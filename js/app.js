@@ -1,7 +1,7 @@
 import { I18n } from "./i18n.js";
 import { Theme } from "./theme.js";
 import { Nationality } from "./nationality.js";
-import { renderFactList } from "./facts.js";
+import { FactsCatalog, renderFactList } from "./facts.js";
 import { Art99 } from "./art99.js";
 import { EmployerPackage } from "./employer-package.js";
 import { LmtGuide } from "./lmt-guide.js";
@@ -849,6 +849,7 @@ async function init() {
       UvList.load(),
       Reference.load(),
       Uncertainty.load(),
+      FactsCatalog.load(),
     ]);
     state.caseData = caseData;
     state.stepsData = stepsData;

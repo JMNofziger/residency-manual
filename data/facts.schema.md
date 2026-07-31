@@ -6,7 +6,7 @@ Every fact-bearing claim (fees, deadlines, day-counts, percentages, thresholds, 
 
 ```json
 {
-  "id": "permit-fee",
+  "id": "permit-admin-fee",
   "value": "€74.32",
   "labelKey": "facts.permitFee",
   "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
@@ -26,9 +26,22 @@ Every fact-bearing claim (fees, deadlines, day-counts, percentages, thresholds, 
 | `verifiedDate` | yes | ISO date `YYYY-MM-DD` when we last checked the source |
 | `id` | recommended | Stable id for checklists / audit |
 
+## Canonical catalog (shared fees)
+
+Shared fees/deadlines live in [`facts-catalog.json`](facts-catalog.json). Elsewhere, `facts[]` may contain **string ids** that resolve at load time:
+
+```json
+"facts": ["permit-admin-fee", "biometric-production-fee", "biometric-admin-fee"]
+```
+
+Inline full objects remain allowed for one-off / local facts. Do **not** re-inline a catalog entry’s `value` + `labelKey` outside the catalog (lint fails). Contested alternate readings stay in [`uncertainty.json`](uncertainty.json), not the catalog.
+
+Runtime: `FactsCatalog.load()` + `FactsCatalog.resolve()` in [`js/facts.js`](../js/facts.js).
+
 ## Where facts live
 
-- `data/steps.json` — `facts[]` on steps or sections
+- `data/facts-catalog.json` — shared canonical facts (id → object)
+- `data/steps.json` — `facts[]` on steps or sections (ids and/or objects)
 - `data/*-checks.json` — `facts[]` on guided checks
 - `data/nationalities/{id}.json` — `facts[]` on slots / checklist items
 - `data/occupations.json` — only if stating numeric legal thresholds

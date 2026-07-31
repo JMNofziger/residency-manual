@@ -3,6 +3,8 @@
  * Walks data/ and cases/ JSON. Fails if:
  * 1) A fact-like object is missing required fields
  * 2) A string outside fact.value matches currency / day-count / % / threshold patterns
+ * 3) A facts[] string id is missing from data/facts-catalog.json
+ * 4) A catalog fact is re-inlined (same value+labelKey) outside the catalog / uncertainty
  *
  * Usage: node scripts/lint-facts.mjs
  */
@@ -14,6 +16,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const TARGETS = [path.join(ROOT, "data"), path.join(ROOT, "cases")];
+const CATALOG_REL = "data/facts-catalog.json";
 
 const REQUIRED_FACT_FIELDS = ["value", "sourceUrl", "sourceTier", "verifiedDate"];
 
@@ -37,7 +40,7 @@ const ALLOWED_STRING_PATHS = [
   /mirrorUrl$/i,
   /hubUrl$/i,
   /verifiedDate$/i,
-  /publication_date$/i,
+  /gazette_date$/i,
   /official_gazette$/i,
   /\.id$/i,
   /oib$/i,
@@ -61,6 +64,10 @@ const ALLOWED_STRING_PATHS = [
   /summaryKey$/i,
   /blurbKey$/i,
   /narrativeKey$/i,
+  /roleKey$/i,
+  /adoptedLabelKey$/i,
+  /meaningKey$/i,
+  /pageNoteKey$/i,
 ];
 
 function isFactObject(node) {
@@ -113,7 +120,6 @@ function findUnsourcedMatches(str) {
   const matches = [];
   for (const { name, re } of UNSOURCED_PATTERNS) {
     if (re.test(str)) {
-      // Allow gazette / article refs that only tripped month/year via NN 55/2026-style text
       if (
         (name === "month-count" || name === "year-count" || name === "schengen-window") &&
         looksLikeGazetteRef(str) &&
@@ -127,8 +133,26 @@ function findUnsourcedMatches(str) {
   return matches;
 }
 
+function isFactsArrayItemPath(pathStr) {
+  return /\.facts\[\d+\]$/.test(pathStr) || /^facts\[\d+\]$/.test(pathStr);
+}
+
+function catalogFingerprint(fact) {
+  return `${String(fact.value)}|${String(fact.labelKey || "")}`;
+}
+
+function allowInlineCatalogDuplicate(relFile, pathStr) {
+  if (relFile === CATALOG_REL) return true;
+  // Contested readings may repeat catalog values with different roles
+  if (relFile === "data/uncertainty.json" && /\.readings\[\d+\]/.test(pathStr)) return true;
+  return false;
+}
+
 const errors = [];
 const factsFound = [];
+let catalogById = {};
+let catalogByFingerprint = new Map();
+let catalogRefHits = 0;
 
 function validateFact(fact, pathStr, file) {
   for (const field of REQUIRED_FACT_FIELDS) {
@@ -157,6 +181,27 @@ function validateFact(fact, pathStr, file) {
       message: `verifiedDate must be YYYY-MM-DD, got ${JSON.stringify(fact.verifiedDate)}`,
     });
   }
+
+  if (file !== CATALOG_REL && fact.id && catalogById[fact.id]) {
+    errors.push({
+      file,
+      path: pathStr,
+      type: "catalog-id-redefined",
+      message: `Fact id "${fact.id}" belongs in ${CATALOG_REL}; use a string ref in facts[] instead of re-inlining`,
+    });
+  }
+
+  const fp = catalogFingerprint(fact);
+  const catalogId = catalogByFingerprint.get(fp);
+  if (catalogId && !allowInlineCatalogDuplicate(file, pathStr)) {
+    errors.push({
+      file,
+      path: pathStr,
+      type: "catalog-value-reinlined",
+      message: `Fact matches catalog id "${catalogId}" (${fact.value} / ${fact.labelKey}). Use string ref "${catalogId}" in facts[] instead of re-inlining`,
+    });
+  }
+
   factsFound.push({ file, path: pathStr, fact });
 }
 
@@ -184,8 +229,20 @@ function walk(node, pathStr, file, inFactValue) {
   }
 
   if (typeof node === "string") {
+    if (isFactsArrayItemPath(pathStr) && file !== CATALOG_REL) {
+      if (!catalogById[node]) {
+        errors.push({
+          file,
+          path: pathStr,
+          type: "unknown-catalog-ref",
+          message: `Unknown facts-catalog id ${JSON.stringify(node)}`,
+        });
+      } else {
+        catalogRefHits += 1;
+      }
+      return;
+    }
     if (inFactValue || pathAllowedForNumericString(pathStr)) return;
-    // Skip pure URLs and paths
     if (/^https?:\/\//i.test(node) || node.startsWith("data/")) return;
     const hits = findUnsourcedMatches(node);
     if (hits.length) {
@@ -199,7 +256,35 @@ function walk(node, pathStr, file, inFactValue) {
   }
 }
 
-const files = TARGETS.flatMap(listJsonFiles);
+// Load catalog first
+const catalogPath = path.join(ROOT, CATALOG_REL);
+if (!fs.existsSync(catalogPath)) {
+  console.error(`lint-facts: missing ${CATALOG_REL}`);
+  process.exit(2);
+}
+let catalogData;
+try {
+  catalogData = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
+} catch (e) {
+  console.error(`lint-facts: failed to parse ${CATALOG_REL}: ${e}`);
+  process.exit(2);
+}
+catalogById = catalogData.facts && typeof catalogData.facts === "object" ? catalogData.facts : {};
+for (const [id, fact] of Object.entries(catalogById)) {
+  if (!fact || typeof fact !== "object") {
+    errors.push({
+      file: CATALOG_REL,
+      path: `facts.${id}`,
+      type: "bad-catalog-entry",
+      message: "Catalog entry must be an object",
+    });
+    continue;
+  }
+  validateFact(fact, `facts.${id}`, CATALOG_REL);
+  catalogByFingerprint.set(catalogFingerprint(fact), id);
+}
+
+const files = TARGETS.flatMap(listJsonFiles).filter((f) => path.relative(ROOT, f) !== CATALOG_REL);
 if (files.length === 0) {
   console.error("lint-facts: no JSON files found under data/ or cases/");
   process.exit(2);
@@ -226,5 +311,5 @@ if (errors.length) {
 }
 
 console.log(
-  `lint-facts: OK — ${files.length} files, ${factsFound.length} cited fact object(s), no unsourced thresholds.`
+  `lint-facts: OK — ${files.length + 1} files, ${Object.keys(catalogById).length} catalog fact(s), ${catalogRefHits} catalog ref(s), ${factsFound.length} cited fact object(s), no unsourced thresholds.`
 );

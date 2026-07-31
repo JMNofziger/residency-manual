@@ -47,39 +47,65 @@ function isFactObject(node) {
   );
 }
 
-function walk(node, file, pathStr, acc) {
+function isFactsArrayItemPath(pathStr) {
+  return /\.facts\[\d+\]$/.test(pathStr) || /^facts\[\d+\]$/.test(pathStr);
+}
+
+function ageDays(verifiedDate) {
+  return Math.floor((Date.UTC(2026, 6, 31) - Date.parse(verifiedDate)) / (24 * 3600 * 1000));
+}
+
+function pushFact(acc, node, file, pathStr, idOverride = null) {
+  const age = ageDays(node.verifiedDate);
+  acc.push({
+    id: idOverride || node.id || null,
+    value: node.value,
+    labelKey: node.labelKey || null,
+    sourceUrl: node.sourceUrl,
+    sourceTier: node.sourceTier,
+    sourceName: node.sourceName || null,
+    verifiedDate: node.verifiedDate,
+    ageDaysAsOfAudit: Number.isFinite(age) ? age : null,
+    file: path.relative(ROOT, file),
+    path: pathStr || "(root)",
+  });
+}
+
+function walk(node, file, pathStr, acc, catalogById) {
   if (!node || typeof node !== "object") return;
   if (isFactObject(node)) {
-    const ageDays = Math.floor(
-      (Date.UTC(2026, 6, 31) - Date.parse(node.verifiedDate)) / (24 * 3600 * 1000)
-    );
-    acc.push({
-      id: node.id || null,
-      value: node.value,
-      labelKey: node.labelKey || null,
-      sourceUrl: node.sourceUrl,
-      sourceTier: node.sourceTier,
-      sourceName: node.sourceName || null,
-      verifiedDate: node.verifiedDate,
-      ageDaysAsOfAudit: Number.isFinite(ageDays) ? ageDays : null,
-      file: path.relative(ROOT, file),
-      path: pathStr || "(root)",
-    });
+    pushFact(acc, node, file, pathStr);
     return;
   }
   if (Array.isArray(node)) {
-    node.forEach((item, i) => walk(item, file, `${pathStr}[${i}]`, acc));
+    node.forEach((item, i) => {
+      const itemPath = `${pathStr}[${i}]`;
+      if (typeof item === "string" && isFactsArrayItemPath(itemPath) && catalogById[item]) {
+        pushFact(acc, catalogById[item], file, itemPath, item);
+        return;
+      }
+      walk(item, file, itemPath, acc, catalogById);
+    });
     return;
   }
   for (const [k, v] of Object.entries(node)) {
-    walk(v, file, pathStr ? `${pathStr}.${k}` : k, acc);
+    walk(v, file, pathStr ? `${pathStr}.${k}` : k, acc, catalogById);
   }
 }
 
+const catalogPath = path.join(ROOT, "data/facts-catalog.json");
+const catalogData = JSON.parse(fs.readFileSync(catalogPath, "utf8"));
+const catalogById = catalogData.facts || {};
+
 const facts = [];
+for (const [id, fact] of Object.entries(catalogById)) {
+  pushFact(facts, fact, catalogPath, `facts.${id}`, id);
+}
+
 for (const file of TARGETS.flatMap(listJsonFiles)) {
+  if (path.relative(ROOT, file) === "data/facts-catalog.json") continue;
   const data = JSON.parse(fs.readFileSync(file, "utf8"));
-  walk(data, file, "", facts);
+  walk(data, file, "", facts, catalogById);
 }
 
 facts.sort((a, b) => String(a.id).localeCompare(String(b.id)) || a.path.localeCompare(b.path));
@@ -92,6 +118,7 @@ const payload = {
   tier1Count: facts.filter((f) => f.sourceTier === 1).length,
   tier2Count: facts.filter((f) => f.sourceTier === 2).length,
   notes: [
+    "Canonical shared fees live in data/facts-catalog.json; steps/checks reference by id. Contested €46.45 / accelerated biometric readings stay in data/uncertainty.json only.",
     "Phase 5 live Tier-1 pass completed 2026-07-31 — see artifacts/phase5-verification.md.",
     "CONFIRMED on HZZ novi sustav: Art. 99 20%/10%, 12 months continuous FTE, €100,000 legal-entity inflow, 30-day blockade, 90-day LMT positive-notice window.",
     "CONFIRMED on MUP Work of third-country nationals (Phase 6e): stay-and-work / Single Permit administrative fee is €74.32 when notified of approval (police filing). Biometric production €31.85 (regular) + admin €9.29. Accelerated biometric production (€59.73) omitted from wizard defaults.",

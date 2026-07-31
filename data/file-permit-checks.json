@@ -162,33 +162,9 @@
       ],
       "evidenceKey": "fpGuide.fees.evidence",
       "facts": [
-        {
-          "id": "fp-permit-admin-fee",
-          "value": "€74.32",
-          "labelKey": "facts.permitFee",
-          "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
-          "sourceTier": 1,
-          "sourceName": "MUP — Work of third-country nationals",
-          "verifiedDate": "2026-07-31"
-        },
-        {
-          "id": "fp-biometric-production-fee",
-          "value": "€31.85",
-          "labelKey": "facts.biometricProductionFee",
-          "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
-          "sourceTier": 1,
-          "sourceName": "MUP — Work of third-country nationals",
-          "verifiedDate": "2026-07-31"
-        },
-        {
-          "id": "fp-biometric-admin-fee",
-          "value": "€9.29",
-          "labelKey": "facts.biometricAdminFee",
-          "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
-          "sourceTier": 1,
-          "sourceName": "MUP — Work of third-country nationals",
-          "verifiedDate": "2026-07-31"
-        }
+        "permit-admin-fee",
+        "biometric-production-fee",
+        "biometric-admin-fee"
       ],
       "caseHintKeys": []
     },

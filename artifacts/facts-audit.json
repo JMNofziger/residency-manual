@@ -1,10 +1,11 @@
 {
   "generatedAt": "2026-07-31",
   "caseId": "example-dool-us-manual-labor",
-  "factCount": 45,
-  "tier1Count": 45,
+  "factCount": 52,
+  "tier1Count": 52,
   "tier2Count": 0,
   "notes": [
+    "Canonical shared fees live in data/facts-catalog.json; steps/checks reference by id. Contested €46.45 / accelerated biometric readings stay in data/uncertainty.json only.",
     "Phase 5 live Tier-1 pass completed 2026-07-31 — see artifacts/phase5-verification.md.",
     "CONFIRMED on HZZ novi sustav: Art. 99 20%/10%, 12 months continuous FTE, €100,000 legal-entity inflow, 30-day blockade, 90-day LMT positive-notice window.",
     "CONFIRMED on MUP Work of third-country nationals (Phase 6e): stay-and-work / Single Permit administrative fee is €74.32 when notified of approval (police filing). Biometric production €31.85 (regular) + admin €9.29. Accelerated biometric production (€59.73) omitted from wizard defaults.",
@@ -138,6 +139,54 @@
       "path": "steps[0].sections[2].facts[3]"
     },
     {
+      "id": "biometric-accelerated",
+      "value": "€59.73",
+      "labelKey": null,
+      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+      "sourceTier": 1,
+      "sourceName": "MUP — Work of third-country nationals",
+      "verifiedDate": "2026-07-31",
+      "ageDaysAsOfAudit": 0,
+      "file": "data/uncertainty.json",
+      "path": "items[1].readings[1]"
+    },
+    {
+      "id": "biometric-admin-fee",
+      "value": "€9.29",
+      "labelKey": "facts.biometricAdminFee",
+      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+      "sourceTier": 1,
+      "sourceName": "MUP — Work of third-country nationals",
+      "verifiedDate": "2026-07-31",
+      "ageDaysAsOfAudit": 0,
+      "file": "data/start-work-checks.json",
+      "path": "checks[1].facts[2]"
+    },
+    {
+      "id": "biometric-admin-fee",
+      "value": "€9.29",
+      "labelKey": "facts.biometricAdminFee",
+      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+      "sourceTier": 1,
+      "sourceName": "MUP — Work of third-country nationals",
+      "verifiedDate": "2026-07-31",
+      "ageDaysAsOfAudit": 0,
+      "file": "data/file-permit-checks.json",
+      "path": "checks[6].facts[2]"
+    },
+    {
+      "id": "biometric-admin-fee",
+      "value": "€9.29",
+      "labelKey": "facts.biometricAdminFee",
+      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+      "sourceTier": 1,
+      "sourceName": "MUP — Work of third-country nationals",
+      "verifiedDate": "2026-07-31",
+      "ageDaysAsOfAudit": 0,
+      "file": "data/facts-catalog.json",
+      "path": "facts.biometric-admin-fee"
+    },
+    {
       "id": "biometric-admin-fee",
       "value": "€9.29",
       "labelKey": "facts.biometricAdminFee",
@@ -158,8 +207,56 @@
       "sourceName": "MUP — Work of third-country nationals",
       "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
+      "file": "data/start-work-checks.json",
+      "path": "checks[1].facts[1]"
+    },
+    {
+      "id": "biometric-production-fee",
+      "value": "€31.85",
+      "labelKey": "facts.biometricProductionFee",
+      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+      "sourceTier": 1,
+      "sourceName": "MUP — Work of third-country nationals",
+      "verifiedDate": "2026-07-31",
+      "ageDaysAsOfAudit": 0,
+      "file": "data/file-permit-checks.json",
+      "path": "checks[6].facts[1]"
+    },
+    {
+      "id": "biometric-production-fee",
+      "value": "€31.85",
+      "labelKey": "facts.biometricProductionFee",
+      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+      "sourceTier": 1,
+      "sourceName": "MUP — Work of third-country nationals",
+      "verifiedDate": "2026-07-31",
+      "ageDaysAsOfAudit": 0,
+      "file": "data/facts-catalog.json",
+      "path": "facts.biometric-production-fee"
+    },
+    {
+      "id": "biometric-production-fee",
+      "value": "€31.85",
+      "labelKey": "facts.biometricProductionFee",
+      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+      "sourceTier": 1,
+      "sourceName": "MUP — Work of third-country nationals",
+      "verifiedDate": "2026-07-31",
+      "ageDaysAsOfAudit": 0,
       "file": "data/steps.json",
       "path": "steps[5].sections[0].facts[1]"
+    },
+    {
+      "id": "biometric-regular",
+      "value": "€31.85",
+      "labelKey": null,
+      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+      "sourceTier": 1,
+      "sourceName": "MUP — Work of third-country nationals",
+      "verifiedDate": "2026-07-31",
+      "ageDaysAsOfAudit": 0,
+      "file": "data/uncertainty.json",
+      "path": "items[1].readings[0]"
     },
     {
       "id": "case-art99-blocked",
@@ -306,30 +403,6 @@
       "path": "steps[7].sections[0].facts[0]"
     },
     {
-      "id": "fp-biometric-admin-fee",
-      "value": "€9.29",
-      "labelKey": "facts.biometricAdminFee",
-      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
-      "sourceTier": 1,
-      "sourceName": "MUP — Work of third-country nationals",
-      "verifiedDate": "2026-07-31",
-      "ageDaysAsOfAudit": 0,
-      "file": "data/file-permit-checks.json",
-      "path": "checks[6].facts[2]"
-    },
-    {
-      "id": "fp-biometric-production-fee",
-      "value": "€31.85",
-      "labelKey": "facts.biometricProductionFee",
-      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
-      "sourceTier": 1,
-      "sourceName": "MUP — Work of third-country nationals",
-      "verifiedDate": "2026-07-31",
-      "ageDaysAsOfAudit": 0,
-      "file": "data/file-permit-checks.json",
-      "path": "checks[6].facts[1]"
-    },
-    {
       "id": "fp-lmt-positive-notice-window",
       "value": "90 days",
       "labelKey": "facts.lmtPositiveNoticeWindow",
@@ -340,18 +413,6 @@
       "ageDaysAsOfAudit": 0,
       "file": "data/file-permit-checks.json",
       "path": "checks[0].facts[0]"
-    },
-    {
-      "id": "fp-permit-admin-fee",
-      "value": "€74.32",
-      "labelKey": "facts.permitFee",
-      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
-      "sourceTier": 1,
-      "sourceName": "MUP — Work of third-country nationals",
-      "verifiedDate": "2026-07-31",
-      "ageDaysAsOfAudit": 0,
-      "file": "data/file-permit-checks.json",
-      "path": "checks[6].facts[0]"
     },
     {
       "id": "fp-permit-decision-timeline",
@@ -410,6 +471,42 @@
       "sourceName": "MUP — Work of third-country nationals",
       "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
+      "file": "data/start-work-checks.json",
+      "path": "checks[1].facts[0]"
+    },
+    {
+      "id": "permit-admin-fee",
+      "value": "€74.32",
+      "labelKey": "facts.permitFee",
+      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+      "sourceTier": 1,
+      "sourceName": "MUP — Work of third-country nationals",
+      "verifiedDate": "2026-07-31",
+      "ageDaysAsOfAudit": 0,
+      "file": "data/file-permit-checks.json",
+      "path": "checks[6].facts[0]"
+    },
+    {
+      "id": "permit-admin-fee",
+      "value": "€74.32",
+      "labelKey": "facts.permitFee",
+      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+      "sourceTier": 1,
+      "sourceName": "MUP — Work of third-country nationals",
+      "verifiedDate": "2026-07-31",
+      "ageDaysAsOfAudit": 0,
+      "file": "data/facts-catalog.json",
+      "path": "facts.permit-admin-fee"
+    },
+    {
+      "id": "permit-admin-fee",
+      "value": "€74.32",
+      "labelKey": "facts.permitFee",
+      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+      "sourceTier": 1,
+      "sourceName": "MUP — Work of third-country nationals",
+      "verifiedDate": "2026-07-31",
+      "ageDaysAsOfAudit": 0,
       "file": "data/steps.json",
       "path": "steps[5].sections[0].facts[0]"
     },
@@ -450,42 +547,6 @@
       "path": "checks[5].facts[0]"
     },
     {
-      "id": "sw-biometric-admin-fee",
-      "value": "€9.29",
-      "labelKey": "facts.biometricAdminFee",
-      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
-      "sourceTier": 1,
-      "sourceName": "MUP — Work of third-country nationals",
-      "verifiedDate": "2026-07-31",
-      "ageDaysAsOfAudit": 0,
-      "file": "data/start-work-checks.json",
-      "path": "checks[1].facts[2]"
-    },
-    {
-      "id": "sw-biometric-production-fee",
-      "value": "€31.85",
-      "labelKey": "facts.biometricProductionFee",
-      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
-      "sourceTier": 1,
-      "sourceName": "MUP — Work of third-country nationals",
-      "verifiedDate": "2026-07-31",
-      "ageDaysAsOfAudit": 0,
-      "file": "data/start-work-checks.json",
-      "path": "checks[1].facts[1]"
-    },
-    {
-      "id": "sw-permit-admin-fee",
-      "value": "€74.32",
-      "labelKey": "facts.permitFee",
-      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
-      "sourceTier": 1,
-      "sourceName": "MUP — Work of third-country nationals",
-      "verifiedDate": "2026-07-31",
-      "ageDaysAsOfAudit": 0,
-      "file": "data/start-work-checks.json",
-      "path": "checks[1].facts[0]"
-    },
-    {
       "id": "sw-permit-decision-timeline",
       "value": "90 days",
       "labelKey": "facts.permitDecisionTimeline",
@@ -496,6 +557,18 @@
       "ageDaysAsOfAudit": 0,
       "file": "data/start-work-checks.json",
       "path": "checks[0].facts[0]"
+    },
+    {
+      "id": "temp-stay-46",
+      "value": "€46.45",
+      "labelKey": null,
+      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661",
+      "sourceTier": 1,
+      "sourceName": "MUP — Temporary stay of third-country nationals",
+      "verifiedDate": "2026-07-31",
+      "ageDaysAsOfAudit": 0,
+      "file": "data/uncertainty.json",
+      "path": "items[0].readings[1]"
     },
     {
       "id": "unemployment-window-standard",
@@ -556,6 +629,18 @@
       "ageDaysAsOfAudit": 0,
       "file": "data/worker-docs-checks.json",
       "path": "checks[6].facts[0]"
+    },
+    {
+      "id": "work-tcn-74",
+      "value": "€74.32",
+      "labelKey": null,
+      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+      "sourceTier": 1,
+      "sourceName": "MUP — Work of third-country nationals",
+      "verifiedDate": "2026-07-31",
+      "ageDaysAsOfAudit": 0,
+      "file": "data/uncertainty.json",
+      "path": "items[0].readings[0]"
     }
   ]
 }

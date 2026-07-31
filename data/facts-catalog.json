@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "notes": [
+    "Canonical shared fees/deadlines. Reference by id string in facts[] arrays elsewhere.",
+    "Contested alternate readings stay in data/uncertainty.json — do not put them here.",
+    "Stay-and-work path admin fee is €74.32 (MUP Work of TCN). €46.45 on the temporary-stay page is a different purpose — see artifacts/phase6e-verification.md."
+  ],
+  "facts": {
+    "permit-admin-fee": {
+      "value": "€74.32",
+      "labelKey": "facts.permitFee",
+      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+      "sourceTier": 1,
+      "sourceName": "MUP — Work of third-country nationals",
+      "verifiedDate": "2026-07-31"
+    },
+    "biometric-production-fee": {
+      "value": "€31.85",
+      "labelKey": "facts.biometricProductionFee",
+      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+      "sourceTier": 1,
+      "sourceName": "MUP — Work of third-country nationals",
+      "verifiedDate": "2026-07-31"
+    },
+    "biometric-admin-fee": {
+      "value": "€9.29",
+      "labelKey": "facts.biometricAdminFee",
+      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+      "sourceTier": 1,
+      "sourceName": "MUP — Work of third-country nationals",
+      "verifiedDate": "2026-07-31"
+    }
+  }
+}

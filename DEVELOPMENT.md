@@ -6,6 +6,8 @@ Progress board for the Croatia employer hiring runbook.
 
 **Not legal advice.** Numeric claims must be cited fact objects; `npm run lint:facts` is build-blocking (also on CI).
 
+**Linear board:** [residency-runbook](https://linear.app/personal-interests-llc/project/residency-runbook-c5b480e87a88) — milestones, Todo/Backlog, deferred debt. Prefer Linear for planning; keep this file as the repo-local status snapshot.
+
 ## Status
 
 | Phase | Name | Status |
@@ -13,16 +15,17 @@ Progress board for the Croatia employer hiring runbook.
 | 0–5 | Sources, shell, facts, US pack, Art. 99 + UV, live Tier-1 verify | Done |
 | 6 | Guided Steps 1–8, glossary/offices, gates, case file I/O | Done |
 | 7a | Case picker (`cases/index.json`) + Zagreb scope banner | Done |
-| 7 | More nationality packs (beyond US) | Next |
+| 7 | More nationality packs (beyond US) | Next (discovery open — Linear RES-8) |
 | 8a | CI lint-facts + gate smoke | Done |
 | 8b | EN/HR locale parity in CI + fee uncertainty cards + workflow overview home | Done |
-| 8 | Hosting (static deploy) | Planned |
+| Trust | Canonical fact catalog (`data/facts-catalog.json`) | In progress (Linear RES-5) |
+| 8 | Hosting (static deploy) | Planned (Linear RES-11) |
 
 ## Known gaps (see critique)
 
 Deep review: [`artifacts/product-critique.md`](artifacts/product-critique.md).
 
-Priorities: canonical fact catalog, more nationality packs, anonymized export, hosting.
+Priorities: expand catalog coverage beyond shared fees, more nationality packs (after discovery), anonymized export, hosting.
 
 ## Done highlights
 
@@ -31,6 +34,7 @@ Priorities: canonical fact catalog, more nationality packs, anonymized export, h
 - Case file I/O: [`js/case-file.js`](js/case-file.js); case picker: [`cases/index.json`](cases/index.json)
 - CI: [`.github/workflows/lint-facts.yml`](.github/workflows/lint-facts.yml) — facts + EN/HR locale parity + gate smoke
 - Workflow overview home + fee uncertainty cards: [`js/overview.js`](js/overview.js), [`js/uncertainty.js`](js/uncertainty.js), [`data/uncertainty.json`](data/uncertainty.json)
+- Canonical shared fees: [`data/facts-catalog.json`](data/facts-catalog.json) (reference by id in `facts[]`; contested readings stay in uncertainty)
 - Live verifies: [`artifacts/phase5-verification.md`](artifacts/phase5-verification.md), [`artifacts/phase6e-verification.md`](artifacts/phase6e-verification.md)
 
 ## Contribute
