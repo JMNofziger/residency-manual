@@ -17,8 +17,8 @@ Progress board for the Croatia employer hiring runbook.
 | 7a | Case picker (`cases/index.json`) + Zagreb scope (now in office panes) | Done |
 | 7 | More nationality packs (beyond US) | Next (discovery — Linear RES-8) |
 | 8a | CI lint-facts + gate smoke | Done |
-| 8b | EN/HR locale parity CI + fee uncertainty cards + workflow overview | Done |
-| Trust | Canonical fact catalog (`data/facts-catalog.json`) | Done (Linear RES-5) |
+| 8b | EN/HR locale parity CI + fee uncertainty cards + workflow overview | Done (Linear RES-18) |
+| Trust | Canonical fact catalog + fee-history guardrails | Done (Linear RES-5, RES-6) |
 | UX | Offices addresses, theme icon, footer reset+backup, import activation, one-shot export nudge | Done |
 | 8 | Hosting (static deploy) | Planned (Linear RES-11) |
 
@@ -34,20 +34,17 @@ Progress board for the Croatia employer hiring runbook.
 
 Deep review + addendum: [`artifacts/product-critique.md`](artifacts/product-critique.md).
 
-**Still open**
+**Open on Linear**
 
-- More nationality packs (drive embassy offices from pack, not core steps)
-- Optional gate / banner for nationality checklist items on worker-docs
-- Anonymized / redacted export
-- Hosting
-- Cite or formally omit post-permit address registration day-count
-- Non-Zagreb competence only when a real second-city case exists
-- Split large `js/app.js` render/session concerns
-- Progress migration helpers for renamed check ids on old imports
+- Hosting (RES-11)
+- Nationality discovery spike (RES-8); embassy-from-pack + optional Step 5 gates (RES-9, RES-10)
+- Address day-count cite/omit (RES-7)
+- Expand catalog beyond shared fees (RES-19)
+- Backlog debt: anonymized export (RES-12), `app.js` split (RES-14), non-Zagreb (RES-15), checklist-id migration (RES-16), UV refresh (RES-17)
 
 **Recently closed (no longer “next”)**
 
-- Canonical shared-fee catalog
+- Canonical shared-fee catalog + fee-history guardrails
 - EN/HR key-parity in CI
 - Fee uncertainty spectrum cards
 - Workflow overview home
