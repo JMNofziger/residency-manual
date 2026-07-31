@@ -16,5 +16,7 @@ jobs:
           node-version: "20"
       - name: Lint cited facts
         run: npm run lint:facts
+      - name: Lint EN/HR locale parity
+        run: npm run lint:locales
       - name: Gate smoke
         run: npm run test:gates

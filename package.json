@@ -5,6 +5,8 @@
   "description": "Static Croatia employer hiring runbook (HZZ LMT → MUP Single Permit)",
   "scripts": {
     "lint:facts": "node scripts/lint-facts.mjs",
+    "lint:locales": "node scripts/lint-locale-parity.mjs",
+    "lint": "npm run lint:facts && npm run lint:locales",
     "audit:facts": "node scripts/generate-facts-audit.mjs",
     "test:gates": "node scripts/smoke-gates.mjs"
   },
