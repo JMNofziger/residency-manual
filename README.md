@@ -31,7 +31,11 @@ Open http://localhost:8080 (needed for JSON/`fetch`; do not open as `file://`).
 
 Put a real case at `cases/private/active.json` (gitignored). It appears first in the case picker when present.
 
-For multiple hires, export one `{id}-runbook.json` per worker. Do not commit private exports (may contain OIB and other identifiers).
+This workspace includes a local VPR EVENT CREW test fixture at:
+- `cases/private/active.json` (preferred auto-load; exportable schema v2 bundle)
+- `cases/private/vpr-event-crew-us-manual-labor.json` (same bundle for import/export drills)
+
+Do not commit these files. For multiple hires, export one `{id}-runbook.json` per worker.
 
 ## Facts lint / CI
 

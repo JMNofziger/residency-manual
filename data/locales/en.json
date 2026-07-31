@@ -21,11 +21,11 @@
     "dutyTemplate": "Duty template (adapt to real work)",
     "dutyTemplateEmpty": "Select an occupation above to load duty bullets.",
     "pathDecision": "Filing path decision",
-    "pathLmt": "Usual path for this hire",
-    "pathUvCandidate": "UV LMT-skip candidate (only if exact title + duties match)",
-    "uvMarkCandidate": "Mark as UV candidate to review",
-    "uvCandidateChip": "UV candidate noted: {title}",
-    "uvClearCandidate": "Clear UV candidate",
+    "pathLmt": "Usual path: {lmt}",
+    "pathUvCandidate": "{uv} skip candidate (only if exact title + duties match)",
+    "uvMarkCandidate": "Mark as {uv} candidate to review",
+    "uvCandidateChip": "{uv} candidate noted: {title}",
+    "uvClearCandidate": "Clear {uv} candidate",
     "nationalityPanel": "Nationality guidance",
     "citedFacts": "Cited figures",
     "factCitation": "{value} — {source}, verified {date}",
@@ -51,7 +51,7 @@
     "defensibility.medium": "Plausible — document duties carefully",
     "mobileMenu": "Steps",
     "employeesApprox": "Approx. employees (case data)",
-    "whatIsLmt": "What is the labor market test?",
+    "whatIsLmt": "What is the {lmt}?",
     "whatIsPermit": "What is the stay-and-work permit?",
     "glossary": "Glossary",
     "addressBook": "Offices",
@@ -85,7 +85,13 @@
     "resetBackupPrompt": "Back up the current case file first. The download uses a _{date}_BAK suffix before .json.",
     "resetDownloadBackup": "Download backup",
     "resetConfirmAction": "Reset progress",
-    "resetCancel": "Cancel"
+    "resetCancel": "Cancel",
+    "uvCandidateSelected": "Selected as {uv} candidate",
+    "uvCandidateChipHtml": "{uv} candidate noted: {title}",
+    "exportNudgeTitle": "Export your case file",
+    "exportNudgeBody": "Export is the durable file for this hire (case + progress). Browser storage is only a last-session cache — export before closing if you need the work elsewhere.",
+    "exportNudgeExport": "Export case now",
+    "exportNudgeDismiss": "Continue without exporting"
   },
   "facts": {
     "art99DomesticRatio": "Domestic workforce ratio (employer condition)",
@@ -611,23 +617,23 @@
     }
   },
   "uv": {
-    "panelTitle": "UV / deficitary occupations (LMT exemption list)",
-    "panelIntro": "Search occupations from the official HZZ/MUP PDF of titles for which the employer is not required to run a labor market test. Default filter: titles tagged as plausibly relevant to this company’s NKD, and valid in Grad Zagreb (or nationwide).",
-    "art110Note": "Separate channel: Art. 110 categories (key personnel, Blue Card, ICT transfer, etc.) file at the police — they are not this searchable UV table.",
-    "listEdition": "Official UV LMT-exemption list edition ingested",
+    "panelTitle": "{uv} (exemption from the {lmt})",
+    "panelIntro": "Search occupations from the official HZZ/MUP PDF of titles for which the employer is not required to run a {lmt}. Default filter: titles tagged as plausibly relevant to this company’s NKD, and valid in Grad Zagreb (or nationwide).",
+    "art110Note": "Separate channel: Art. 110 categories (key personnel, Blue Card, ICT transfer, etc.) file at the police — they are not this searchable {uv} table.",
+    "listEdition": "Official {uv} edition ingested",
     "listStaleBanner": "This tool ships the official 2023 PDF still hosted by MUP/HZZ. Re-open the live HZZ “Lista zanimanja…” hub before filing — the list can be amended after this edition.",
     "openPdf": "Open official PDF (Tier 1)",
     "openHub": "Open HZZ radne dozvole hub",
-    "searchLabel": "Search occupations",
+    "searchLabel": "Search {uv} titles",
     "searchPlaceholder": "e.g. električar, crane, cleaner…",
-    "toggleAllZagreb": "Show all UV titles valid in Grad Zagreb (not only NKD-relevant)",
+    "toggleAllZagreb": "Show all {uv} titles valid in Grad Zagreb (not only NKD-relevant)",
     "nkdRelevantBadge": "NKD-relevant",
     "regionAll": "Valid in all counties (nationwide on this list)",
     "regionLimited": "Regional title — includes Grad Zagreb on this list edition",
     "regionChip": "Region: {region}",
     "nkdChip": "NKD {nkd}",
-    "emptyState": "No UV titles match this filter. For manual event crew under NKD 90399, treat labor market test as the primary path — do not invent a UV title that is not on the official list or that mismatches real duties.",
-    "noTitleShopping": "LMT skip applies only if the exact occupation title and real duties match a listed UV title and your registered activity. Title shopping that mismatches actual work is a rejection risk.",
+    "emptyState": "No {uv} titles match this filter. For manual event crew under NKD 90399, treat the {lmt} as the primary path — do not invent a title that is not on the official list or that mismatches real duties.",
+    "noTitleShopping": "Skipping the {lmt} applies only if the exact occupation title and real duties match a listed {uv} title and your registered activity. Title shopping that mismatches actual work is a rejection risk.",
     "regions": {
       "grad_zagreb": "Grad Zagreb"
     },
@@ -651,7 +657,8 @@
     "hzz": {
       "name": "Croatian Employment Service (HZZ)",
       "role": "Runs the labor market test and publishes employer rules for hiring foreign workers.",
-      "hubLabel": "HZZ — foreign workers / labor market test"
+      "hubLabel": "HZZ — foreign workers / labor market test",
+      "addressNote": "Use the Zagreb regional office for local employer contact. Central HQ is Radnička cesta 1; published online hubs remain the filing source of truth."
     },
     "mup": {
       "name": "Ministry of the Interior (MUP)",
@@ -660,8 +667,10 @@
     },
     "puZagreb": {
       "name": "Police administration (Zagreb area)",
-      "role": "Local police desk for many stay-and-work filings and biometrics for Zagreb employers/workplaces.",
-      "hubLabel": "MUP homepage — find the competent police administration"
+      "role": "Competent police administration for Grad Zagreb stay-and-work follow-up, foreigner status desks, and biometric card logistics.",
+      "hubLabel": "PU zagrebačka — how and where to file",
+      "addressNote": "For this Grad Zagreb seat/workplace case, foreigner-status work is at Remetinečki gaj 13. Biometric card production/pickup for foreign nationals is at Petrinjska 30. Re-check the PU zagrebačka “how and where” page before you go — channels change.",
+      "emailNote": "zg.drzavljanstvo.stranci@mup.hr is published for certain foreigner-status e-mail filings. The separate radna.dozvola.zagreb@mup.hr channel is for non–labor-market-test / Art. 110 / extension paths only — not a first filing that still needs the labor market test."
     },
     "fina": {
       "name": "Fina (company register / Info.BIZ)",
@@ -692,7 +701,8 @@
       "name": "U.S. Embassy Zagreb",
       "role": "U.S.-citizen practical guidance (entry/residence notes, FBI background-check pointers). Does not replace Croatian MUP/HZZ rules.",
       "hubLabel": "U.S. Embassy — entry and residence"
-    }
+    },
+    "zagrebScope": "Scope note: desks and competence below are modeled for a Grad Zagreb employer/workplace (this case: Savska cesta area). Other police administrations are not mapped yet — confirm the competent desk on official pages before you visit or file."
   },
   "glossary": {
     "singlePermit": {
@@ -716,7 +726,7 @@
       "body": "Legal employer conditions (workforce ratio, continuous domestic employment, tax/contribution standing, blocked accounts, and related checks) that HZZ expects before a positive opinion. This runbook turns them into a guided checklist."
     },
     "uvList": {
-      "title": "UV occupations list (LMT exemption list)",
+      "title": "Upravno vijeće deficitary occupations list (exemption from the labor market test)",
       "body": "An official list of occupation titles for which the employer may skip the labor market test. Only exact listed titles that match real duties count — do not invent a title to skip the test."
     },
     "nkd": {
@@ -941,7 +951,7 @@
     "priorOrient": "Mark Step 1 (Orient) complete",
     "occupationGuided": "Complete the occupation guided checks",
     "occupationSelected": "Select an occupation title",
-    "occupationPathDecided": "Decide LMT path or mark a UV skip candidate",
+    "occupationPathDecided": "Decide {lmt} path or mark a {uv} skip candidate",
     "priorOccupation": "Mark Step 2 (Occupation) complete",
     "pkgGuided": "Complete the employer-package guided checks",
     "priorPackage": "Mark Step 3 (Employer package) complete",
@@ -1121,11 +1131,11 @@
     "notStarted": "Not started — begin at occupation check",
     "branchLabel": "Active branch",
     "branchTitle": "Branch point after the package",
-    "branchLead": "Either run the HZZ labour market test, or skip it only when Art. 99 / UV conditions truly fit.",
-    "branchLmt": "Running the HZZ labour market test",
-    "branchUv": "UV / Art. 99 skip candidate: {title}",
-    "railLmt": "HZZ LMT",
-    "railUv": "UV skip",
+    "branchLead": "Either run the HZZ {lmt}, or skip it only when Article 99 / {uv} conditions truly fit.",
+    "branchLmt": "Running the HZZ {lmt}",
+    "branchUv": "{uv} / Article 99 skip candidate: {title}",
+    "railLmt": "HZZ {lmt}",
+    "railUv": "{uv} skip",
     "joinLabel": "Both paths join again at MUP stay-and-work filing",
     "flowLabel": "Workflow steps",
     "enterChecklist": "Open checklist — {step}",
@@ -1168,5 +1178,9 @@
       "meaningAccelerated": "Accelerated production option — higher fee, not the default checklist amount.",
       "pageNote": "Live MUP Work of TCN page (biometric / production fees)."
     }
+  },
+  "terms": {
+    "lmt": "labor market test",
+    "uv": "Upravno vijeće deficitary occupations list"
   }
 }

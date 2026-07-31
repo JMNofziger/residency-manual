@@ -54,38 +54,49 @@ export const UvList = {
 
   bind(root) {
     if (!root) return;
-    if (root._uvBound) return;
-    root._uvBound = true;
+    // Always (re)wire — panel DOM is recreated on each render.
+    if (root._uvClick) root.removeEventListener("click", root._uvClick);
+    if (root._uvInput) {
+      root.querySelector("[data-uv-search]")?.removeEventListener("input", root._uvInput);
+    }
+    if (root._uvToggle) {
+      root.querySelector("[data-uv-toggle-all]")?.removeEventListener("change", root._uvToggle);
+    }
+
     const search = root.querySelector("[data-uv-search]");
     const toggle = root.querySelector("[data-uv-toggle-all]");
-    search?.addEventListener("input", (e) => {
+    root._uvInput = (e) => {
       this.query = e.target.value || "";
       this.rerenderResults(root);
-    });
-    toggle?.addEventListener("change", (e) => {
+    };
+    root._uvToggle = (e) => {
       this.showAllZagreb = !!e.target.checked;
       this.rerenderResults(root);
-    });
-    root.addEventListener("click", (e) => {
+    };
+    root._uvClick = (e) => {
       const btn = e.target.closest("[data-uv-candidate-id]");
       if (!btn || !root.contains(btn)) return;
+      e.preventDefault();
       const handler = root._onMarkCandidate;
       if (typeof handler !== "function") return;
       handler({
         id: btn.getAttribute("data-uv-candidate-id"),
         title: btn.getAttribute("data-uv-candidate-title"),
       });
-    });
+    };
+    search?.addEventListener("input", root._uvInput);
+    toggle?.addEventListener("change", root._uvToggle);
+    root.addEventListener("click", root._uvClick);
   },
 
   rerenderResults(root) {
     const caseData = root._caseData;
     const host = root.querySelector("[data-uv-results]");
     if (!host || !caseData) return;
-    host.innerHTML = this.renderResults(caseData);
+    host.innerHTML = this.renderResults(caseData, root._uvCandidate || null);
   },
 
-  renderResults(caseData) {
+  renderResults(caseData, uvCandidate = null) {
     const rows = this.filtered(caseData);
     if (!rows.length) {
       return `<p class="uv-empty">${esc(I18n.t("uv.emptyState"))}</p>`;
@@ -108,19 +119,21 @@ export const UvList = {
               (occ.regions || []).includes("all")
                 ? I18n.t("uv.regionAll")
                 : I18n.t("uv.regionLimited");
+            const marked = uvCandidate?.id === occ.id;
             return `
-              <li>
+              <li class="${marked ? "is-marked" : ""}">
                 <div class="uv-title-row">
                   <strong>${esc(title)}</strong>
                   ${nkdBadge}
+                  ${marked ? `<span class="pill">${esc(I18n.t("ui.selected"))}</span>` : ""}
                 </div>
                 <p class="muted">${esc(regionLabel)}</p>
                 ${relevance}
                 ${seasonal}
-                <button type="button" class="btn ghost uv-mark-btn"
+                <button type="button" class="btn ${marked ? "done" : "accent"} uv-mark-btn"
                   data-uv-candidate-id="${escAttr(occ.id)}"
                   data-uv-candidate-title="${escAttr(title)}">
-                  ${esc(I18n.t("ui.uvMarkCandidate"))}
+                  ${esc(marked ? I18n.t("ui.uvCandidateSelected") : I18n.t("ui.uvMarkCandidate"))}
                 </button>
               </li>`;
           })
@@ -128,7 +141,7 @@ export const UvList = {
       </ul>`;
   },
 
-  render(caseData) {
+  render(caseData, uvCandidate = null) {
     if (!this.data) return "";
     const meta = this.data.listMeta;
     const metaFact = {
@@ -142,16 +155,26 @@ export const UvList = {
     const region = caseData.employer.hzzRegion || "grad_zagreb";
     const nkd = caseData.employer.nkd2025;
 
-    const html = `
+    const selectedBanner = uvCandidate
+      ? `<aside class="uv-selected-banner" role="status">
+          <p>${I18n.th("ui.uvCandidateChipHtml", { title: uvCandidate.title })}</p>
+          <button type="button" class="btn ghost" id="btn-clear-uv-candidate">${I18n.th(
+            "ui.uvClearCandidate"
+          )}</button>
+        </aside>`
+      : "";
+
+    return `
       <section class="card uv-panel" id="uv-panel" data-uv-panel>
         <div class="panel-head">
-          <h3>${esc(I18n.t("uv.panelTitle"))}</h3>
+          <h3>${I18n.th("uv.panelTitle")}</h3>
           <span class="pill">${esc(I18n.t("uv.regionChip", { region: I18n.t("uv.regions." + region) }))}</span>
           <span class="pill">${esc(I18n.t("uv.nkdChip", { nkd }))}</span>
         </div>
         <p class="banner warn">${esc(I18n.t(meta.noteKey))}</p>
-        <p>${esc(I18n.t("uv.panelIntro"))}</p>
-        <p class="muted">${esc(I18n.t("uv.art110Note"))}</p>
+        <p>${I18n.th("uv.panelIntro")}</p>
+        <p class="muted">${I18n.th("uv.art110Note")}</p>
+        ${selectedBanner}
         ${renderFactList([metaFact])}
         <p class="muted">
           <a href="${escAttr(meta.sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(
@@ -164,26 +187,26 @@ export const UvList = {
         </p>
         <div class="uv-controls">
           <label class="uv-search-label">
-            <span>${esc(I18n.t("uv.searchLabel"))}</span>
+            <span>${I18n.th("uv.searchLabel")}</span>
             <input type="search" data-uv-search value="${escAttr(this.query)}" placeholder="${escAttr(
               I18n.t("uv.searchPlaceholder")
             )}" />
           </label>
           <label class="check-row">
             <input type="checkbox" data-uv-toggle-all ${this.showAllZagreb ? "checked" : ""} />
-            <span>${esc(I18n.t("uv.toggleAllZagreb"))}</span>
+            <span>${I18n.th("uv.toggleAllZagreb")}</span>
           </label>
         </div>
-        <div data-uv-results>${this.renderResults(caseData)}</div>
-        <p class="muted">${esc(I18n.t("uv.noTitleShopping"))}</p>
+        <div data-uv-results>${this.renderResults(caseData, uvCandidate)}</div>
+        <p class="muted">${I18n.th("uv.noTitleShopping")}</p>
       </section>
     `;
-    return html;
   },
 
   afterMount(root, caseData, options = {}) {
     if (!root) return;
     root._caseData = caseData;
+    root._uvCandidate = options.uvCandidate || null;
     root._onMarkCandidate = options.onMarkCandidate || null;
     this.bind(root);
   },

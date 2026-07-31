@@ -21,11 +21,11 @@
     "dutyTemplate": "Predložak dužnosti (prilagodite stvarnom radu)",
     "dutyTemplateEmpty": "Odaberite zanimanje iznad za učitavanje dužnosti.",
     "pathDecision": "Odluka o putu podnošenja",
-    "pathLmt": "Uobičajeni put za ovo zapošljavanje",
-    "pathUvCandidate": "UV kandidat za preskok TTR (samo ako točan naziv + dužnosti odgovaraju)",
-    "uvMarkCandidate": "Označi kao UV kandidata za pregled",
-    "uvCandidateChip": "Zabilježen UV kandidat: {title}",
-    "uvClearCandidate": "Obriši UV kandidata",
+    "pathLmt": "Uobičajeni put: {lmt}",
+    "pathUvCandidate": "Kandidat za preskok prema {uv} (samo ako točan naziv + dužnosti odgovaraju)",
+    "uvMarkCandidate": "Označi kao kandidata s {uv} za pregled",
+    "uvCandidateChip": "Zabilježen kandidat s {uv}: {title}",
+    "uvClearCandidate": "Obriši kandidata s {uv}",
     "nationalityPanel": "Vodič po državljanstvu",
     "citedFacts": "Citirane brojke",
     "factCitation": "{value} — {source}, provjereno {date}",
@@ -51,7 +51,7 @@
     "defensibility.medium": "Prihvatljivo — pažljivo dokumentirajte dužnosti",
     "mobileMenu": "Koraci",
     "employeesApprox": "Približan broj zaposlenih (podatak slučaja)",
-    "whatIsLmt": "Što je test tržišta rada?",
+    "whatIsLmt": "Što je {lmt}?",
     "whatIsPermit": "Što je dozvola za boravak i rad?",
     "glossary": "Pojmovnik",
     "addressBook": "Uredi",
@@ -85,7 +85,13 @@
     "resetBackupPrompt": "Prvo napravite sigurnosnu kopiju trenutne datoteke predmeta. Preuzimanje koristi sufiks _{date}_BAK prije .json.",
     "resetDownloadBackup": "Preuzmi sigurnosnu kopiju",
     "resetConfirmAction": "Resetiraj napredak",
-    "resetCancel": "Odustani"
+    "resetCancel": "Odustani",
+    "uvCandidateSelected": "Odabrano kao kandidat s {uv}",
+    "uvCandidateChipHtml": "Zabilježen kandidat s {uv}: {title}",
+    "exportNudgeTitle": "Izvezite datoteku predmeta",
+    "exportNudgeBody": "Izvoz je trajna datoteka za ovo zapošljavanje (slučaj + napredak). Spremanje u pregledniku je samo predmemorija sesije — izvezite prije zatvaranja ako trebate rad drugdje.",
+    "exportNudgeExport": "Izvezi predmet sada",
+    "exportNudgeDismiss": "Nastavi bez izvoza"
   },
   "facts": {
     "art99DomesticRatio": "Udio domaće radne snage (uvjet za poslodavca)",
@@ -611,23 +617,23 @@
     }
   },
   "uv": {
-    "panelTitle": "UV / deficitarna zanimanja (lista izuzeća od TTR)",
-    "panelIntro": "Pretražite zanimanja iz službenog HZZ/MUP PDF-a za koja poslodavac nije dužan zatražiti test tržišta rada. Zadani filtar: nazivi označeni kao vjerojatno relevantni za NKD ove tvrtke i važeći u Gradu Zagrebu (ili na cijeloj listi).",
-    "art110Note": "Zaseban kanal: kategorije iz čl. 110. (ključno osoblje, plava karta, ICT premještaj itd.) podnose se u policiji — nisu ova pretraživa UV tablica.",
-    "listEdition": "Ingestirano izdanje službene UV liste izuzeća od TTR",
+    "panelTitle": "{uv} (izuzeće od {lmt})",
+    "panelIntro": "Pretražite zanimanja iz službenog HZZ/MUP PDF-a naziva za koje poslodavac ne mora pokrenuti {lmt}. Zadani filtar: nazivi označeni kao relevantni za NKD tvrtke i važeći u Gradu Zagrebu (ili na cijelom području).",
+    "art110Note": "Zaseban kanal: kategorije iz čl. 110. (ključno osoblje, plava karta, ICT itd.) podnose se policiji — nisu ova pretraživa tablica {uv}.",
+    "listEdition": "Učitano izdanje {uv}",
     "listStaleBanner": "Ovaj alat koristi službeni PDF iz 2023. koji MUP/HZZ još hosta. Prije podnošenja ponovno otvorite živi HZZ hub „Lista zanimanja…” — lista se može dopunjavati nakon ovog izdanja.",
     "openPdf": "Otvori službeni PDF (razina 1)",
     "openHub": "Otvori HZZ hub za radne dozvole",
-    "searchLabel": "Pretraži zanimanja",
+    "searchLabel": "Pretraži nazive s {uv}",
     "searchPlaceholder": "npr. električar, kran, čistač…",
-    "toggleAllZagreb": "Prikaži sva UV zanimanja važeća u Gradu Zagrebu (ne samo NKD-relevantna)",
+    "toggleAllZagreb": "Prikaži sva zanimanja s {uv} važeća u Gradu Zagrebu (ne samo relevantna za NKD)",
     "nkdRelevantBadge": "Relevantno za NKD",
     "regionAll": "Važi u svim županijama (nacionalno na ovoj listi)",
     "regionLimited": "Regionalno zanimanje — uključuje Grad Zagreb na ovom izdanju",
     "regionChip": "Regija: {region}",
     "nkdChip": "NKD {nkd}",
-    "emptyState": "Nema UV zanimanja za ovaj filtar. Za ručni event crew pod NKD 90399 tretirajte test tržišta rada kao primarni put — nemojte izmišljati UV naziv koji nije na službenoj listi ili ne odgovara stvarnim dužnostima.",
-    "noTitleShopping": "Preskok TTR vrijedi samo ako točan naziv zanimanja i stvarne dužnosti odgovaraju navedenom UV zanimanju i vašoj registriranoj djelatnosti. Kupovina naziva mimo stvarnog rada rizik je odbijanja.",
+    "emptyState": "Nijedan naziv s {uv} ne odgovara filtru. Za fizički rad na događajima pod NKD 90399 tretirajte {lmt} kao primarni put — ne izmišljajte naziv koji nije na službenoj listi ili ne odgovara stvarnim dužnostima.",
+    "noTitleShopping": "Preskok {lmt} vrijedi samo ako točan naziv zanimanja i stvarne dužnosti odgovaraju navedenom nazivu s {uv} i registriranoj djelatnosti. Kupovina naziva koja ne odgovara stvarnom radu rizik je odbijanja.",
     "regions": {
       "grad_zagreb": "Grad Zagreb"
     },
@@ -651,7 +657,8 @@
     "hzz": {
       "name": "Hrvatski zavod za zapošljavanje (HZZ)",
       "role": "Provodi test tržišta rada i objavljuje pravila za zapošljavanje stranaca.",
-      "hubLabel": "HZZ — stranci / test tržišta rada"
+      "hubLabel": "HZZ — stranci / test tržišta rada",
+      "addressNote": "Za lokalni kontakt poslodavca koristite područnu službu Zagreb. Središnji ured je Radnička cesta 1; objavljeni online hubovi ostaju izvor istine za podnošenje."
     },
     "mup": {
       "name": "Ministarstvo unutarnjih poslova (MUP)",
@@ -660,8 +667,10 @@
     },
     "puZagreb": {
       "name": "Policijska uprava (područje Zagreba)",
-      "role": "Lokalni šalter za mnoga podnošenja boravka i rada te biometriju za zagrebačke poslodavce/mjesta rada.",
-      "hubLabel": "MUP početna — pronađite nadležnu policijsku upravu"
+      "role": "Nadležna policijska uprava za praćenje boravka i rada u Gradu Zagrebu, šaltere statusa stranaca i biometrijske iskaznice.",
+      "hubLabel": "PU zagrebačka — kako i gdje riješiti",
+      "addressNote": "Za ovaj predmet sa sjedištem/mjestom rada u Gradu Zagrebu statusni poslovi stranaca su na Remetinečkom gaju 13. Biometrijske iskaznice za strance — Petrinjska 30. Prije odlaska ponovno provjerite stranicu PU zagrebačke „kako i gdje“ — kanali se mijenjaju.",
+      "emailNote": "zg.drzavljanstvo.stranci@mup.hr objavljen je za određene e-mail podneske statusa stranaca. Odvojeni kanal radna.dozvola.zagreb@mup.hr namijenjen je putovima bez testa tržišta rada / čl. 110. / produženjima — ne za prvo podnošenje koje još treba test tržišta rada."
     },
     "fina": {
       "name": "Fina (registar tvrtki / Info.BIZ)",
@@ -692,7 +701,8 @@
       "name": "Veleposlanstvo SAD-a u Zagrebu",
       "role": "Praktične smjernice za državljane SAD-a (ulazak/boravak, FBI pozadinska provjera). Ne zamjenjuje hrvatska MUP/HZZ pravila.",
       "hubLabel": "Veleposlanstvo SAD-a — ulazak i boravak"
-    }
+    },
+    "zagrebScope": "Napomena o opsegu: šalteri i nadležnost dolje modelirani su za poslodavca/mjesto rada Grad Zagreb (ovaj predmet: područje Savske ceste). Druge policijske uprave još nisu mapirane — potvrdite nadležni šalter na službenim stranicama prije posjeta ili podnošenja."
   },
   "glossary": {
     "singlePermit": {
@@ -700,7 +710,7 @@
       "body": "Jedna odluka koja pokriva boravak i rad državljanina treće zemlje. Obično slijedi nakon pozitivnog testa tržišta rada (osim ako vrijedi službeno izuzeće)."
     },
     "lmt": {
-      "title": "Test tržišta rada",
+      "title": "Test tržišta rada (labor market test)",
       "body": "Provjera Hrvatskog zavoda za zapošljavanje (HZZ) može li se radno mjesto popuniti iz domaćeg/EEA tržišta prije zapošljavanja državljanina treće zemlje."
     },
     "hzz": {
@@ -716,7 +726,7 @@
       "body": "Zakonski uvjeti (omjer radne snage, kontinuirano domaće zaposlenje, porezi/doprinosi, blokirani računi i povezane provjere) koje HZZ očekuje prije pozitivnog mišljenja. Ovaj priručnik ih pretvara u vođeni popis."
     },
     "uvList": {
-      "title": "UV lista zanimanja (izuzeće od testa tržišta rada)",
+      "title": "Lista deficitarnih zanimanja Upravnog vijeća (izuzeće od testa tržišta rada)",
       "body": "Službena lista naziva zanimanja za koja poslodavac može preskočiti test tržišta rada. Broje se samo točni navedeni nazivi koji odgovaraju stvarnim dužnostima."
     },
     "nkd": {
@@ -941,7 +951,7 @@
     "priorOrient": "Označite Korak 1 (Orijentacija) kao gotov",
     "occupationGuided": "Dovršite vođene provjere zanimanja",
     "occupationSelected": "Odaberite naziv zanimanja",
-    "occupationPathDecided": "Odlučite put TTR ili označite UV kandidata za preskok",
+    "occupationPathDecided": "Odlučite put {lmt} ili označite kandidata za preskok prema {uv}",
     "priorOccupation": "Označite Korak 2 (Zanimanje) kao gotov",
     "pkgGuided": "Dovršite vođene provjere paketa poslodavca",
     "priorPackage": "Označite Korak 3 (Paket poslodavca) kao gotov",
@@ -1121,11 +1131,11 @@
     "notStarted": "Nije započeto — počnite provjerom zanimanja",
     "branchLabel": "Aktivna grana",
     "branchTitle": "Točka grananja nakon paketa",
-    "branchLead": "Ili pokrenite HZZ test tržišta rada, ili ga preskočite samo kad uvjeti čl. 99 / UV stvarno odgovaraju.",
-    "branchLmt": "Pokreće se HZZ test tržišta rada",
-    "branchUv": "UV / čl. 99 kandidat za preskok: {title}",
-    "railLmt": "HZZ TTR",
-    "railUv": "UV preskok",
+    "branchLead": "Ili pokrenite HZZ {lmt}, ili ga preskočite samo kad uvjeti članka 99. / {uv} stvarno odgovaraju.",
+    "branchLmt": "Pokreće se HZZ {lmt}",
+    "branchUv": "Kandidat za preskok prema {uv} / članku 99.: {title}",
+    "railLmt": "HZZ {lmt}",
+    "railUv": "Preskok prema {uv}",
     "joinLabel": "Oba puta ponovno se spajaju na podnošenju MUP-u za boravak i rad",
     "flowLabel": "Koraci tijeka",
     "enterChecklist": "Otvori kontrolni popis — {step}",
@@ -1168,5 +1178,9 @@
       "meaningAccelerated": "Opcija ubrzane proizvodnje — viša pristojba, nije zadani iznos kontrolnog popisa.",
       "pageNote": "Živa MUP stranica o radu državljana trećih zemalja (biometrijske / proizvodne pristojbe)."
     }
+  },
+  "terms": {
+    "lmt": "test tržišta rada",
+    "uv": "lista deficitarnih zanimanja Upravnog vijeća"
   }
 }

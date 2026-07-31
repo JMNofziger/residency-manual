@@ -45,8 +45,8 @@ export function renderWorkflowOverview({ steps, progress, caseData, stepIndex })
   });
 
   const branchLabel = isUv
-    ? I18n.t("overview.branchUv", { title: uv?.title || "—" })
-    : I18n.t("overview.branchLmt");
+    ? I18n.th("overview.branchUv", { title: uv?.title || "—" })
+    : I18n.th("overview.branchLmt");
 
   const positionText = current
     ? I18n.t("overview.positionAt", { step: I18n.t(current.titleKey), n: doneCount, total })
@@ -107,10 +107,10 @@ export function renderWorkflowOverview({ steps, progress, caseData, stepIndex })
       <div class="flow-board" aria-label="${escAttr(I18n.t("overview.flowLabel"))}">
         <div class="flow-branch-banner ${isUv ? "is-uv" : "is-lmt"}">
           <p class="flow-branch-title">${esc(I18n.t("overview.branchTitle"))}</p>
-          <p>${esc(I18n.t("overview.branchLead"))}</p>
+          <p>${I18n.th("overview.branchLead")}</p>
           <div class="flow-branch-rails" aria-hidden="true">
-            <span class="rail rail-lmt ${isUv ? "" : "is-on"}">${esc(I18n.t("overview.railLmt"))}</span>
-            <span class="rail rail-uv ${isUv ? "is-on" : ""}">${esc(I18n.t("overview.railUv"))}</span>
+            <span class="rail rail-lmt ${isUv ? "" : "is-on"}">${I18n.th("overview.railLmt")}</span>
+            <span class="rail rail-uv ${isUv ? "is-on" : ""}">${I18n.th("overview.railUv")}</span>
           </div>
           <p class="muted flow-join">${esc(I18n.t("overview.joinLabel"))}</p>
         </div>

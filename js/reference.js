@@ -68,11 +68,17 @@ export const Reference = {
   renderOfficeCard(office, { compact = false, showOpenInBook = false } = {}) {
     if (!office) return "";
     const phones = (office.phones || [])
-      .map((p) => `<li><a href="tel:${escAttr(p)}">${esc(p)}</a></li>`)
+      .map((p) => `<li><a href="tel:${escAttr(p.replace(/\s+/g, ""))}">${esc(p)}</a></li>`)
       .join("");
     const emails = (office.emails || [])
       .map((e) => `<li><a href="mailto:${escAttr(e)}">${esc(e)}</a></li>`)
       .join("");
+    const addressNote = office.addressNoteKey
+      ? `<p class="office-address-note muted">${esc(I18n.t(office.addressNoteKey))}</p>`
+      : "";
+    const emailNote = office.emailNoteKey
+      ? `<p class="office-email-note muted">${esc(I18n.t(office.emailNoteKey))}</p>`
+      : "";
     return `
       <article class="office-card ${compact ? "is-compact" : ""}" id="office-${escAttr(office.id)}" data-office-id="${escAttr(
         office.id
@@ -89,12 +95,14 @@ export const Reference = {
         </header>
         <p class="office-role">${esc(I18n.t(office.roleKey))}</p>
         ${office.address ? `<p class="office-address">${esc(office.address)}</p>` : ""}
+        ${addressNote}
         <p class="office-links">
           <a href="${escAttr(office.website)}" target="_blank" rel="noopener noreferrer">${esc(
             I18n.t(office.hubLabelKey || "ui.officialWebsite")
           )}</a>
         </p>
         ${phones || emails ? `<ul class="office-contacts">${phones}${emails}</ul>` : ""}
+        ${emailNote}
         <p class="muted office-verify">${esc(I18n.t(office.verifyKey || "offices.verifyOnSite"))}</p>
       </article>`;
   },
@@ -102,6 +110,9 @@ export const Reference = {
   renderStepOffices(stepId) {
     const list = this.officesForStep(stepId);
     if (!list.length) return "";
+    const scope = this.offices?.scopeKey
+      ? `<p class="office-scope-note">${esc(I18n.t(this.offices.scopeKey))}</p>`
+      : "";
     return `
       <section class="card offices-inline" aria-labelledby="step-offices-heading">
         <div class="panel-head">
@@ -110,6 +121,7 @@ export const Reference = {
             I18n.t("ui.addressBook")
           )}</button>
         </div>
+        ${scope}
         <p class="muted">${esc(I18n.t("ui.stepOfficesIntro"))}</p>
         <div class="office-card-grid">
           ${list.map((o) => this.renderOfficeCard(o, { compact: true })).join("")}
@@ -172,7 +184,11 @@ export const Reference = {
   renderOfficesBody() {
     const offices = this.filteredOffices();
     if (!offices.length) return `<p class="muted">${esc(I18n.t("ui.referenceEmpty"))}</p>`;
+    const scope = this.offices?.scopeKey
+      ? `<p class="office-scope-note">${esc(I18n.t(this.offices.scopeKey))}</p>`
+      : "";
     return `
+      ${scope}
       <p class="muted">${esc(I18n.t(this.offices.noteKey))}</p>
       <div class="office-card-grid">
         ${offices.map((o) => this.renderOfficeCard(o, { compact: false })).join("")}

@@ -40,6 +40,32 @@ export const I18n = {
     return str;
   },
 
+  /**
+   * Like t(), but escapes text and expands {lmt}/{uv} into italic full-name spans.
+   * Other {vars} are HTML-escaped.
+   */
+  th(key, vars = {}, root = "core") {
+    const raw = this.t(key, {}, root);
+    const esc = (s) =>
+      String(s ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;");
+    const lmt = `<i class="term-italic">${esc(this.t("terms.lmt"))}</i>`;
+    const uv = `<i class="term-italic">${esc(this.t("terms.uv"))}</i>`;
+    return raw
+      .split(/(\{lmt\}|\{uv\}|\{[a-zA-Z0-9_]+\})/g)
+      .map((part) => {
+        if (part === "{lmt}") return lmt;
+        if (part === "{uv}") return uv;
+        const m = part.match(/^\{([a-zA-Z0-9_]+)\}$/);
+        if (m) return esc(vars[m[1]] ?? "");
+        return esc(part);
+      })
+      .join("");
+  },
+
   tp(key, vars = {}) {
     return this.t(key, vars, "pack");
   },

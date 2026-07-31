@@ -113,6 +113,7 @@ const state = {
   progress: null,
   /** @type {'overview' | 'wizard'} */
   view: "overview",
+  appReady: false,
 };
 
 function storageKey() {
@@ -180,13 +181,69 @@ function ensureOccupationDefaults() {
   }
 }
 
-function saveProgress() {
+function saveProgress({ nudgeExport = true } = {}) {
   state.progress.updatedAt = new Date().toISOString();
   state.progress.theme = Theme.get();
   state.progress.stepIndex = state.stepIndex;
   state.progress.view = state.view;
   localStorage.setItem(storageKey(), JSON.stringify(state.progress));
   localStorage.setItem("residency-runbook:locale", state.progress.locale);
+  if (nudgeExport && state.appReady) scheduleExportNudge();
+}
+
+let exportNudgeTimer = null;
+
+function scheduleExportNudge() {
+  if (exportNudgeTimer) clearTimeout(exportNudgeTimer);
+  exportNudgeTimer = setTimeout(() => {
+    exportNudgeTimer = null;
+    openExportNudge();
+  }, 450);
+}
+
+function closeExportNudge() {
+  document.getElementById("export-nudge")?.remove();
+}
+
+function openExportNudge() {
+  if (document.getElementById("export-nudge")) return;
+  const host = document.createElement("div");
+  host.id = "export-nudge";
+  host.className = "export-nudge";
+  host.innerHTML = `
+    <div class="export-nudge-backdrop" data-export-dismiss></div>
+    <div class="export-nudge-panel" role="dialog" aria-modal="true" aria-labelledby="export-nudge-title">
+      <h2 id="export-nudge-title">${esc(I18n.t("ui.exportNudgeTitle"))}</h2>
+      <p>${esc(I18n.t("ui.exportNudgeBody"))}</p>
+      <div class="export-nudge-actions">
+        <button type="button" class="btn primary" id="btn-export-nudge-export">${esc(
+          I18n.t("ui.exportNudgeExport")
+        )}</button>
+        <button type="button" class="btn ghost" data-export-dismiss>${esc(
+          I18n.t("ui.exportNudgeDismiss")
+        )}</button>
+      </div>
+    </div>`;
+  document.body.appendChild(host);
+  host.querySelectorAll("[data-export-dismiss]").forEach((el) => {
+    el.addEventListener("click", () => closeExportNudge());
+  });
+  host.querySelector("#btn-export-nudge-export")?.addEventListener("click", () => {
+    const bundle = toBundle(state.caseData, {
+      ...state.progress,
+      stepIndex: state.stepIndex,
+      view: state.view,
+    });
+    downloadBundle(bundle, `${bundle.id || "case"}-runbook.json`);
+    closeExportNudge();
+  });
+  const onKey = (e) => {
+    if (e.key === "Escape") {
+      closeExportNudge();
+      document.removeEventListener("keydown", onKey);
+    }
+  };
+  document.addEventListener("keydown", onKey);
 }
 
 function setView(view) {
@@ -464,20 +521,20 @@ function renderDutyTemplate() {
           <input type="radio" name="occupation-path" value="labor_market_test" ${
             path === "labor_market_test" ? "checked" : ""
           } />
-          <span>${esc(I18n.t("ui.pathLmt"))}</span>
+          <span>${I18n.th("ui.pathLmt")}</span>
         </label>
         <label class="check-row">
           <input type="radio" name="occupation-path" value="uv_skip_candidate" ${
             path === "uv_skip_candidate" ? "checked" : ""
           } />
-          <span>${esc(I18n.t("ui.pathUvCandidate"))}</span>
+          <span>${I18n.th("ui.pathUvCandidate")}</span>
         </label>
       </fieldset>
       ${
         uv
-          ? `<p class="case-hint">${esc(I18n.t("ui.uvCandidateChip", { title: uv.title }))}
-              <button type="button" class="btn ghost" id="btn-clear-uv-candidate">${esc(
-                I18n.t("ui.uvClearCandidate")
+          ? `<p class="case-hint">${I18n.th("ui.uvCandidateChipHtml", { title: uv.title })}
+              <button type="button" class="btn ghost" id="btn-clear-uv-candidate">${I18n.th(
+                "ui.uvClearCandidate"
               )}</button>
             </p>`
           : ""
@@ -572,7 +629,7 @@ function renderGateBanner(step) {
     <aside class="gate-banner" role="status">
       <p>${esc(I18n.t("ui.stepLocked"))}</p>
       <ul>
-        ${unmet.map((u) => `<li>${esc(I18n.t(u.labelKey))}</li>`).join("")}
+        ${unmet.map((u) => `<li>${I18n.th(u.labelKey)}</li>`).join("")}
       </ul>
     </aside>`;
 }
@@ -617,8 +674,8 @@ function renderWizardMain() {
 
   document.getElementById("main-panel").innerHTML = `
     <header class="step-header">
-      <p class="eyebrow">${esc(I18n.t("ui.pathLmt"))}
-        <button type="button" class="term-chip" data-open-term="lmt">${esc(I18n.t("ui.whatIsLmt"))}</button>
+      <p class="eyebrow">${I18n.th("ui.pathLmt")}
+        <button type="button" class="term-chip" data-open-term="lmt">${I18n.th("ui.whatIsLmt")}</button>
         <button type="button" class="term-chip" data-open-term="single-permit">${esc(I18n.t("ui.whatIsPermit"))}</button>
       </p>
       <h2>${esc(I18n.t(step.titleKey))}</h2>
@@ -631,7 +688,7 @@ function renderWizardMain() {
     ${renderSections(step)}
     ${step.showOccupations ? renderOccupations() : ""}
     ${step.showDutyTemplate ? renderDutyTemplate() : ""}
-    ${step.showUvList ? UvList.render(state.caseData) : ""}
+    ${step.showUvList ? UvList.render(state.caseData, state.progress.uvCandidate) : ""}
     ${resolveGuidedPanel(step)?.render(isChecked, state.caseData) || ""}
     ${nationalityHtml}
     ${renderChecklist(step)}
@@ -654,6 +711,7 @@ function renderWizardMain() {
 
   if (step.showUvList) {
     UvList.afterMount(document.getElementById("uv-panel"), state.caseData, {
+      uvCandidate: state.progress.uvCandidate,
       onMarkCandidate: (candidate) => {
         state.progress.uvCandidate = candidate;
         state.progress.occupationPath = "uv_skip_candidate";
@@ -755,10 +813,6 @@ function renderChrome() {
       state.view === "overview" ? I18n.t("ui.openChecklist") : I18n.t("ui.backToOverview");
   }
   document.getElementById("nav-heading").textContent = I18n.t("ui.steps");
-  const exportHint = document.getElementById("export-hint");
-  if (exportHint) exportHint.textContent = I18n.t("ui.exportHint");
-  const scopeBanner = document.getElementById("scope-banner");
-  if (scopeBanner) scopeBanner.textContent = I18n.t("ui.zagrebScope");
   const caseHeading = document.getElementById("case-picker-heading");
   if (caseHeading) caseHeading.textContent = I18n.t("ui.casePicker");
   const picker = document.getElementById("case-picker");
@@ -832,7 +886,7 @@ function render() {
 async function setLocale(locale) {
   state.progress.locale = locale;
   await I18n.load(locale, state.caseData.worker.nationalityId);
-  saveProgress();
+  saveProgress({ nudgeExport: false });
   render();
 }
 
@@ -841,7 +895,7 @@ function bindGlobal() {
   document.getElementById("btn-lang-hr").addEventListener("click", () => setLocale("hr"));
   document.getElementById("btn-theme").addEventListener("click", () => {
     Theme.toggle();
-    saveProgress();
+    saveProgress({ nudgeExport: false });
     renderChrome();
   });
   document.getElementById("btn-glossary")?.addEventListener("click", () => Reference.open("glossary"));
@@ -943,10 +997,11 @@ async function init() {
     reconcileStepCompletion();
     state.stepIndex = clampStepIndex(state.progress.stepIndex || 0);
     state.view = state.progress.view === "wizard" ? "wizard" : "overview";
-    saveProgress();
+    saveProgress({ nudgeExport: false });
     bindGlobal();
     loading.hidden = true;
     document.getElementById("app-shell").hidden = false;
+    state.appReady = true;
     render();
   } catch (err) {
     console.error(err);
