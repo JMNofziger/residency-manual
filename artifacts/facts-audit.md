@@ -8,7 +8,8 @@ Total cited facts: 45 (Tier 1: 45, Tier 2: 0)
 
 - Phase 5 live Tier-1 pass completed 2026-07-31 — see artifacts/phase5-verification.md.
 - CONFIRMED on HZZ novi sustav: Art. 99 20%/10%, 12 months continuous FTE, €100,000 legal-entity inflow, 30-day blockade, 90-day LMT positive-notice window.
-- CONFIRMED on MUP temporary stay: €46.45 stay fee, €31.85 biometric production (regular), €9.29 biometric admin fee. Accelerated biometric production (€59.73) omitted from wizard facts.
+- CONFIRMED on MUP Work of third-country nationals (Phase 6e): stay-and-work / Single Permit administrative fee is €74.32 when notified of approval (police filing). Biometric production €31.85 (regular) + admin €9.29. Accelerated biometric production (€59.73) omitted from wizard defaults.
+- NOTE: MUP temporary-stay page also lists €46.45 — that is the generic temporary-stay administrative fee for other purposes, NOT the stay-and-work path fee used in this runbook. See artifacts/phase6e-verification.md.
 - CONFIRMED on MUP long-term page: €83.62 decision fee.
 - CONFIRMED on NN 55/2026: general force 2026-06-04; 90-day decision deadline; employer-change after 6 months; unemployment 3/6 months with 2-year qualifier; A1.1 after 1 year stay; Art. 92.a(1)/(4)/(6) deferred to 2027-06-04.
 - CONFIRMED on MVEP granting-stay page: short-stay 90/180; alien self-registration within 2 days if provider cannot register (provider: 1 day via eVisitor).
