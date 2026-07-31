@@ -18,7 +18,7 @@ Progress board for the Croatia employer hiring runbook.
 | 7 | More nationality packs (beyond US) | Next (discovery open — Linear RES-8) |
 | 8a | CI lint-facts + gate smoke | Done |
 | 8b | EN/HR locale parity in CI + fee uncertainty cards + workflow overview home | Done |
-| Trust | Canonical fact catalog (`data/facts-catalog.json`) | In progress (Linear RES-5) |
+| Trust | Canonical fact catalog (`data/facts-catalog.json`) | Done (Linear RES-5) |
 | 8 | Hosting (static deploy) | Planned (Linear RES-11) |
 
 ## Known gaps (see critique)
