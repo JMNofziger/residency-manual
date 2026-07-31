@@ -63,7 +63,10 @@
     "stepOfficesIntro": "Public agencies you will likely deal with here. Phone and desk details change — always confirm on the official website before you visit or call.",
     "openInAddressBook": "Open in Offices",
     "relatedOffices": "Related offices",
-    "officialWebsite": "Official website"
+    "officialWebsite": "Official website",
+    "stepLocked": "Finish the requirements below before you can open this step or mark it complete:",
+    "stepLockedShort": "Locked — finish the previous step first",
+    "cannotComplete": "Complete the required checks before marking this step done."
   },
   "facts": {
     "art99DomesticRatio": "Domestic workforce ratio (employer condition)",
@@ -936,5 +939,25 @@
       },
       "evidence": "Receipt + dated archive copy of the full filing set."
     }
+  },
+  "gates": {
+    "art99Complete": "Complete every Art. 99 guided check",
+    "art99Checklist": "Mark the Art. 99 self-check checklist item",
+    "priorOrient": "Mark Step 1 (Orient) complete",
+    "occupationGuided": "Complete the occupation guided checks",
+    "occupationSelected": "Select an occupation title",
+    "occupationPathDecided": "Decide LMT path or mark a UV skip candidate",
+    "priorOccupation": "Mark Step 2 (Occupation) complete",
+    "pkgGuided": "Complete the employer-package guided checks",
+    "priorPackage": "Mark Step 3 (Employer package) complete",
+    "lmtGuided": "Complete the labor market test guided checks",
+    "priorLmt": "Mark Step 4 (Labor market test) complete",
+    "wdGuided": "Complete the worker-documents guided checks",
+    "priorWorkerDocs": "Mark Step 5 (Worker documents) complete",
+    "fpGuided": "Complete the filing guided checks",
+    "priorFilePermit": "Mark Step 6 (File permit) complete",
+    "startWorkChecklist": "Complete every Start-work checklist item",
+    "priorStartWork": "Mark Step 7 (Start work) complete",
+    "complyChecklist": "Complete every Compliance checklist item"
   }
 }

@@ -63,7 +63,10 @@
     "stepOfficesIntro": "Javna tijela s kojima ćete vjerojatno imati kontakt. Telefoni i šalteri se mijenjaju — uvijek potvrdite na službenoj stranici prije posjeta ili poziva.",
     "openInAddressBook": "Otvori u Uredima",
     "relatedOffices": "Povezani uredi",
-    "officialWebsite": "Službena stranica"
+    "officialWebsite": "Službena stranica",
+    "stepLocked": "Ispunite uvjete ispod prije nego što otvorite ovaj korak ili ga označite gotovim:",
+    "stepLockedShort": "Zaključano — najprije dovršite prethodni korak",
+    "cannotComplete": "Dovršite obvezne provjere prije označavanja koraka kao gotovog."
   },
   "facts": {
     "art99DomesticRatio": "Udio domaće radne snage (uvjet za poslodavca)",
@@ -937,5 +940,25 @@
       },
       "evidence": "Potvrda + arhivirana kopija cijelog kompleta s datumom."
     }
+  },
+  "gates": {
+    "art99Complete": "Dovršite sve vođene provjere čl. 99.",
+    "art99Checklist": "Označite stavku samoprovjere čl. 99.",
+    "priorOrient": "Označite Korak 1 (Orijentacija) kao gotov",
+    "occupationGuided": "Dovršite vođene provjere zanimanja",
+    "occupationSelected": "Odaberite naziv zanimanja",
+    "occupationPathDecided": "Odlučite put TTR ili označite UV kandidata za preskok",
+    "priorOccupation": "Označite Korak 2 (Zanimanje) kao gotov",
+    "pkgGuided": "Dovršite vođene provjere paketa poslodavca",
+    "priorPackage": "Označite Korak 3 (Paket poslodavca) kao gotov",
+    "lmtGuided": "Dovršite vođene provjere testa tržišta rada",
+    "priorLmt": "Označite Korak 4 (Test tržišta rada) kao gotov",
+    "wdGuided": "Dovršite vođene provjere dokumenata radnika",
+    "priorWorkerDocs": "Označite Korak 5 (Dokumenti radnika) kao gotov",
+    "fpGuided": "Dovršite vođene provjere podnošenja",
+    "priorFilePermit": "Označite Korak 6 (Podnošenje) kao gotov",
+    "startWorkChecklist": "Dovršite sve stavke kontrolnog popisa Početak rada",
+    "priorStartWork": "Označite Korak 7 (Početak rada) kao gotov",
+    "complyChecklist": "Dovršite sve stavke kontrolnog popisa Usklađenost"
   }
 }

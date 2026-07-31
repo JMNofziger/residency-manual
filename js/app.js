@@ -10,6 +10,7 @@ import { WorkerDocsGuide } from "./worker-docs-guide.js";
 import { FilePermitGuide } from "./file-permit-guide.js";
 import { UvList } from "./uv-list.js";
 import { Reference } from "./reference.js";
+import { canEnterStep, canMarkStepComplete } from "./step-gates.js";
 
 const GUIDED_PANELS = {
   art99: Art99,
@@ -85,6 +86,7 @@ function normalizeProgress(raw) {
     selectedOccupationId: null,
     occupationPath: "labor_market_test",
     uvCandidate: null,
+    stepIndex: 0,
     updatedAt: null,
   };
   if (!raw || typeof raw !== "object") return base;
@@ -95,9 +97,11 @@ function normalizeProgress(raw) {
     checkedItemIds: Array.isArray(raw.checkedItemIds) ? raw.checkedItemIds : [],
     occupationPath: raw.occupationPath === "uv_skip_candidate" ? "uv_skip_candidate" : "labor_market_test",
     uvCandidate: raw.uvCandidate && typeof raw.uvCandidate === "object" ? raw.uvCandidate : null,
+    stepIndex: typeof raw.stepIndex === "number" ? raw.stepIndex : 0,
   };
 }
 
+/** Last-session cache only — export/import is the durable source of truth. */
 function loadProgress() {
   try {
     const raw = localStorage.getItem(storageKey());
@@ -106,6 +110,21 @@ function loadProgress() {
   } catch {
     return normalizeProgress(null);
   }
+}
+
+function gateContext() {
+  return {
+    progress: state.progress,
+    isChecked,
+    panelsByKey: GUIDED_PANELS,
+  };
+}
+
+function clampStepIndex(index) {
+  const steps = state.stepsData?.steps || [];
+  let i = Math.max(0, Math.min(index, Math.max(0, steps.length - 1)));
+  while (i > 0 && !canEnterStep(steps, i, state.progress)) i -= 1;
+  return i;
 }
 
 function ensureOccupationDefaults() {
@@ -120,6 +139,7 @@ function ensureOccupationDefaults() {
 function saveProgress() {
   state.progress.updatedAt = new Date().toISOString();
   state.progress.theme = Theme.get();
+  state.progress.stepIndex = state.stepIndex;
   localStorage.setItem(storageKey(), JSON.stringify(state.progress));
   localStorage.setItem("residency-runbook:locale", state.progress.locale);
 }
@@ -355,9 +375,14 @@ function renderStepNav() {
     .map((s, i) => {
       const done = state.progress.completedStepIds.includes(s.id);
       const active = i === state.stepIndex;
+      const locked = !canEnterStep(steps, i, state.progress);
       return `
-        <button type="button" class="step-nav-item ${active ? "is-active" : ""} ${done ? "is-done" : ""}"
-          data-step-index="${i}" aria-current="${active ? "step" : "false"}">
+        <button type="button" class="step-nav-item ${active ? "is-active" : ""} ${done ? "is-done" : ""} ${
+          locked ? "is-locked" : ""
+        }"
+          data-step-index="${i}" ${locked ? "disabled" : ""}
+          title="${locked ? escAttr(I18n.t("ui.stepLockedShort")) : ""}"
+          aria-current="${active ? "step" : "false"}">
           <span class="step-num">${s.order}</span>
           <span class="step-label">${esc(I18n.t(s.titleKey))}</span>
         </button>`;
@@ -365,11 +390,29 @@ function renderStepNav() {
     .join("");
 }
 
+function renderGateBanner(step) {
+  const { ok, unmet } = canMarkStepComplete(step, gateContext());
+  if (ok) return "";
+  return `
+    <aside class="gate-banner" role="status">
+      <p>${esc(I18n.t("ui.stepLocked"))}</p>
+      <ul>
+        ${unmet.map((u) => `<li>${esc(I18n.t(u.labelKey))}</li>`).join("")}
+      </ul>
+    </aside>`;
+}
+
 function renderMain() {
   const step = currentStep();
   const completed = state.progress.completedStepIds.includes(step.id);
+  const gate = canMarkStepComplete(step, gateContext());
   const slots = step.nationalitySlots || [];
   const nationalityHtml = slots.map((id) => Nationality.renderSlot(id, isChecked, setChecked)).join("");
+  const steps = state.stepsData.steps;
+  const canGoNext =
+    state.stepIndex < steps.length - 1 &&
+    completed &&
+    canEnterStep(steps, state.stepIndex + 1, state.progress);
 
   document.getElementById("step-nav").innerHTML = renderStepNav();
   document.getElementById("mobile-progress").textContent = `${I18n.t("ui.progress")}: ${step.order}/${
@@ -385,6 +428,7 @@ function renderMain() {
       <h2>${esc(I18n.t(step.titleKey))}</h2>
       <p class="step-summary">${esc(I18n.t(step.summaryKey))}</p>
     </header>
+    ${renderGateBanner(step)}
     ${step.showEmployerCard ? renderEmployerCard() : ""}
     ${step.showCaseRisks ? renderCaseRisks(step.id) : ""}
     ${renderSections(step)}
@@ -400,12 +444,14 @@ function renderMain() {
       <button type="button" class="btn ghost" id="btn-prev" ${state.stepIndex === 0 ? "disabled" : ""}>${esc(
         I18n.t("ui.prev")
       )}</button>
-      <button type="button" class="btn ${completed ? "done" : "accent"}" id="btn-complete">
+      <button type="button" class="btn ${completed ? "done" : "accent"}" id="btn-complete"
+        ${!completed && !gate.ok ? "disabled" : ""}
+        title="${!completed && !gate.ok ? escAttr(I18n.t("ui.cannotComplete")) : ""}">
         ${esc(completed ? I18n.t("ui.stepComplete") : I18n.t("ui.markComplete"))}
       </button>
-      <button type="button" class="btn primary" id="btn-next" ${
-        state.stepIndex >= state.stepsData.steps.length - 1 ? "disabled" : ""
-      }>${esc(I18n.t("ui.next"))}</button>
+      <button type="button" class="btn primary" id="btn-next" ${canGoNext ? "" : "disabled"}>${esc(
+        I18n.t("ui.next")
+      )}</button>
     </footer>
   `;
 
@@ -432,10 +478,8 @@ function renderMain() {
     input.addEventListener("change", () => {
       if (!input.checked) return;
       state.progress.occupationPath = input.value;
-      if (input.value === "labor_market_test") {
-        /* keep uvCandidate for reference but path is LMT */
-      }
       saveProgress();
+      render();
     });
   });
 
@@ -458,16 +502,25 @@ function renderMain() {
 
   document.getElementById("btn-prev")?.addEventListener("click", () => {
     state.stepIndex = Math.max(0, state.stepIndex - 1);
+    saveProgress();
     render();
   });
   document.getElementById("btn-next")?.addEventListener("click", () => {
-    state.stepIndex = Math.min(state.stepsData.steps.length - 1, state.stepIndex + 1);
+    const next = state.stepIndex + 1;
+    if (!canEnterStep(state.stepsData.steps, next, state.progress)) return;
+    state.stepIndex = Math.min(state.stepsData.steps.length - 1, next);
+    saveProgress();
     render();
   });
   document.getElementById("btn-complete")?.addEventListener("click", () => {
     const set = new Set(state.progress.completedStepIds);
-    if (set.has(step.id)) set.delete(step.id);
-    else set.add(step.id);
+    if (set.has(step.id)) {
+      set.delete(step.id);
+    } else {
+      const gateNow = canMarkStepComplete(step, gateContext());
+      if (!gateNow.ok) return;
+      set.add(step.id);
+    }
     state.progress.completedStepIds = [...set];
     saveProgress();
     render();
@@ -534,34 +587,25 @@ function bindGlobal() {
       state.caseData?.intendedOccupation?.id || state.caseData?.suggestedOccupationIds?.[0] || null;
     state.progress.occupationPath = "labor_market_test";
     state.progress.uvCandidate = null;
+    state.progress.stepIndex = 0;
+    state.stepIndex = 0;
     saveProgress();
     render();
   });
   document.getElementById("step-nav").addEventListener("click", (e) => {
     const btn = e.target.closest("[data-step-index]");
-    if (!btn) return;
-    state.stepIndex = Number(btn.dataset.stepIndex);
+    if (!btn || btn.disabled) return;
+    const idx = Number(btn.dataset.stepIndex);
+    if (!canEnterStep(state.stepsData.steps, idx, state.progress)) return;
+    state.stepIndex = idx;
+    saveProgress();
     render();
   });
   document.getElementById("main-panel").addEventListener("change", (e) => {
     const input = e.target;
     if (input?.matches?.('input[type="checkbox"][data-check-id]')) {
       setChecked(input.dataset.checkId, input.checked);
-      const panel = panelForCheckId(input.dataset.checkId);
-      if (panel) {
-        const parent = document.querySelector(
-          `input[data-check-id="core:${panel.data?.parentChecklistId}"]`
-        );
-        if (parent) parent.checked = panel.allComplete(isChecked);
-        const item = input.closest(".guided-item, .art99-item");
-        if (item) item.classList.toggle("is-done", input.checked);
-        const progress = document.querySelector(`#${panel.panelDomId} .pill`);
-        if (progress && panel.data) {
-          const total = panel.data.checks.length;
-          const done = panel.checkIds().filter((id) => isChecked(id)).length;
-          progress.textContent = I18n.t("guided.progress", { done, total });
-        }
-      }
+      render();
     }
   });
   document.getElementById("btn-mobile-nav")?.addEventListener("click", () => {
@@ -592,6 +636,7 @@ async function init() {
     await Nationality.load(caseData.worker.nationalityId);
     await I18n.load(state.progress.locale || DEFAULT_LOCALE, caseData.worker.nationalityId);
     syncAllGuidedParents();
+    state.stepIndex = clampStepIndex(state.progress.stepIndex || 0);
     saveProgress();
     bindGlobal();
     loading.hidden = true;

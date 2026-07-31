@@ -141,6 +141,20 @@
         "fina",
         "porezna",
         "hzmo"
+      ],
+      "advanceRequires": [
+        {
+          "type": "guidedComplete",
+          "panel": "art99",
+          "labelKey": "gates.art99Complete"
+        },
+        {
+          "type": "checklist",
+          "ids": [
+            "orient-art99-selfcheck"
+          ],
+          "labelKey": "gates.art99Checklist"
+        }
       ]
     },
     {
@@ -189,6 +203,26 @@
         "hzz",
         "mup",
         "fina"
+      ],
+      "advanceRequires": [
+        {
+          "type": "stepComplete",
+          "stepId": "orient",
+          "labelKey": "gates.priorOrient"
+        },
+        {
+          "type": "guidedComplete",
+          "panel": "occupation",
+          "labelKey": "gates.occupationGuided"
+        },
+        {
+          "type": "occupationSelected",
+          "labelKey": "gates.occupationSelected"
+        },
+        {
+          "type": "occupationPathDecided",
+          "labelKey": "gates.occupationPathDecided"
+        }
       ]
     },
     {
@@ -235,6 +269,18 @@
         "fina",
         "porezna",
         "hzmo"
+      ],
+      "advanceRequires": [
+        {
+          "type": "stepComplete",
+          "stepId": "occupation",
+          "labelKey": "gates.priorOccupation"
+        },
+        {
+          "type": "guidedComplete",
+          "panel": "employer-package",
+          "labelKey": "gates.pkgGuided"
+        }
       ]
     },
     {
@@ -277,6 +323,23 @@
       ],
       "officeIds": [
         "hzz"
+      ],
+      "advanceRequires": [
+        {
+          "type": "stepComplete",
+          "stepId": "employer-package",
+          "labelKey": "gates.priorPackage"
+        },
+        {
+          "type": "guidedComplete",
+          "panel": "lmt",
+          "whenPath": "labor_market_test",
+          "labelKey": "gates.lmtGuided"
+        },
+        {
+          "type": "occupationPathDecided",
+          "labelKey": "gates.occupationPathDecided"
+        }
       ]
     },
     {
@@ -323,6 +386,18 @@
         "mup",
         "mvep",
         "us-embassy"
+      ],
+      "advanceRequires": [
+        {
+          "type": "stepComplete",
+          "stepId": "lmt",
+          "labelKey": "gates.priorLmt"
+        },
+        {
+          "type": "guidedComplete",
+          "panel": "worker-docs",
+          "labelKey": "gates.wdGuided"
+        }
       ]
     },
     {
@@ -411,7 +486,19 @@
         "pu-zagreb"
       ],
       "guidedPanel": "file-permit",
-      "showEmployerCard": true
+      "showEmployerCard": true,
+      "advanceRequires": [
+        {
+          "type": "stepComplete",
+          "stepId": "worker-docs",
+          "labelKey": "gates.priorWorkerDocs"
+        },
+        {
+          "type": "guidedComplete",
+          "panel": "file-permit",
+          "labelKey": "gates.fpGuided"
+        }
+      ]
     },
     {
       "id": "start-work",
@@ -476,6 +563,24 @@
         "hzmo",
         "hzzo",
         "porezna"
+      ],
+      "advanceRequires": [
+        {
+          "type": "stepComplete",
+          "stepId": "file-permit",
+          "labelKey": "gates.priorFilePermit"
+        },
+        {
+          "type": "checklist",
+          "ids": [
+            "sw-await-decision",
+            "sw-biometrics",
+            "sw-collect-card",
+            "sw-hzmo-hzzo",
+            "sw-start-only-authorized"
+          ],
+          "labelKey": "gates.startWorkChecklist"
+        }
       ]
     },
     {
@@ -616,6 +721,23 @@
         "mup",
         "pu-zagreb",
         "hzzo"
+      ],
+      "advanceRequires": [
+        {
+          "type": "stepComplete",
+          "stepId": "start-work",
+          "labelKey": "gates.priorStartWork"
+        },
+        {
+          "type": "checklist",
+          "ids": [
+            "cy-track-permit-dates",
+            "cy-employer-change-rules",
+            "cy-a1-plan",
+            "cy-renewal-calendar"
+          ],
+          "labelKey": "gates.complyChecklist"
+        }
       ]
     }
   ]

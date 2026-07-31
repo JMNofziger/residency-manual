@@ -231,6 +231,49 @@ a:hover {
   color: #0f1a12;
 }
 
+.step-nav-item.is-locked {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.step-nav-item.is-locked:hover {
+  background: transparent;
+}
+
+.gate-banner {
+  margin: 0 0 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--border));
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--accent) 8%, var(--bg-elev));
+}
+
+.gate-banner p {
+  margin: 0 0 0.4rem;
+  font-weight: 550;
+}
+
+.gate-banner ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.gate-banner li {
+  margin: 0.2rem 0;
+}
+
+.export-hint {
+  margin: 0;
+  padding: 0 1.25rem 0.75rem;
+  font-size: 0.8rem;
+}
+
+.file-btn {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
 .step-num {
   width: 1.6rem;
   height: 1.6rem;
