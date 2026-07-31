@@ -7,18 +7,18 @@ Every fact-bearing claim (fees, deadlines, day-counts, percentages, thresholds, 
 ```json
 {
   "id": "permit-fee",
-  "value": "€46.45",
+  "value": "€74.32",
   "labelKey": "facts.permitFee",
-  "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661",
+  "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
   "sourceTier": 1,
-  "sourceName": "MUP — Temporary Stay",
-  "verifiedDate": "2026-07-30"
+  "sourceName": "MUP — Work of third-country nationals",
+  "verifiedDate": "2026-07-31"
 }
 ```
 
 | Field | Required | Notes |
 |---|---|---|
-| `value` | yes | Display value (`€46.45`, `90 days`, `20%`, …) |
+| `value` | yes | Display value (`€74.32`, `90 days`, `20%`, …) |
 | `labelKey` | yes (UI) | i18n key for what the figure means |
 | `sourceUrl` | yes | Prefer Tier 1 |
 | `sourceTier` | yes | `1` or `2` |
@@ -29,6 +29,7 @@ Every fact-bearing claim (fees, deadlines, day-counts, percentages, thresholds, 
 ## Where facts live
 
 - `data/steps.json` — `facts[]` on steps or sections
+- `data/*-checks.json` — `facts[]` on guided checks
 - `data/nationalities/{id}.json` — `facts[]` on slots / checklist items
 - `data/occupations.json` — only if stating numeric legal thresholds
 - `cases/*.json` — risk flags that assert legal thresholds include `facts[]`

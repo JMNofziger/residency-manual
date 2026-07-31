@@ -1,35 +1,27 @@
 # Croatia foreign-worker sources
 
-Official and secondary links used by this runbook. Prefer **Tier 1** for any fee, deadline, or legal threshold.
+Official links used by this runbook. Prefer **Tier 1** for any fee, deadline, or legal threshold.
 
-**2026 note:** Aliens Act amendments (NN 55/2026) entered force **2026-06-04**. Treat pre-June-2026 commentary as possibly outdated.
+Aliens Act amendments (**NN 55/2026**) entered force **2026-06-04**. Prefer post-amendment wording.
 
 ## Tier 1 — official
 
 | Source | Use for | URL |
 |---|---|---|
 | MUP — Stay and work hub | Overview | https://mup.gov.hr/aliens-281621/stay-and-work/281622 |
-| MUP — Work of third-country nationals | Stay-and-work rules | https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663 |
-| MUP — Temporary stay | Docs / fees | https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661 |
-| MUP — EU Blue Card | Highly qualified path only | https://mup.gov.hr/aliens-281621/stay-and-work/stay-and-work-of-highly-qualified-third-country-nationals/281692 |
+| MUP — Work of third-country nationals | Stay-and-work rules / fees | https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663 |
+| MUP — Temporary stay | Docs, competence, biometrics context | https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661 |
+| MUP — Obrasci | Form 2a and other official forms | https://mup.gov.hr/obrasci-281565/281565 |
 | MUP — Long-term / permanent | Later stay pathways | https://mup.gov.hr/aliens-281621/stay-and-work/long-term-residence-and-permanent-stay/281682 |
+| MUP — EU Blue Card | Highly qualified path only (not this hire) | https://mup.gov.hr/aliens-281621/stay-and-work/stay-and-work-of-highly-qualified-third-country-nationals/281692 |
 | MUP — Radne dozvole | Exemptions / UV list hub | https://mup.gov.hr/radne-dozvole/286764 |
-| Narodne novine | Statute text | https://narodne-novine.nn.hr/ |
+| Narodne novine — NN 55/2026 | Statute text (decision window, mobility, A1.1, etc.) | https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html |
 | HZZ — Novi sustav | Labor market test + Art. 99 | https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/ |
 | HZZ — Filing tips | Practical HZZ filing | https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/savjeti-za-predaju-zahtjeva/ |
 | MVEP — Granting stay | Entry / short stay / registration | https://mvep.gov.hr/services-consular-portal/consular-information-22802/stay-of-foreigners/granting-stay-in-croatia/22839 |
-
-**2026 themes to verify in NN text before stating as fact:** Single Permit framing, longer decision windows, employer-change and unemployment rules, Form 17a / housing, A1.1 language for extension (some language articles deferred).
-
-## Tier 2 — explanation only
-
-Cross-check every number against Tier 1 before citing.
-
-| Source | URL |
-|---|---|
-| Croatia Week — 2026 law summary | https://www.croatiaweek.com/croatia-new-foreign-workers-law-2026/ |
-| Expat in Croatia — 2026 changes | https://www.expatincroatia.com/croatian-law-on-foreigners-2026/ |
-| Profesio.hr — labor market test guide | https://www.profesio.hr/sveobuhvatan-vodic-o-pokretanju-testa-trzista-rada-u-hrvatskoj/ |
+| HZMO | Pension insurance (employer registration) | https://www.mirovinsko.hr/ |
+| HZZO | Health insurance (employer registration) | https://hzzo.hr/ |
+| Tax Administration (ePorezna) | Employer tax / withholding | https://eporezna.porezna-uprava.hr/ |
 
 ## U.S. citizens (entry / documents layer)
 
@@ -43,3 +35,8 @@ Same Croatian permit law as other third-country nationals. Extra practical sourc
 ## Adding nationalities later
 
 Keep a nationality-neutral core. Per country, add only: entry rules, consulate pages, and country-specific supporting documents.
+
+## Live verification artifacts
+
+- [`artifacts/phase5-verification.md`](artifacts/phase5-verification.md) — Art. 99, LMT window, early fees / registration
+- [`artifacts/phase6e-verification.md`](artifacts/phase6e-verification.md) — stay-and-work fee €74.32, Form 2a, Zagreb filing notes

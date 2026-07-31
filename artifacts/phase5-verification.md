@@ -10,7 +10,7 @@
 |---|---|---|
 | HZZ — Novi sustav | https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/ | Art. 99 thresholds + 90-day LMT notice window confirmed |
 | HZZ — Savjeti | https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/savjeti-za-predaju-zahtjeva/ | Unemployment 3/6 months confirmed |
-| MUP — Temporary stay | https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661 | Fees €46.45 / €31.85 / €9.29 confirmed |
+| MUP — Temporary stay | https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661 | Fees €46.45 (generic temporary stay) / €31.85 / €9.29 confirmed — **stay-and-work admin fee corrected to €74.32 in Phase 6e** |
 | MUP — Long-term / permanent | https://mup.gov.hr/aliens-281621/stay-and-work/long-term-residence-and-permanent-stay/281682 | €83.62 confirmed |
 | MUP — Blue Card | https://mup.gov.hr/aliens-281621/stay-and-work/stay-and-work-of-highly-qualified-third-country-nationals/281692 | Fees present; **48-month validity not stated** → omitted from wizard |
 | NN 55/2026 | https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html | Force date, 90-day decision, mobility, unemployment, A1.1 + deferred Art. 92.a confirmed |
@@ -21,7 +21,7 @@ U.S. Embassy Croatia entry page is JS-heavy and did not yield extractable text i
 
 ## Corrections applied
 
-1. **Biometric fees** — was only €9.29 (understated). Now cite €31.85 production (regular) + €9.29 admin, plus €46.45 stay fee.
+1. **Biometric fees** — was only €9.29 (understated). Now cite €31.85 production (regular) + €9.29 admin, plus temporary-stay admin €46.45. **Later (Phase 6e):** Single Permit / stay-and-work admin fee is **€74.32** on MUP Work of TCN — see [`phase6e-verification.md`](phase6e-verification.md).
 2. **Police registration** — was “48 hours” via Embassy. Now **2 days** via MVEP (alien self-registration if provider cannot register).
 3. **Visa-free 90/180** — kept; source retargeted to MVEP.
 4. **Blue Card 48 months** — **removed** (not confirmed on live MUP Blue Card page / NN 55/2026 excerpt).
