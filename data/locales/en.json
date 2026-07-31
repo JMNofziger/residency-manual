@@ -166,47 +166,23 @@
     "employerPackage": {
       "title": "Prepare employer package",
       "summary": "Contract, pay parity, Form 17a / housing, and tax readiness before HZZ/MUP filing.",
-      "contract": {
-        "title": "Employment contract & pay",
-        "body": "Prepare a Croatian-law employment contract (or binding offer) stating position, place of work, hours, and pay. Remuneration should meet applicable minimums and be comparable to domestic workers in similar roles. Keep OIB, company extracts, and proof of registered activity ready."
-      },
-      "form17a": {
-        "title": "Form 17a & housing (2026)",
-        "body": "NN 55/2026 introduced Form 17a (employer compliance/liability) and clearer standards when the employer provides accommodation. If you house the worker, document space standards and the arrangement; if the worker arranges housing, keep lease/proof of accommodation for the permit file. Confirm the current Form 17a template on official channels."
-      },
-      "tax": {
-        "title": "Tax, contributions, bank account",
-        "body": "Clear unpaid tax/contribution debts and avoid prolonged blocked accounts (see cited blocked-account threshold on Orient). Have evidence of business inflow/threshold readiness available for eligibility checks."
+      "overview": {
+        "title": "What to assemble",
+        "body": "Before HZZ or MUP filing, assemble the employer-side package: Croatian-law contract or binding offer, pay-parity rationale, current Form 17a (verify the live template — field specs are not invented here), housing evidence path, and tax/contribution standing. Use the guided checklist below."
       },
       "check": {
-        "contract": "Draft contract / offer ready with role, place, pay",
-        "payParity": "Pay meets minimums and parity expectations",
-        "form17a": "Form 17a / employer declarations prepared (verify current form)",
-        "housing": "Accommodation plan documented (employer-provided or worker lease)",
-        "taxClear": "Tax/contribution standing and bank account status checked"
+        "guided": "I completed the guided employer-package self-check (all rows below)"
       }
     },
     "lmt": {
       "title": "Run HZZ labor market test",
       "summary": "Submit the test tržišta rada, keep related-activity consistency, use the positive-notice window.",
-      "what": {
-        "title": "What the test is",
-        "body": "The labor market test (test tržišta rada) lets HZZ assess whether the vacancy can be filled from the domestic/EEA register before a third-country national is hired. Legal basis and employer obligations are described on HZZ’s novi sustav zapošljavanja stranaca pages (Arts. 98–99 context)."
-      },
-      "filing": {
-        "title": "Filing tips",
-        "body": "Follow HZZ’s practical filing guidance: consistent occupation title, workplace, and employer activity; complete attachments; avoid mismatched NKD vs job description. Use HZZ Savjeti za predaju zahtjeva as the operational checklist."
-      },
-      "window": {
-        "title": "After a positive notice",
-        "body": "A positive labor-market opinion is time-limited. File the stay-and-work application within the cited window. If refused, revise occupation/duties or assess exemptions before refiling."
+      "overview": {
+        "title": "What this step covers",
+        "body": "The labor market test (test tržišta rada) lets HZZ assess whether the vacancy can be filled from the domestic/EEA register. Follow the guided filing workflow below using HZZ’s published hubs — do not invent a private portal URL."
       },
       "check": {
-        "prepare": "LMT request package assembled (title, duties, workplace, employer docs)",
-        "relatedActivity": "Occupation is clearly related to registered activity",
-        "submit": "Request submitted to HZZ per current procedure",
-        "positiveNotice": "Positive notice received and stored",
-        "fileWindow": "Calendar set to file Single Permit within the cited validity window"
+        "guided": "I completed the guided LMT filing self-check (all rows below)"
       }
     },
     "workerDocs": {
@@ -306,6 +282,12 @@
       }
     }
   },
+  "guided": {
+    "progress": "{done}/{total} checks done",
+    "howLabel": "How to check",
+    "evidenceLabel": "Evidence to keep:",
+    "passLabel": "I completed this check with current evidence"
+  },
   "art99": {
     "panelTitle": "Art. 99 employer self-check (guided)",
     "panelIntro": "Work through each condition in order. Mark a row only after you have pulled the evidence. Completing every row marks the Step 1 Art. 99 checklist item.",
@@ -394,6 +376,151 @@
         "inspectorate": "If status is unclear, ask the labour inspectorate / competent ministry channel before filing."
       },
       "evidence": "Written confirmation or filing-system clear status that the employer is not on the prohibited list."
+    }
+  },
+  "pkg": {
+    "panelTitle": "Employer package self-check (guided)",
+    "panelIntro": "Assemble the employer-side file before HZZ/MUP. Mark a row only after you have the evidence. Completing every row marks the Step 3 checklist item.",
+    "contract": {
+      "title": "Employment contract / binding offer terms",
+      "why": "HZZ and MUP filings need a clear Croatian-law contract or binding offer: position, place of work, hours, and pay aligned with the occupation you will request.",
+      "how": {
+        "draft": "Draft the contract or binding offer with role title, workplace, working time, and remuneration.",
+        "mup": "Cross-check stay-and-work document expectations on the MUP third-country national work page.",
+        "hzzTips": "Align wording with HZZ filing tips so title, duties, and workplace stay consistent across later LMT and permit filings."
+      },
+      "evidence": "Signed or ready-to-sign contract / binding offer PDF plus company extract (OIB, representation).",
+      "caseHint": "Keep the occupation title consistent with NKD {nkd} ({nkdLabel}) and the duties you will put on the LMT request."
+    },
+    "payParity": {
+      "title": "Pay meets minimums and parity expectations",
+      "why": "Remuneration should meet applicable Croatian minimums and be comparable to domestic workers in similar roles — do not invent a euro figure in this wizard.",
+      "how": {
+        "compare": "Compare the offered pay to how you pay (or would pay) a domestic worker for the same duties and hours.",
+        "official": "Confirm current legal minimum / stay-and-work pay expectations on official MUP / labour channels before filing.",
+        "noInvent": "Do not copy unofficial salary blogs into the file — use primary law or competent authority guidance."
+      },
+      "evidence": "Pay table or offer letter showing amount + note of the official source you used for the minimum/parity check."
+    },
+    "form17a": {
+      "title": "Confirm current Form 17a (no invented field list)",
+      "why": "NN 55/2026 introduced Form 17a (employer compliance/liability). This runbook does not invent form fields — you must pull the live official template.",
+      "how": {
+        "nn": "Read the Form 17a / employer-obligation context in NN 55/2026.",
+        "mup": "Check MUP third-country national work pages for the current employer declaration / Form 17a channel.",
+        "verifyCurrent": "Download or obtain the current official Form 17a template from those channels — omit any field list that is not on the live form."
+      },
+      "evidence": "Current official Form 17a (blank or completed draft) with retrieval date noted.",
+      "caseHint": "Intentional omission: this wizard does not ship Form 17a field specifications."
+    },
+    "housing": {
+      "title": "Housing evidence path",
+      "why": "NN 55/2026 clarified standards when the employer provides accommodation; if the worker arranges housing, the permit file still needs proof of accommodation.",
+      "how": {
+        "path": "Decide employer-provided vs worker-arranged housing before filing.",
+        "nn": "Review housing-related standards in NN 55/2026 / MUP guidance — do not invent square-metre thresholds here.",
+        "document": "Collect lease, employer housing agreement, or other accommodation proof that matches the chosen path."
+      },
+      "evidence": "Lease / employer housing agreement / accommodation confirmation matching the chosen path."
+    },
+    "tax": {
+      "title": "Tax and contribution standing; blocked account",
+      "why": "Unpaid tax/contribution debts and prolonged blocked accounts undermine Art. 99-style eligibility and later filings.",
+      "how": {
+        "eporezna": "Check tax standing in ePorezna / Tax Administration channels.",
+        "hzmo": "Check contribution standing via HZMO channels.",
+        "certificate": "Obtain current clearance evidence and confirm the account is not blocked beyond the cited window."
+      },
+      "evidence": "Tax/contribution clearance printouts + bank status note dated close to filing."
+    },
+    "handoff": {
+      "title": "Art. 99 inflow / eligibility evidence ready",
+      "why": "Step 1 guided Art. 99 checks (especially bank inflow and blocked-account) must be finished before HZZ treats the employer package as filing-ready. Published company revenue is not bank-inflow proof.",
+      "how": {
+        "orient": "Confirm every Orient Art. 99 guided row is complete with current evidence.",
+        "bank": "Pull live bank statements covering the inflow lookback — do not rely on FINA revenue alone.",
+        "hzz": "Re-read HZZ novi sustav eligibility thresholds before submitting LMT."
+      },
+      "evidence": "Completed Art. 99 evidence pack (bank inflow, continuous employment, ratio model) ready to attach or show on request.",
+      "caseHint": "Case revenue on the employer card is not Art. 99 inflow proof — use bank evidence for NKD {nkd} employer before filing."
+    }
+  },
+  "lmtGuide": {
+    "panelTitle": "HZZ labor market test — guided filing",
+    "panelIntro": "Work the LMT path in order. Use only HZZ’s published hubs for procedure. Completing every row marks the Step 4 checklist item.",
+    "confirmPath": {
+      "title": "Confirm LMT is still the correct path",
+      "why": "UV / deficitary list skips apply only when the exact listed title and real duties match. Manual event crew under arts-support NKD usually stays on LMT.",
+      "how": {
+        "uv": "Re-check the official UV / radne dozvole materials if you thought an exemption applied.",
+        "noShopping": "Do not pick a UV title that mismatches real duties just to skip LMT.",
+        "hzz": "Confirm on HZZ novi sustav that your hire still needs the labor market test."
+      },
+      "evidence": "Short note: LMT required (or exact UV title + duties match with PDF edition cited).",
+      "caseHint": "For NKD {nkd} manual event crew, treat LMT as primary unless a listed UV title truly matches duties."
+    },
+    "related": {
+      "title": "Occupation related to registered activity",
+      "why": "HZZ expects the requested occupation to relate to the employer’s registered economic activity.",
+      "how": {
+        "fina": "Confirm registered activity / NKD on Fina Info.BIZ.",
+        "duties": "Write duties that sit inside that activity — not an unrelated desk, IT, or hospitality role.",
+        "tips": "Use HZZ filing tips to keep title, workplace, and activity wording consistent."
+      },
+      "evidence": "Company extract + duty list mapped to registered activity.",
+      "caseHint": "Registered activity for this case: NKD {nkd} — {nkdLabel}."
+    },
+    "assemble": {
+      "title": "Assemble the LMT request package",
+      "why": "Incomplete or inconsistent attachments are a common reason for delay or refusal.",
+      "how": {
+        "contents": "Assemble occupation title, duties, workplace, employer identity docs, and required attachments per HZZ guidance.",
+        "tips": "Walk HZZ Savjeti za predaju zahtjeva as the operational checklist.",
+        "consistency": "Ensure the same title/duties/workplace appear on contract, LMT request, and later Single Permit forms."
+      },
+      "evidence": "Complete LMT request folder (PDF/scans) ready to submit."
+    },
+    "submit": {
+      "title": "Submit via current HZZ published procedure",
+      "why": "Procedure and channels change; this runbook does not invent a private e-portal URL beyond HZZ’s published pages.",
+      "how": {
+        "hub": "Open HZZ novi sustav zapošljavanja stranaca for the current legal/process overview.",
+        "tips": "Follow Savjeti za predaju zahtjeva for practical submission steps.",
+        "current": "Use whatever submission channel those pages currently prescribe (do not rely on outdated third-party portal links)."
+      },
+      "evidence": "Submission receipt / protocol number / confirmation email from HZZ.",
+      "caseHint": "Route the request for competence tied to region {region} (confirm on HZZ pages if regional routing applies)."
+    },
+    "notice": {
+      "title": "Handle positive or negative notice",
+      "why": "The notice outcome drives whether you may file the Single Permit and whether you must revise the occupation path.",
+      "how": {
+        "store": "Save the full HZZ notice PDF and note the issue date.",
+        "positive": "If positive, immediately start the Single Permit clock (next check).",
+        "negative": "If negative/refused, revise occupation/duties or reassess exemptions before refiling — do not ignore the grounds."
+      },
+      "evidence": "Stored HZZ notice + short decision note (proceed / revise)."
+    },
+    "window": {
+      "title": "Calendar the Single Permit filing window",
+      "why": "A positive labor-market opinion is time-limited. Missing the window means repeating LMT work.",
+      "how": {
+        "calendar": "Put the notice issue date and deadline on a shared calendar with owner + reminder.",
+        "hzz": "Confirm the validity window on HZZ novi sustav (cited fact below).",
+        "mup": "Prepare the stay-and-work / Single Permit filing path on MUP radne dozvole materials in parallel."
+      },
+      "evidence": "Calendar entry + owner named; notice PDF linked."
+    },
+    "competence": {
+      "title": "Confirm regional / competence routing",
+      "why": "Employer seat and workplace affect which HZZ / police administration handles later steps; confirm before you file.",
+      "how": {
+        "case": "Read the loaded case employer city / HZZ region / police administration fields.",
+        "hzz": "Confirm any regional routing notes on HZZ published pages.",
+        "confirm": "Write down which office you will use for LMT follow-up and for the later Single Permit filing."
+      },
+      "evidence": "One-line competence note (HZZ unit + intended police administration).",
+      "caseHint": "This case region: {region}. Employer card shows the live address — do not hardcode another city."
     }
   },
   "uv": {

@@ -166,47 +166,23 @@
     "employerPackage": {
       "title": "Pripremite paket poslodavca",
       "summary": "Ugovor, usklađenost plaće, obrazac 17a / smještaj i porezna spremnost prije HZZ/MUP.",
-      "contract": {
-        "title": "Ugovor o radu i plaća",
-        "body": "Pripremite ugovor o radu po hrvatskom pravu (ili obvezujuću ponudu) s radnim mjestom, mjestom rada, satima i plaćom. Naknada treba zadovoljiti primjenjive minimume i biti usporediva s domaćim radnicima. Pripremite OIB, izvatke i dokaz registrirane djelatnosti."
-      },
-      "form17a": {
-        "title": "Obrazac 17a i smještaj (2026.)",
-        "body": "NN 55/2026 uveo je obrazac 17a (usklađenost/odgovornost poslodavca) i jasnije standarde kad poslodavac osigurava smještaj. Ako smještate radnika, dokumentirajte standarde; ako radnik sam uređuje smještaj, čuvajte ugovor o najmu/dokaz. Potvrdite aktualni obrazac na službenim kanalima."
-      },
-      "tax": {
-        "title": "Porez, doprinosi, bankovni račun",
-        "body": "Podmirite neplaćene poreze/doprinose i izbjegavajte dugotrajno blokirane račune (vidi citirani prag na koraku Orijentacija). Pripremite dokaze o priljevu/pragu."
+      "overview": {
+        "title": "Što sastaviti",
+        "body": "Prije HZZ ili MUP podnošenja sastavite paket poslodavca: ugovor ili obvezujuću ponudu po hrvatskom pravu, obrazloženje usklađenosti plaće, aktualni obrazac 17a (provjerite živi predložak — polja se ovdje ne izmišljaju), put dokaza o smještaju te porezni/doprinosni status. Koristite vođeni popis ispod."
       },
       "check": {
-        "contract": "Nacrt ugovora / ponude spreman (uloga, mjesto, plaća)",
-        "payParity": "Plaća zadovoljava minimume i očekivanja usklađenosti",
-        "form17a": "Obrazac 17a / izjave pripremljene (provjerite aktualni obrazac)",
-        "housing": "Plan smještaja dokumentiran",
-        "taxClear": "Porezni/doprinosni status i račun provjereni"
+        "guided": "Završio/la sam vođenu samoprovjeru paketa poslodavca (svi redovi ispod)"
       }
     },
     "lmt": {
       "title": "Pokrenite HZZ test tržišta rada",
       "summary": "Podnesite test tržišta rada, držite usklađenost djelatnosti, iskoristite rok pozitivnog mišljenja.",
-      "what": {
-        "title": "Što je test",
-        "body": "Test tržišta rada omogućuje HZZ-u da procijeni može li se radno mjesto popuniti iz domaćeg/EEA registra prije zapošljavanja državljanina treće zemlje. Pravni temelj opisan je na HZZ stranicama novog sustava (kontekst čl. 98.–99.)."
-      },
-      "filing": {
-        "title": "Savjeti za predaju",
-        "body": "Slijedite HZZ praktične savjete: usklađen naziv zanimanja, mjesto rada i djelatnost; potpuni prilozi; izbjegavajte nesklad NKD-a i opisa posla. Koristite HZZ Savjeti za predaju zahtjeva."
-      },
-      "window": {
-        "title": "Nakon pozitivnog mišljenja",
-        "body": "Pozitivno mišljenje vremenski je ograničeno. Podnesite zahtjev za boravak i rad unutar citiranog roka. Ako je odbijeno, revidirajte zanimanje/dužnosti ili procijenite izuzeća."
+      "overview": {
+        "title": "Što pokriva ovaj korak",
+        "body": "Test tržišta rada omogućuje HZZ-u da procijeni može li se radno mjesto popuniti iz domaćeg/EEA registra. Slijedite vođeni tijek ispod koristeći objavljene HZZ stranice — ne izmišljajte privatni URL portala."
       },
       "check": {
-        "prepare": "Paket zahtjeva za TTR sastavljen",
-        "relatedActivity": "Zanimanje je jasno povezano s registriranom djelatnošću",
-        "submit": "Zahtjev podnesen HZZ-u prema aktualnom postupku",
-        "positiveNotice": "Pozitivno mišljenje zaprimljeno i pohranjeno",
-        "fileWindow": "Kalendar postavljen za podnošenje jedinstvene dozvole unutar citiranog roka"
+        "guided": "Završio/la sam vođenu samoprovjeru podnošenja TTR-a (svi redovi ispod)"
       }
     },
     "workerDocs": {
@@ -306,6 +282,12 @@
       }
     }
   },
+  "guided": {
+    "progress": "{done}/{total} provjera gotovo",
+    "howLabel": "Kako provjeriti",
+    "evidenceLabel": "Dokazi koje zadržati:",
+    "passLabel": "Završio/la sam ovu provjeru s aktualnim dokazima"
+  },
   "art99": {
     "panelTitle": "Samoprovjera poslodavca po čl. 99. (vođeno)",
     "panelIntro": "Prođite svaki uvjet redom. Označite red samo nakon što ste prikupili dokaze. Dovršetak svih redova označava stavku Art. 99. na kontrolnom popisu Koraka 1.",
@@ -394,6 +376,151 @@
         "inspectorate": "Ako status nije jasan, prije podnošenja obratite se inspekciji rada / nadležnom ministarstvu."
       },
       "evidence": "Pisana potvrda ili jasan status u sustavu podnošenja da poslodavac nije na zabranjenom popisu."
+    }
+  },
+  "pkg": {
+    "panelTitle": "Samoprovjera paketa poslodavca (vođeno)",
+    "panelIntro": "Sastavite paket poslodavca prije HZZ/MUP. Označite red samo nakon što imate dokaze. Dovršetak svih redova označava stavku na kontrolnom popisu Koraka 3.",
+    "contract": {
+      "title": "Ugovor o radu / obvezujuća ponuda",
+      "why": "Za HZZ i MUP potrebni su jasan ugovor ili obvezujuća ponuda po hrvatskom pravu: radno mjesto, mjesto rada, sati i plaća usklađeni sa zanimanjem koje ćete tražiti.",
+      "how": {
+        "draft": "Nacrtajte ugovor ili obvezujuću ponudu s nazivom uloge, mjestom rada, radnim vremenom i naknadom.",
+        "mup": "Uskladite očekivanja dokumenata na MUP stranici o radu državljana trećih zemalja.",
+        "hzzTips": "Uskladite formulacije s HZZ savjetima za predaju kako bi naziv, dužnosti i mjesto rada ostali dosljedni kasnije."
+      },
+      "evidence": "Potpisani ili spremni ugovor / ponuda (PDF) + izvadak tvrtke (OIB, zastupanje).",
+      "caseHint": "Držite naziv zanimanja usklađenim s NKD {nkd} ({nkdLabel}) i dužnostima koje ćete staviti u zahtjev za TTR."
+    },
+    "payParity": {
+      "title": "Plaća zadovoljava minimume i usklađenost",
+      "why": "Naknada treba zadovoljiti primjenjive hrvatske minimume i biti usporediva s domaćim radnicima u sličnim ulogama — u ovom čarobnjaku ne izmišljajte iznos u eurima.",
+      "how": {
+        "compare": "Usporedite ponuđenu plaću s onim što biste platili domaćem radniku za iste dužnosti i sate.",
+        "official": "Prije podnošenja potvrdite aktualne zakonske minimume / očekivanja na službenim MUP / radnim kanalima.",
+        "noInvent": "Ne kopirajte neslužbene blogove o plaćama — koristite primarno pravo ili nadležno tijelo."
+      },
+      "evidence": "Tablica plaće ili ponuda s iznosom + bilješka o službenom izvoru provjere minimuma/usklađenosti."
+    },
+    "form17a": {
+      "title": "Potvrdite aktualni obrazac 17a (bez izmišljenog popisa polja)",
+      "why": "NN 55/2026 uveo je obrazac 17a (usklađenost/odgovornost poslodavca). Ovaj priručnik ne izmišlja polja obrasca — morate preuzeti živi službeni predložak.",
+      "how": {
+        "nn": "Pročitajte kontekst obrasca 17a / obveza poslodavca u NN 55/2026.",
+        "mup": "Provjerite MUP stranice o radu državljana trećih zemalja za aktualni kanal izjave / obrasca 17a.",
+        "verifyCurrent": "Preuzmite ili pribavite aktualni službeni obrazac 17a s tih kanala — izostavite popis polja koji nije na živom obrascu."
+      },
+      "evidence": "Aktualni službeni obrazac 17a (prazan ili nacrt) s datumom preuzimanja.",
+      "caseHint": "Namjerni izostanak: ovaj čarobnjak ne isporučuje specifikacije polja obrasca 17a."
+    },
+    "housing": {
+      "title": "Put dokaza o smještaju",
+      "why": "NN 55/2026 pojasnio je standarde kad poslodavac osigurava smještaj; ako radnik sam uređuje smještaj, spisu za dozvolu i dalje treba dokaz smještaja.",
+      "how": {
+        "path": "Prije podnošenja odlučite: smještaj poslodavca ili radnikov najam.",
+        "nn": "Pregledajte standarde smještaja u NN 55/2026 / MUP smjernicama — ovdje ne izmišljajte pragove u m².",
+        "document": "Prikupite ugovor o najmu, sporazum o smještaju poslodavca ili drugi dokaz koji odgovara odabranom putu."
+      },
+      "evidence": "Najam / sporazum poslodavca / potvrda smještaja prema odabranom putu."
+    },
+    "tax": {
+      "title": "Porezni i doprinosni status; blokirani račun",
+      "why": "Neplaćeni porezi/doprinosi i dugotrajno blokirani računi ugrožavaju podobnost u smislu čl. 99. i kasnija podnošenja.",
+      "how": {
+        "eporezna": "Provjerite porezni status u ePorezna / kanalima Porezne uprave.",
+        "hzmo": "Provjerite doprinosni status putem HZMO kanala.",
+        "certificate": "Pribavite aktualne potvrde i potvrdite da račun nije blokiran dulje od citiranog roka."
+      },
+      "evidence": "Ispisi porezne/doprinosne urednosti + bilješka o statusu računa blizu datuma podnošenja."
+    },
+    "handoff": {
+      "title": "Dokazi Art. 99. o priljevu / podobnosti spremni",
+      "why": "Vođene Art. 99. provjere na Koraku 1 (osobito bankovni priljev i blokirani račun) moraju biti gotove prije nego HZZ tretira paket kao spreman za podnošenje. Objavljeni prihod tvrtke nije dokaz bankovnog priljeva.",
+      "how": {
+        "orient": "Potvrdite da je svaki vođeni red Art. 99. na Orijentaciji dovršen s aktualnim dokazima.",
+        "bank": "Pribavite žive bankovne izvatke za razdoblje priljeva — ne oslanjajte se samo na FINA prihod.",
+        "hzz": "Ponovno pročitajte pragove podobnosti na HZZ novom sustavu prije podnošenja TTR-a."
+      },
+      "evidence": "Dovršen paket dokaza Art. 99. (priljev, kontinuirano zaposlenje, model omjera) spreman za prilog ili uvid.",
+      "caseHint": "Prihod na kartici poslodavca nije dokaz priljeva za Art. 99. — prije podnošenja koristite bankovne dokaze za poslodavca NKD {nkd}."
+    }
+  },
+  "lmtGuide": {
+    "panelTitle": "HZZ test tržišta rada — vođeno podnošenje",
+    "panelIntro": "Prođite put TTR-a redom. Za postupak koristite samo objavljene HZZ stranice. Dovršetak svih redova označava stavku na kontrolnom popisu Koraka 4.",
+    "confirmPath": {
+      "title": "Potvrdite da je TTR i dalje ispravan put",
+      "why": "Preskoci s UV / deficitarne liste vrijede samo kad točan navedeni naziv i stvarne dužnosti odgovaraju. Ručni event crew pod NKD-om umjetničke podrške uobičajeno ostaje na TTR-u.",
+      "how": {
+        "uv": "Ponovno provjerite službene UV / radne dozvole materijale ako ste mislili da vrijedi izuzeće.",
+        "noShopping": "Ne birajte UV naziv koji ne odgovara stvarnim dužnostima samo da preskočite TTR.",
+        "hzz": "Na HZZ novom sustavu potvrdite da vaše zapošljavanje i dalje zahtijeva test tržišta rada."
+      },
+      "evidence": "Kratka bilješka: potreban TTR (ili točan UV naziv + podudaranje dužnosti s citiranim izdanjem PDF-a).",
+      "caseHint": "Za ručni event crew pod NKD {nkd} tretirajte TTR kao primarni put osim ako navedeni UV naziv stvarno odgovara dužnostima."
+    },
+    "related": {
+      "title": "Zanimanje povezano s registriranom djelatnošću",
+      "why": "HZZ očekuje da traženo zanimanje bude povezano s registriranom gospodarskom djelatnošću poslodavca.",
+      "how": {
+        "fina": "Potvrdite registriranu djelatnost / NKD na Fina Info.BIZ.",
+        "duties": "Napišite dužnosti unutar te djelatnosti — ne nepovezani uredski, IT ili ugostiteljski posao.",
+        "tips": "Koristite HZZ savjete za predaju kako bi naziv, mjesto rada i djelatnost ostali usklađeni."
+      },
+      "evidence": "Izvadak tvrtke + popis dužnosti mapiran na registriranu djelatnost.",
+      "caseHint": "Registrirana djelatnost u ovom slučaju: NKD {nkd} — {nkdLabel}."
+    },
+    "assemble": {
+      "title": "Sastavite paket zahtjeva za TTR",
+      "why": "Nepotpuni ili neusklađeni prilozi čest su razlog kašnjenja ili odbijanja.",
+      "how": {
+        "contents": "Sastavite naziv zanimanja, dužnosti, mjesto rada, identifikaciju poslodavca i potrebne priloge prema HZZ smjernicama.",
+        "tips": "Prođite HZZ Savjeti za predaju zahtjeva kao operativni popis.",
+        "consistency": "Isti naziv/dužnosti/mjesto rada moraju biti na ugovoru, zahtjevu za TTR i kasnijim obrascima jedinstvene dozvole."
+      },
+      "evidence": "Potpuni folder zahtjeva za TTR (PDF/skenovi) spreman za podnošenje."
+    },
+    "submit": {
+      "title": "Podnesite prema aktualnom objavljenom HZZ postupku",
+      "why": "Postupak i kanali se mijenjaju; ovaj priručnik ne izmišlja privatni URL e-portala izvan objavljenih HZZ stranica.",
+      "how": {
+        "hub": "Otvorite HZZ novi sustav zapošljavanja stranaca za aktualni pravni/procesni pregled.",
+        "tips": "Slijedite Savjeti za predaju zahtjeva za praktične korake podnošenja.",
+        "current": "Koristite kanal podnošenja koji te stranice trenutačno propisuju (ne oslanjajte se na zastarjele linkove trećih strana)."
+      },
+      "evidence": "Potvrda podnošenja / broj protokola / e-pošta potvrde od HZZ-a.",
+      "caseHint": "Usmjerite zahtjev prema nadležnosti za regiju {region} (potvrdite na HZZ stranicama ako vrijedi regionalno usmjeravanje)."
+    },
+    "notice": {
+      "title": "Obrada pozitivnog ili negativnog mišljenja",
+      "why": "Ishod mišljenja određuje smijete li podnijeti jedinstvenu dozvolu i trebate li revidirati put zanimanja.",
+      "how": {
+        "store": "Spremite cijeli PDF mišljenja HZZ-a i zabilježite datum izdavanja.",
+        "positive": "Ako je pozitivno, odmah pokrenite sat jedinstvene dozvole (sljedeća provjera).",
+        "negative": "Ako je negativno/odbijeno, revidirajte zanimanje/dužnosti ili ponovno procijenite izuzeća prije ponovnog podnošenja — ne zanemarujte razloge."
+      },
+      "evidence": "Pohranjeno HZZ mišljenje + kratka odluka (nastavak / revizija)."
+    },
+    "window": {
+      "title": "Stavite u kalendar rok za jedinstvenu dozvolu",
+      "why": "Pozitivno mišljenje o tržištu rada vremenski je ograničeno. Propuštanje roka znači ponavljanje rada na TTR-u.",
+      "how": {
+        "calendar": "Stavite datum izdavanja mišljenja i krajnji rok u zajednički kalendar s vlasnikom i podsjetnikom.",
+        "hzz": "Potvrdite rok valjanosti na HZZ novom sustavu (citirana činjenica ispod).",
+        "mup": "Paralelno pripremite put podnošenja boravka i rada / jedinstvene dozvole na MUP materijalima o radnim dozvolama."
+      },
+      "evidence": "Unos u kalendar + imenovani vlasnik; povezan PDF mišljenja."
+    },
+    "competence": {
+      "title": "Potvrdite regionalnu / nadležnu usmjerenost",
+      "why": "Sjedište poslodavca i mjesto rada utječu na to koja HZZ / policijska uprava vodi kasnije korake; potvrdite prije podnošenja.",
+      "how": {
+        "case": "Pročitajte polja grada / HZZ regije / policijske uprave na učitanom slučaju.",
+        "hzz": "Potvrdite bilješke o regionalnom usmjeravanju na objavljenim HZZ stranicama.",
+        "confirm": "Zapišite koji ured ćete koristiti za nastavak TTR-a i kasnije podnošenje jedinstvene dozvole."
+      },
+      "evidence": "Jednoredna bilješka o nadležnosti (jedinica HZZ + namjeravana policijska uprava).",
+      "caseHint": "Regija ovog slučaja: {region}. Kartica poslodavca pokazuje živu adresu — ne ugrađujte drugi grad."
     }
   },
   "uv": {

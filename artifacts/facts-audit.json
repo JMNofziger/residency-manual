@@ -1,8 +1,8 @@
 {
   "generatedAt": "2026-07-31",
   "caseId": "example-dool-us-manual-labor",
-  "factCount": 30,
-  "tier1Count": 30,
+  "factCount": 32,
+  "tier1Count": 32,
   "tier2Count": 0,
   "notes": [
     "Phase 5 live Tier-1 pass completed 2026-07-31 — see artifacts/phase5-verification.md.",
@@ -241,8 +241,8 @@
       "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
       "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
-      "file": "data/steps.json",
-      "path": "steps[3].sections[2].facts[0]"
+      "file": "data/lmt-checks.json",
+      "path": "checks[5].facts[0]"
     },
     {
       "id": "long-term-fee",
@@ -303,6 +303,30 @@
       "ageDaysAsOfAudit": 0,
       "file": "data/steps.json",
       "path": "steps[5].sections[3].facts[0]"
+    },
+    {
+      "id": "pkg-blocked-account",
+      "value": "30 days",
+      "labelKey": "facts.art99BlockedAccount",
+      "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+      "sourceTier": 1,
+      "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
+      "verifiedDate": "2026-07-31",
+      "ageDaysAsOfAudit": 0,
+      "file": "data/employer-package-checks.json",
+      "path": "checks[4].facts[0]"
+    },
+    {
+      "id": "pkg-inflow-handoff",
+      "value": "€100,000",
+      "labelKey": "facts.art99InflowThreshold",
+      "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+      "sourceTier": 1,
+      "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
+      "verifiedDate": "2026-07-31",
+      "ageDaysAsOfAudit": 0,
+      "file": "data/employer-package-checks.json",
+      "path": "checks[5].facts[0]"
     },
     {
       "id": "unemployment-long-hold-qualifier",

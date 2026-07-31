@@ -18,7 +18,7 @@ Living progress board for the Croatia employer hiring wizard. Update this file w
 | 3 | Core EN/HR step content + US nationality pack | Done |
 | 4 | Art. 99 guided self-check + searchable UV list | Done |
 | 5 | Live Tier-1 re-verification pass | Done |
-| 6 | Harden remaining wizard steps (2–8 workflows) | Next |
+| 6 | Harden remaining wizard steps (2–8 workflows) | In progress (6a done) |
 | 7 | More nationality packs + case picker | Planned |
 | 8 | Hosting, CI, and ops polish | Planned |
 
@@ -104,15 +104,23 @@ Live pass against HZZ / MUP / NN 55/2026 / MVEP. Report: [`artifacts/phase5-veri
 
 ---
 
-## Phase 6 — Harden steps 2–8 *(next)*
+## Phase 6 — Harden steps 2–8
 
-**Status:** Next up
+**Status:** In progress — **6a done** (2026-07-31)
 
-Step 1 is the deepest workflow. Later steps still need the same “how exactly” treatment:
+### Phase 6a — Steps 3 + 4 guided panels *(done)*
+
+Generalized Art. 99 pattern into [`js/guided-checks.js`](js/guided-checks.js); Art. 99 remains `idPrefix: "art99"` for localStorage compatibility.
+
+- Step 3 guided panel: [`data/employer-package-checks.json`](data/employer-package-checks.json) + `pkg.*` locales (`idPrefix: pkg`)
+- Step 4 guided panel: [`data/lmt-checks.json`](data/lmt-checks.json) + `lmtGuide.*` locales (`idPrefix: lmtGuide`)
+- Steps use `guidedPanel` flag in [`data/steps.json`](data/steps.json); parent checklist rollup matches Orient
+- Form 17a field specs intentionally omitted; HZZ submit links only published hubs (no invented portal URL)
+- `90 days` LMT positive-notice fact lives on the LMT guided check; case hints interpolate `{nkd}` / `{region}` from loaded case (private case via `cases/private/active.json`)
+
+### Remaining Phase 6
 
 - [ ] Step 2 — occupation selection UX tied to UV search results + duty templates
-- [ ] Step 3 — employer package checklist (contract clauses, Form 17a, housing evidence)
-- [ ] Step 4 — HZZ LMT filing walkthrough (screens/portals, 90-day window after positive notice)
 - [ ] Step 5 — worker docs with nationality pack slots (US already stubbed; deepen checklist)
 - [ ] Step 6 — Single Permit filing path for Zagreb competence
 - [ ] Step 7 — biometrics / HZMO / HZZO / tax registration order of operations

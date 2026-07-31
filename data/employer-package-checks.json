@@ -1,0 +1,162 @@
+{
+  "version": 1,
+  "titleKey": "pkg.panelTitle",
+  "introKey": "pkg.panelIntro",
+  "sourceHub": {
+    "labelKey": "sources.mupWorkTcn",
+    "url": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+    "tier": 1
+  },
+  "parentChecklistId": "pkg-guided-complete",
+  "checks": [
+    {
+      "id": "contract-terms",
+      "order": 1,
+      "titleKey": "pkg.contract.title",
+      "whyKey": "pkg.contract.why",
+      "howSteps": [
+        {
+          "labelKey": "pkg.contract.how.draft"
+        },
+        {
+          "labelKey": "pkg.contract.how.mup",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663"
+        },
+        {
+          "labelKey": "pkg.contract.how.hzzTips",
+          "url": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/savjeti-za-predaju-zahtjeva/"
+        }
+      ],
+      "evidenceKey": "pkg.contract.evidence",
+      "facts": [],
+      "caseHintKeys": ["pkg.contract.caseHint"]
+    },
+    {
+      "id": "pay-parity",
+      "order": 2,
+      "titleKey": "pkg.payParity.title",
+      "whyKey": "pkg.payParity.why",
+      "howSteps": [
+        {
+          "labelKey": "pkg.payParity.how.compare"
+        },
+        {
+          "labelKey": "pkg.payParity.how.official",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663"
+        },
+        {
+          "labelKey": "pkg.payParity.how.noInvent"
+        }
+      ],
+      "evidenceKey": "pkg.payParity.evidence",
+      "facts": [],
+      "caseHintKeys": []
+    },
+    {
+      "id": "form17a-current",
+      "order": 3,
+      "titleKey": "pkg.form17a.title",
+      "whyKey": "pkg.form17a.why",
+      "howSteps": [
+        {
+          "labelKey": "pkg.form17a.how.nn",
+          "url": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html"
+        },
+        {
+          "labelKey": "pkg.form17a.how.mup",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663"
+        },
+        {
+          "labelKey": "pkg.form17a.how.verifyCurrent"
+        }
+      ],
+      "evidenceKey": "pkg.form17a.evidence",
+      "facts": [],
+      "caseHintKeys": ["pkg.form17a.caseHint"]
+    },
+    {
+      "id": "housing-evidence",
+      "order": 4,
+      "titleKey": "pkg.housing.title",
+      "whyKey": "pkg.housing.why",
+      "howSteps": [
+        {
+          "labelKey": "pkg.housing.how.path"
+        },
+        {
+          "labelKey": "pkg.housing.how.nn",
+          "url": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html"
+        },
+        {
+          "labelKey": "pkg.housing.how.document"
+        }
+      ],
+      "evidenceKey": "pkg.housing.evidence",
+      "facts": [],
+      "caseHintKeys": []
+    },
+    {
+      "id": "tax-contribution-clear",
+      "order": 5,
+      "titleKey": "pkg.tax.title",
+      "whyKey": "pkg.tax.why",
+      "howSteps": [
+        {
+          "labelKey": "pkg.tax.how.eporezna",
+          "url": "https://eporezna.porezna-uprava.hr/"
+        },
+        {
+          "labelKey": "pkg.tax.how.hzmo",
+          "url": "https://www.mirovinsko.hr/"
+        },
+        {
+          "labelKey": "pkg.tax.how.certificate"
+        }
+      ],
+      "evidenceKey": "pkg.tax.evidence",
+      "facts": [
+        {
+          "id": "pkg-blocked-account",
+          "value": "30 days",
+          "labelKey": "facts.art99BlockedAccount",
+          "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+          "sourceTier": 1,
+          "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
+          "verifiedDate": "2026-07-31"
+        }
+      ],
+      "caseHintKeys": []
+    },
+    {
+      "id": "art99-handoff",
+      "order": 6,
+      "titleKey": "pkg.handoff.title",
+      "whyKey": "pkg.handoff.why",
+      "howSteps": [
+        {
+          "labelKey": "pkg.handoff.how.orient"
+        },
+        {
+          "labelKey": "pkg.handoff.how.bank"
+        },
+        {
+          "labelKey": "pkg.handoff.how.hzz",
+          "url": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/"
+        }
+      ],
+      "evidenceKey": "pkg.handoff.evidence",
+      "facts": [
+        {
+          "id": "pkg-inflow-handoff",
+          "value": "€100,000",
+          "labelKey": "facts.art99InflowThreshold",
+          "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+          "sourceTier": 1,
+          "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
+          "verifiedDate": "2026-07-31"
+        }
+      ],
+      "caseHintKeys": ["pkg.handoff.caseHint"]
+    }
+  ]
+}

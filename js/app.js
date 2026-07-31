@@ -3,7 +3,40 @@ import { Theme } from "./theme.js";
 import { Nationality } from "./nationality.js";
 import { renderFactList } from "./facts.js";
 import { Art99 } from "./art99.js";
+import { EmployerPackage } from "./employer-package.js";
+import { LmtGuide } from "./lmt-guide.js";
 import { UvList } from "./uv-list.js";
+
+const GUIDED_PANELS = {
+  art99: Art99,
+  "employer-package": EmployerPackage,
+  lmt: LmtGuide,
+};
+
+function resolveGuidedPanel(step) {
+  if (step?.guidedPanel && GUIDED_PANELS[step.guidedPanel]) {
+    return GUIDED_PANELS[step.guidedPanel];
+  }
+  if (step?.showArt99Checks) return GUIDED_PANELS.art99;
+  return null;
+}
+
+function panelForCheckId(checkId) {
+  return Object.values(GUIDED_PANELS).find((p) => p.ownsCheckId(checkId)) || null;
+}
+
+function applyParentChecked(parentId, parentChecked) {
+  const s = new Set(state.progress.checkedItemIds);
+  if (parentChecked) s.add(parentId);
+  else s.delete(parentId);
+  state.progress.checkedItemIds = [...s];
+}
+
+function syncAllGuidedParents() {
+  for (const panel of Object.values(GUIDED_PANELS)) {
+    panel.syncParentChecklist(isChecked, applyParentChecked);
+  }
+}
 
 /** Public anonymized fixture (committed). */
 const DEFAULT_CASE_PATH = "cases/example-dool-us-manual-labor.json";
@@ -75,13 +108,9 @@ function setChecked(id, checked) {
   if (checked) set.add(id);
   else set.delete(id);
   state.progress.checkedItemIds = [...set];
-  if (String(id).startsWith("art99:")) {
-    Art99.syncParentChecklist(isChecked, (parentId, parentChecked) => {
-      const s = new Set(state.progress.checkedItemIds);
-      if (parentChecked) s.add(parentId);
-      else s.delete(parentId);
-      state.progress.checkedItemIds = [...s];
-    });
+  const panel = panelForCheckId(id);
+  if (panel) {
+    panel.syncParentChecklist(isChecked, applyParentChecked);
   }
   saveProgress();
 }
@@ -279,7 +308,7 @@ function renderMain() {
     ${step.showEmployerCard ? renderEmployerCard() : ""}
     ${step.showCaseRisks ? renderCaseRisks(step.id) : ""}
     ${renderSections(step)}
-    ${step.showArt99Checks ? Art99.render(isChecked) : ""}
+    ${resolveGuidedPanel(step)?.render(isChecked, state.caseData) || ""}
     ${step.showUvList ? UvList.render(state.caseData) : ""}
     ${step.showOccupations ? renderOccupations() : ""}
     ${nationalityHtml}
@@ -375,18 +404,19 @@ function bindGlobal() {
     const input = e.target;
     if (input?.matches?.('input[type="checkbox"][data-check-id]')) {
       setChecked(input.dataset.checkId, input.checked);
-      if (String(input.dataset.checkId).startsWith("art99:")) {
+      const panel = panelForCheckId(input.dataset.checkId);
+      if (panel) {
         const parent = document.querySelector(
-          `input[data-check-id="core:${Art99.data?.parentChecklistId}"]`
+          `input[data-check-id="core:${panel.data?.parentChecklistId}"]`
         );
-        if (parent) parent.checked = Art99.allComplete(isChecked);
-        const item = input.closest(".art99-item");
+        if (parent) parent.checked = panel.allComplete(isChecked);
+        const item = input.closest(".guided-item, .art99-item");
         if (item) item.classList.toggle("is-done", input.checked);
-        const progress = document.querySelector("#art99-panel .pill");
-        if (progress && Art99.data) {
-          const total = Art99.data.checks.length;
-          const done = Art99.checkIds().filter((id) => isChecked(id)).length;
-          progress.textContent = I18n.t("art99.progress", { done, total });
+        const progress = document.querySelector(`#${panel.panelDomId} .pill`);
+        if (progress && panel.data) {
+          const total = panel.data.checks.length;
+          const done = panel.checkIds().filter((id) => isChecked(id)).length;
+          progress.textContent = I18n.t("guided.progress", { done, total });
         }
       }
     }
@@ -404,7 +434,7 @@ async function init() {
       loadCaseData(),
       fetch("data/steps.json").then((r) => r.json()),
       fetch("data/occupations.json").then((r) => r.json()),
-      Art99.load(),
+      ...Object.values(GUIDED_PANELS).map((p) => p.load()),
       UvList.load(),
     ]);
     state.caseData = caseData;
@@ -414,7 +444,8 @@ async function init() {
     Theme.apply(state.progress.theme || Theme.get());
     await Nationality.load(caseData.worker.nationalityId);
     await I18n.load(state.progress.locale || DEFAULT_LOCALE, caseData.worker.nationalityId);
-    Art99.syncParentChecklist(isChecked, setChecked);
+    syncAllGuidedParents();
+    saveProgress();
     bindGlobal();
     loading.hidden = true;
     document.getElementById("app-shell").hidden = false;

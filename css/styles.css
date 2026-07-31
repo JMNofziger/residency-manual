@@ -479,7 +479,8 @@ a:hover {
   font-size: 0.92rem;
 }
 
-.art99-list {
+.art99-list,
+.guided-list {
   list-style: none;
   margin: 1rem 0 0;
   padding: 0;
@@ -487,30 +488,35 @@ a:hover {
   gap: 0.85rem;
 }
 
-.art99-item {
+.art99-item,
+.guided-item {
   padding: 0.9rem 1rem;
   border-radius: 14px;
   border: 1px solid var(--border);
   background: var(--bg-soft);
 }
 
-.art99-item.is-done {
+.art99-item.is-done,
+.guided-item.is-done {
   border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
 }
 
-.art99-item-head {
+.art99-item-head,
+.guided-item-head {
   display: flex;
   gap: 0.65rem;
   align-items: center;
   margin-bottom: 0.35rem;
 }
 
-.art99-item-head h4 {
+.art99-item-head h4,
+.guided-item-head h4 {
   margin: 0;
   font-size: 1.02rem;
 }
 
-.art99-order {
+.art99-order,
+.guided-order {
   width: 1.7rem;
   height: 1.7rem;
   border-radius: 999px;
@@ -522,16 +528,19 @@ a:hover {
   border: 1px solid var(--border);
 }
 
-.art99-how {
+.art99-how,
+.guided-how {
   margin: 0.65rem 0;
 }
 
-.art99-how ol {
+.art99-how ol,
+.guided-how ol {
   margin: 0.35rem 0 0;
   padding-left: 1.2rem;
 }
 
-.art99-how li {
+.art99-how li,
+.guided-how li {
   margin: 0.25rem 0;
 }
 
@@ -543,7 +552,8 @@ a:hover {
   font-size: 0.92rem;
 }
 
-.art99-pass {
+.art99-pass,
+.guided-pass {
   margin-top: 0.65rem;
 }
 

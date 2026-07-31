@@ -1,0 +1,173 @@
+{
+  "version": 1,
+  "titleKey": "lmtGuide.panelTitle",
+  "introKey": "lmtGuide.panelIntro",
+  "sourceHub": {
+    "labelKey": "sources.hzzLmt",
+    "url": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+    "tier": 1
+  },
+  "parentChecklistId": "lmt-guided-complete",
+  "checks": [
+    {
+      "id": "confirm-lmt-path",
+      "order": 1,
+      "titleKey": "lmtGuide.confirmPath.title",
+      "whyKey": "lmtGuide.confirmPath.why",
+      "howSteps": [
+        {
+          "labelKey": "lmtGuide.confirmPath.how.uv",
+          "url": "https://mup.gov.hr/radne-dozvole/286764"
+        },
+        {
+          "labelKey": "lmtGuide.confirmPath.how.noShopping"
+        },
+        {
+          "labelKey": "lmtGuide.confirmPath.how.hzz",
+          "url": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/"
+        }
+      ],
+      "evidenceKey": "lmtGuide.confirmPath.evidence",
+      "facts": [],
+      "caseHintKeys": ["lmtGuide.confirmPath.caseHint"]
+    },
+    {
+      "id": "related-activity",
+      "order": 2,
+      "titleKey": "lmtGuide.related.title",
+      "whyKey": "lmtGuide.related.why",
+      "howSteps": [
+        {
+          "labelKey": "lmtGuide.related.how.fina",
+          "url": "https://infobiz.fina.hr/"
+        },
+        {
+          "labelKey": "lmtGuide.related.how.duties"
+        },
+        {
+          "labelKey": "lmtGuide.related.how.tips",
+          "url": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/savjeti-za-predaju-zahtjeva/"
+        }
+      ],
+      "evidenceKey": "lmtGuide.related.evidence",
+      "facts": [],
+      "caseHintKeys": ["lmtGuide.related.caseHint"]
+    },
+    {
+      "id": "assemble-request",
+      "order": 3,
+      "titleKey": "lmtGuide.assemble.title",
+      "whyKey": "lmtGuide.assemble.why",
+      "howSteps": [
+        {
+          "labelKey": "lmtGuide.assemble.how.contents"
+        },
+        {
+          "labelKey": "lmtGuide.assemble.how.tips",
+          "url": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/savjeti-za-predaju-zahtjeva/"
+        },
+        {
+          "labelKey": "lmtGuide.assemble.how.consistency"
+        }
+      ],
+      "evidenceKey": "lmtGuide.assemble.evidence",
+      "facts": [],
+      "caseHintKeys": []
+    },
+    {
+      "id": "submit-hzz",
+      "order": 4,
+      "titleKey": "lmtGuide.submit.title",
+      "whyKey": "lmtGuide.submit.why",
+      "howSteps": [
+        {
+          "labelKey": "lmtGuide.submit.how.hub",
+          "url": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/"
+        },
+        {
+          "labelKey": "lmtGuide.submit.how.tips",
+          "url": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/savjeti-za-predaju-zahtjeva/"
+        },
+        {
+          "labelKey": "lmtGuide.submit.how.current"
+        }
+      ],
+      "evidenceKey": "lmtGuide.submit.evidence",
+      "facts": [],
+      "caseHintKeys": ["lmtGuide.submit.caseHint"]
+    },
+    {
+      "id": "notice-outcome",
+      "order": 5,
+      "titleKey": "lmtGuide.notice.title",
+      "whyKey": "lmtGuide.notice.why",
+      "howSteps": [
+        {
+          "labelKey": "lmtGuide.notice.how.store"
+        },
+        {
+          "labelKey": "lmtGuide.notice.how.positive"
+        },
+        {
+          "labelKey": "lmtGuide.notice.how.negative"
+        }
+      ],
+      "evidenceKey": "lmtGuide.notice.evidence",
+      "facts": [],
+      "caseHintKeys": []
+    },
+    {
+      "id": "ninety-day-clock",
+      "order": 6,
+      "titleKey": "lmtGuide.window.title",
+      "whyKey": "lmtGuide.window.why",
+      "howSteps": [
+        {
+          "labelKey": "lmtGuide.window.how.calendar"
+        },
+        {
+          "labelKey": "lmtGuide.window.how.hzz",
+          "url": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/"
+        },
+        {
+          "labelKey": "lmtGuide.window.how.mup",
+          "url": "https://mup.gov.hr/radne-dozvole/286764"
+        }
+      ],
+      "evidenceKey": "lmtGuide.window.evidence",
+      "facts": [
+        {
+          "id": "lmt-positive-notice-window",
+          "value": "90 days",
+          "labelKey": "facts.lmtPositiveNoticeWindow",
+          "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+          "sourceTier": 1,
+          "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
+          "verifiedDate": "2026-07-31"
+        }
+      ],
+      "caseHintKeys": []
+    },
+    {
+      "id": "zagreb-competence",
+      "order": 7,
+      "titleKey": "lmtGuide.competence.title",
+      "whyKey": "lmtGuide.competence.why",
+      "howSteps": [
+        {
+          "labelKey": "lmtGuide.competence.how.case"
+        },
+        {
+          "labelKey": "lmtGuide.competence.how.hzz",
+          "url": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/"
+        },
+        {
+          "labelKey": "lmtGuide.competence.how.confirm"
+        }
+      ],
+      "evidenceKey": "lmtGuide.competence.evidence",
+      "facts": [],
+      "caseHintKeys": ["lmtGuide.competence.caseHint"]
+    }
+  ]
+}

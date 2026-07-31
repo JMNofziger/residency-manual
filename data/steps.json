@@ -133,7 +133,7 @@
       ],
       "showCaseRisks": true,
       "showEmployerCard": true,
-      "showArt99Checks": true,
+      "guidedPanel": "art99",
       "showUvList": true
     },
     {
@@ -201,43 +201,19 @@
       "nationalitySlots": [],
       "sections": [
         {
-          "id": "contract",
-          "titleKey": "steps.employerPackage.contract.title",
-          "bodyKey": "steps.employerPackage.contract.body"
-        },
-        {
-          "id": "form17a",
-          "titleKey": "steps.employerPackage.form17a.title",
-          "bodyKey": "steps.employerPackage.form17a.body"
-        },
-        {
-          "id": "tax",
-          "titleKey": "steps.employerPackage.tax.title",
-          "bodyKey": "steps.employerPackage.tax.body"
+          "id": "overview",
+          "titleKey": "steps.employerPackage.overview.title",
+          "bodyKey": "steps.employerPackage.overview.body"
         }
       ],
       "checklist": [
         {
-          "id": "pkg-draft-contract",
-          "labelKey": "steps.employerPackage.check.contract"
-        },
-        {
-          "id": "pkg-pay-parity",
-          "labelKey": "steps.employerPackage.check.payParity"
-        },
-        {
-          "id": "pkg-form17a",
-          "labelKey": "steps.employerPackage.check.form17a"
-        },
-        {
-          "id": "pkg-housing",
-          "labelKey": "steps.employerPackage.check.housing"
-        },
-        {
-          "id": "pkg-tax-clear",
-          "labelKey": "steps.employerPackage.check.taxClear"
+          "id": "pkg-guided-complete",
+          "labelKey": "steps.employerPackage.check.guided"
         }
       ],
+      "guidedPanel": "employer-package",
+      "showEmployerCard": true,
       "sources": [
         {
           "labelKey": "sources.mupWorkTcn",
@@ -264,54 +240,19 @@
       "nationalitySlots": [],
       "sections": [
         {
-          "id": "what",
-          "titleKey": "steps.lmt.what.title",
-          "bodyKey": "steps.lmt.what.body"
-        },
-        {
-          "id": "filing",
-          "titleKey": "steps.lmt.filing.title",
-          "bodyKey": "steps.lmt.filing.body"
-        },
-        {
-          "id": "window",
-          "titleKey": "steps.lmt.window.title",
-          "bodyKey": "steps.lmt.window.body",
-          "facts": [
-            {
-              "id": "lmt-positive-notice-window",
-              "value": "90 days",
-              "labelKey": "facts.lmtPositiveNoticeWindow",
-              "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
-              "sourceTier": 1,
-              "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
-              "verifiedDate": "2026-07-31"
-            }
-          ]
+          "id": "overview",
+          "titleKey": "steps.lmt.overview.title",
+          "bodyKey": "steps.lmt.overview.body"
         }
       ],
       "checklist": [
         {
-          "id": "lmt-prepare-request",
-          "labelKey": "steps.lmt.check.prepare"
-        },
-        {
-          "id": "lmt-related-activity",
-          "labelKey": "steps.lmt.check.relatedActivity"
-        },
-        {
-          "id": "lmt-submit-hzz",
-          "labelKey": "steps.lmt.check.submit"
-        },
-        {
-          "id": "lmt-positive-notice",
-          "labelKey": "steps.lmt.check.positiveNotice"
-        },
-        {
-          "id": "lmt-file-within-window",
-          "labelKey": "steps.lmt.check.fileWindow"
+          "id": "lmt-guided-complete",
+          "labelKey": "steps.lmt.check.guided"
         }
       ],
+      "guidedPanel": "lmt",
+      "showEmployerCard": true,
       "sources": [
         {
           "labelKey": "sources.hzzLmt",

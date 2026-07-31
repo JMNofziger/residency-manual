@@ -2,7 +2,7 @@
 
 Generated: 2026-07-31
 Case: example-dool-us-manual-labor
-Total cited facts: 30 (Tier 1: 30, Tier 2: 0)
+Total cited facts: 32 (Tier 1: 32, Tier 2: 0)
 
 ## Notes
 
@@ -38,12 +38,14 @@ Total cited facts: 30 (Tier 1: 30, Tier 2: 0)
 | case-art99-ratio | 20% | facts.art99DomesticRatio | HZZ — Novi sustav zapošljavanja stranaca | 1 | 2026-07-31 | 0 | cases/example-dool-us-manual-labor.json |
 | case-inflow-threshold | €100,000 | facts.art99InflowThreshold | HZZ — Novi sustav zapošljavanja stranaca | 1 | 2026-07-31 | 0 | cases/example-dool-us-manual-labor.json |
 | employer-change-after | 6 months | facts.employerChangeAfter | Narodne novine — NN 55/2026 | 1 | 2026-07-31 | 0 | data/steps.json |
-| lmt-positive-notice-window | 90 days | facts.lmtPositiveNoticeWindow | HZZ — Novi sustav zapošljavanja stranaca | 1 | 2026-07-31 | 0 | data/steps.json |
+| lmt-positive-notice-window | 90 days | facts.lmtPositiveNoticeWindow | HZZ — Novi sustav zapošljavanja stranaca | 1 | 2026-07-31 | 0 | data/lmt-checks.json |
 | long-term-fee | €83.62 | facts.longTermFee | MUP — Long-term residence and permanent stay | 1 | 2026-07-31 | 0 | data/steps.json |
 | nn552026-in-force | 2026-06-04 | facts.nn552026InForce | Narodne novine — NN 55/2026 | 1 | 2026-07-31 | 0 | data/steps.json |
 | — | 2023-03 | uv.listEdition | MUP/HZZ — Lista zanimanja (izuzetak od TTR) PDF | 1 | 2026-07-31 | 0 | data/uv-occupations.json |
 | permit-admin-fee | €46.45 | facts.permitFee | MUP — Temporary Stay | 1 | 2026-07-31 | 0 | data/steps.json |
 | permit-decision-timeline | 90 days | facts.permitDecisionTimeline | Narodne novine — NN 55/2026 | 1 | 2026-07-31 | 0 | data/steps.json |
+| pkg-blocked-account | 30 days | facts.art99BlockedAccount | HZZ — Novi sustav zapošljavanja stranaca | 1 | 2026-07-31 | 0 | data/employer-package-checks.json |
+| pkg-inflow-handoff | €100,000 | facts.art99InflowThreshold | HZZ — Novi sustav zapošljavanja stranaca | 1 | 2026-07-31 | 0 | data/employer-package-checks.json |
 | unemployment-long-hold-qualifier | 2 years | facts.unemploymentLongHoldQualifier | Narodne novine — NN 55/2026 | 1 | 2026-07-31 | 0 | data/steps.json |
 | unemployment-window-long-hold | 6 months | facts.unemploymentWindowLongHold | Narodne novine — NN 55/2026 | 1 | 2026-07-31 | 0 | data/steps.json |
 | unemployment-window-standard | 3 months | facts.unemploymentWindowStandard | Narodne novine — NN 55/2026 | 1 | 2026-07-31 | 0 | data/steps.json |
