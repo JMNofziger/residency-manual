@@ -17,6 +17,7 @@ id_ed25519
 *credentials*
 *secrets*
 secrets/
+config/
 config.local.*
 *.local.json
 *.local.js
