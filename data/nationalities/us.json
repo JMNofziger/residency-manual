@@ -23,6 +23,11 @@
       "blurbKey": "workerDocs.blurb",
       "checklist": [
         {
+          "id": "us-pipeline",
+          "labelKey": "workerDocs.pipeline.label",
+          "helpKey": "workerDocs.pipeline.help"
+        },
+        {
           "id": "us-fbi",
           "labelKey": "workerDocs.fbi.label",
           "helpKey": "workerDocs.fbi.help",
@@ -32,6 +37,11 @@
               "url": "https://www.fbi.gov/how-we-can-help-you/need-an-fbi-service-or-more-information/identity-history-summary-checks"
             }
           ]
+        },
+        {
+          "id": "us-apostille-translation",
+          "labelKey": "workerDocs.apostille.label",
+          "helpKey": "workerDocs.apostille.help"
         },
         {
           "id": "us-embassy-guidance",
@@ -61,6 +71,10 @@
           ],
           "links": [
             {
+              "labelKey": "workerDocs.mvepLink",
+              "url": "https://mvep.gov.hr/services-consular-portal/consular-information-22802/stay-of-foreigners/granting-stay-in-croatia/22839"
+            },
+            {
               "labelKey": "workerDocs.embassy.link",
               "url": "https://hr.usembassy.gov/entry-and-residence-requirements/"
             }
@@ -83,15 +97,15 @@
           ],
           "links": [
             {
-              "labelKey": "workerDocs.embassy.link",
-              "url": "https://hr.usembassy.gov/entry-and-residence-requirements/"
+              "labelKey": "workerDocs.mvepLink",
+              "url": "https://mvep.gov.hr/services-consular-portal/consular-information-22802/stay-of-foreigners/granting-stay-in-croatia/22839"
             }
           ]
         },
         {
-          "id": "us-apostille-translation",
-          "labelKey": "workerDocs.apostille.label",
-          "helpKey": "workerDocs.apostille.help"
+          "id": "us-name-consistency",
+          "labelKey": "workerDocs.names.label",
+          "helpKey": "workerDocs.names.help"
         }
       ]
     },

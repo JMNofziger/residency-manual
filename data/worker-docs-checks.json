@@ -1,0 +1,169 @@
+{
+  "version": 1,
+  "titleKey": "wdGuide.panelTitle",
+  "introKey": "wdGuide.panelIntro",
+  "sourceHub": {
+    "labelKey": "sources.mupTempStay",
+    "url": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661",
+    "tier": 1
+  },
+  "parentChecklistId": "wd-guided-complete",
+  "checks": [
+    {
+      "id": "passport",
+      "order": 1,
+      "titleKey": "wdGuide.passport.title",
+      "whyKey": "wdGuide.passport.why",
+      "howSteps": [
+        {
+          "labelKey": "wdGuide.passport.how.valid"
+        },
+        {
+          "labelKey": "wdGuide.passport.how.copy"
+        },
+        {
+          "labelKey": "wdGuide.passport.how.mup",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661"
+        }
+      ],
+      "evidenceKey": "wdGuide.passport.evidence",
+      "facts": [],
+      "caseHintKeys": []
+    },
+    {
+      "id": "criminal-record",
+      "order": 2,
+      "titleKey": "wdGuide.criminal.title",
+      "whyKey": "wdGuide.criminal.why",
+      "howSteps": [
+        {
+          "labelKey": "wdGuide.criminal.how.countries"
+        },
+        {
+          "labelKey": "wdGuide.criminal.how.nationality"
+        },
+        {
+          "labelKey": "wdGuide.criminal.how.mup",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661"
+        }
+      ],
+      "evidenceKey": "wdGuide.criminal.evidence",
+      "facts": [],
+      "caseHintKeys": ["wdGuide.criminal.caseHint"]
+    },
+    {
+      "id": "health-insurance",
+      "order": 3,
+      "titleKey": "wdGuide.insurance.title",
+      "whyKey": "wdGuide.insurance.why",
+      "howSteps": [
+        {
+          "labelKey": "wdGuide.insurance.how.policy"
+        },
+        {
+          "labelKey": "wdGuide.insurance.how.mup",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661"
+        },
+        {
+          "labelKey": "wdGuide.insurance.how.laterHzzo"
+        }
+      ],
+      "evidenceKey": "wdGuide.insurance.evidence",
+      "facts": [],
+      "caseHintKeys": []
+    },
+    {
+      "id": "accommodation",
+      "order": 4,
+      "titleKey": "wdGuide.housing.title",
+      "whyKey": "wdGuide.housing.why",
+      "howSteps": [
+        {
+          "labelKey": "wdGuide.housing.how.proof"
+        },
+        {
+          "labelKey": "wdGuide.housing.how.employerStep"
+        },
+        {
+          "labelKey": "wdGuide.housing.how.mup",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661"
+        }
+      ],
+      "evidenceKey": "wdGuide.housing.evidence",
+      "facts": [],
+      "caseHintKeys": ["wdGuide.housing.caseHint"]
+    },
+    {
+      "id": "photos",
+      "order": 5,
+      "titleKey": "wdGuide.photos.title",
+      "whyKey": "wdGuide.photos.why",
+      "howSteps": [
+        {
+          "labelKey": "wdGuide.photos.how.specs"
+        },
+        {
+          "labelKey": "wdGuide.photos.how.mup",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661"
+        },
+        {
+          "labelKey": "wdGuide.photos.how.noInvent"
+        }
+      ],
+      "evidenceKey": "wdGuide.photos.evidence",
+      "facts": [],
+      "caseHintKeys": []
+    },
+    {
+      "id": "translations",
+      "order": 6,
+      "titleKey": "wdGuide.translations.title",
+      "whyKey": "wdGuide.translations.why",
+      "howSteps": [
+        {
+          "labelKey": "wdGuide.translations.how.list"
+        },
+        {
+          "labelKey": "wdGuide.translations.how.apostille"
+        },
+        {
+          "labelKey": "wdGuide.translations.how.sworn"
+        }
+      ],
+      "evidenceKey": "wdGuide.translations.evidence",
+      "facts": [],
+      "caseHintKeys": ["wdGuide.translations.caseHint"]
+    },
+    {
+      "id": "timing",
+      "order": 7,
+      "titleKey": "wdGuide.timing.title",
+      "whyKey": "wdGuide.timing.why",
+      "howSteps": [
+        {
+          "labelKey": "wdGuide.timing.how.order"
+        },
+        {
+          "labelKey": "wdGuide.timing.how.lmtWindow"
+        },
+        {
+          "labelKey": "wdGuide.timing.how.hzz",
+          "url": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/"
+        }
+      ],
+      "evidenceKey": "wdGuide.timing.evidence",
+      "facts": [
+        {
+          "id": "wd-lmt-window-reminder",
+          "value": "90 days",
+          "labelKey": "facts.lmtPositiveNoticeWindow",
+          "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+          "sourceTier": 1,
+          "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
+          "verifiedDate": "2026-07-31"
+        }
+      ],
+      "caseHintKeys": []
+    }
+  ]
+}

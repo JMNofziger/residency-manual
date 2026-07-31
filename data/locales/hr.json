@@ -230,22 +230,13 @@
     },
     "workerDocs": {
       "title": "Prikupite dokumente radnika",
-      "summary": "Osnovni komplet za DTZ; paket državljanstva dodaje specifikacije u panelu ispod.",
-      "core": {
-        "title": "Osnovni dokumenti (svi državljani trećih zemalja)",
-        "body": "Tipični MUP spisi za privremeni boravak / boravak i rad traže: važeću putovnicu; uvjerenja o nekažnjavanju prema zemljama boravka; dokaz zdravstvenog osiguranja; dokaz smještaja; biometrijske fotografije; obrasce; te dokumente poslodavca iz ranijih koraka. Točne liste su na MUP stranicama."
-      },
-      "translations": {
-        "title": "Prijevodi i formalnosti",
-        "body": "Strane javne isprave obično trebaju ovjereni hrvatski prijevod (i apostille/legalizaciju gdje treba). Kaznene evidencije pokrenite rano."
+      "summary": "Sastavite spis radnika za zahtjev za boravak i rad. Koraci specifični za državu (npr. FBI za SAD) su u panelu državljanstva.",
+      "overview": {
+        "title": "Što ide u spis radnika",
+        "body": "Koristite vođeni popis ispod za uobičajene dokumente koje većina državljana trećih zemalja treba. Zatim dovršite panel državljanstva za korake specifične za zemlju. Uvijek ponovno provjerite živu MUP stranicu o privremenom boravku za točan popis."
       },
       "check": {
-        "passport": "Prikupljena kopija važeće putovnice",
-        "criminalRecord": "Zatražena kaznena evidencija (postupak u panelu državljanstva)",
-        "insurance": "Dokaz zdravstvenog osiguranja spreman",
-        "accommodation": "Dokaz smještaja spreman",
-        "photos": "Fotografije prema specifikaciji",
-        "translations": "Plan prijevoda / apostillea u tijeku"
+        "guided": "Završio/la sam vođenu samoprovjeru dokumenata radnika (svi redovi ispod)"
       }
     },
     "filePermit": {
@@ -785,6 +776,83 @@
     "a1": {
       "title": "A1.1 hrvatski jezik",
       "body": "Razina jezika (A1.1, latinica) koja može biti potrebna za produženje boravka prema pravilima 2026. Dio odredbi ima odgođeno stupanje na snagu — vidi činjenice u koraku o usklađenosti."
+    }
+  },
+  "wdGuide": {
+    "panelTitle": "Dokumenti radnika — vođena samoprovjera",
+    "panelIntro": "Prikupite dokaze koje će radnik trebati za podnošenje boravka i rada. Označite red tek kad imate dokument ili jasnu narudžbu u tijeku. Dovršetak svih redova označava stavku Koraka 5.",
+    "passport": {
+      "title": "Važeća putovnica",
+      "why": "Zahtjev identificira radnika putovnicom. Istekla ili neusklađena putovnica zaustavlja podnošenje.",
+      "how": {
+        "valid": "Potvrdite da je putovnica važeća za planirani boravak i da odgovara pravnom imenu.",
+        "copy": "Sačuvajte jasan kolor sken biografske stranice (i vize/pečate ako MUP traži).",
+        "mup": "Ponovno provjerite MUP očekivanja za stranice putovnice."
+      },
+      "evidence": "Sken putovnice + bilješka o datumu isteka."
+    },
+    "criminal": {
+      "title": "Uvjerenje o nekažnjavanju / kaznena evidencija",
+      "why": "MUP tipično traži dokaze o kaznenoj evidenciji iz relevantnih zemalja boravka. Postupak ovisi o državljanstvu.",
+      "how": {
+        "countries": "Popišite zemlje u kojima je radnik živio dovoljno dugo da se može tražiti uvjerenje.",
+        "nationality": "Otvorite panel državljanstva na ovom koraku i slijedite službeni postupak te zemlje (za SAD: FBI Identity History Summary).",
+        "mup": "Na MUP stranicama potvrdite treba li apostille/legalizacija i prijevod."
+      },
+      "evidence": "Naručeni ili zaprimljeni dokument(i) s bilješkama praćenja.",
+      "caseHint": "Ne izmišljajte generičko „policijsko pismo“. Koristite službeni kanal za državljanstvo radnika."
+    },
+    "insurance": {
+      "title": "Dokaz zdravstvenog osiguranja",
+      "why": "Zahtjevi za boravak uobičajeno traže dokaz da je radnik osiguran do uređenja javnog osiguranja.",
+      "how": {
+        "policy": "Prikupite policu ili potvrdu koja pokriva Hrvatsku za planirani dolazak/podnošenje.",
+        "mup": "Potvrdite prihvatljivo osiguranje na MUP stranici o privremenom boravku.",
+        "laterHzzo": "Prijava javnog zdravstvenog osiguranja (HZZO) dolazi nakon odobrenog rada — ovaj korak je dokaz za spis zahtjeva."
+      },
+      "evidence": "PDF police/potvrde s datumima pokrića."
+    },
+    "housing": {
+      "title": "Dokaz smještaja",
+      "why": "MUP očekuje dokaz gdje će radnik boraviti. To mora odgovarati putu smještaja iz paketa poslodavca.",
+      "how": {
+        "proof": "Prikupite najam, hotelsku rezervaciju ili potvrdu poslodavca o smještaju.",
+        "employerStep": "Ponovno upotrijebite put dokaza iz Koraka 3 (smještaj poslodavca ili radnikov).",
+        "mup": "Potvrdite očekivanja dokumenata o smještaju na MUP stranicama."
+      },
+      "evidence": "Najam / rezervacija / pismo poslodavca usklađeno s adresom na zahtjevu.",
+      "caseHint": "Ista adresa mora biti na dokazu smještaja, prijavi i obrascima dozvole."
+    },
+    "photos": {
+      "title": "Fotografije za zahtjev / biometriju",
+      "why": "Podnošenja i biometrijske iskaznice trebaju fotografije prema službenoj specifikaciji.",
+      "how": {
+        "specs": "Zatražite u studiju fotografije za hrvatski boravak/biometriju.",
+        "mup": "Slijedite veličinu i pozadinu prema živim MUP uputama — ne pogađajte milimetre napamet.",
+        "noInvent": "Ovaj priručnik ne izmišlja dimenzije fotografija; koristite službenu MUP specifikaciju na dan snimanja."
+      },
+      "evidence": "Fotografije prema aktualnoj MUP specifikaciji."
+    },
+    "translations": {
+      "title": "Plan apostille/legalizacije i hrvatskog prijevoda",
+      "why": "Strane javne isprave obično trebaju formalnu ovjeru i ovjereni hrvatski prijevod prije nego ih MUP prihvati.",
+      "how": {
+        "list": "Popišite svaku stranu javnu ispravu u spisu (kaznena evidencija, civilni status ako se traži itd.).",
+        "apostille": "Dogovorite apostille ili legalizaciju prema pravilima zemlje izdavanja.",
+        "sworn": "Rano rezervirajte sudskog tumača — to često sjedi na kritičnom putu."
+      },
+      "evidence": "Evidencija: dokument → status apostille/legalizacije → termin tumača.",
+      "caseHint": "Pokrenite lanac kaznena evidencija → apostille → prijevod prije nego rok testa tržišta rada postane kratak."
+    },
+    "timing": {
+      "title": "Uskladite rokove dokumenata s rokom testa tržišta rada",
+      "why": "Pozitivno mišljenje HZZ-a vremenski je ograničeno. Spori dokumenti radnika mogu potrošiti rok podnošenja.",
+      "how": {
+        "order": "Preferirani redoslijed: najprije dugi rokovi (kaznena evidencija), zatim apostille/prijevod, zatim putovanje/termini.",
+        "lmtWindow": "Nakon pozitivnog HZZ mišljenja stavite podnošenje boravka i rada u kalendar unutar citiranog roka.",
+        "hzz": "Ponovno pročitajte HZZ smjernice o roku pozitivnog mišljenja dok je spis radnika još u pokretu."
+      },
+      "evidence": "Zajednički vremenski plan s vlasnicima za FBI/apostille/prijevod i HZZ rok."
     }
   }
 }

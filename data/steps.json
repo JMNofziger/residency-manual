@@ -289,42 +289,18 @@
       ],
       "sections": [
         {
-          "id": "core-docs",
-          "titleKey": "steps.workerDocs.core.title",
-          "bodyKey": "steps.workerDocs.core.body"
-        },
-        {
-          "id": "translations",
-          "titleKey": "steps.workerDocs.translations.title",
-          "bodyKey": "steps.workerDocs.translations.body"
+          "id": "overview",
+          "titleKey": "steps.workerDocs.overview.title",
+          "bodyKey": "steps.workerDocs.overview.body"
         }
       ],
       "checklist": [
         {
-          "id": "wd-passport",
-          "labelKey": "steps.workerDocs.check.passport"
-        },
-        {
-          "id": "wd-criminal-record",
-          "labelKey": "steps.workerDocs.check.criminalRecord"
-        },
-        {
-          "id": "wd-insurance",
-          "labelKey": "steps.workerDocs.check.insurance"
-        },
-        {
-          "id": "wd-accommodation",
-          "labelKey": "steps.workerDocs.check.accommodation"
-        },
-        {
-          "id": "wd-photos",
-          "labelKey": "steps.workerDocs.check.photos"
-        },
-        {
-          "id": "wd-translations",
-          "labelKey": "steps.workerDocs.check.translations"
+          "id": "wd-guided-complete",
+          "labelKey": "steps.workerDocs.check.guided"
         }
       ],
+      "guidedPanel": "worker-docs",
       "showEmployerCard": true,
       "sources": [
         {
@@ -335,6 +311,11 @@
         {
           "labelKey": "sources.mupWorkTcn",
           "url": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+          "tier": 1
+        },
+        {
+          "labelKey": "sources.mvepStay",
+          "url": "https://mvep.gov.hr/services-consular-portal/consular-information-22802/stay-of-foreigners/granting-stay-in-croatia/22839",
           "tier": 1
         }
       ],

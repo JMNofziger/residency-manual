@@ -230,22 +230,13 @@
     },
     "workerDocs": {
       "title": "Collect worker documents",
-      "summary": "Core TCN document set; nationality pack adds country-specific how-tos in the panel below.",
-      "core": {
-        "title": "Core documents (all third-country nationals)",
-        "body": "Typical MUP temporary stay / stay-and-work files require: valid passport; criminal-record / police certificate(s) as requested for the worker’s countries of residence; proof of health insurance; proof of accommodation; biometric-style photos; application forms; and employer documents from earlier steps. Exact lists are on MUP temporary-stay and work-of-TCN pages — treat those as authoritative."
-      },
-      "translations": {
-        "title": "Translations & formalities",
-        "body": "Foreign public documents usually need a certified Croatian translation (and apostille/legalization where required). Start background checks early — they often gate the filing date."
+      "summary": "Assemble the worker’s file for the stay-and-work application. Country-specific steps (for example U.S. FBI checks) appear in the nationality panel.",
+      "overview": {
+        "title": "What belongs in the worker file",
+        "body": "Use the guided checklist below for the common documents every third-country national usually needs. Then complete the nationality panel for country-specific steps. Always re-check the live MUP temporary-stay page for the exact list that applies to your filing."
       },
       "check": {
-        "passport": "Valid passport copy collected",
-        "criminalRecord": "Criminal-record documents requested (country-specific process in nationality panel)",
-        "insurance": "Health insurance evidence ready",
-        "accommodation": "Accommodation proof ready",
-        "photos": "Photos meeting biometric/application specs",
-        "translations": "Translation / apostille plan underway"
+        "guided": "I completed the guided worker-document self-check (all rows below)"
       }
     },
     "filePermit": {
@@ -784,6 +775,83 @@
     "a1": {
       "title": "A1.1 Croatian language requirement",
       "body": "A language level (A1.1, Latin script) that can be required for extending stay under 2026 rules. Some related articles have a deferred force date — see the Compliance step facts."
+    }
+  },
+  "wdGuide": {
+    "panelTitle": "Worker documents — guided self-check",
+    "panelIntro": "Gather evidence the worker will need for the stay-and-work filing. Mark a row only when you have the document or a clear order in progress. Completing every row marks the Step 5 checklist item.",
+    "passport": {
+      "title": "Valid passport",
+      "why": "The application identifies the worker by passport. An expired or mismatched passport stalls filing.",
+      "how": {
+        "valid": "Confirm the passport is valid for the planned stay and matches the worker’s legal name.",
+        "copy": "Keep a clear color scan of the biodata page (and visas/stamps if MUP asks).",
+        "mup": "Re-check MUP temporary-stay document expectations for passport pages."
+      },
+      "evidence": "Passport scan + note of expiry date."
+    },
+    "criminal": {
+      "title": "Criminal-record / police certificate",
+      "why": "MUP typically asks for criminal-record evidence from relevant countries of residence. The process is nationality-specific.",
+      "how": {
+        "countries": "List every country where the worker lived long enough that a certificate may be required.",
+        "nationality": "Open the nationality panel on this step and follow that country’s official process (for U.S. workers: FBI Identity History Summary).",
+        "mup": "Confirm on MUP pages whether apostille/legalization and translation are required for the certificate you obtained."
+      },
+      "evidence": "Ordered or received criminal-record document(s) with tracking notes.",
+      "caseHint": "Do not invent a generic “police letter.” Use the official channel for the worker’s nationality."
+    },
+    "insurance": {
+      "title": "Health insurance evidence",
+      "why": "Stay applications usually require proof the worker is insured for the period of stay until public coverage is arranged.",
+      "how": {
+        "policy": "Collect a policy or certificate that covers Croatia for the planned arrival/filing window.",
+        "mup": "Confirm acceptable insurance wording on the MUP temporary-stay page.",
+        "laterHzzo": "Remember public health insurance registration (HZZO) comes after work is authorized — this step is about evidence for the application file."
+      },
+      "evidence": "Insurance certificate/policy PDF with coverage dates."
+    },
+    "housing": {
+      "title": "Accommodation proof",
+      "why": "MUP expects proof of where the worker will stay. This must match the housing path you prepared in the employer package step.",
+      "how": {
+        "proof": "Collect a lease, hotel booking, or employer housing confirmation that matches the planned address.",
+        "employerStep": "Reuse the housing evidence path from Step 3 (employer-provided vs worker-arranged).",
+        "mup": "Confirm accommodation document expectations on MUP temporary-stay pages."
+      },
+      "evidence": "Lease / booking / employer housing letter aligned with the application address.",
+      "caseHint": "Keep the same address story on housing proof, registration, and the permit forms."
+    },
+    "photos": {
+      "title": "Application / biometric-style photos",
+      "why": "Filings and biometric cards need photos that meet official specifications.",
+      "how": {
+        "specs": "Ask the photo studio for Croatian residence/biometric application photos.",
+        "mup": "Follow size and background rules on the live MUP instructions — do not guess millimetres from memory.",
+        "noInvent": "This runbook does not invent photo dimensions; use the official MUP spec the day you shoot."
+      },
+      "evidence": "Printed/digital photos meeting the current MUP specification."
+    },
+    "translations": {
+      "title": "Apostille / legalization and Croatian translation plan",
+      "why": "Foreign public documents usually need formal authentication and a certified Croatian translation before MUP will accept them.",
+      "how": {
+        "list": "List every foreign public document in the file (criminal record, civil status if requested, etc.).",
+        "apostille": "Arrange apostille or legalization as required for that issuing country.",
+        "sworn": "Book a court-sworn Croatian translator early — this often sits on the critical path."
+      },
+      "evidence": "Tracker: document → apostille/legalization status → translator booking.",
+      "caseHint": "Start the criminal-record → apostille → translation chain before the labor market test clock gets short."
+    },
+    "timing": {
+      "title": "Align document timing with the labor market test window",
+      "why": "A positive labor market opinion is time-limited. Slow worker documents can burn the filing window.",
+      "how": {
+        "order": "Preferred order: order long-lead items (criminal record) first, then apostille/translation, then travel/appointments.",
+        "lmtWindow": "After a positive HZZ notice, calendar the stay-and-work filing inside the cited validity window.",
+        "hzz": "Re-read HZZ guidance on the positive-notice window while the worker file is still in motion."
+      },
+      "evidence": "Shared timeline with owners for FBI/apostille/translation and the HZZ notice deadline."
     }
   }
 }

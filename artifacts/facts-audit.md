@@ -2,7 +2,7 @@
 
 Generated: 2026-07-31
 Case: example-dool-us-manual-labor
-Total cited facts: 32 (Tier 1: 32, Tier 2: 0)
+Total cited facts: 33 (Tier 1: 33, Tier 2: 0)
 
 ## Notes
 
@@ -52,3 +52,4 @@ Total cited facts: 32 (Tier 1: 32, Tier 2: 0)
 | us-police-registration | 2 days | facts.usPoliceRegistration | MVEP — Granting Stay in Croatia | 1 | 2026-07-31 | 0 | data/nationalities/us.json |
 | us-visa-free-window | 90/180 | facts.usVisaFreeWindow | MVEP — Granting Stay in Croatia | 1 | 2026-07-31 | 0 | data/nationalities/us.json |
 | us-visa-free-window-docs | 90/180 | facts.usVisaFreeWindow | MVEP — Granting Stay in Croatia | 1 | 2026-07-31 | 0 | data/nationalities/us.json |
+| wd-lmt-window-reminder | 90 days | facts.lmtPositiveNoticeWindow | HZZ — Novi sustav zapošljavanja stranaca | 1 | 2026-07-31 | 0 | data/worker-docs-checks.json |

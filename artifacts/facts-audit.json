@@ -1,8 +1,8 @@
 {
   "generatedAt": "2026-07-31",
   "caseId": "example-dool-us-manual-labor",
-  "factCount": 32,
-  "tier1Count": 32,
+  "factCount": 33,
+  "tier1Count": 33,
   "tier2Count": 0,
   "notes": [
     "Phase 5 live Tier-1 pass completed 2026-07-31 — see artifacts/phase5-verification.md.",
@@ -374,7 +374,7 @@
       "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/nationalities/us.json",
-      "path": "slots.worker-docs.checklist[3].facts[0]"
+      "path": "slots.worker-docs.checklist[5].facts[0]"
     },
     {
       "id": "us-visa-free-window",
@@ -398,7 +398,19 @@
       "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/nationalities/us.json",
-      "path": "slots.worker-docs.checklist[2].facts[0]"
+      "path": "slots.worker-docs.checklist[4].facts[0]"
+    },
+    {
+      "id": "wd-lmt-window-reminder",
+      "value": "90 days",
+      "labelKey": "facts.lmtPositiveNoticeWindow",
+      "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+      "sourceTier": 1,
+      "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
+      "verifiedDate": "2026-07-31",
+      "ageDaysAsOfAudit": 0,
+      "file": "data/worker-docs-checks.json",
+      "path": "checks[6].facts[0]"
     }
   ]
 }

@@ -1,42 +1,51 @@
 {
   "label": "Sjedinjene Američke Države",
   "facts": {
-    "usVisaFreeWindow": "Bezvizni kratki boravak za SAD (dani u razdoblju)",
-    "usPoliceRegistration": "Rok samoprijave stranca ako pružatelj smještaja ne može prijaviti (MVEP)"
+    "usVisaFreeWindow": "Bezvizni kratki boravak za SAD (dani unutar / izvan razdoblja)",
+    "usPoliceRegistration": "Rok samoprijave ako pružatelj smještaja ne može prijaviti boravak (MVEP)"
   },
   "orient": {
-    "title": "Državljanin SAD-a — praktične razlike",
-    "blurb": "Državljani SAD-a podliježu istim pravilima Zakona o strancima / jedinstvene dozvole kao i drugi DTZ. U praksi se razlikuju: bezvizni kratki ulazak (citirano), stranice Ambasade SAD-a u Hrvatskoj te američki kazneni list (FBI Identity History Summary). Bezvizni boravak nije odobrenje za rad."
+    "title": "Državljanin SAD-a — što je drugačije u praksi",
+    "blurb": "Državljani SAD-a podliježu istom hrvatskom zakonu o strancima i pravilima dozvole za boravak i rad kao i drugi državljani trećih zemalja. U praksi se razlikuju: bezvizni kratki ulazak (citirano), stranice Ambasade SAD-a u Hrvatskoj te američki postupak kaznene evidencije (FBI Identity History Summary). Bezvizni boravak nije dopuštenje za rad."
   },
   "workerDocs": {
-    "title": "Dokumentacija specifična za SAD",
-    "blurb": "Koristite uz osnovnu DTZ listu iznad. Primarni izvori: Ambasada SAD-a — ulazak i boravak te FBI Identity History Summary Checks.",
+    "title": "Koraci dokumenata specifični za SAD",
+    "blurb": "Dovršite ovo uz (ili paralelno s) osnovnim vođenim popisom dokumenata radnika. Službeni izvori: Ambasada SAD-a — ulazak i boravak, FBI Identity History Summary Checks i MVEP smjernice o odobravanju boravka.",
+    "pipeline": {
+      "label": "Postavite lanac dokumenata s vlasnicima i datumima",
+      "help": "Predloženi redoslijed: (1) naručite FBI Identity History Summary, (2) apostille, (3) sudski tumač na hrvatski, (4) osiguranje + fotografije + dokaz smještaja, (5) putovanje/termini. Stavite vlasnike u zajednički kalendar kako se ne bi potrošio rok testa tržišta rada."
+    },
     "fbi": {
-      "label": "Naručite FBI Identity History Summary (kaznena evidencija)",
-      "help": "Hrvatska tipično očekuje američki dokument o kaznenoj evidenciji. Koristite službeni FBI postupak; ostavite vrijeme za obradu, zatim apostille/prijevod prema MUP zahtjevima.",
+      "label": "Naručite FBI Identity History Summary (američka kaznena evidencija)",
+      "help": "Hrvatska tipično očekuje američki dokument o kaznenoj evidenciji. Koristite isključivo službeni FBI postupak. Uračunajte vrijeme obrade prije apostillea i prijevoda.",
       "link": "FBI — Identity History Summary Checks"
     },
+    "apostille": {
+      "label": "Stavite apostille na FBI/civilne isprave, zatim sudski hrvatski prijevod",
+      "help": "Nakon što stigne FBI (i druge američke javne isprave koje MUP traži), dogovorite haški apostille, zatim sudski tumač na hrvatski. Počnite rano — to često određuje datum podnošenja."
+    },
     "embassy": {
-      "label": "Pročitajte zahtjeve Ambasade SAD-a za ulazak i boravak",
-      "help": "Službeni sažetak vlade SAD-a o bezviznom boravku, zahtjevima za privremeni boravak i prijavi boravka.",
+      "label": "Pročitajte smjernice Ambasade SAD-a o ulasku i boravku",
+      "help": "Koristite stranicu Ambasade za napomene građanima o bezviznom boravku, zahtjevima za boravak i prijavi. Ne zamjenjuje MUP/HZZ pravila same radne dozvole.",
       "link": "Ambasada SAD-a u HR — Entry and Residence"
     },
     "visaFree": {
-      "label": "Planirajte ulazak unutar bezviznih pravila (i dalje bez rada)",
-      "help": "Nositelji američke putovnice mogu ući bez vize za kratki boravak unutar citiranog prozora. To pomaže za termine, ali ne ovlašćuje za rad."
+      "label": "Planirajte ulazak pod bezviznim pravilima (i dalje bez rada)",
+      "help": "Nositelji američke putovnice mogu ući bez vize za kratki boravak unutar citiranog prozora. To pomaže za termine u Hrvatskoj, ali rad i dalje zahtijeva dozvolu za boravak i rad. Potvrdite aktualni tekst na MVEP i stranici Ambasade."
     },
+    "mvepLink": "MVEP — Odobravanje boravka u Hrvatskoj",
     "registration": {
-      "label": "Organizirajte prijavu smještaja / boravka nakon dolaska",
-      "help": "MVEP: pružatelj smještaja prijavljuje putem eVisitora u roku od jednog dana; ako ne može, državljanin treće zemlje mora se prijaviti unutar citiranog roka od ulaska ili promjene smještaja. Hoteli to često odrade. Potvrdite aktualnu MUP/eVisitor praksu. Rok citiran:"
+      "label": "Isplanirajte prijavu smještaja nakon dolaska",
+      "help": "MVEP: pružatelji smještaja uobičajeno prijavljuju goste brzo putem eVisitora; ako ne mogu, stranac se mora sam prijaviti unutar citiranog roka od ulaska ili promjene adrese. Hoteli to često odrade. Potvrdite aktualnu MUP/eVisitor praksu za vaš tip smještaja. Citirani rok:"
     },
-    "apostille": {
-      "label": "Apostille + ovjereni hrvatski prijevod američkih isprava",
-      "help": "Očekujte apostille (Haag) na FBI/civilnim ispravama i sudski tumač za hrvatski prijevod. Pokrenite lanac prije nego TTR rok postane tijesan."
+    "names": {
+      "label": "Držite pravno ime istim na svim dokumentima",
+      "help": "Putovnica, FBI sažetak, apostille, prijevod, ugovor o radu, zahtjev za test tržišta rada i obrasci boravka i rada trebaju istu pravnu ortografiju imena. Ispravite nesklad prije podnošenja."
     }
   },
   "filePermit": {
-    "title": "Napomene o kanalu podnošenja (SAD)",
-    "notes": "Mnogi državljani SAD-a koji su zakonito prisutni mogu podnijeti zahtjev u zemlji kod nadležne policije/MUP-a nakon TTR; drugima treba konzularni kanal ovisno o statusu i uputama MUP-a. Potvrdite kanal na MUP-u i stranici Ambasade. Nema posebnog ugovora SAD-a koji ublažava standarde radne dozvole.",
+    "title": "Napomene o kanalu podnošenja (radnici iz SAD-a)",
+    "notes": "Mnogi državljani SAD-a koji su već zakonito prisutni mogu podnijeti zahtjev u Hrvatskoj kod nadležne policije/MUP-a nakon testa tržišta rada. Drugima treba konzularni kanal ovisno o statusu i uputama MUP-a. Potvrdite ispravan kanal na MUP stranicama i stranici Ambasade. Nema ugovora SAD-a koji snižava hrvatske standarde radne dozvole.",
     "embassyLink": "Ambasada SAD-a u HR — Entry and Residence"
   }
 }
