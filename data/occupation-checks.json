@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "titleKey": "occGuide.panelTitle",
+  "introKey": "occGuide.panelIntro",
+  "sourceHub": {
+    "labelKey": "sources.hzzLmt",
+    "url": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+    "tier": 1
+  },
+  "parentChecklistId": "occ-guided-complete",
+  "checks": [
+    {
+      "id": "pick-title",
+      "order": 1,
+      "titleKey": "occGuide.pick.title",
+      "whyKey": "occGuide.pick.why",
+      "howSteps": [
+        {
+          "labelKey": "occGuide.pick.how.list"
+        },
+        {
+          "labelKey": "occGuide.pick.how.select"
+        },
+        {
+          "labelKey": "occGuide.pick.how.consistent"
+        }
+      ],
+      "evidenceKey": "occGuide.pick.evidence",
+      "facts": [],
+      "caseHintKeys": ["occGuide.pick.caseHint"]
+    },
+    {
+      "id": "match-nkd",
+      "order": 2,
+      "titleKey": "occGuide.nkd.title",
+      "whyKey": "occGuide.nkd.why",
+      "howSteps": [
+        {
+          "labelKey": "occGuide.nkd.how.card"
+        },
+        {
+          "labelKey": "occGuide.nkd.how.fina",
+          "url": "https://infobiz.fina.hr/"
+        },
+        {
+          "labelKey": "occGuide.nkd.how.duties"
+        }
+      ],
+      "evidenceKey": "occGuide.nkd.evidence",
+      "facts": [],
+      "caseHintKeys": ["occGuide.nkd.caseHint"]
+    },
+    {
+      "id": "search-uv",
+      "order": 3,
+      "titleKey": "occGuide.uv.title",
+      "whyKey": "occGuide.uv.why",
+      "howSteps": [
+        {
+          "labelKey": "occGuide.uv.how.panel"
+        },
+        {
+          "labelKey": "occGuide.uv.how.pdf",
+          "url": "https://mup.gov.hr/UserDocsImages/2024/8/Lista-zanimanja-izuzetak-od-provedbe-testa-trzista-rada_2023.pdf"
+        },
+        {
+          "labelKey": "occGuide.uv.how.hub",
+          "url": "https://mup.gov.hr/radne-dozvole/286764"
+        },
+        {
+          "labelKey": "occGuide.uv.how.noShopping"
+        }
+      ],
+      "evidenceKey": "occGuide.uv.evidence",
+      "facts": [],
+      "caseHintKeys": ["occGuide.uv.caseHint"]
+    },
+    {
+      "id": "path-decision",
+      "order": 4,
+      "titleKey": "occGuide.path.title",
+      "whyKey": "occGuide.path.why",
+      "howSteps": [
+        {
+          "labelKey": "occGuide.path.how.lmtDefault"
+        },
+        {
+          "labelKey": "occGuide.path.how.uvOnly"
+        },
+        {
+          "labelKey": "occGuide.path.how.record"
+        }
+      ],
+      "evidenceKey": "occGuide.path.evidence",
+      "facts": [],
+      "caseHintKeys": ["occGuide.path.caseHint"]
+    },
+    {
+      "id": "duty-template",
+      "order": 5,
+      "titleKey": "occGuide.duties.title",
+      "whyKey": "occGuide.duties.why",
+      "howSteps": [
+        {
+          "labelKey": "occGuide.duties.how.template"
+        },
+        {
+          "labelKey": "occGuide.duties.how.adapt"
+        },
+        {
+          "labelKey": "occGuide.duties.how.hzz",
+          "url": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/savjeti-za-predaju-zahtjeva/"
+        }
+      ],
+      "evidenceKey": "occGuide.duties.evidence",
+      "facts": [],
+      "caseHintKeys": ["occGuide.duties.caseHint"]
+    },
+    {
+      "id": "lock-filing",
+      "order": 6,
+      "titleKey": "occGuide.lock.title",
+      "whyKey": "occGuide.lock.why",
+      "howSteps": [
+        {
+          "labelKey": "occGuide.lock.how.contract"
+        },
+        {
+          "labelKey": "occGuide.lock.how.lmt"
+        },
+        {
+          "labelKey": "occGuide.lock.how.permit",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663"
+        }
+      ],
+      "evidenceKey": "occGuide.lock.evidence",
+      "facts": [],
+      "caseHintKeys": []
+    }
+  ]
+}

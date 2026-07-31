@@ -144,39 +144,23 @@
       "nationalitySlots": [],
       "sections": [
         {
-          "id": "primary",
-          "titleKey": "steps.occupation.primary.title",
-          "bodyKey": "steps.occupation.primary.body"
-        },
-        {
-          "id": "nkd",
-          "titleKey": "steps.occupation.nkd.title",
-          "bodyKey": "steps.occupation.nkd.body"
-        },
-        {
-          "id": "lmt-vs-deficit",
-          "titleKey": "steps.occupation.lmtVsDeficit.title",
-          "bodyKey": "steps.occupation.lmtVsDeficit.body"
+          "id": "overview",
+          "titleKey": "steps.occupation.overview.title",
+          "bodyKey": "steps.occupation.overview.body"
         }
       ],
       "checklist": [
         {
-          "id": "occ-pick-title",
-          "labelKey": "steps.occupation.check.pickTitle"
-        },
-        {
-          "id": "occ-match-nkd",
-          "labelKey": "steps.occupation.check.matchNkd"
-        },
-        {
-          "id": "occ-check-uv-list",
-          "labelKey": "steps.occupation.check.uvList"
-        },
-        {
-          "id": "occ-document-duties",
-          "labelKey": "steps.occupation.check.documentDuties"
+          "id": "occ-guided-complete",
+          "labelKey": "steps.occupation.check.guided"
         }
       ],
+      "guidedPanel": "occupation",
+      "showOccupations": true,
+      "showDutyTemplate": true,
+      "showCaseRisks": true,
+      "showUvList": true,
+      "showEmployerCard": true,
       "sources": [
         {
           "labelKey": "sources.mupRadneDozvole",
@@ -187,11 +171,13 @@
           "labelKey": "sources.hzzLmt",
           "url": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
           "tier": 1
+        },
+        {
+          "labelKey": "sources.hzzFilingTips",
+          "url": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/savjeti-za-predaju-zahtjeva/",
+          "tier": 1
         }
-      ],
-      "showOccupations": true,
-      "showCaseRisks": true,
-      "showUvList": true
+      ]
     },
     {
       "id": "employer-package",
@@ -317,6 +303,7 @@
           "labelKey": "steps.workerDocs.check.translations"
         }
       ],
+      "showEmployerCard": true,
       "sources": [
         {
           "labelKey": "sources.mupTempStay",

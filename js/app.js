@@ -5,10 +5,12 @@ import { renderFactList } from "./facts.js";
 import { Art99 } from "./art99.js";
 import { EmployerPackage } from "./employer-package.js";
 import { LmtGuide } from "./lmt-guide.js";
+import { OccupationGuide } from "./occupation-guide.js";
 import { UvList } from "./uv-list.js";
 
 const GUIDED_PANELS = {
   art99: Art99,
+  occupation: OccupationGuide,
   "employer-package": EmployerPackage,
   lmt: LmtGuide,
 };
@@ -60,6 +62,7 @@ const state = {
   caseData: null,
   stepsData: null,
   occupations: null,
+  dutyTemplates: null,
   stepIndex: 0,
   progress: null,
 };
@@ -68,27 +71,44 @@ function storageKey() {
   return `residency-runbook:${state.caseData?.id || "default"}`;
 }
 
+function normalizeProgress(raw) {
+  const base = {
+    completedStepIds: [],
+    checkedItemIds: [],
+    locale: localStorage.getItem("residency-runbook:locale") || DEFAULT_LOCALE,
+    theme: Theme.get(),
+    selectedOccupationId: null,
+    occupationPath: "labor_market_test",
+    uvCandidate: null,
+    updatedAt: null,
+  };
+  if (!raw || typeof raw !== "object") return base;
+  return {
+    ...base,
+    ...raw,
+    completedStepIds: Array.isArray(raw.completedStepIds) ? raw.completedStepIds : [],
+    checkedItemIds: Array.isArray(raw.checkedItemIds) ? raw.checkedItemIds : [],
+    occupationPath: raw.occupationPath === "uv_skip_candidate" ? "uv_skip_candidate" : "labor_market_test",
+    uvCandidate: raw.uvCandidate && typeof raw.uvCandidate === "object" ? raw.uvCandidate : null,
+  };
+}
+
 function loadProgress() {
   try {
     const raw = localStorage.getItem(storageKey());
-    if (!raw) {
-      return {
-        completedStepIds: [],
-        checkedItemIds: [],
-        locale: localStorage.getItem("residency-runbook:locale") || DEFAULT_LOCALE,
-        theme: Theme.get(),
-        updatedAt: null,
-      };
-    }
-    return JSON.parse(raw);
+    if (!raw) return normalizeProgress(null);
+    return normalizeProgress(JSON.parse(raw));
   } catch {
-    return {
-      completedStepIds: [],
-      checkedItemIds: [],
-      locale: DEFAULT_LOCALE,
-      theme: Theme.get(),
-      updatedAt: null,
-    };
+    return normalizeProgress(null);
+  }
+}
+
+function ensureOccupationDefaults() {
+  if (!state.progress.selectedOccupationId) {
+    state.progress.selectedOccupationId =
+      state.caseData?.intendedOccupation?.id ||
+      state.caseData?.suggestedOccupationIds?.[0] ||
+      null;
   }
 }
 
@@ -188,28 +208,80 @@ function renderOccupations() {
   const block = state.occupations.byNkd?.[nkd];
   if (!block) return "";
   const suggested = new Set(state.caseData.suggestedOccupationIds || []);
+  const selectedId = state.progress.selectedOccupationId;
   return `
-    <section class="card occupations-card">
+    <section class="card occupations-card" id="occupations-panel">
       <h3>${esc(I18n.t("ui.occupations"))}</h3>
       <p class="muted">${esc(I18n.t(block.noteKey))}</p>
       <ul class="occupation-list">
         ${block.occupations
           .map((occ) => {
-            const primary = occ.primary || suggested.has(occ.id);
+            const catalogPrimary = occ.primary || suggested.has(occ.id);
+            const selected = occ.id === selectedId;
             const fit = I18n.t(`ui.defensibility.${occ.defensibility}`);
             return `
-              <li class="${primary ? "is-primary" : ""}">
+              <li class="${selected ? "is-selected" : ""} ${catalogPrimary ? "is-primary" : ""}">
                 <div class="occ-title">
                   ${esc(I18n.t(occ.titleKey))}
-                  ${primary ? `<span class="pill">${esc(I18n.t("ui.primary"))}</span>` : ""}
+                  ${selected ? `<span class="pill">${esc(I18n.t("ui.selected"))}</span>` : ""}
+                  ${!selected && catalogPrimary ? `<span class="pill muted-pill">${esc(I18n.t("ui.primary"))}</span>` : ""}
                 </div>
                 <p>${esc(I18n.t(occ.blurbKey))}</p>
                 <span class="occ-fit">${esc(I18n.t("ui.defensibility"))}: ${esc(fit)}</span>
+                <button type="button" class="btn ${selected ? "done" : "accent"} occ-select-btn"
+                  data-select-occupation="${escAttr(occ.id)}">
+                  ${esc(I18n.t("ui.selectOccupation"))}
+                </button>
               </li>`;
           })
           .join("")}
       </ul>
       <p class="muted">${esc(I18n.t(block.uvListReminderKey))}</p>
+    </section>
+  `;
+}
+
+function renderDutyTemplate() {
+  const occId = state.progress.selectedOccupationId;
+  const tpl = occId ? state.dutyTemplates?.byOccupationId?.[occId] : null;
+  const path = state.progress.occupationPath || "labor_market_test";
+  const uv = state.progress.uvCandidate;
+  let body = `<p class="muted">${esc(I18n.t("ui.dutyTemplateEmpty"))}</p>`;
+  if (tpl) {
+    body = `
+      <p>${esc(I18n.t(tpl.introKey))}</p>
+      <ul class="duty-bullets">
+        ${(tpl.bulletKeys || []).map((k) => `<li>${esc(I18n.t(k))}</li>`).join("")}
+      </ul>`;
+  }
+  return `
+    <section class="card duty-template-card" id="duty-template-panel">
+      <h3>${esc(I18n.t("ui.dutyTemplate"))}</h3>
+      ${body}
+      <fieldset class="path-decision">
+        <legend>${esc(I18n.t("ui.pathDecision"))}</legend>
+        <label class="check-row">
+          <input type="radio" name="occupation-path" value="labor_market_test" ${
+            path === "labor_market_test" ? "checked" : ""
+          } />
+          <span>${esc(I18n.t("ui.pathLmt"))}</span>
+        </label>
+        <label class="check-row">
+          <input type="radio" name="occupation-path" value="uv_skip_candidate" ${
+            path === "uv_skip_candidate" ? "checked" : ""
+          } />
+          <span>${esc(I18n.t("ui.pathUvCandidate"))}</span>
+        </label>
+      </fieldset>
+      ${
+        uv
+          ? `<p class="case-hint">${esc(I18n.t("ui.uvCandidateChip", { title: uv.title }))}
+              <button type="button" class="btn ghost" id="btn-clear-uv-candidate">${esc(
+                I18n.t("ui.uvClearCandidate")
+              )}</button>
+            </p>`
+          : ""
+      }
     </section>
   `;
 }
@@ -301,16 +373,18 @@ function renderMain() {
 
   document.getElementById("main-panel").innerHTML = `
     <header class="step-header">
-      <p class="eyebrow">${esc(I18n.t("ui.pathLmt"))}</p>
+      <p class="eyebrow">${esc(I18n.t("ui.pathLmt"))}
+      </p>
       <h2>${esc(I18n.t(step.titleKey))}</h2>
       <p class="step-summary">${esc(I18n.t(step.summaryKey))}</p>
     </header>
     ${step.showEmployerCard ? renderEmployerCard() : ""}
     ${step.showCaseRisks ? renderCaseRisks(step.id) : ""}
     ${renderSections(step)}
-    ${resolveGuidedPanel(step)?.render(isChecked, state.caseData) || ""}
-    ${step.showUvList ? UvList.render(state.caseData) : ""}
     ${step.showOccupations ? renderOccupations() : ""}
+    ${step.showDutyTemplate ? renderDutyTemplate() : ""}
+    ${step.showUvList ? UvList.render(state.caseData) : ""}
+    ${resolveGuidedPanel(step)?.render(isChecked, state.caseData) || ""}
     ${nationalityHtml}
     ${renderChecklist(step)}
     ${renderSources(step)}
@@ -328,8 +402,42 @@ function renderMain() {
   `;
 
   if (step.showUvList) {
-    UvList.afterMount(document.getElementById("uv-panel"), state.caseData);
+    UvList.afterMount(document.getElementById("uv-panel"), state.caseData, {
+      onMarkCandidate: (candidate) => {
+        state.progress.uvCandidate = candidate;
+        state.progress.occupationPath = "uv_skip_candidate";
+        saveProgress();
+        render();
+      },
+    });
   }
+
+  document.querySelectorAll("[data-select-occupation]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      state.progress.selectedOccupationId = btn.getAttribute("data-select-occupation");
+      saveProgress();
+      render();
+    });
+  });
+
+  document.querySelectorAll('input[name="occupation-path"]').forEach((input) => {
+    input.addEventListener("change", () => {
+      if (!input.checked) return;
+      state.progress.occupationPath = input.value;
+      if (input.value === "labor_market_test") {
+        /* keep uvCandidate for reference but path is LMT */
+      }
+      saveProgress();
+    });
+  });
+
+  document.getElementById("btn-clear-uv-candidate")?.addEventListener("click", () => {
+    state.progress.uvCandidate = null;
+    state.progress.occupationPath = "labor_market_test";
+    saveProgress();
+    render();
+  });
+
 
   document.getElementById("btn-prev")?.addEventListener("click", () => {
     state.stepIndex = Math.max(0, state.stepIndex - 1);
@@ -391,6 +499,10 @@ function bindGlobal() {
     if (!confirm(I18n.t("ui.resetConfirm"))) return;
     state.progress.completedStepIds = [];
     state.progress.checkedItemIds = [];
+    state.progress.selectedOccupationId =
+      state.caseData?.intendedOccupation?.id || state.caseData?.suggestedOccupationIds?.[0] || null;
+    state.progress.occupationPath = "labor_market_test";
+    state.progress.uvCandidate = null;
     saveProgress();
     render();
   });
@@ -430,17 +542,20 @@ async function init() {
   Theme.init();
   const loading = document.getElementById("loading-state");
   try {
-    const [caseData, stepsData, occupations] = await Promise.all([
+    const [caseData, stepsData, occupations, dutyTemplates] = await Promise.all([
       loadCaseData(),
       fetch("data/steps.json").then((r) => r.json()),
       fetch("data/occupations.json").then((r) => r.json()),
+      fetch("data/duty-templates.json").then((r) => r.json()),
       ...Object.values(GUIDED_PANELS).map((p) => p.load()),
       UvList.load(),
     ]);
     state.caseData = caseData;
     state.stepsData = stepsData;
     state.occupations = occupations;
+    state.dutyTemplates = dutyTemplates;
     state.progress = loadProgress();
+    ensureOccupationDefaults();
     Theme.apply(state.progress.theme || Theme.get());
     await Nationality.load(caseData.worker.nationalityId);
     await I18n.load(state.progress.locale || DEFAULT_LOCALE, caseData.worker.nationalityId);

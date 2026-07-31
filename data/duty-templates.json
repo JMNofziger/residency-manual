@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "byOccupationId": {
+    "manual-event-crew": {
+      "pathDefault": "labor_market_test",
+      "introKey": "duties.manualEventCrew.intro",
+      "bulletKeys": [
+        "duties.manualEventCrew.b1",
+        "duties.manualEventCrew.b2",
+        "duties.manualEventCrew.b3",
+        "duties.manualEventCrew.b4",
+        "duties.manualEventCrew.b5"
+      ]
+    },
+    "stage-hand": {
+      "pathDefault": "labor_market_test",
+      "introKey": "duties.stageHand.intro",
+      "bulletKeys": [
+        "duties.stageHand.b1",
+        "duties.stageHand.b2",
+        "duties.stageHand.b3",
+        "duties.stageHand.b4",
+        "duties.stageHand.b5"
+      ]
+    },
+    "event-setup-worker": {
+      "pathDefault": "labor_market_test",
+      "introKey": "duties.eventSetup.intro",
+      "bulletKeys": [
+        "duties.eventSetup.b1",
+        "duties.eventSetup.b2",
+        "duties.eventSetup.b3",
+        "duties.eventSetup.b4"
+      ]
+    },
+    "venue-support-worker": {
+      "pathDefault": "labor_market_test",
+      "introKey": "duties.venueSupport.intro",
+      "bulletKeys": [
+        "duties.venueSupport.b1",
+        "duties.venueSupport.b2",
+        "duties.venueSupport.b3",
+        "duties.venueSupport.b4"
+      ]
+    }
+  }
+}

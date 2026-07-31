@@ -1,7 +1,7 @@
 {
   "ui": {
-    "title": "Čarobnjak za zapošljavanje stranaca",
-    "subtitle": "Test tržišta rada → Jedinstvena dozvola",
+    "title": "Priručnik za zapošljavanje",
+    "subtitle": "Hrvatska: najprije test tržišta rada, zatim zahtjev za boravak i rad",
     "langEn": "EN",
     "langHr": "HR",
     "themeDark": "Tamno",
@@ -16,6 +16,16 @@
     "employer": "Poslodavac (testni slučaj)",
     "occupations": "Prijedlozi zanimanja (NKD)",
     "primary": "Primarno",
+    "selected": "Odabrano",
+    "selectOccupation": "Odaberi za podnošenje",
+    "dutyTemplate": "Predložak dužnosti (prilagodite stvarnom radu)",
+    "dutyTemplateEmpty": "Odaberite zanimanje iznad za učitavanje dužnosti.",
+    "pathDecision": "Odluka o putu podnošenja",
+    "pathLmt": "Uobičajeni put za ovo zapošljavanje",
+    "pathUvCandidate": "UV kandidat za preskok TTR (samo ako točan naziv + dužnosti odgovaraju)",
+    "uvMarkCandidate": "Označi kao UV kandidata za pregled",
+    "uvCandidateChip": "Zabilježen UV kandidat: {title}",
+    "uvClearCandidate": "Obriši UV kandidata",
     "nationalityPanel": "Vodič po državljanstvu",
     "citedFacts": "Citirane brojke",
     "factCitation": "{value} — {source}, provjereno {date}",
@@ -25,11 +35,10 @@
     "markComplete": "Označi korak završenim",
     "stepComplete": "Korak završen",
     "progress": "Napredak",
-    "disclaimer": "Ovo nije pravni savjet. Svaka brojčana pravna tvrdnja u čarobnjaku je citirani objekt s izvorom i datumom provjere. Prije podnošenja ponovno provjerite povezanu službenu stranicu. Sekundarni vodiči prije lipnja 2026. mogu odražavati stara pravila (vidi NN 55/2026).",
+    "disclaimer": "Nije pravni savjet. Prije podnošenja potvrdite pristojbe, obrasce i rokove na službenim stranicama.",
     "sourceRegistry": "Registar izvora",
     "loading": "Učitavanje…",
     "errorLoad": "Nije moguće učitati podatke. Otvorite putem lokalnog statičkog poslužitelja (vidi README).",
-    "pathLmt": "Primarni put: test tržišta rada",
     "oib": "OIB",
     "mb": "MB",
     "nkd": "NKD",
@@ -109,6 +118,38 @@
       "blurb": "Fizička podrška na lokaciji. Opis posla neka ne sadrži nepovezane uredske zadatke."
     }
   },
+  "duties": {
+    "manualEventCrew": {
+      "intro": "Početne dužnosti za fizički event crew unutar umjetničke/event podrške. Prilagodite stvarnom prostoru i uklonite što nećete raditi.",
+      "b1": "Utovar i istovar opreme za događaje, kofera i scenskih materijala na lokaciji.",
+      "b2": "Nošenje, postavljanje i skidanje fizičke produkcijske opreme pod vodstvom voditelja produkcije.",
+      "b3": "Pomoć pri privremenoj zaštiti poda, polaganju kabela po podu i održavanju prolaza tijekom postave/razmontaže.",
+      "b4": "Podrška fizičkim pomacima scene / scenografije između cuejeva prema uputama (bez nepovezanog uredskog ili IT rada).",
+      "b5": "Poštivanje uputa o sigurnosti pri ručnom rukovanju tijekom proba, predstava i završetka."
+    },
+    "stageHand": {
+      "intro": "Početne dužnosti za scenskog radnika / scenotehničara. Formulacije držite unutar podrške izvedbenim umjetnostima.",
+      "b1": "Pomoć pri sastavljanju, postavljanju i razmontaži scenskih podesta, mekih elemenata i scenografije.",
+      "b2": "Premještanje i učvršćivanje rekvizita i dijelova scenografije pod vodstvom stage managera / tehničkog voditelja.",
+      "b3": "Podrška promjenama scena i fizičkim resetima tijekom proba i izvedbi.",
+      "b4": "Pomoć u održavanju prolaza u kulisama i iza scene za sigurno kretanje ljudi i scenografije.",
+      "b5": "Ostali fizički poslovi scenske podrške unutar registrirane umjetničke/event djelatnosti."
+    },
+    "eventSetup": {
+      "intro": "Početne dužnosti za postavu / razmontažu događaja. Dokumentirajte samo rad koji ćete stvarno obavljati.",
+      "b1": "Postava i razmontaža privremenih sjedala, barijera i nenosivih rasporeda događaja.",
+      "b2": "Sastavljanje i rastavljanje prenosivog namještaja i elemenata izložbe za događaje.",
+      "b3": "Pozicioniranje i uklanjanje opreme prema planu lokacije.",
+      "b4": "Čišćenje radnog prostora nakon postave/razmontaže kao dio fizičke podrške događaju."
+    },
+    "venueSupport": {
+      "intro": "Početne dužnosti za podršku prostoru / produkciji. Izbjegavajte miješanje nepovezanog ugostiteljskog ili uredskog rada.",
+      "b1": "Fizička podrška na lokaciji za rad prostora i produkcije tijekom događaja.",
+      "b2": "Premještanje produkcijskog materijala i opreme između skladišta i izvedbenih zona.",
+      "b3": "Pomoć tehničkim voditeljima u fizičkim pripremama prije otvaranja i nakon završetka.",
+      "b4": "Podrška sigurnom čišćenju produkcijskih zona nakon događaja."
+    }
+  },
   "steps": {
     "orient": {
       "title": "Orijentacija i podobnost",
@@ -144,23 +185,12 @@
     "occupation": {
       "title": "Odaberite zanimanje",
       "summary": "Odaberite obraniv naziv vezan uz NKD 90399; odlučite TTR naspram mogućeg deficitarnog izuzeća.",
-      "primary": {
-        "title": "Namjeravana uloga",
-        "body": "Primarna namjera: fizički radnik na događajima (utovar, nošenje, fizička produkcijska podrška). Napišite dužnosti koje inspektor rada i HZZ mogu povezati s registriranom djelatnošću."
-      },
-      "nkd": {
-        "title": "Uskladite s NKD tvrtke",
-        "body": "Uskladite zanimanje s registriranom NKD djelatnošću poslodavca. Za tvrtke podrške umjetnosti/događajima (npr. NKD 90399 / starija 9002) preferirajte nazive unutar te djelatnosti. Izbjegavajte zanimanja koja izgledaju kao nepovezani uredski, IT ili ugostiteljski poslovi."
-      },
-      "lmtVsDeficit": {
-        "title": "Test tržišta rada naspram deficitarne liste",
-        "body": "Zadano: podnesite test tržišta rada HZZ-u. Pretraživa UV ploča prikazuje zanimanja iz službenog HZZ/MUP PDF-a o izuzeću od TTR (filtrirano po regiji i NKD). Kategorije iz čl. 110. (ključno osoblje, plava karta itd.) zaseban su kanal putem policije — nisu ova UV tablica. Prije podnošenja ponovno provjerite živi HZZ hub."
+      "overview": {
+        "title": "Kako zaključati naziv",
+        "body": "Odaberite predloženo zanimanje za NKD ovog poslodavca, pretražite službenu UV listu izuzeća od TTR bez kupovine naziva, odlučite TTR naspram stvarnog UV podudaranja, zatim prilagodite predložak dužnosti. Isti naziv i dužnosti koristite na ugovoru, zahtjevu za TTR i jedinstvenoj dozvoli."
       },
       "check": {
-        "pickTitle": "Odabrao/la sam konkretan naziv zanimanja za zahtjev",
-        "matchNkd": "Naziv i dužnosti odgovaraju NKD 90399",
-        "uvList": "Pretražio/la sam UV listu izuzeća od TTR za ovu regiju/NKD (i ponovno provjeravam živi HZZ prije podnošenja)",
-        "documentDuties": "Nacrtao/la sam dužnosti pogodne za HZZ / MUP pregled"
+        "guided": "Završio/la sam vođenu samoprovjeru zanimanja (svi redovi ispod)"
       }
     },
     "employerPackage": {
@@ -189,16 +219,16 @@
       "title": "Prikupite dokumente radnika",
       "summary": "Osnovni komplet za DTZ; paket državljanstva dodaje specifikacije u panelu ispod.",
       "core": {
-        "title": "Osnovni dokumenti (svi DTZ)",
-        "body": "Tipični MUP spisi za privremeni boravak / boravak i rad traže: važeću putovnicu; uvjerenje o nekažnjavanju; dokaz zdravstvenog osiguranja; dokaz smještaja; fotografije; obrasce; te dokumente poslodavca. Točne liste na MUP stranicama — one su mjerodavne."
+        "title": "Osnovni dokumenti (svi državljani trećih zemalja)",
+        "body": "Tipični MUP spisi za privremeni boravak / boravak i rad traže: važeću putovnicu; uvjerenja o nekažnjavanju prema zemljama boravka; dokaz zdravstvenog osiguranja; dokaz smještaja; biometrijske fotografije; obrasce; te dokumente poslodavca iz ranijih koraka. Točne liste su na MUP stranicama."
       },
       "translations": {
         "title": "Prijevodi i formalnosti",
-        "body": "Inozemne javne isprave obično trebaju ovjereni hrvatski prijevod (i apostille/legalizaciju gdje je potrebno). Rano pokrenite provjere kaznene evidencije."
+        "body": "Strane javne isprave obično trebaju ovjereni hrvatski prijevod (i apostille/legalizaciju gdje treba). Kaznene evidencije pokrenite rano."
       },
       "check": {
-        "passport": "Kopija važeće putovnice prikupljena",
-        "criminalRecord": "Uvjerenje o nekažnjavanju naručeno (postupak u panelu državljanstva)",
+        "passport": "Prikupljena kopija važeće putovnice",
+        "criminalRecord": "Zatražena kaznena evidencija (postupak u panelu državljanstva)",
         "insurance": "Dokaz zdravstvenog osiguranja spreman",
         "accommodation": "Dokaz smještaja spreman",
         "photos": "Fotografije prema specifikaciji",
@@ -521,6 +551,76 @@
       },
       "evidence": "Jednoredna bilješka o nadležnosti (jedinica HZZ + namjeravana policijska uprava).",
       "caseHint": "Regija ovog slučaja: {region}. Kartica poslodavca pokazuje živu adresu — ne ugrađujte drugi grad."
+    }
+  },
+  "occGuide": {
+    "panelTitle": "Naziv zanimanja — vođena samoprovjera",
+    "panelIntro": "Zaključajte jedan naziv za podnošenje, iskreno pretražite UV listu, prilagodite dužnosti i zabilježite treba li i dalje TTR. Dovršetak svih redova označava stavku na kontrolnom popisu Koraka 2.",
+    "pick": {
+      "title": "Odaberite naziv zanimanja za podnošenje",
+      "why": "HZZ-u i MUP-u treba jedan konkretan naziv koji odgovara stvarnim dužnostima — neodređeni „radnik“ izaziva pitanja.",
+      "how": {
+        "list": "Pregledajte prijedloge usklađene s NKD-om ovog poslodavca.",
+        "select": "Kliknite Odaberi za podnošenje na nazivu koji ćete koristiti na ugovoru i HZZ zahtjevu.",
+        "consistent": "Ne planirajte kasnije mijenjati naziv bez usklađenog ažuriranja ugovora, TTR-a i obrazaca dozvole."
+      },
+      "evidence": "Odabrani naziv zabilježen u čarobnjaku + nacrt ugovora s istim tekstom.",
+      "caseHint": "Prijedlozi su filtrirani za NKD poslodavca {nkd} ({nkdLabel})."
+    },
+    "nkd": {
+      "title": "Potvrdite da naziv odgovara registriranoj djelatnosti",
+      "why": "Traženo zanimanje mora biti povezano s registriranom gospodarskom djelatnošću poslodavca.",
+      "how": {
+        "card": "Pročitajte NKD / oznaku djelatnosti na kartici poslodavca.",
+        "fina": "Po potrebi potvrdite živi izvadak na Fina Info.BIZ.",
+        "duties": "Dužnosti moraju opisivati rad unutar te djelatnosti — ne nepovezane uredske, IT ili ugostiteljske zadatke."
+      },
+      "evidence": "Popis dužnosti mapiran na NKD formulaciju iz izvatka tvrtke.",
+      "caseHint": "Registrirana djelatnost: NKD {nkd} — {nkdLabel}."
+    },
+    "uv": {
+      "title": "Pretražite službenu UV listu izuzeća od TTR",
+      "why": "Preskok TTR vrijedi samo za točne nazive na službenom UV PDF-u koji odgovaraju stvarnim dužnostima i regiji — ne za izmišljene stagehand oznake.",
+      "how": {
+        "panel": "Koristite UV ploču na ovom koraku (zadani filtar: ova regija + NKD-relevantne oznake).",
+        "pdf": "Otvorite službeni MUP UV PDF kada trebate izvorni tekst.",
+        "hub": "Prije podnošenja ponovno otvorite živi MUP/HZZ hub radnih dozvola — lista se može dopunjavati.",
+        "noShopping": "Ako ništa ne odgovara dužnostima, zadržite TTR. Po želji označite UV red samo kao kandidata za iskreni pregled."
+      },
+      "evidence": "Bilješka/slika UV pretrage + „nema podudaranja → TTR“ ili točan navedeni naziv s izdanjem.",
+      "caseHint": "Filtar regije: {region}. Ručni event crew pod NKD {nkd} uobičajeno ostaje na TTR-u."
+    },
+    "path": {
+      "title": "Zabilježite odluku TTR naspram UV preskoka",
+      "why": "Sljedeći koraci (paket poslodavca i HZZ podnošenje) ovise o tome imate li stvarno UV podudaranje.",
+      "how": {
+        "lmtDefault": "Zadano: odaberite Test tržišta rada osim ako točan UV naziv odgovara dužnostima.",
+        "uvOnly": "UV kandidata odaberite samo ako službeni naziv i stvarne dužnosti odgovaraju — zatim ponovno provjerite živo prije podnošenja.",
+        "record": "Postavite kontrolu odluke o putu ispod predloška dužnosti i držite je usklađenom s Korakom 4."
+      },
+      "evidence": "Odluka o putu spremljena u čarobnjaku (TTR ili imenovani UV kandidat).",
+      "caseHint": "Kad niste sigurni, zadržite TTR — lažni UV preskoci rizik su odbijanja."
+    },
+    "duties": {
+      "title": "Prilagodite predložak dužnosti",
+      "why": "HZZ savjeti za predaju očekuju jasne, dosljedne dužnosti vezane uz zanimanje i registriranu djelatnost.",
+      "how": {
+        "template": "Otvorite predložak dužnosti za odabrano zanimanje na ovom koraku.",
+        "adapt": "Uredite točke izvan alata prema stvarnom radu; obrišite zadatke koje nećete obavljati.",
+        "hzz": "Držite formulacije usklađenima s HZZ Savjeti za predaju zahtjeva."
+      },
+      "evidence": "Konačni popis dužnosti spreman za ugovor / TTR / obrasce dozvole.",
+      "caseHint": "Predlošci su početne točke za NKD {nkd} podršku događajima — nisu službeni HZZ obrasci."
+    },
+    "lock": {
+      "title": "Zaključajte isti naziv na svim podnošenjima",
+      "why": "Nesklad naziva između ugovora, TTR-a i jedinstvene dozvole stvara rizik odbijanja.",
+      "how": {
+        "contract": "Koristite odabrani naziv na ugovoru o radu / obvezujućoj ponudi.",
+        "lmt": "Isti naziv i dužnosti stavite na HZZ zahtjev za test tržišta rada.",
+        "permit": "Isti tekst prenesite u MUP spis za boravak i rad / jedinstvenu dozvolu."
+      },
+      "evidence": "Jednoredna bilješka: tekst naziva + datum + gdje se pojavljuje (ugovor / TTR / dozvola)."
     }
   },
   "uv": {

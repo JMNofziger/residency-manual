@@ -1,7 +1,7 @@
 {
   "ui": {
-    "title": "Employer hiring wizard",
-    "subtitle": "Labor market test → Single Permit",
+    "title": "Employer hiring runbook",
+    "subtitle": "Croatia: check the job market first, then apply for a stay-and-work permit",
     "langEn": "EN",
     "langHr": "HR",
     "themeDark": "Dark",
@@ -16,6 +16,16 @@
     "employer": "Employer (test case)",
     "occupations": "Occupation suggestions (NKD)",
     "primary": "Primary",
+    "selected": "Selected",
+    "selectOccupation": "Select for filing",
+    "dutyTemplate": "Duty template (adapt to real work)",
+    "dutyTemplateEmpty": "Select an occupation above to load duty bullets.",
+    "pathDecision": "Filing path decision",
+    "pathLmt": "Usual path for this hire",
+    "pathUvCandidate": "UV LMT-skip candidate (only if exact title + duties match)",
+    "uvMarkCandidate": "Mark as UV candidate to review",
+    "uvCandidateChip": "UV candidate noted: {title}",
+    "uvClearCandidate": "Clear UV candidate",
     "nationalityPanel": "Nationality guidance",
     "citedFacts": "Cited figures",
     "factCitation": "{value} — {source}, verified {date}",
@@ -25,11 +35,10 @@
     "markComplete": "Mark step complete",
     "stepComplete": "Step completed",
     "progress": "Progress",
-    "disclaimer": "Not legal advice. Every numeric legal claim in this wizard is a cited fact object with source and verified date. Re-check the linked official page before filing. Pre-June-2026 secondary guides may reflect prior rules (see NN 55/2026).",
+    "disclaimer": "Not legal advice. Confirm fees, forms, and deadlines on official government pages before you file.",
     "sourceRegistry": "Source registry",
     "loading": "Loading…",
     "errorLoad": "Could not load wizard data. Open via a local static server (see README).",
-    "pathLmt": "Primary path: labor market test",
     "oib": "OIB",
     "mb": "MB",
     "nkd": "NKD",
@@ -109,6 +118,38 @@
       "blurb": "On-site physical support for venues and productions. Keep the job description free of unrelated office tasks."
     }
   },
+  "duties": {
+    "manualEventCrew": {
+      "intro": "Starter duty bullets for manual event crew under arts/event support. Adapt to the real venue and remove anything you will not do.",
+      "b1": "Load-in and load-out of event equipment, cases, and staging materials at the venue.",
+      "b2": "Carry, place, and strike physical production gear under direction of the production lead.",
+      "b3": "Assist with temporary floor protection, cable runs on the floor, and clear egress paths during setup/strike.",
+      "b4": "Support physical stage / set moves between cues as instructed (no unrelated office or IT work).",
+      "b5": "Follow on-site safety instructions for manual handling during rehearsals, shows, and wrap."
+    },
+    "stageHand": {
+      "intro": "Starter duty bullets for stage-hand / scenotehničar support. Keep wording tied to performing-arts support.",
+      "b1": "Assist with assembly, placement, and strike of stage decks, soft goods, and scenic elements.",
+      "b2": "Move and secure stage props and set pieces under the stage manager / technical lead.",
+      "b3": "Support scene changes and physical resets during rehearsals and performances.",
+      "b4": "Help maintain clear wing and backstage pathways for safe movement of people and scenery.",
+      "b5": "Perform other physical stage-support tasks assigned within the registered arts/event activity."
+    },
+    "eventSetup": {
+      "intro": "Starter duty bullets for event setup / strike. Document only work you will actually perform.",
+      "b1": "Set and strike temporary seating, barriers, and non-structural event layouts.",
+      "b2": "Assemble and dismantle portable event furniture and display elements.",
+      "b3": "Position and remove event gear according to the site plan.",
+      "b4": "Clean work areas after setup/strike as part of the physical event-support role."
+    },
+    "venueSupport": {
+      "intro": "Starter duty bullets for venue / production support. Avoid mixing in unrelated hospitality or desk work.",
+      "b1": "Provide on-site physical support for venue and production operations during events.",
+      "b2": "Move production supplies and equipment between storage and performance areas.",
+      "b3": "Assist technical leads with physical preparations before doors and after curtain.",
+      "b4": "Support safe clearing of production areas after the event."
+    }
+  },
   "steps": {
     "orient": {
       "title": "Orient & eligibility",
@@ -144,23 +185,12 @@
     "occupation": {
       "title": "Pick the occupation",
       "summary": "Choose a defensible title tied to NKD 90399; decide LMT vs possible deficitary exemption.",
-      "primary": {
-        "title": "Intended role",
-        "body": "Primary intent: manual event crew / physical labor (load-in, carrying, physical production support). Write duties that a labor inspector and HZZ can map to your registered arts/event support activity."
-      },
-      "nkd": {
-        "title": "Match the company’s NKD",
-        "body": "Match the occupation to the employer’s registered NKD activity. For arts/event-support companies (e.g. NKD 90399 / legacy 9002), prefer titles that clearly sit inside that activity. Avoid requesting occupations that look like unrelated office, IT, or hospitality work."
-      },
-      "lmtVsDeficit": {
-        "title": "Labor market test vs deficitary list",
-        "body": "Default: file a labor market test with HZZ. The searchable UV panel lists occupations from the official HZZ/MUP LMT-exemption PDF (filtered for this employer’s region and NKD). Art. 110 categories (key personnel, Blue Card, etc.) are a separate police-filing channel — not this UV table. Re-check the live HZZ hub before filing."
+      "overview": {
+        "title": "How to lock the title",
+        "body": "Select a suggested occupation for this employer’s NKD, search the official UV LMT-exemption list without title-shopping, decide LMT vs a true UV match, then adapt the duty template. Use the same title and duties on the contract, LMT request, and Single Permit."
       },
       "check": {
-        "pickTitle": "I selected a concrete occupation title for the application",
-        "matchNkd": "The title and duties match NKD 90399 event/arts support",
-        "uvList": "I searched the UV LMT-exemption list for this region/NKD (and re-check live HZZ before filing)",
-        "documentDuties": "I drafted duty bullets suitable for HZZ / MUP review"
+        "guided": "I completed the guided occupation self-check (all rows below)"
       }
     },
     "employerPackage": {
@@ -521,6 +551,76 @@
       },
       "evidence": "One-line competence note (HZZ unit + intended police administration).",
       "caseHint": "This case region: {region}. Employer card shows the live address — do not hardcode another city."
+    }
+  },
+  "occGuide": {
+    "panelTitle": "Occupation title — guided self-check",
+    "panelIntro": "Lock one filing title, search the UV list honestly, adapt duty bullets, and record whether LMT remains required. Completing every row marks the Step 2 checklist item.",
+    "pick": {
+      "title": "Select the filing occupation title",
+      "why": "HZZ and MUP need one concrete title that matches real duties — vague “worker” labels invite questions.",
+      "how": {
+        "list": "Review the NKD-aligned suggestions for this employer.",
+        "select": "Click Select for filing on the title you will use on the contract and HZZ request.",
+        "consistent": "Do not plan to change the title later without updating contract, LMT, and permit forms together."
+      },
+      "evidence": "Selected title noted in this wizard + draft contract heading with the same wording.",
+      "caseHint": "Suggestions are filtered for employer NKD {nkd} ({nkdLabel})."
+    },
+    "nkd": {
+      "title": "Confirm title fits registered activity",
+      "why": "Requested occupation must relate to the employer’s registered economic activity.",
+      "how": {
+        "card": "Read the employer card NKD / activity label for this case.",
+        "fina": "Confirm the live company extract on Fina Info.BIZ if needed.",
+        "duties": "Ensure duty bullets describe work inside that activity — not unrelated desk, IT, or hospitality tasks."
+      },
+      "evidence": "Duty list mapped to NKD wording from the company extract.",
+      "caseHint": "Registered activity: NKD {nkd} — {nkdLabel}."
+    },
+    "uv": {
+      "title": "Search the official UV LMT-exemption list",
+      "why": "LMT skip applies only for exact titles on the official UV PDF that match real duties and region — not for invented stagehand labels.",
+      "how": {
+        "panel": "Use the UV search panel on this step (default filter: this region + NKD-relevant tags).",
+        "pdf": "Open the official MUP-hosted UV PDF when you need the source text.",
+        "hub": "Re-open the live MUP/HZZ radne dozvole hub before filing — the list can be amended.",
+        "noShopping": "If nothing matches duties, keep LMT. Optionally mark a UV row as a candidate only for honest review."
+      },
+      "evidence": "Screenshot or note of UV search + either “no match → LMT” or exact listed title with edition.",
+      "caseHint": "Region filter: {region}. Manual event crew under NKD {nkd} usually stays on LMT."
+    },
+    "path": {
+      "title": "Record LMT vs UV-skip decision",
+      "why": "The next steps (employer package and HZZ filing) depend on whether you truly have a UV match.",
+      "how": {
+        "lmtDefault": "Default: choose Labor market test unless an exact UV title matches duties.",
+        "uvOnly": "Choose UV candidate only if the official listed title and real duties match — then re-verify live before filing.",
+        "record": "Set the path decision control under the duty template and keep it consistent with Step 4."
+      },
+      "evidence": "Path decision saved in this wizard (LMT or named UV candidate).",
+      "caseHint": "When unsure, keep LMT — false UV skips are a rejection risk."
+    },
+    "duties": {
+      "title": "Adapt the duty template",
+      "why": "HZZ filing tips expect clear, consistent duties tied to the occupation and registered activity.",
+      "how": {
+        "template": "Open the duty template for the selected occupation on this step.",
+        "adapt": "Edit the bullets offline to match real work; delete tasks you will not perform.",
+        "hzz": "Keep wording aligned with HZZ Savjeti za predaju zahtjeva consistency guidance."
+      },
+      "evidence": "Final duty bullet list ready to paste into contract / LMT / permit forms.",
+      "caseHint": "Templates are starters for NKD {nkd} event/arts support — not official HZZ forms."
+    },
+    "lock": {
+      "title": "Lock the same title across filings",
+      "why": "Mismatched titles between contract, LMT, and Single Permit create refusal risk.",
+      "how": {
+        "contract": "Use the selected title on the employment contract / binding offer.",
+        "lmt": "Use the same title and duties on the HZZ labor market test request.",
+        "permit": "Carry the same wording into the MUP stay-and-work / Single Permit file."
+      },
+      "evidence": "One-line lock note: title string + date + where it appears (contract / LMT / permit)."
     }
   },
   "uv": {

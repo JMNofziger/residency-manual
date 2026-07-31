@@ -259,6 +259,10 @@ a:hover {
 }
 
 .eyebrow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.15rem;
   margin: 0 0 0.35rem;
   color: var(--accent);
   font-size: 0.8rem;
@@ -360,6 +364,40 @@ a:hover {
 
 .occupation-list li.is-primary {
   border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
+}
+
+.occupation-list li.is-selected {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+.occ-select-btn,
+.uv-mark-btn {
+  margin-top: 0.65rem;
+}
+
+.muted-pill {
+  background: var(--bg-elev);
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+
+.duty-template-card .duty-bullets {
+  margin: 0.75rem 0 1rem;
+  padding-left: 1.2rem;
+}
+
+.path-decision {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0 0;
+}
+
+.path-decision legend {
+  padding: 0 0.35rem;
+  font-weight: 650;
+}
 }
 
 .occ-title {

@@ -54,6 +54,8 @@ export const UvList = {
 
   bind(root) {
     if (!root) return;
+    if (root._uvBound) return;
+    root._uvBound = true;
     const search = root.querySelector("[data-uv-search]");
     const toggle = root.querySelector("[data-uv-toggle-all]");
     search?.addEventListener("input", (e) => {
@@ -63,6 +65,16 @@ export const UvList = {
     toggle?.addEventListener("change", (e) => {
       this.showAllZagreb = !!e.target.checked;
       this.rerenderResults(root);
+    });
+    root.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-uv-candidate-id]");
+      if (!btn || !root.contains(btn)) return;
+      const handler = root._onMarkCandidate;
+      if (typeof handler !== "function") return;
+      handler({
+        id: btn.getAttribute("data-uv-candidate-id"),
+        title: btn.getAttribute("data-uv-candidate-title"),
+      });
     });
   },
 
@@ -105,6 +117,11 @@ export const UvList = {
                 <p class="muted">${esc(regionLabel)}</p>
                 ${relevance}
                 ${seasonal}
+                <button type="button" class="btn ghost uv-mark-btn"
+                  data-uv-candidate-id="${escAttr(occ.id)}"
+                  data-uv-candidate-title="${escAttr(title)}">
+                  ${esc(I18n.t("ui.uvMarkCandidate"))}
+                </button>
               </li>`;
           })
           .join("")}
@@ -164,9 +181,10 @@ export const UvList = {
     return html;
   },
 
-  afterMount(root, caseData) {
+  afterMount(root, caseData, options = {}) {
     if (!root) return;
     root._caseData = caseData;
+    root._onMarkCandidate = options.onMarkCandidate || null;
     this.bind(root);
   },
 };
