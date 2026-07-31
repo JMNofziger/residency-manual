@@ -89,9 +89,10 @@
     "uvCandidateSelected": "Selected as {uv} candidate",
     "uvCandidateChipHtml": "{uv} candidate noted: {title}",
     "exportNudgeTitle": "Export your case file",
-    "exportNudgeBody": "Export is the durable file for this hire (case + progress). Browser storage is only a last-session cache — export before closing if you need the work elsewhere.",
+    "exportNudgeBody": "Export is the durable file for this hire (case + progress). Browser storage is only a last-session cache. You will get one more reminder if you leave with unsaved changes.",
     "exportNudgeExport": "Export case now",
-    "exportNudgeDismiss": "Continue without exporting"
+    "exportNudgeDismiss": "Continue without exporting",
+    "importedCase": "imported"
   },
   "facts": {
     "art99DomesticRatio": "Domestic workforce ratio (employer condition)",

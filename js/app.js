@@ -59,6 +59,7 @@ const DEFAULT_CASE_PATH = "cases/example-dool-us-manual-labor.json";
 const LOCAL_CASE_PATH = "cases/private/active.json";
 const CASE_INDEX_PATH = "cases/index.json";
 const DEFAULT_LOCALE = "en";
+const IMPORTED_PATH_PREFIX = "imported:";
 
 async function loadCaseCatalog() {
   const entries = [];
@@ -96,10 +97,29 @@ async function loadCaseCatalog() {
 }
 
 async function loadCaseData(path) {
+  const entry = (state.caseCatalog || []).find((c) => c.path === path);
+  if (entry?.snapshot) return entry.snapshot;
   const target = path || DEFAULT_CASE_PATH;
   const res = await fetch(target, { cache: "no-store" });
   if (!res.ok) throw new Error(`Failed to load case: ${target}`);
   return res.json();
+}
+
+function registerImportedCase(caseData) {
+  const id = caseData?.id || "imported-case";
+  const path = `${IMPORTED_PATH_PREFIX}${id}`;
+  const entry = {
+    id,
+    path,
+    title: caseData.title || id,
+    private: true,
+    imported: true,
+    snapshot: caseData,
+  };
+  state.caseCatalog = (state.caseCatalog || []).filter((c) => !c.imported);
+  state.caseCatalog.unshift(entry);
+  state.casePath = path;
+  return entry;
 }
 
 const state = {
@@ -114,6 +134,8 @@ const state = {
   /** @type {'overview' | 'wizard'} */
   view: "overview",
   appReady: false,
+  exportNudgeShown: false,
+  dirtySinceExport: false,
 };
 
 function storageKey() {
@@ -188,7 +210,13 @@ function saveProgress({ nudgeExport = true } = {}) {
   state.progress.view = state.view;
   localStorage.setItem(storageKey(), JSON.stringify(state.progress));
   localStorage.setItem("residency-runbook:locale", state.progress.locale);
-  if (nudgeExport && state.appReady) scheduleExportNudge();
+  if (nudgeExport && state.appReady) {
+    state.dirtySinceExport = true;
+    if (!state.exportNudgeShown) {
+      state.exportNudgeShown = true;
+      scheduleExportNudge();
+    }
+  }
 }
 
 let exportNudgeTimer = null;
@@ -203,6 +231,17 @@ function scheduleExportNudge() {
 
 function closeExportNudge() {
   document.getElementById("export-nudge")?.remove();
+}
+
+function exportCurrentCase(filename) {
+  const bundle = toBundle(state.caseData, {
+    ...state.progress,
+    stepIndex: state.stepIndex,
+    view: state.view,
+  });
+  downloadBundle(bundle, filename || `${bundle.id || "case"}-runbook.json`);
+  state.dirtySinceExport = false;
+  return bundle;
 }
 
 function openExportNudge() {
@@ -229,12 +268,7 @@ function openExportNudge() {
     el.addEventListener("click", () => closeExportNudge());
   });
   host.querySelector("#btn-export-nudge-export")?.addEventListener("click", () => {
-    const bundle = toBundle(state.caseData, {
-      ...state.progress,
-      stepIndex: state.stepIndex,
-      view: state.view,
-    });
-    downloadBundle(bundle, `${bundle.id || "case"}-runbook.json`);
+    exportCurrentCase();
     closeExportNudge();
   });
   const onKey = (e) => {
@@ -284,12 +318,7 @@ function backupFilename(basename = caseExportBasename()) {
 }
 
 function downloadCurrentCaseBackup() {
-  const bundle = toBundle(state.caseData, {
-    ...state.progress,
-    stepIndex: state.stepIndex,
-    view: state.view,
-  });
-  downloadBundle(bundle, backupFilename(`${bundle.id || "case"}-runbook`));
+  exportCurrentCase(backupFilename(`${state.caseData?.id || "case"}-runbook`));
 }
 
 function doResetProgress() {
@@ -817,14 +846,14 @@ function renderChrome() {
   if (caseHeading) caseHeading.textContent = I18n.t("ui.casePicker");
   const picker = document.getElementById("case-picker");
   if (picker) {
-    const currentId = state.caseData?.id;
     picker.innerHTML = (state.caseCatalog || [])
-      .map(
-        (c) =>
-          `<option value="${escAttr(c.path)}" ${c.id === currentId || c.path === state.casePath ? "selected" : ""}>${esc(
-            c.private ? `${c.title} (${I18n.t("ui.privateCase")})` : c.title
-          )}</option>`
-      )
+      .map((c) => {
+        let label = c.title;
+        if (c.imported) label = `${c.title} (${I18n.t("ui.importedCase")})`;
+        else if (c.private) label = `${c.title} (${I18n.t("ui.privateCase")})`;
+        const selected = c.path === state.casePath ? "selected" : "";
+        return `<option value="${escAttr(c.path)}" ${selected}>${esc(label)}</option>`;
+      })
       .join("");
   }
   const mobileNav = document.getElementById("btn-mobile-nav");
@@ -843,8 +872,8 @@ function renderChrome() {
 }
 
 async function applyImportedBundle(caseData, progress) {
+  registerImportedCase(caseData);
   state.caseData = caseData;
-  state.casePath = "";
   state.progress = normalizeProgress({
     ...progress,
     locale: progress.locale || state.progress?.locale || DEFAULT_LOCALE,
@@ -857,7 +886,9 @@ async function applyImportedBundle(caseData, progress) {
   reconcileStepCompletion();
   state.stepIndex = clampStepIndex(state.progress.stepIndex || 0);
   state.view = state.progress.view === "wizard" ? "wizard" : "overview";
-  saveProgress();
+  // Imported file is already durable — don't treat import as unsaved dirty work.
+  state.dirtySinceExport = false;
+  saveProgress({ nudgeExport: false });
   render();
 }
 
@@ -866,6 +897,9 @@ async function switchCase(path) {
   const caseData = await loadCaseData(path);
   state.casePath = path;
   state.caseData = caseData;
+  // Keep imported snapshot entry selected path if switching to it
+  const entry = (state.caseCatalog || []).find((c) => c.path === path);
+  if (entry?.imported) entry.snapshot = caseData;
   state.progress = loadProgress();
   ensureOccupationDefaults();
   await Nationality.load(caseData.worker.nationalityId);
@@ -874,7 +908,8 @@ async function switchCase(path) {
   reconcileStepCompletion();
   state.stepIndex = clampStepIndex(state.progress.stepIndex || 0);
   state.view = state.progress.view === "wizard" ? "wizard" : "overview";
-  saveProgress();
+  state.dirtySinceExport = false;
+  saveProgress({ nudgeExport: false });
   render();
 }
 
@@ -921,8 +956,7 @@ function bindGlobal() {
     openResetDialog();
   });
   document.getElementById("btn-export")?.addEventListener("click", () => {
-    const bundle = toBundle(state.caseData, { ...state.progress, stepIndex: state.stepIndex, view: state.view });
-    downloadBundle(bundle, `${bundle.id || "case"}-runbook.json`);
+    exportCurrentCase();
   });
   document.getElementById("btn-import")?.addEventListener("change", async (e) => {
     const file = e.target.files?.[0];
@@ -935,6 +969,11 @@ function bindGlobal() {
       console.error(err);
       alert(I18n.t("ui.importError"));
     }
+  });
+  window.addEventListener("beforeunload", (e) => {
+    if (!state.dirtySinceExport) return;
+    e.preventDefault();
+    e.returnValue = "";
   });
   document.getElementById("step-nav").addEventListener("click", (e) => {
     const btn = e.target.closest("[data-step-index]");

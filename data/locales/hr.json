@@ -89,9 +89,10 @@
     "uvCandidateSelected": "Odabrano kao kandidat s {uv}",
     "uvCandidateChipHtml": "Zabilježen kandidat s {uv}: {title}",
     "exportNudgeTitle": "Izvezite datoteku predmeta",
-    "exportNudgeBody": "Izvoz je trajna datoteka za ovo zapošljavanje (slučaj + napredak). Spremanje u pregledniku je samo predmemorija sesije — izvezite prije zatvaranja ako trebate rad drugdje.",
+    "exportNudgeBody": "Izvoz je trajna datoteka za ovo zapošljavanje (slučaj + napredak). Spremanje u pregledniku je samo predmemorija sesije. Još jednom ćete biti upozoreni ako zatvorite prozor s nesačuvanim izmjenama.",
     "exportNudgeExport": "Izvezi predmet sada",
-    "exportNudgeDismiss": "Nastavi bez izvoza"
+    "exportNudgeDismiss": "Nastavi bez izvoza",
+    "importedCase": "uvezeno"
   },
   "facts": {
     "art99DomesticRatio": "Udio domaće radne snage (uvjet za poslodavca)",
