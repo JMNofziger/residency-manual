@@ -7,6 +7,7 @@ import { EmployerPackage } from "./employer-package.js";
 import { LmtGuide } from "./lmt-guide.js";
 import { OccupationGuide } from "./occupation-guide.js";
 import { WorkerDocsGuide } from "./worker-docs-guide.js";
+import { FilePermitGuide } from "./file-permit-guide.js";
 import { UvList } from "./uv-list.js";
 import { Reference } from "./reference.js";
 
@@ -16,6 +17,7 @@ const GUIDED_PANELS = {
   "employer-package": EmployerPackage,
   lmt: LmtGuide,
   "worker-docs": WorkerDocsGuide,
+  "file-permit": FilePermitGuide,
 };
 
 function resolveGuidedPanel(step) {

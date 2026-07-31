@@ -335,19 +335,9 @@
       ],
       "sections": [
         {
-          "id": "when",
-          "titleKey": "steps.filePermit.when.title",
-          "bodyKey": "steps.filePermit.when.body"
-        },
-        {
-          "id": "where",
-          "titleKey": "steps.filePermit.where.title",
-          "bodyKey": "steps.filePermit.where.body"
-        },
-        {
-          "id": "fees",
-          "titleKey": "steps.filePermit.fees.title",
-          "bodyKey": "steps.filePermit.fees.body",
+          "id": "overview",
+          "titleKey": "steps.filePermit.overview.title",
+          "bodyKey": "steps.filePermit.overview.body",
           "facts": [
             {
               "id": "permit-admin-fee",
@@ -375,14 +365,7 @@
               "sourceTier": 1,
               "sourceName": "MUP — Work of third-country nationals",
               "verifiedDate": "2026-07-31"
-            }
-          ]
-        },
-        {
-          "id": "timeline",
-          "titleKey": "steps.filePermit.timeline.title",
-          "bodyKey": "steps.filePermit.timeline.body",
-          "facts": [
+            },
             {
               "id": "permit-decision-timeline",
               "value": "90 days",
@@ -397,35 +380,24 @@
       ],
       "checklist": [
         {
-          "id": "fp-assemble-file",
-          "labelKey": "steps.filePermit.check.assemble"
-        },
-        {
-          "id": "fp-confirm-competence",
-          "labelKey": "steps.filePermit.check.competence"
-        },
-        {
-          "id": "fp-pay-fees",
-          "labelKey": "steps.filePermit.check.fees"
-        },
-        {
-          "id": "fp-submit",
-          "labelKey": "steps.filePermit.check.submit"
-        },
-        {
-          "id": "fp-keep-proof",
-          "labelKey": "steps.filePermit.check.proof"
+          "id": "fp-guided-complete",
+          "labelKey": "steps.filePermit.check.guided"
         }
       ],
       "sources": [
+        {
+          "labelKey": "sources.mupWorkTcn",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+          "tier": 1
+        },
         {
           "labelKey": "sources.mupTempStay",
           "url": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661",
           "tier": 1
         },
         {
-          "labelKey": "sources.mupWorkTcn",
-          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+          "labelKey": "sources.mupObrasci",
+          "url": "https://mup.gov.hr/obrasci-281565/281565",
           "tier": 1
         },
         {
@@ -437,7 +409,9 @@
       "officeIds": [
         "mup",
         "pu-zagreb"
-      ]
+      ],
+      "guidedPanel": "file-permit",
+      "showEmployerCard": true
     },
     {
       "id": "start-work",

@@ -107,7 +107,8 @@
     "hzzLmt": "HZZ — Test tržišta rada (novi sustav)",
     "hzzFilingTips": "HZZ — Savjeti za predaju zahtjeva",
     "mvepStay": "MVEP — Odobrenje boravka u Hrvatskoj",
-    "nn552026": "Narodne novine — Izmjene Zakona o strancima (NN 55/2026)"
+    "nn552026": "Narodne novine — Izmjene Zakona o strancima (NN 55/2026)",
+    "mupObrasci": "MUP — Službeni obrasci"
   },
   "occupations": {
     "nkd90399": {
@@ -241,29 +242,13 @@
     },
     "filePermit": {
       "title": "Podnesite boravak i rad (jedinstvena dozvola)",
-      "summary": "Podnesite nakon TTR (osim izuzeća); pristojbe i nadležnost koriste citirane brojke.",
-      "when": {
-        "title": "Kada podnijeti",
-        "body": "Podnesite zahtjev kad je preduvjet tržišta rada ispunjen (pozitivno mišljenje ili izuzeće) i dokumenti poslodavca + radnika potpuni. Pazite na rok valjanosti TTR."
-      },
-      "where": {
-        "title": "Gdje podnijeti (ovaj slučaj)",
-        "body": "Nadležnost općenito slijedi sjedište / mjesto rada poslodavca. Za poslodavca sa sjedištem u Zagrebu očekujte nadležnu policijsku upravu — potvrdite točan šalter na MUP stranicama. Neka državljanstva podnose konzularno; vidi panel državljanstva."
-      },
-      "fees": {
-        "title": "Pristojbe",
-        "body": "MUP pristojbe za privremeni boravak pri podnošenju u policiji citirane su ispod: administrativna pristojba za privremeni boravak, pristojba za izradu biometrijske iskaznice (redovni postupak; ubrzani se razlikuje) te dodatna administrativna pristojba za izdavanje. Rasporedi pristojbi za Blue Card ovdje ne vrijede. Na dan plaćanja ponovno otvorite MUP stranicu."
-      },
-      "timeline": {
-        "title": "Rok odluke",
-        "body": "Planirani okvir roka odluke prema izmjenama 2026. (citirano ispod). Potvrdite operativni tekst na zakonu / MUP stranici za vaš postupak."
+      "summary": "Podnesite u zemlji na nadležnom zagrebačkom šalteru policije/MUP-a nakon TTR (osim izuzeća). Koristite Obrazac 2a i citirane pristojbe.",
+      "overview": {
+        "title": "Pregled podnošenja u Zagrebu",
+        "body": "Za ovaj slučaj sa sjedištem u Zagrebu podnesite zahtjev za boravak i rad u zemlji kad je preduvjet tržišta rada ispunjen i dokumenti poslodavca + radnika spremni. Potvrdite točan šalter PU Zagrebačke na MUP stranicama. Koristite vođeni popis ispod. Konzularne napomene (ako postoje) su u panelu državljanstva. Biometrija je sljedeći korak."
       },
       "check": {
-        "assemble": "Cjelovit spis sastavljen (poslodavac + radnik + dokaz TTR)",
-        "competence": "Nadležna policija/MUP potvrđena za zagrebačku adresu",
-        "fees": "Iznosi pristojbi ponovno provjereni na MUP-u na dan plaćanja",
-        "submit": "Zahtjev podnesen / termin obavljen",
-        "proof": "Dokaz podnošenja i kopija spisa sačuvani"
+        "guided": "Vođene provjere podnošenja gotove (Obrazac 2a, šalter Zagreb, pristojbe, predaja, dokaz)"
       }
     },
     "startWork": {
@@ -776,6 +761,10 @@
     "a1": {
       "title": "A1.1 hrvatski jezik",
       "body": "Razina jezika (A1.1, latinica) koja može biti potrebna za produženje boravka prema pravilima 2026. Dio odredbi ima odgođeno stupanje na snagu — vidi činjenice u koraku o usklađenosti."
+    },
+    "form2a": {
+      "title": "Obrazac 2a",
+      "body": "Službeni obrazac zahtjeva za dozvolu za boravak i rad. Uvijek preuzmite aktualni predložak s MUP Obrasci — ovaj priručnik ne izmišlja polja. Obrazac 17a je zaseban obrazac poslodavca."
     }
   },
   "wdGuide": {
@@ -853,6 +842,100 @@
         "hzz": "Ponovno pročitajte HZZ smjernice o roku pozitivnog mišljenja dok je spis radnika još u pokretu."
       },
       "evidence": "Zajednički vremenski plan s vlasnicima za FBI/apostille/prijevod i HZZ rok."
+    }
+  },
+  "fpGuide": {
+    "panelTitle": "Vođene provjere podnošenja (Zagreb)",
+    "panelIntro": "Prođite svaki red prije odlaska na šalter. Kad su svi redovi gotovi, Korak 6 je označen. Pristojbe su citirane s MUP-a; platite kad MUP naloži (često pri odobrenju / preuzimanju iskaznice). Biometrija je Korak 7.",
+    "lmtPrecondition": {
+      "title": "Preduvjet tržišta rada još vrijedi",
+      "why": "Zahtjev možete podnijeti samo s pozitivnim mišljenjem HZZ unutar roka valjanosti ili s dokumentiranim službenim izuzećem (npr. potvrđeni UV preskok).",
+      "how": {
+        "notice": "Držite pozitivno mišljenje HZZ o testu tržišta rada (ili dokaz izuzeća) u spisu.",
+        "window": "Potvrdite rok podnošenja na HZZ novi sustav (citirana činjenica).",
+        "uv": "Ako ste tvrdili UV preskok, potvrdite da živa UV lista još pokriva odabrani naziv — ne izmišljajte izuzeće."
+      },
+      "evidence": "Pozitivno mišljenje HZZ unutar citiranog roka ili pisani UV/izuzeće vezan uz ovo zanimanje."
+    },
+    "assemble": {
+      "title": "Potpuni spis zahtjeva sastavljen",
+      "why": "Nepotpuni spisi se odbijaju ili kasne. Paket poslodavca, dokumenti radnika i dokaz TTR/izuzeća moraju ići zajedno.",
+      "how": {
+        "employer": "Uključite paket poslodavca iz Koraka 3 (ugovor/ponuda, put obrasca 17a, smještaj, porezni status).",
+        "worker": "Uključite dokumente radnika iz Koraka 5 (putovnica, kaznena evidencija, osiguranje/smještaj/fotografije prema potrebi).",
+        "lmt": "Uključite mišljenje TTR ili dokaz izuzeća iz Koraka 4."
+      },
+      "evidence": "Jedna mapa (papir ili PDF) s poslodavcem + radnikom + TTR/izuzećem spremna za predaju."
+    },
+    "competence": {
+      "title": "Potvrdite nadležni šalter u Zagrebu",
+      "why": "MUP usmjerava zahtjeve prema mjestu namjeravanog boravka, sjedištu poslodavca ili mjestu rada. Pogrešan šalter gubi posjet.",
+      "how": {
+        "rule": "Ponovno pročitajte MUP pravilo nadležnosti (boravak / sjedište / mjesto rada).",
+        "zagreb": "Za ovaj slučaj sa sjedištem u Zagrebu planirajte Policijsku upravu zagrebačku (PU Zagreb).",
+        "confirm": "Potvrdite točan šalter na živim MUP / PU Zagreb kanalima prije puta — ne oslanjajte se na zastarjele karte."
+      },
+      "evidence": "Bilješka o potvrđenom nazivu/adresi šaltera i datumu provjere.",
+      "caseHint": "Ovaj priručnik pretpostavlja zagrebačko sjedište/mjesto rada aktivnog slučaja; drugi gradovi još nisu mapirani."
+    },
+    "form2a": {
+      "title": "Preuzmite aktualni Obrazac 2a",
+      "why": "Službeni zahtjev za dozvolu za boravak i rad je Obrazac 2a. Predlošci se mijenjaju — uvijek preuzmite živi obrazac.",
+      "how": {
+        "obrasci": "Otvorite MUP stranicu Obrasci.",
+        "download": "Preuzmite Zahtjev za dozvolu za boravak i rad — Obrazac 2a (aktualno izdanje).",
+        "noInvent": "Ne izmišljajte polja iz blogova ili starih PDF-ova — koristite samo živi službeni predložak."
+      },
+      "evidence": "Aktualni prazan PDF Obrasca 2a s datumom preuzimanja (skica ispune nije obavezna).",
+      "caseHint": "Obrazac 17a je drugi obrazac poslodavca (Korak 3). Podnošenje koristi Obrazac 2a."
+    },
+    "appointment": {
+      "title": "Potvrdite naručivanje ili dolazak bez termina",
+      "why": "Zagrebački šalteri mogu tražiti termin ili prihvaćati dolazak bez najave. Pravila se mijenjaju; pitajte nadležni ured.",
+      "how": {
+        "askPu": "Pitajte PU Zagrebačku (telefon/upute na službenim kanalima) kako naručiti termin ili je li moguć dolazak bez termina za boravak i rad.",
+        "noInvent": "Ne izmišljajte nacionalni URL za e-naručivanje — ovdje nije citiran kao Tier 1 za TTR put podnošenja.",
+        "notEmail": "Ne koristite radna.dozvola.zagreb@mup.hr za prvo podnošenje koje zahtijeva TTR — taj e-mail je samo za slučajeve bez TTR / produženja / čl. 110."
+      },
+      "evidence": "Pisana bilješka reference termina ili uputa za dolazak bez najave i datum potvrde."
+    },
+    "whoAppears": {
+      "title": "Tko se mora pojaviti",
+      "why": "MUP tretira zahtjev za boravak i rad kao zahtjev državljanina treće zemlje. Poslodavac dostavlja prateću dokumentaciju.",
+      "how": {
+        "worker": "Radnik (podnositelj) dolazi s valjanom putnom ispravom i ispunjenim Obrascem 2a.",
+        "employerDocs": "Ponesite sve priloge poslodavca; predstavnik poslodavca može pratiti, ali ovdje ne izmišljamo obvezno zajedničko potpisivanje na šalteru.",
+        "nationality": "Ako panel državljanstva kaže da vrijedi konzularni kanal, slijedite taj panel — ovaj vođeni put pretpostavlja podnošenje u policiji u zemlji."
+      },
+      "evidence": "Plan tko dolazi + spis usklađen s prilozima Obrasca 2a."
+    },
+    "fees": {
+      "title": "Znajte raspored pristojbi (platite kad nalože)",
+      "why": "MUP navodi odvojene iznose za administrativnu pristojbu za boravak i rad i izradu biometrijske iskaznice. Iznosi se plaćaju kad MUP naloži — tipično pri obavijesti o odobrenju / preuzimanju — ne nužno prije predaje.",
+      "how": {
+        "schedule": "Ponovno otvorite odjeljak pristojbi na MUP stranici o radu državljana trećih zemalja na dan plaćanja.",
+        "whenDue": "Planirajte administrativnu pristojbu za boravak i rad pri obavijesti o odobrenju; držite uplatnice odvojeno kako MUP traži.",
+        "biometricsStep": "Pristojbe za biometriju navedene su ovdje radi planiranja; dolazak na biometriju i preuzimanje iskaznice je Korak 7."
+      },
+      "evidence": "Snimka ili ispis živog MUP teksta o pristojbama s današnjim datumom te plan plaćanja."
+    },
+    "submit": {
+      "title": "Predajte na potvrđenom šalteru",
+      "why": "Zahtjev nije podnesen dok ga nadležni ured ne zaprimi.",
+      "how": {
+        "counter": "Dođite na potvrđeni zagrebački šalter (ili dogovoreni termin) s potpunim spisom.",
+        "complete": "Predajte Obrazac 2a + priloge; slijedite upute na mjestu za uplatnice ili nedostajuće stavke."
+      },
+      "evidence": "Potvrda predaje, pečat ili pisana potvrda šaltera."
+    },
+    "proof": {
+      "title": "Zadržite dokaz predaje i kopiju spisa",
+      "why": "Trebate dokaz podnošenja dok čekate odluku i kasnije za biometriju.",
+      "how": {
+        "receipt": "Sačuvajte potvrdu predaje / broj protokola.",
+        "copy": "Držite potpunu kopiju svega predanog (skenovi)."
+      },
+      "evidence": "Potvrda + arhivirana kopija cijelog kompleta s datumom."
     }
   }
 }

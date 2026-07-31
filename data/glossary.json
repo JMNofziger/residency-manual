@@ -6,91 +6,130 @@
       "sort": "Single Permit",
       "titleKey": "glossary.singlePermit.title",
       "bodyKey": "glossary.singlePermit.body",
-      "officeIds": ["mup"]
+      "officeIds": [
+        "mup"
+      ]
     },
     {
       "id": "lmt",
       "sort": "Labor market test",
       "titleKey": "glossary.lmt.title",
       "bodyKey": "glossary.lmt.body",
-      "officeIds": ["hzz"]
+      "officeIds": [
+        "hzz"
+      ]
     },
     {
       "id": "hzz",
       "sort": "HZZ",
       "titleKey": "glossary.hzz.title",
       "bodyKey": "glossary.hzz.body",
-      "officeIds": ["hzz"]
+      "officeIds": [
+        "hzz"
+      ]
     },
     {
       "id": "mup",
       "sort": "MUP",
       "titleKey": "glossary.mup.title",
       "bodyKey": "glossary.mup.body",
-      "officeIds": ["mup", "pu-zagreb"]
+      "officeIds": [
+        "mup",
+        "pu-zagreb"
+      ]
     },
     {
       "id": "art99",
       "sort": "Article 99",
       "titleKey": "glossary.art99.title",
       "bodyKey": "glossary.art99.body",
-      "officeIds": ["hzz"]
+      "officeIds": [
+        "hzz"
+      ]
     },
     {
       "id": "uv-list",
       "sort": "UV occupations list",
       "titleKey": "glossary.uvList.title",
       "bodyKey": "glossary.uvList.body",
-      "officeIds": ["hzz", "mup"]
+      "officeIds": [
+        "hzz",
+        "mup"
+      ]
     },
     {
       "id": "nkd",
       "sort": "NKD",
       "titleKey": "glossary.nkd.title",
       "bodyKey": "glossary.nkd.body",
-      "officeIds": ["fina"]
+      "officeIds": [
+        "fina"
+      ]
     },
     {
       "id": "tcn",
       "sort": "Third-country national",
       "titleKey": "glossary.tcn.title",
       "bodyKey": "glossary.tcn.body",
-      "officeIds": ["mup"]
+      "officeIds": [
+        "mup"
+      ]
     },
     {
       "id": "form17a",
       "sort": "Form 17a",
       "titleKey": "glossary.form17a.title",
       "bodyKey": "glossary.form17a.body",
-      "officeIds": ["mup"]
+      "officeIds": [
+        "mup"
+      ]
+    },
+    {
+      "id": "form2a",
+      "sort": "Form 2a",
+      "titleKey": "glossary.form2a.title",
+      "bodyKey": "glossary.form2a.body",
+      "officeIds": [
+        "mup",
+        "pu-zagreb"
+      ]
     },
     {
       "id": "oib",
       "sort": "OIB",
       "titleKey": "glossary.oib.title",
       "bodyKey": "glossary.oib.body",
-      "officeIds": ["fina", "porezna"]
+      "officeIds": [
+        "fina",
+        "porezna"
+      ]
     },
     {
       "id": "hzmo",
       "sort": "HZMO",
       "titleKey": "glossary.hzmo.title",
       "bodyKey": "glossary.hzmo.body",
-      "officeIds": ["hzmo"]
+      "officeIds": [
+        "hzmo"
+      ]
     },
     {
       "id": "hzzo",
       "sort": "HZZO",
       "titleKey": "glossary.hzzo.title",
       "bodyKey": "glossary.hzzo.body",
-      "officeIds": ["hzzo"]
+      "officeIds": [
+        "hzzo"
+      ]
     },
     {
       "id": "mvep",
       "sort": "MVEP",
       "titleKey": "glossary.mvep.title",
       "bodyKey": "glossary.mvep.body",
-      "officeIds": ["mvep"]
+      "officeIds": [
+        "mvep"
+      ]
     },
     {
       "id": "nn",
@@ -104,14 +143,18 @@
       "sort": "EU Blue Card",
       "titleKey": "glossary.blueCard.title",
       "bodyKey": "glossary.blueCard.body",
-      "officeIds": ["mup"]
+      "officeIds": [
+        "mup"
+      ]
     },
     {
       "id": "a1",
       "sort": "A1.1 Croatian",
       "titleKey": "glossary.a1.title",
       "bodyKey": "glossary.a1.body",
-      "officeIds": ["mup"]
+      "officeIds": [
+        "mup"
+      ]
     }
   ]
 }

@@ -107,7 +107,8 @@
     "hzzLmt": "HZZ — Labor market test (novi sustav)",
     "hzzFilingTips": "HZZ — Tips for submitting the request",
     "mvepStay": "MVEP — Granting stay in Croatia",
-    "nn552026": "Narodne novine — Zakon o strancima amendments (NN 55/2026)"
+    "nn552026": "Narodne novine — Zakon o strancima amendments (NN 55/2026)",
+    "mupObrasci": "MUP — Official forms (Obrasci)"
   },
   "occupations": {
     "nkd90399": {
@@ -241,29 +242,13 @@
     },
     "filePermit": {
       "title": "File stay-and-work (Single Permit)",
-      "summary": "File after LMT (unless exempt); fees and local police competence use cited figures.",
-      "when": {
-        "title": "When to file",
-        "body": "File the stay-and-work / temporary stay application once the labor market precondition is met (positive notice or applicable exemption) and employer + worker documents are complete. Keep the LMT validity window in mind."
-      },
-      "where": {
-        "title": "Where to file (this case)",
-        "body": "Competence generally follows the employer’s seat / place of work. For a Zagreb-based employer, expect Zagreb police administration / competent immigration office — confirm the exact receiving counter on MUP pages before traveling. Some nationalities file via consulate when required; see the nationality panel if a channel delta applies."
-      },
-      "fees": {
-        "title": "Fees",
-        "body": "MUP temporary-stay fees for police filing are cited below: temporary-stay administrative fee, biometric production fee (regular procedure; accelerated differs), and an additional biometric administrative fee. Blue Card fee schedules differ and do not apply here. Re-open the MUP page on payment day."
-      },
-      "timeline": {
-        "title": "Decision timeline",
-        "body": "Planning assumption for the decision window under the 2026 amendments (cite below). Confirm operative wording on the statute / MUP page for your exact procedure."
+      "summary": "File in-country at the competent Zagreb police/MUP desk after LMT (unless exempt). Use Form 2a and cited fees.",
+      "overview": {
+        "title": "Zagreb filing overview",
+        "body": "For this Zagreb-seat case, file the stay-and-work application in-country once the labor market precondition is met and employer + worker documents are ready. Confirm the exact PU Zagrebačka receiving desk on MUP pages. Use the guided checklist below. Consular-channel notes (if any) stay in the nationality panel. Biometrics attendance is the next step."
       },
       "check": {
-        "assemble": "Full application file assembled (employer + worker + LMT proof)",
-        "competence": "Competent police/MUP office confirmed for Zagreb employer address",
-        "fees": "Fee amounts re-checked on MUP the day of payment",
-        "submit": "Application submitted / appointment completed",
-        "proof": "Submission proof and copy of file retained"
+        "guided": "Filing guided checks complete (Form 2a, Zagreb desk, fees, submit, proof)"
       }
     },
     "startWork": {
@@ -775,6 +760,10 @@
     "a1": {
       "title": "A1.1 Croatian language requirement",
       "body": "A language level (A1.1, Latin script) that can be required for extending stay under 2026 rules. Some related articles have a deferred force date — see the Compliance step facts."
+    },
+    "form2a": {
+      "title": "Form 2a (Obrazac 2a)",
+      "body": "The official application form for a stay-and-work permit. Always download the current template from MUP Obrasci — this runbook does not invent form fields. Form 17a is a separate employer form."
     }
   },
   "wdGuide": {
@@ -852,6 +841,100 @@
         "hzz": "Re-read HZZ guidance on the positive-notice window while the worker file is still in motion."
       },
       "evidence": "Shared timeline with owners for FBI/apostille/translation and the HZZ notice deadline."
+    }
+  },
+  "fpGuide": {
+    "panelTitle": "Guided filing checks (Zagreb)",
+    "panelIntro": "Work through each row before you travel to the police desk. Completing every row marks Step 6 done. Fee amounts are cited from MUP; pay when MUP instructs (often on approval / at card collection). Biometrics attendance is Step 7.",
+    "lmtPrecondition": {
+      "title": "Labor market precondition still valid",
+      "why": "You may file only with a positive HZZ notice still inside its validity window, or with a documented official exemption (for example a confirmed UV skip).",
+      "how": {
+        "notice": "Keep the positive HZZ labor market test notice (or exemption proof) with the file.",
+        "window": "Confirm the filing window on HZZ novi sustav (cited fact).",
+        "uv": "If you claimed a UV skip, confirm the live UV list still covers the chosen title — do not invent an exemption."
+      },
+      "evidence": "Positive HZZ notice dated within the cited window, or written UV/exemption proof tied to this occupation."
+    },
+    "assemble": {
+      "title": "Full application file assembled",
+      "why": "Incomplete files are rejected or delayed. Employer package, worker documents, and LMT/exemption proof must travel together.",
+      "how": {
+        "employer": "Include the employer package from Step 3 (contract/offer, Form 17a path, housing, tax standing).",
+        "worker": "Include worker documents from Step 5 (passport, criminal record path, insurance/housing/photos as required).",
+        "lmt": "Include LMT notice or exemption proof from Step 4."
+      },
+      "evidence": "Single folder (paper or PDF) with employer + worker + LMT/exemption set ready to hand in."
+    },
+    "competence": {
+      "title": "Confirm Zagreb competent desk",
+      "why": "MUP routes applications by intended place of stay, employer seat, or place of work. Wrong desk wastes the visit.",
+      "how": {
+        "rule": "Re-read MUP temporary-stay competence wording (stay / employer seat / place of work).",
+        "zagreb": "For this Zagreb-seat employer case, plan on Policijska uprava zagrebačka (PU Zagreb).",
+        "confirm": "Confirm the exact receiving counter on live MUP / PU Zagreb channels before you travel — do not rely on outdated maps."
+      },
+      "evidence": "Note of the confirmed desk name/address and the date you verified it.",
+      "caseHint": "This runbook assumes a Zagreb workplace/seat for the active case; other cities are not mapped yet."
+    },
+    "form2a": {
+      "title": "Download current Form 2a (Obrazac 2a)",
+      "why": "The official application for a stay-and-work permit is Form 2a. Templates change — always pull the live form.",
+      "how": {
+        "obrasci": "Open the MUP Obrasci (forms) page.",
+        "download": "Download Zahtjev za dozvolu za boravak i rad — Obrazac 2a (current edition).",
+        "noInvent": "Do not invent form fields from blogs or older PDFs — use only the live official template."
+      },
+      "evidence": "Current blank Form 2a PDF with retrieval date noted (draft fill optional).",
+      "caseHint": "Form 17a is a different employer form (Step 3). Filing uses Form 2a."
+    },
+    "appointment": {
+      "title": "Confirm how to book or walk in",
+      "why": "Zagreb desks may require an appointment or accept walk-ins. Rules change; ask the competent office.",
+      "how": {
+        "askPu": "Ask PU Zagrebačka (phone/counter instructions on official channels) how to book or whether walk-in is allowed for stay-and-work filing.",
+        "noInvent": "Do not invent a national e-booking URL — none is cited here as Tier 1 for the LMT filing path.",
+        "notEmail": "Do not use radna.dozvola.zagreb@mup.hr for a first LMT-required filing — that e-mail channel is for non-LMT / extensions / Art. 110 cases only."
+      },
+      "evidence": "Written note of booking reference or walk-in instructions and the date confirmed."
+    },
+    "whoAppears": {
+      "title": "Who must appear",
+      "why": "MUP treats the stay-and-work filing as the third-country national’s application. The employer supplies supporting documents.",
+      "how": {
+        "worker": "The worker (applicant) appears with a valid travel document and the completed Form 2a.",
+        "employerDocs": "Bring the full employer-side attachments; an employer representative may accompany but is not invented here as a mandatory co-signer at the counter.",
+        "nationality": "If the nationality panel says a consular channel applies instead, follow that panel — this guided path assumes in-country police filing."
+      },
+      "evidence": "Plan of who attends + packed file matching Form 2a attachments."
+    },
+    "fees": {
+      "title": "Know the fee schedule (pay when instructed)",
+      "why": "MUP cites separate amounts for the stay-and-work administrative fee and biometric card production. Amounts are paid when MUP instructs — typically when you are notified of approval / at collection — not necessarily before you submit.",
+      "how": {
+        "schedule": "Re-open the MUP Work of third-country nationals fee section on payment day.",
+        "whenDue": "Budget for the stay-and-work administrative fee when notified of approval; keep payment slips separate as MUP requires.",
+        "biometricsStep": "Biometric production/admin fees are listed here for planning; attending biometrics and collecting the card is Step 7."
+      },
+      "evidence": "Screenshot or printout of the live MUP fee wording dated today, plus a payment plan."
+    },
+    "submit": {
+      "title": "Submit at the confirmed desk",
+      "why": "The application is not filed until the competent office receives it.",
+      "how": {
+        "counter": "Attend the confirmed Zagreb desk (or completed booking) with the full file.",
+        "complete": "Hand in Form 2a + attachments; follow any on-site instructions for slips or missing items."
+      },
+      "evidence": "Submission receipt, stamp, or written confirmation from the desk."
+    },
+    "proof": {
+      "title": "Keep submission proof and a file copy",
+      "why": "You need proof of filing while waiting for the decision window and for biometrics later.",
+      "how": {
+        "receipt": "Retain the submission receipt / protocol number.",
+        "copy": "Keep a complete copy of everything submitted (scans)."
+      },
+      "evidence": "Receipt + dated archive copy of the full filing set."
     }
   }
 }

@@ -1,0 +1,240 @@
+{
+  "version": 1,
+  "titleKey": "fpGuide.panelTitle",
+  "introKey": "fpGuide.panelIntro",
+  "sourceHub": {
+    "labelKey": "sources.mupWorkTcn",
+    "url": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+    "tier": 1
+  },
+  "parentChecklistId": "fp-guided-complete",
+  "checks": [
+    {
+      "id": "lmt-precondition",
+      "order": 1,
+      "titleKey": "fpGuide.lmtPrecondition.title",
+      "whyKey": "fpGuide.lmtPrecondition.why",
+      "howSteps": [
+        {
+          "labelKey": "fpGuide.lmtPrecondition.how.notice"
+        },
+        {
+          "labelKey": "fpGuide.lmtPrecondition.how.window",
+          "url": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/"
+        },
+        {
+          "labelKey": "fpGuide.lmtPrecondition.how.uv"
+        }
+      ],
+      "evidenceKey": "fpGuide.lmtPrecondition.evidence",
+      "facts": [
+        {
+          "id": "fp-lmt-positive-notice-window",
+          "value": "90 days",
+          "labelKey": "facts.lmtPositiveNoticeWindow",
+          "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+          "sourceTier": 1,
+          "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
+          "verifiedDate": "2026-07-31"
+        }
+      ],
+      "caseHintKeys": []
+    },
+    {
+      "id": "assemble-file",
+      "order": 2,
+      "titleKey": "fpGuide.assemble.title",
+      "whyKey": "fpGuide.assemble.why",
+      "howSteps": [
+        {
+          "labelKey": "fpGuide.assemble.how.employer"
+        },
+        {
+          "labelKey": "fpGuide.assemble.how.worker"
+        },
+        {
+          "labelKey": "fpGuide.assemble.how.lmt"
+        }
+      ],
+      "evidenceKey": "fpGuide.assemble.evidence",
+      "facts": [],
+      "caseHintKeys": []
+    },
+    {
+      "id": "competence-zagreb",
+      "order": 3,
+      "titleKey": "fpGuide.competence.title",
+      "whyKey": "fpGuide.competence.why",
+      "howSteps": [
+        {
+          "labelKey": "fpGuide.competence.how.rule",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661"
+        },
+        {
+          "labelKey": "fpGuide.competence.how.zagreb"
+        },
+        {
+          "labelKey": "fpGuide.competence.how.confirm"
+        }
+      ],
+      "evidenceKey": "fpGuide.competence.evidence",
+      "facts": [],
+      "caseHintKeys": ["fpGuide.competence.caseHint"]
+    },
+    {
+      "id": "form-2a",
+      "order": 4,
+      "titleKey": "fpGuide.form2a.title",
+      "whyKey": "fpGuide.form2a.why",
+      "howSteps": [
+        {
+          "labelKey": "fpGuide.form2a.how.obrasci",
+          "url": "https://mup.gov.hr/obrasci-281565/281565"
+        },
+        {
+          "labelKey": "fpGuide.form2a.how.download"
+        },
+        {
+          "labelKey": "fpGuide.form2a.how.noInvent"
+        }
+      ],
+      "evidenceKey": "fpGuide.form2a.evidence",
+      "facts": [],
+      "caseHintKeys": ["fpGuide.form2a.caseHint"]
+    },
+    {
+      "id": "appointment",
+      "order": 5,
+      "titleKey": "fpGuide.appointment.title",
+      "whyKey": "fpGuide.appointment.why",
+      "howSteps": [
+        {
+          "labelKey": "fpGuide.appointment.how.askPu"
+        },
+        {
+          "labelKey": "fpGuide.appointment.how.noInvent"
+        },
+        {
+          "labelKey": "fpGuide.appointment.how.notEmail"
+        }
+      ],
+      "evidenceKey": "fpGuide.appointment.evidence",
+      "facts": [],
+      "caseHintKeys": []
+    },
+    {
+      "id": "who-appears",
+      "order": 6,
+      "titleKey": "fpGuide.whoAppears.title",
+      "whyKey": "fpGuide.whoAppears.why",
+      "howSteps": [
+        {
+          "labelKey": "fpGuide.whoAppears.how.worker",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661"
+        },
+        {
+          "labelKey": "fpGuide.whoAppears.how.employerDocs"
+        },
+        {
+          "labelKey": "fpGuide.whoAppears.how.nationality"
+        }
+      ],
+      "evidenceKey": "fpGuide.whoAppears.evidence",
+      "facts": [],
+      "caseHintKeys": []
+    },
+    {
+      "id": "fees",
+      "order": 7,
+      "titleKey": "fpGuide.fees.title",
+      "whyKey": "fpGuide.fees.why",
+      "howSteps": [
+        {
+          "labelKey": "fpGuide.fees.how.schedule",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663"
+        },
+        {
+          "labelKey": "fpGuide.fees.how.whenDue"
+        },
+        {
+          "labelKey": "fpGuide.fees.how.biometricsStep"
+        }
+      ],
+      "evidenceKey": "fpGuide.fees.evidence",
+      "facts": [
+        {
+          "id": "fp-permit-admin-fee",
+          "value": "€74.32",
+          "labelKey": "facts.permitFee",
+          "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+          "sourceTier": 1,
+          "sourceName": "MUP — Work of third-country nationals",
+          "verifiedDate": "2026-07-31"
+        },
+        {
+          "id": "fp-biometric-production-fee",
+          "value": "€31.85",
+          "labelKey": "facts.biometricProductionFee",
+          "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+          "sourceTier": 1,
+          "sourceName": "MUP — Work of third-country nationals",
+          "verifiedDate": "2026-07-31"
+        },
+        {
+          "id": "fp-biometric-admin-fee",
+          "value": "€9.29",
+          "labelKey": "facts.biometricAdminFee",
+          "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+          "sourceTier": 1,
+          "sourceName": "MUP — Work of third-country nationals",
+          "verifiedDate": "2026-07-31"
+        }
+      ],
+      "caseHintKeys": []
+    },
+    {
+      "id": "submit",
+      "order": 8,
+      "titleKey": "fpGuide.submit.title",
+      "whyKey": "fpGuide.submit.why",
+      "howSteps": [
+        {
+          "labelKey": "fpGuide.submit.how.counter"
+        },
+        {
+          "labelKey": "fpGuide.submit.how.complete"
+        }
+      ],
+      "evidenceKey": "fpGuide.submit.evidence",
+      "facts": [],
+      "caseHintKeys": []
+    },
+    {
+      "id": "proof",
+      "order": 9,
+      "titleKey": "fpGuide.proof.title",
+      "whyKey": "fpGuide.proof.why",
+      "howSteps": [
+        {
+          "labelKey": "fpGuide.proof.how.receipt"
+        },
+        {
+          "labelKey": "fpGuide.proof.how.copy"
+        }
+      ],
+      "evidenceKey": "fpGuide.proof.evidence",
+      "facts": [
+        {
+          "id": "fp-permit-decision-timeline",
+          "value": "90 days",
+          "labelKey": "facts.permitDecisionTimeline",
+          "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+          "sourceTier": 1,
+          "sourceName": "Narodne novine — NN 55/2026",
+          "verifiedDate": "2026-07-31"
+        }
+      ],
+      "caseHintKeys": []
+    }
+  ]
+}
