@@ -14,6 +14,7 @@ import { UvList } from "./uv-list.js";
 import { Reference } from "./reference.js";
 import { canEnterStep, canMarkStepComplete } from "./step-gates.js";
 import { toBundle, downloadBundle, parseFile } from "./case-file.js";
+import { Uncertainty } from "./uncertainty.js";
 
 const GUIDED_PANELS = {
   art99: Art99,
@@ -491,6 +492,7 @@ function renderMain() {
       <p class="step-summary">${esc(I18n.t(step.summaryKey))}</p>
     </header>
     ${renderGateBanner(step)}
+    ${Uncertainty.renderForStep(step.id)}
     ${step.showEmployerCard ? renderEmployerCard() : ""}
     ${step.showCaseRisks ? renderCaseRisks(step.id) : ""}
     ${renderSections(step)}
@@ -772,6 +774,7 @@ async function init() {
       ...Object.values(GUIDED_PANELS).map((p) => p.load()),
       UvList.load(),
       Reference.load(),
+      Uncertainty.load(),
     ]);
     state.caseData = caseData;
     state.stepsData = stepsData;

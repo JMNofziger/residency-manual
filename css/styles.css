@@ -978,3 +978,188 @@ a:hover {
     width: 100%;
   }
 }
+
+/* —— Uncertainty cards —— */
+.overview-uncertainty {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.overview-uncertainty > h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+}
+
+.uncertainty-card {
+  padding: 1.1rem 1.15rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(160deg, color-mix(in srgb, var(--danger) 8%, transparent), transparent 40%),
+    var(--bg-elev);
+}
+
+.uncertainty-card.is-resolved {
+  background:
+    linear-gradient(160deg, color-mix(in srgb, var(--ok) 10%, transparent), transparent 42%),
+    var(--bg-elev);
+}
+
+.uncertainty-eyebrow {
+  margin: 0 0 0.25rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-size: 0.7rem;
+  font-weight: 650;
+}
+
+.uncertainty-card-head h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+}
+
+.uncertainty-card-head p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.uncertainty-spectrum {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.55rem;
+  align-items: center;
+  margin: 1rem 0 0.35rem;
+}
+
+.spectrum-end {
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.spectrum-track {
+  position: relative;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--danger), var(--accent), var(--ok));
+  overflow: hidden;
+}
+
+.spectrum-marker {
+  position: absolute;
+  top: 50%;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  background: var(--bg-elev);
+  border: 2px solid var(--text);
+  transform: translate(-50%, -50%);
+  left: 18%;
+  transition: left 0.55s ease;
+  animation: marker-pulse 2.4s ease-in-out infinite;
+}
+
+.spectrum-marker.is-resolved {
+  left: 82%;
+}
+
+@keyframes marker-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 45%, transparent); }
+  50% { box-shadow: 0 0 0 6px transparent; }
+}
+
+.uncertainty-spectrum-caption,
+.uncertainty-adopted {
+  margin: 0.25rem 0 0.75rem;
+  font-size: 0.9rem;
+}
+
+.uncertainty-adopted {
+  font-weight: 650;
+  color: var(--ok);
+}
+
+.uncertainty-readings {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+@media (min-width: 720px) {
+  .uncertainty-readings {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.uncertainty-reading {
+  padding: 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) - 6px);
+  background: var(--bg-soft);
+}
+
+.uncertainty-reading.is-adopted {
+  border-color: color-mix(in srgb, var(--ok) 55%, var(--border));
+}
+
+.uncertainty-reading-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.7rem;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.uncertainty-value {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 650;
+}
+
+.uncertainty-role {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.uncertainty-meaning {
+  margin: 0.45rem 0;
+  font-size: 0.9rem;
+}
+
+.uncertainty-source {
+  display: inline-block;
+  font-size: 0.88rem;
+  word-break: break-word;
+}
+
+.uncertainty-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.85rem;
+  margin-top: 0.45rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.uncertainty-page-note {
+  margin: 0.4rem 0 0;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 860px) {
+  #app-shell.is-overview .sidebar,
+  #app-shell.is-overview .mobile-bar {
+    display: none;
+  }
+
+  .overview-hero {
+    padding: 1.25rem 1rem;
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "stay-work-admin-fee",
+      "titleKey": "uncertainty.stayWorkFee.title",
+      "summaryKey": "uncertainty.stayWorkFee.summary",
+      "spectrumKey": "uncertainty.stayWorkFee.spectrum",
+      "resolvedForPath": true,
+      "adoptedLabelKey": "facts.permitFee",
+      "stepIds": ["file-permit", "start-work"],
+      "showOnOverview": true,
+      "readings": [
+        {
+          "id": "work-tcn-74",
+          "value": "€74.32",
+          "roleKey": "uncertainty.role.adopted",
+          "meaningKey": "uncertainty.stayWorkFee.meaning74",
+          "sourceName": "MUP — Work of third-country nationals",
+          "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+          "sourceTier": 1,
+          "pageUpdatedNoteKey": "uncertainty.stayWorkFee.pageNoteWork",
+          "verifiedDate": "2026-07-31"
+        },
+        {
+          "id": "temp-stay-46",
+          "value": "€46.45",
+          "roleKey": "uncertainty.role.conflicting",
+          "meaningKey": "uncertainty.stayWorkFee.meaning46",
+          "sourceName": "MUP — Temporary stay of third-country nationals",
+          "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661",
+          "sourceTier": 1,
+          "pageUpdatedNoteKey": "uncertainty.stayWorkFee.pageNoteTemp",
+          "verifiedDate": "2026-07-31"
+        }
+      ]
+    },
+    {
+      "id": "biometric-production-fee",
+      "titleKey": "uncertainty.biometricFee.title",
+      "summaryKey": "uncertainty.biometricFee.summary",
+      "spectrumKey": "uncertainty.biometricFee.spectrum",
+      "resolvedForPath": true,
+      "adoptedLabelKey": "facts.biometricProductionFee",
+      "stepIds": ["file-permit", "start-work"],
+      "showOnOverview": false,
+      "readings": [
+        {
+          "id": "biometric-regular",
+          "value": "€31.85",
+          "roleKey": "uncertainty.role.adopted",
+          "meaningKey": "uncertainty.biometricFee.meaningRegular",
+          "sourceName": "MUP — Work of third-country nationals",
+          "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+          "sourceTier": 1,
+          "pageUpdatedNoteKey": "uncertainty.biometricFee.pageNote",
+          "verifiedDate": "2026-07-31"
+        },
+        {
+          "id": "biometric-accelerated",
+          "value": "€59.73",
+          "roleKey": "uncertainty.role.alternate",
+          "meaningKey": "uncertainty.biometricFee.meaningAccelerated",
+          "sourceName": "MUP — Work of third-country nationals",
+          "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+          "sourceTier": 1,
+          "pageUpdatedNoteKey": "uncertainty.biometricFee.pageNote",
+          "verifiedDate": "2026-07-31"
+        }
+      ]
+    }
+  ]
+}

@@ -1098,5 +1098,38 @@
       },
       "evidence": "Kratka bilješka da je dugotrajni boravak pregledan kao izvan opsega prve godine."
     }
+  },
+  "uncertainty": {
+    "eyebrow": "Sukobljeni službeni iznosi",
+    "overviewTitle": "Sukobi naknada za praćenje",
+    "overviewIntro": "Stranice 1. reda se ne slažu oko nekih pristojbi. Prikazujemo oba čitanja s izvorima i datumima provjere; vodič usvaja jednu vrijednost za ovaj put.",
+    "verifiedOn": "Zadnja provjera {date}",
+    "adopted": "Usvojeno za ovaj put: {value}",
+    "spectrum": {
+      "conflict": "Sukob",
+      "resolved": "Riješeno za put"
+    },
+    "role": {
+      "adopted": "Usvojeno",
+      "conflicting": "Sukobljeno",
+      "alternate": "Alternativna opcija"
+    },
+    "stayWorkFee": {
+      "title": "Administrativna pristojba boravka i rada (obrazac 2a)",
+      "summary": "MUP objavljuje dva iznosa u eurima koji izgledaju slično, ali se odnose na različite svrhe privremenog boravka.",
+      "spectrum": "Neriješeno ako miješate stranice; za ovaj angažman riješeno korištenjem stranice o radu državljana trećih zemalja.",
+      "meaning74": "Administrativna pristojba za boravak i rad / obrazac 2a na stranici o radu državljana trećih zemalja.",
+      "meaning46": "Iznos naveden za druge svrhe privremenog boravka — nije put boravka i rada koji se ovdje koristi.",
+      "pageNoteWork": "Živa MUP stranica o radu državljana trećih zemalja (odjeljak pristojbi).",
+      "pageNoteTemp": "Živa MUP stranica pristojbi za privremeni boravak — druge svrhe."
+    },
+    "biometricFee": {
+      "title": "Pristojba za izdavanje biometrijske iskaznice",
+      "summary": "Ista MUP stranica navodi redovnu i ubrzanu pristojbu proizvodnje. To su opcije, ne proturječnost osnovne pristojbe.",
+      "spectrum": "Za kontrolni popis riješeno usvajanjem redovne pristojbe osim ako se ne odabere ubrzanje.",
+      "meaningRegular": "Redovna pristojba proizvodnje biometrijske boravišne iskaznice.",
+      "meaningAccelerated": "Opcija ubrzane proizvodnje — viša pristojba, nije zadani iznos kontrolnog popisa.",
+      "pageNote": "Živa MUP stranica o radu državljana trećih zemalja (biometrijske / proizvodne pristojbe)."
+    }
   }
 }

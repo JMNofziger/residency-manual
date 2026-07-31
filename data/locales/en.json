@@ -1098,5 +1098,38 @@
       },
       "evidence": "Short note that long-term stay was reviewed as out-of-scope for year one."
     }
+  },
+  "uncertainty": {
+    "eyebrow": "Conflicting official figures",
+    "overviewTitle": "Fee conflicts to watch",
+    "overviewIntro": "Tier-1 pages disagree on some fees. Both readings are shown with sources and verification dates; the runbook adopts one value for this path.",
+    "verifiedOn": "Last verified {date}",
+    "adopted": "Adopted for this path: {value}",
+    "spectrum": {
+      "conflict": "Conflict",
+      "resolved": "Path-resolved"
+    },
+    "role": {
+      "adopted": "Adopted",
+      "conflicting": "Conflicting",
+      "alternate": "Alternate option"
+    },
+    "stayWorkFee": {
+      "title": "Stay-and-work admin fee (Form 2a)",
+      "summary": "MUP publishes two euro amounts that look similar but apply to different temporary-stay purposes.",
+      "spectrum": "Unresolved if you mix pages; resolved for this hire by using the stay-and-work work page.",
+      "meaning74": "Administrative fee for stay and work / Form 2a on the Work of TCN page.",
+      "meaning46": "Fee listed for other temporary-stay purposes — not the stay-and-work path used here.",
+      "pageNoteWork": "Live MUP Work of TCN page (fees section).",
+      "pageNoteTemp": "Live MUP temporary-stay fees page — other purposes."
+    },
+    "biometricFee": {
+      "title": "Biometric card issuance fee",
+      "summary": "Same MUP page lists regular and accelerated production fees. They are options, not a contradiction of the base fee.",
+      "spectrum": "Resolved for the checklist by adopting the regular fee unless acceleration is chosen.",
+      "meaningRegular": "Regular biometric residence permit production fee.",
+      "meaningAccelerated": "Accelerated production option — higher fee, not the default checklist amount.",
+      "pageNote": "Live MUP Work of TCN page (biometric / production fees)."
+    }
   }
 }
