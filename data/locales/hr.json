@@ -116,7 +116,10 @@
     "hzzFilingTips": "HZZ — Savjeti za predaju zahtjeva",
     "mvepStay": "MVEP — Odobrenje boravka u Hrvatskoj",
     "nn552026": "Narodne novine — Izmjene Zakona o strancima (NN 55/2026)",
-    "mupObrasci": "MUP — Službeni obrasci"
+    "mupObrasci": "MUP — Službeni obrasci",
+    "hzmo": "HZMO — Hrvatski zavod za mirovinsko osiguranje",
+    "hzzo": "HZZO — Hrvatski zavod za zdravstveno osiguranje",
+    "porezna": "Porezna uprava (ePorezna)"
   },
   "occupations": {
     "nkd90399": {
@@ -261,51 +264,24 @@
     },
     "startWork": {
       "title": "Odluka, biometrija, početak rada",
-      "summary": "Preuzmite iskaznicu, prijavite HZMO/HZZO/porez, radite tek kad ste ovlašteni.",
-      "decision": {
-        "title": "Odluka",
-        "body": "Pričekajte MUP odluku. Ne stavljajte radnika na produktivni plaćeni rad u Hrvatskoj prije odobrenja boravka i rada. Bezvizna prisutnost nije zamjena."
-      },
-      "biometrics": {
-        "title": "Biometrija i iskaznica",
-        "body": "Dođite na biometriju po pozivu i preuzmite boravišnu/radnu iskaznicu. Čuvajte skenove odluke i iskaznice. Pristojba za iskaznicu navedena je u činjenicama koraka Podnošenje."
-      },
-      "register": {
-        "title": "HZMO, HZZO, porez",
-        "body": "Prijavite zaposlenje za mirovinsko (HZMO), zdravstveno (HZZO) i poreznu obustavu kao za svakog radnika. Uskladite datum početka u plaći s pravnim početkom ovlaštenog rada."
+      "summary": "Nakon podnošenja: pričekajte odluku, biometriju i iskaznicu, zatim HZMO / HZZO / porez — radite tek kad je odobreno.",
+      "overview": {
+        "title": "Nakon podnošenja zahtjeva",
+        "body": "Ne stavljajte radnika na produktivni plaćeni rad u Hrvatskoj dok boravak i rad nisu odobreni. Koristite vođeni popis: odluka → pristojbe pri odobrenju → biometrija → iskaznica → prijava adrese → socijalne/porezne prijave → odobreni početak. Bezvizni boravak nije zamjena."
       },
       "check": {
-        "decision": "Pozitivna odluka zaprimljena",
-        "biometrics": "Biometrija obavljena",
-        "card": "Boravišna/radna iskaznica preuzeta",
-        "social": "HZMO / HZZO / porezne prijave obavljene",
-        "startAuthorized": "Prvi radni dan na/nakon ovlaštenog početka"
+        "guided": "Vođene provjere početka rada gotove (od odluke do odobrenog početka)"
       }
     },
     "comply": {
       "title": "Ostanite usklađeni",
-      "summary": "Promjena poslodavca, prozori nezaposlenosti, A1 za produženje, obnove.",
-      "employerChange": {
-        "title": "Promjena poslodavca",
-        "body": "Prema okviru 2026. radnici mogu promijeniti poslodavca nakon citiranog razdoblja bez prethodnog punog obrasca nove dozvole — prije postupanja potvrdite točan mehanizam obavijesti/odobrenja na aktualnom MUP vodiču."
-      },
-      "unemployment": {
-        "title": "Prozori nezaposlenosti",
-        "body": "Dopušteni prozori nezaposlenosti nakon gubitka posla citirani su ispod. Potvrdite operativna pravila prije oslanjanja na ta razdoblja."
-      },
-      "language": {
-        "title": "A1.1 hrvatski za produženje",
-        "body": "NN 55/2026 nalaže ispit A1.1 hrvatskog + latinice nakon najmanje citiranog boravka te dokaz uz produženje — no čl. 92.a st. 1./4./6. odgođen je do citiranog datuma stupanja na snagu. Rano planirajte učenje; do tada koristite odgođeni datum kao orijentir usklađenosti."
-      },
-      "renewals": {
-        "title": "Obnove i dugotrajni boravak",
-        "body": "Pratite istek, održavajte zaposlenje gdje je potrebno i pokrenite obnovu prije isteka iskaznice. Dugotrajni boravak je zaseban kasniji put; pristojba citirana ispod."
+      "summary": "Pratite datume, promjenu poslodavca i prozore nezaposlenosti, plan A1.1 jezika, produženja.",
+      "overview": {
+        "title": "Kalendar usklađenosti",
+        "body": "Nakon početka rada držite zajednički kalendar za istek iskaznice, pravila promjene poslodavca, prozore nezaposlenosti i obvezu A1.1 jezika (dijelom odgođenu). Ponovno otvorite NN 55/2026 i MUP stranice prije oslanjanja na bilo koji rok. Dugotrajni boravak je kasniji put."
       },
       "check": {
-        "dates": "Datumi isteka dozvole / iskaznice zabilježeni",
-        "employerChange": "Tim poznaje pravila promjene poslodavca (provjeriti prije uporabe)",
-        "a1": "Plan A1.1 jezika usklađen s citiranim činjenicama o boravku / odgođenom stupanju na snagu",
-        "renewal": "Podsjetnik za obnovu postavljen prije isteka"
+        "guided": "Vođene provjere usklađenosti gotove (od datuma do svijesti o dugotrajnom boravku)"
       }
     }
   },
@@ -962,8 +938,163 @@
     "priorWorkerDocs": "Označite Korak 5 (Dokumenti radnika) kao gotov",
     "fpGuided": "Dovršite vođene provjere podnošenja",
     "priorFilePermit": "Označite Korak 6 (Podnošenje) kao gotov",
-    "startWorkChecklist": "Dovršite sve stavke kontrolnog popisa Početak rada",
     "priorStartWork": "Označite Korak 7 (Početak rada) kao gotov",
-    "complyChecklist": "Dovršite sve stavke kontrolnog popisa Usklađenost"
+    "swGuided": "Dovršite vođene provjere početka rada",
+    "cyGuided": "Dovršite vođene provjere usklađenosti"
+  },
+  "swGuide": {
+    "panelTitle": "Vođene provjere početka rada",
+    "panelIntro": "Idite odozgo prema dolje nakon podnošenja zahtjeva za boravak i rad. Kad su svi redovi gotovi, Korak 7 je označen. Iznosi pristojbi odgovaraju Koraku 6 — platite kad MUP naloži.",
+    "decision": {
+      "title": "Pričekajte pozitivnu odluku",
+      "why": "Odobrenje za rad dolazi odlukom MUP-a o zahtjevu za boravak i rad, ne samim podnošenjem.",
+      "how": {
+        "wait": "Pratite predmet / držite kontakt podatke ažurnima kod nadležnog šaltera.",
+        "timeline": "Planirajte prema citiranom roku odluke; potvrdite operativni tekst u propisu / na MUP stranici.",
+        "noWork": "Ne planirajte produktivni plaćeni rad u Hrvatskoj dok odluka nije pozitivna."
+      },
+      "evidence": "Pisana ili portalna potvrda pozitivne odluke o boravku i radu (ili jasan put odbijanja ako je negativna)."
+    },
+    "fees": {
+      "title": "Platite pristojbe kad MUP naloži",
+      "why": "Pristojbe za boravak i rad te biometriju tipično dospijevaju pri obavijesti o odobrenju / izradi iskaznice — ne nužno pri podnošenju.",
+      "how": {
+        "mup": "Ponovno otvorite odjeljak pristojbi na MUP stranici o radu državljana trećih zemalja na dan plaćanja.",
+        "when": "Platite administrativnu pristojbu za boravak i rad i biometrijske iznose kad nalože.",
+        "slips": "Držite odvojene uplatnice kako MUP traži."
+      },
+      "evidence": "Potvrde plaćanja / uplatnice za svaku citiranu plaćenu pristojbu."
+    },
+    "biometrics": {
+      "title": "Dođite na biometriju kad vas pozovu",
+      "why": "Biometrijska iskaznica boravka/rada izdaje se nakon odobrenja; radnik se mora pojaviti na poziv.",
+      "how": {
+        "invite": "Slijedite poziv nadležne policijske uprave / upute MUP-a.",
+        "zagreb": "Za ovaj zagrebački slučaj potvrdite šalter biometrije s PU Zagrebačkom.",
+        "docs": "Ponesite putnu ispravu i papire navedene u pozivu."
+      },
+      "evidence": "Obavljen termin biometrije (pečat, potvrda ili bilješka šaltera).",
+      "caseHint": "Iznosi pristojbi za iskaznicu citirani su u retku pristojbi; dolazak je ovaj red."
+    },
+    "card": {
+      "title": "Preuzmite iskaznicu boravka/rada",
+      "why": "Fizička iskaznica je svakodnevni dokaz odobrenog boravka i rada.",
+      "how": {
+        "collect": "Preuzmite iskaznicu kad vas obavijeste da je gotova.",
+        "scan": "Skenirajte obje strane i pohranite uz odluku."
+      },
+      "evidence": "Skenovi izdane iskaznice + odluke u spisu."
+    },
+    "address": {
+      "title": "Prijavite adresu privremenog boravišta",
+      "why": "Neprijavljivanje privremenog boravišta kod nadležne policije može ugroziti dozvolu prema MUP pravilima privremenog boravka.",
+      "how": {
+        "mup": "Pročitajte obvezu prijave privremenog boravišta na MUP stranici o privremenom boravku.",
+        "desk": "Prijavite na nadležnom zagrebačkom šalteru za stvarnu adresu.",
+        "verify": "Potvrdite živi tekst roka na MUP-u prije unošenja u kalendar — ovdje ne izmišljamo broj dana."
+      },
+      "evidence": "Potvrda / pečat prijave privremenog boravišta radnika."
+    },
+    "hzmo": {
+      "title": "Prijavite zaposlenje u HZMO (mirovina)",
+      "why": "Poslodavac mora prijaviti radnika na mirovinsko osiguranje kao i svakog drugog zaposlenika.",
+      "how": {
+        "site": "Koristite službene HZMO kanale za prijave poslodavca.",
+        "employer": "Podnesite prijavu zaposlenja kao za domaćeg radnika.",
+        "align": "Uskladite datum početka prijave s odobrenim početkom rada."
+      },
+      "evidence": "HZMO potvrda prijave / ispis u spisu."
+    },
+    "hzzo": {
+      "title": "Prijavite zdravstveno osiguranje u HZZO",
+      "why": "Prijava javnog zdravstvenog osiguranja slijedi odobreno zaposlenje.",
+      "how": {
+        "site": "Koristite službene HZZO kanale za prijavu poslodavca.",
+        "employer": "Dovršite prijavu zdravstvenog osiguranja za radnika."
+      },
+      "evidence": "HZZO potvrda prijave u spisu."
+    },
+    "tax": {
+      "title": "Postavite porezno obustavljanje (Porezna)",
+      "why": "Plaća mora ispravno obustavljati i prijavljivati porez od odobrenog datuma početka.",
+      "how": {
+        "porezna": "Koristite alate Porezne uprave / ePorezne za poslodavce prema potrebi.",
+        "withholding": "Postavite obustavu i datum početka usklađeno s odobrenim radom."
+      },
+      "evidence": "Potvrda porezne/platne postavke ili plan prve usklađene isplatne liste."
+    },
+    "start": {
+      "title": "Prvi radni dan tek kad je odobreno",
+      "why": "Rad prije odobrenja nosi prekršajne sankcije za poslodavca i radnika.",
+      "how": {
+        "date": "Postavite prvi produktivni radni dan na ili nakon odobrenog početka.",
+        "payroll": "Uskladite HR/platni datum početka s tim odobrenjem.",
+        "noVisaFree": "Bezvizni boravak ne tretirajte kao dozvolu za rad."
+      },
+      "evidence": "HR bilješka odobrenog datuma početka + prva evidencija/plata na ili nakon tog datuma."
+    }
+  },
+  "cyGuide": {
+    "panelTitle": "Vođene provjere usklađenosti",
+    "panelIntro": "Ove redove držite aktualnima tijekom trajanja dozvole. Kad su svi gotovi, Korak 8 je označen. Ponovno otvorite NN 55/2026 i MUP prije oslanjanja na bilo koji rok.",
+    "dates": {
+      "title": "Zabilježite datume isteka dozvole i iskaznice",
+      "why": "Propuštena produženja stvaraju rizik nezakonitog boravka/rada.",
+      "how": {
+        "card": "Prepišite datume isteka s odluke i biometrijske iskaznice.",
+        "calendar": "Stavite produženja u zajednički kalendar poslodavca s vremenskim predumišljajem.",
+        "owners": "Dodijelite vlasnika (HR / agencija) za svaki podsjetnik."
+      },
+      "evidence": "Unosi u kalendar + bilješka u spisu s datumima isteka iskaznice/odluke."
+    },
+    "employerChange": {
+      "title": "Znajte pravila promjene poslodavca prije uporabe",
+      "why": "NN 55/2026 mijenja kada radnik smije promijeniti poslodavca; mehaniku i dalje treba potvrditi na živom MUP-u.",
+      "how": {
+        "nn": "Pročitajte okvir promjene poslodavca u NN 55/2026 (citirano razdoblje dolje).",
+        "mup": "Potvrdite korake obavijesti/odobrenja na aktualnom MUP vodiču o radu DTT prije bilo koje promjene.",
+        "verify": "Ne premještajte radnika kod novog poslodavca dok se ne slijedi živi postupak."
+      },
+      "evidence": "Interna bilješka citiranog čekanja + poveznica/datum MUP stranice koju ste provjerili."
+    },
+    "unemployment": {
+      "title": "Znajte prozore nezaposlenosti",
+      "why": "Gubitak posla ne okončava boravak automatski odmah, ali su prozori ograničeni i moraju se potvrditi.",
+      "how": {
+        "nn": "Zabilježite standardni i dulji prozor nezaposlenosti te kvalifikator duljeg držanja (citirane činjenice).",
+        "notify": "Ako zaposlenje prestane, slijedite obveze obavješćivanja policije prema živim MUP pravilima.",
+        "verify": "Ponovno otvorite NN/MUP prije oslanjanja na prozor kod stvarnog prestanka."
+      },
+      "evidence": "Bilješka playbooka s citiranim prozorima + vlasnik koji potvrđuje prije uporabe."
+    },
+    "a1": {
+      "title": "Planirajte A1.1 hrvatski (latinica) za produženje",
+      "why": "Pravila produženja mogu tražiti dokaz A1.1 nakon citiranog razdoblja boravka; dio članaka je odgođen.",
+      "how": {
+        "nn": "Pročitajte kontekst obveze A1.1 + latinice u NN 55/2026.",
+        "deferred": "Tretirajte odgođeni datum stupanja na snagu kao milju za planiranje odgođenih članaka.",
+        "schedule": "Rano počnite s učenjem jezika kako bi radnik bio spreman kad se pravilo primijeni na produženja."
+      },
+      "evidence": "Jezični plan s ciljem A1.1 latinica + odgođeni datum na kalendaru."
+    },
+    "renewal": {
+      "title": "Postavite podsjetnike za produženje prije isteka",
+      "why": "Početak produženja tek nakon isteka rizikuje jaz u zakonitom boravku/radu.",
+      "how": {
+        "remind": "Postavite podsjetnike znatno prije isteka iskaznice/dozvole.",
+        "mup": "Slijedite aktualne MUP kanale za produženje kad dođe vrijeme.",
+        "continuous": "Držite zaposlenje kontinuiranim tamo gdje put to zahtijeva."
+      },
+      "evidence": "Datumi podsjetnika za produženje + vlasnik u zajedničkom kalendaru."
+    },
+    "longTerm": {
+      "title": "Znajte da je dugotrajni boravak kasniji put",
+      "why": "Dugotrajni / stalni boravak odvojen je od prvog ciklusa jedinstvene dozvole.",
+      "how": {
+        "mup": "Pregledajte MUP stranicu o dugotrajnom / stalnom boravku (pristojba dolje samo radi svijesti).",
+        "later": "Ne tretirajte dugotrajni boravak kao dio kontrolnog popisa zapošljavanja u prvoj godini."
+      },
+      "evidence": "Kratka bilješka da je dugotrajni boravak pregledan kao izvan opsega prve godine."
+    }
   }
 }

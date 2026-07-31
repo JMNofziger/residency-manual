@@ -8,6 +8,8 @@ import { LmtGuide } from "./lmt-guide.js";
 import { OccupationGuide } from "./occupation-guide.js";
 import { WorkerDocsGuide } from "./worker-docs-guide.js";
 import { FilePermitGuide } from "./file-permit-guide.js";
+import { StartWorkGuide } from "./start-work-guide.js";
+import { ComplyGuide } from "./comply-guide.js";
 import { UvList } from "./uv-list.js";
 import { Reference } from "./reference.js";
 import { canEnterStep, canMarkStepComplete } from "./step-gates.js";
@@ -20,6 +22,8 @@ const GUIDED_PANELS = {
   lmt: LmtGuide,
   "worker-docs": WorkerDocsGuide,
   "file-permit": FilePermitGuide,
+  "start-work": StartWorkGuide,
+  comply: ComplyGuide,
 };
 
 function resolveGuidedPanel(step) {

@@ -2,7 +2,7 @@
 
 Generated: 2026-07-31
 Case: example-dool-us-manual-labor
-Total cited facts: 38 (Tier 1: 38, Tier 2: 0)
+Total cited facts: 45 (Tier 1: 45, Tier 2: 0)
 
 ## Notes
 
@@ -21,7 +21,6 @@ Total cited facts: 38 (Tier 1: 38, Tier 2: 0)
 | ID | Value | Label key | Source | Tier | Verified | Age (days) | File |
 |---|---|---|---|---:|---|---:|---|
 | a1-deferred-force | 2027-06-04 | facts.a1DeferredForce | Narodne novine — NN 55/2026 | 1 | 2026-07-31 | 0 | data/steps.json |
-| a1-within | 1 year | facts.a1LanguageWithin | Narodne novine — NN 55/2026 | 1 | 2026-07-31 | 0 | data/steps.json |
 | art99-blocked-account | 30 days | facts.art99BlockedAccount | HZZ — Novi sustav zapošljavanja stranaca | 1 | 2026-07-31 | 0 | data/steps.json |
 | art99-check-blocked | 30 days | facts.art99BlockedAccount | HZZ — Novi sustav zapošljavanja stranaca | 1 | 2026-07-31 | 0 | data/art99-checks.json |
 | art99-check-continuous | 12 months | facts.art99ContinuousEmployment | HZZ — Novi sustav zapošljavanja stranaca | 1 | 2026-07-31 | 0 | data/art99-checks.json |
@@ -37,6 +36,13 @@ Total cited facts: 38 (Tier 1: 38, Tier 2: 0)
 | case-art99-continuous | 12 months | facts.art99ContinuousEmployment | HZZ — Novi sustav zapošljavanja stranaca | 1 | 2026-07-31 | 0 | cases/example-dool-us-manual-labor.json |
 | case-art99-ratio | 20% | facts.art99DomesticRatio | HZZ — Novi sustav zapošljavanja stranaca | 1 | 2026-07-31 | 0 | cases/example-dool-us-manual-labor.json |
 | case-inflow-threshold | €100,000 | facts.art99InflowThreshold | HZZ — Novi sustav zapošljavanja stranaca | 1 | 2026-07-31 | 0 | cases/example-dool-us-manual-labor.json |
+| cy-a1-deferred-force | 2027-06-04 | facts.a1DeferredForce | Narodne novine — NN 55/2026 | 1 | 2026-07-31 | 0 | data/comply-checks.json |
+| cy-a1-within | 1 year | facts.a1LanguageWithin | Narodne novine — NN 55/2026 | 1 | 2026-07-31 | 0 | data/comply-checks.json |
+| cy-employer-change-after | 6 months | facts.employerChangeAfter | Narodne novine — NN 55/2026 | 1 | 2026-07-31 | 0 | data/comply-checks.json |
+| cy-long-term-fee | €83.62 | facts.longTermFee | MUP — Long-term residence and permanent stay | 1 | 2026-07-31 | 0 | data/comply-checks.json |
+| cy-unemployment-long-hold-qualifier | 2 years | facts.unemploymentLongHoldQualifier | Narodne novine — NN 55/2026 | 1 | 2026-07-31 | 0 | data/comply-checks.json |
+| cy-unemployment-window-long-hold | 6 months | facts.unemploymentWindowLongHold | Narodne novine — NN 55/2026 | 1 | 2026-07-31 | 0 | data/comply-checks.json |
+| cy-unemployment-window-standard | 3 months | facts.unemploymentWindowStandard | Narodne novine — NN 55/2026 | 1 | 2026-07-31 | 0 | data/comply-checks.json |
 | employer-change-after | 6 months | facts.employerChangeAfter | Narodne novine — NN 55/2026 | 1 | 2026-07-31 | 0 | data/steps.json |
 | fp-biometric-admin-fee | €9.29 | facts.biometricAdminFee | MUP — Work of third-country nationals | 1 | 2026-07-31 | 0 | data/file-permit-checks.json |
 | fp-biometric-production-fee | €31.85 | facts.biometricProductionFee | MUP — Work of third-country nationals | 1 | 2026-07-31 | 0 | data/file-permit-checks.json |
@@ -44,15 +50,16 @@ Total cited facts: 38 (Tier 1: 38, Tier 2: 0)
 | fp-permit-admin-fee | €74.32 | facts.permitFee | MUP — Work of third-country nationals | 1 | 2026-07-31 | 0 | data/file-permit-checks.json |
 | fp-permit-decision-timeline | 90 days | facts.permitDecisionTimeline | Narodne novine — NN 55/2026 | 1 | 2026-07-31 | 0 | data/file-permit-checks.json |
 | lmt-positive-notice-window | 90 days | facts.lmtPositiveNoticeWindow | HZZ — Novi sustav zapošljavanja stranaca | 1 | 2026-07-31 | 0 | data/lmt-checks.json |
-| long-term-fee | €83.62 | facts.longTermFee | MUP — Long-term residence and permanent stay | 1 | 2026-07-31 | 0 | data/steps.json |
 | nn552026-in-force | 2026-06-04 | facts.nn552026InForce | Narodne novine — NN 55/2026 | 1 | 2026-07-31 | 0 | data/steps.json |
 | — | 2023-03 | uv.listEdition | MUP/HZZ — Lista zanimanja (izuzetak od TTR) PDF | 1 | 2026-07-31 | 0 | data/uv-occupations.json |
 | permit-admin-fee | €74.32 | facts.permitFee | MUP — Work of third-country nationals | 1 | 2026-07-31 | 0 | data/steps.json |
 | permit-decision-timeline | 90 days | facts.permitDecisionTimeline | Narodne novine — NN 55/2026 | 1 | 2026-07-31 | 0 | data/steps.json |
 | pkg-blocked-account | 30 days | facts.art99BlockedAccount | HZZ — Novi sustav zapošljavanja stranaca | 1 | 2026-07-31 | 0 | data/employer-package-checks.json |
 | pkg-inflow-handoff | €100,000 | facts.art99InflowThreshold | HZZ — Novi sustav zapošljavanja stranaca | 1 | 2026-07-31 | 0 | data/employer-package-checks.json |
-| unemployment-long-hold-qualifier | 2 years | facts.unemploymentLongHoldQualifier | Narodne novine — NN 55/2026 | 1 | 2026-07-31 | 0 | data/steps.json |
-| unemployment-window-long-hold | 6 months | facts.unemploymentWindowLongHold | Narodne novine — NN 55/2026 | 1 | 2026-07-31 | 0 | data/steps.json |
+| sw-biometric-admin-fee | €9.29 | facts.biometricAdminFee | MUP — Work of third-country nationals | 1 | 2026-07-31 | 0 | data/start-work-checks.json |
+| sw-biometric-production-fee | €31.85 | facts.biometricProductionFee | MUP — Work of third-country nationals | 1 | 2026-07-31 | 0 | data/start-work-checks.json |
+| sw-permit-admin-fee | €74.32 | facts.permitFee | MUP — Work of third-country nationals | 1 | 2026-07-31 | 0 | data/start-work-checks.json |
+| sw-permit-decision-timeline | 90 days | facts.permitDecisionTimeline | Narodne novine — NN 55/2026 | 1 | 2026-07-31 | 0 | data/start-work-checks.json |
 | unemployment-window-standard | 3 months | facts.unemploymentWindowStandard | Narodne novine — NN 55/2026 | 1 | 2026-07-31 | 0 | data/steps.json |
 | us-police-registration | 2 days | facts.usPoliceRegistration | MVEP — Granting Stay in Croatia | 1 | 2026-07-31 | 0 | data/nationalities/us.json |
 | us-visa-free-window | 90/180 | facts.usVisaFreeWindow | MVEP — Granting Stay in Croatia | 1 | 2026-07-31 | 0 | data/nationalities/us.json |

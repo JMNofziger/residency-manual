@@ -1,8 +1,8 @@
 {
   "generatedAt": "2026-07-31",
   "caseId": "example-dool-us-manual-labor",
-  "factCount": 38,
-  "tier1Count": 38,
+  "factCount": 45,
+  "tier1Count": 45,
   "tier2Count": 0,
   "notes": [
     "Phase 5 live Tier-1 pass completed 2026-07-31 — see artifacts/phase5-verification.md.",
@@ -26,19 +26,7 @@
       "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/steps.json",
-      "path": "steps[7].sections[2].facts[1]"
-    },
-    {
-      "id": "a1-within",
-      "value": "1 year",
-      "labelKey": "facts.a1LanguageWithin",
-      "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
-      "sourceTier": 1,
-      "sourceName": "Narodne novine — NN 55/2026",
-      "verifiedDate": "2026-07-31",
-      "ageDaysAsOfAudit": 0,
-      "file": "data/steps.json",
-      "path": "steps[7].sections[2].facts[0]"
+      "path": "steps[7].sections[0].facts[2]"
     },
     {
       "id": "art99-blocked-account",
@@ -221,6 +209,90 @@
       "path": "riskFlags[3].facts[0]"
     },
     {
+      "id": "cy-a1-deferred-force",
+      "value": "2027-06-04",
+      "labelKey": "facts.a1DeferredForce",
+      "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+      "sourceTier": 1,
+      "sourceName": "Narodne novine — NN 55/2026",
+      "verifiedDate": "2026-07-31",
+      "ageDaysAsOfAudit": 0,
+      "file": "data/comply-checks.json",
+      "path": "checks[3].facts[1]"
+    },
+    {
+      "id": "cy-a1-within",
+      "value": "1 year",
+      "labelKey": "facts.a1LanguageWithin",
+      "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+      "sourceTier": 1,
+      "sourceName": "Narodne novine — NN 55/2026",
+      "verifiedDate": "2026-07-31",
+      "ageDaysAsOfAudit": 0,
+      "file": "data/comply-checks.json",
+      "path": "checks[3].facts[0]"
+    },
+    {
+      "id": "cy-employer-change-after",
+      "value": "6 months",
+      "labelKey": "facts.employerChangeAfter",
+      "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+      "sourceTier": 1,
+      "sourceName": "Narodne novine — NN 55/2026",
+      "verifiedDate": "2026-07-31",
+      "ageDaysAsOfAudit": 0,
+      "file": "data/comply-checks.json",
+      "path": "checks[1].facts[0]"
+    },
+    {
+      "id": "cy-long-term-fee",
+      "value": "€83.62",
+      "labelKey": "facts.longTermFee",
+      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/long-term-residence-and-permanent-stay/281682",
+      "sourceTier": 1,
+      "sourceName": "MUP — Long-term residence and permanent stay",
+      "verifiedDate": "2026-07-31",
+      "ageDaysAsOfAudit": 0,
+      "file": "data/comply-checks.json",
+      "path": "checks[5].facts[0]"
+    },
+    {
+      "id": "cy-unemployment-long-hold-qualifier",
+      "value": "2 years",
+      "labelKey": "facts.unemploymentLongHoldQualifier",
+      "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+      "sourceTier": 1,
+      "sourceName": "Narodne novine — NN 55/2026",
+      "verifiedDate": "2026-07-31",
+      "ageDaysAsOfAudit": 0,
+      "file": "data/comply-checks.json",
+      "path": "checks[2].facts[2]"
+    },
+    {
+      "id": "cy-unemployment-window-long-hold",
+      "value": "6 months",
+      "labelKey": "facts.unemploymentWindowLongHold",
+      "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+      "sourceTier": 1,
+      "sourceName": "Narodne novine — NN 55/2026",
+      "verifiedDate": "2026-07-31",
+      "ageDaysAsOfAudit": 0,
+      "file": "data/comply-checks.json",
+      "path": "checks[2].facts[1]"
+    },
+    {
+      "id": "cy-unemployment-window-standard",
+      "value": "3 months",
+      "labelKey": "facts.unemploymentWindowStandard",
+      "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+      "sourceTier": 1,
+      "sourceName": "Narodne novine — NN 55/2026",
+      "verifiedDate": "2026-07-31",
+      "ageDaysAsOfAudit": 0,
+      "file": "data/comply-checks.json",
+      "path": "checks[2].facts[0]"
+    },
+    {
       "id": "employer-change-after",
       "value": "6 months",
       "labelKey": "facts.employerChangeAfter",
@@ -305,18 +377,6 @@
       "path": "checks[5].facts[0]"
     },
     {
-      "id": "long-term-fee",
-      "value": "€83.62",
-      "labelKey": "facts.longTermFee",
-      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/long-term-residence-and-permanent-stay/281682",
-      "sourceTier": 1,
-      "sourceName": "MUP — Long-term residence and permanent stay",
-      "verifiedDate": "2026-07-31",
-      "ageDaysAsOfAudit": 0,
-      "file": "data/steps.json",
-      "path": "steps[7].sections[3].facts[0]"
-    },
-    {
       "id": "nn552026-in-force",
       "value": "2026-06-04",
       "labelKey": "facts.nn552026InForce",
@@ -389,28 +449,52 @@
       "path": "checks[5].facts[0]"
     },
     {
-      "id": "unemployment-long-hold-qualifier",
-      "value": "2 years",
-      "labelKey": "facts.unemploymentLongHoldQualifier",
-      "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+      "id": "sw-biometric-admin-fee",
+      "value": "€9.29",
+      "labelKey": "facts.biometricAdminFee",
+      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
       "sourceTier": 1,
-      "sourceName": "Narodne novine — NN 55/2026",
+      "sourceName": "MUP — Work of third-country nationals",
       "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
-      "file": "data/steps.json",
-      "path": "steps[7].sections[1].facts[2]"
+      "file": "data/start-work-checks.json",
+      "path": "checks[1].facts[2]"
     },
     {
-      "id": "unemployment-window-long-hold",
-      "value": "6 months",
-      "labelKey": "facts.unemploymentWindowLongHold",
+      "id": "sw-biometric-production-fee",
+      "value": "€31.85",
+      "labelKey": "facts.biometricProductionFee",
+      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+      "sourceTier": 1,
+      "sourceName": "MUP — Work of third-country nationals",
+      "verifiedDate": "2026-07-31",
+      "ageDaysAsOfAudit": 0,
+      "file": "data/start-work-checks.json",
+      "path": "checks[1].facts[1]"
+    },
+    {
+      "id": "sw-permit-admin-fee",
+      "value": "€74.32",
+      "labelKey": "facts.permitFee",
+      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+      "sourceTier": 1,
+      "sourceName": "MUP — Work of third-country nationals",
+      "verifiedDate": "2026-07-31",
+      "ageDaysAsOfAudit": 0,
+      "file": "data/start-work-checks.json",
+      "path": "checks[1].facts[0]"
+    },
+    {
+      "id": "sw-permit-decision-timeline",
+      "value": "90 days",
+      "labelKey": "facts.permitDecisionTimeline",
       "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
       "sourceTier": 1,
       "sourceName": "Narodne novine — NN 55/2026",
       "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
-      "file": "data/steps.json",
-      "path": "steps[7].sections[1].facts[1]"
+      "file": "data/start-work-checks.json",
+      "path": "checks[0].facts[0]"
     },
     {
       "id": "unemployment-window-standard",
@@ -422,7 +506,7 @@
       "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/steps.json",
-      "path": "steps[7].sections[1].facts[0]"
+      "path": "steps[7].sections[0].facts[1]"
     },
     {
       "id": "us-police-registration",

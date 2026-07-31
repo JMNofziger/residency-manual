@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "titleKey": "cyGuide.panelTitle",
+  "introKey": "cyGuide.panelIntro",
+  "sourceHub": {
+    "labelKey": "sources.nn552026",
+    "url": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+    "tier": 1
+  },
+  "parentChecklistId": "cy-guided-complete",
+  "checks": [
+    {
+      "id": "track-dates",
+      "order": 1,
+      "titleKey": "cyGuide.dates.title",
+      "whyKey": "cyGuide.dates.why",
+      "howSteps": [
+        { "labelKey": "cyGuide.dates.how.card" },
+        { "labelKey": "cyGuide.dates.how.calendar" },
+        { "labelKey": "cyGuide.dates.how.owners" }
+      ],
+      "evidenceKey": "cyGuide.dates.evidence",
+      "facts": [],
+      "caseHintKeys": []
+    },
+    {
+      "id": "employer-change",
+      "order": 2,
+      "titleKey": "cyGuide.employerChange.title",
+      "whyKey": "cyGuide.employerChange.why",
+      "howSteps": [
+        {
+          "labelKey": "cyGuide.employerChange.how.nn",
+          "url": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html"
+        },
+        {
+          "labelKey": "cyGuide.employerChange.how.mup",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663"
+        },
+        { "labelKey": "cyGuide.employerChange.how.verify" }
+      ],
+      "evidenceKey": "cyGuide.employerChange.evidence",
+      "facts": [
+        {
+          "id": "cy-employer-change-after",
+          "value": "6 months",
+          "labelKey": "facts.employerChangeAfter",
+          "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+          "sourceTier": 1,
+          "sourceName": "Narodne novine — NN 55/2026",
+          "verifiedDate": "2026-07-31"
+        }
+      ],
+      "caseHintKeys": []
+    },
+    {
+      "id": "unemployment",
+      "order": 3,
+      "titleKey": "cyGuide.unemployment.title",
+      "whyKey": "cyGuide.unemployment.why",
+      "howSteps": [
+        {
+          "labelKey": "cyGuide.unemployment.how.nn",
+          "url": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html"
+        },
+        { "labelKey": "cyGuide.unemployment.how.notify" },
+        { "labelKey": "cyGuide.unemployment.how.verify" }
+      ],
+      "evidenceKey": "cyGuide.unemployment.evidence",
+      "facts": [
+        {
+          "id": "cy-unemployment-window-standard",
+          "value": "3 months",
+          "labelKey": "facts.unemploymentWindowStandard",
+          "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+          "sourceTier": 1,
+          "sourceName": "Narodne novine — NN 55/2026",
+          "verifiedDate": "2026-07-31"
+        },
+        {
+          "id": "cy-unemployment-window-long-hold",
+          "value": "6 months",
+          "labelKey": "facts.unemploymentWindowLongHold",
+          "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+          "sourceTier": 1,
+          "sourceName": "Narodne novine — NN 55/2026",
+          "verifiedDate": "2026-07-31"
+        },
+        {
+          "id": "cy-unemployment-long-hold-qualifier",
+          "value": "2 years",
+          "labelKey": "facts.unemploymentLongHoldQualifier",
+          "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+          "sourceTier": 1,
+          "sourceName": "Narodne novine — NN 55/2026",
+          "verifiedDate": "2026-07-31"
+        }
+      ],
+      "caseHintKeys": []
+    },
+    {
+      "id": "a1-plan",
+      "order": 4,
+      "titleKey": "cyGuide.a1.title",
+      "whyKey": "cyGuide.a1.why",
+      "howSteps": [
+        {
+          "labelKey": "cyGuide.a1.how.nn",
+          "url": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html"
+        },
+        { "labelKey": "cyGuide.a1.how.deferred" },
+        { "labelKey": "cyGuide.a1.how.schedule" }
+      ],
+      "evidenceKey": "cyGuide.a1.evidence",
+      "facts": [
+        {
+          "id": "cy-a1-within",
+          "value": "1 year",
+          "labelKey": "facts.a1LanguageWithin",
+          "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+          "sourceTier": 1,
+          "sourceName": "Narodne novine — NN 55/2026",
+          "verifiedDate": "2026-07-31"
+        },
+        {
+          "id": "cy-a1-deferred-force",
+          "value": "2027-06-04",
+          "labelKey": "facts.a1DeferredForce",
+          "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+          "sourceTier": 1,
+          "sourceName": "Narodne novine — NN 55/2026",
+          "verifiedDate": "2026-07-31"
+        }
+      ],
+      "caseHintKeys": []
+    },
+    {
+      "id": "renewal",
+      "order": 5,
+      "titleKey": "cyGuide.renewal.title",
+      "whyKey": "cyGuide.renewal.why",
+      "howSteps": [
+        { "labelKey": "cyGuide.renewal.how.remind" },
+        {
+          "labelKey": "cyGuide.renewal.how.mup",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663"
+        },
+        { "labelKey": "cyGuide.renewal.how.continuous" }
+      ],
+      "evidenceKey": "cyGuide.renewal.evidence",
+      "facts": [],
+      "caseHintKeys": []
+    },
+    {
+      "id": "long-term",
+      "order": 6,
+      "titleKey": "cyGuide.longTerm.title",
+      "whyKey": "cyGuide.longTerm.why",
+      "howSteps": [
+        {
+          "labelKey": "cyGuide.longTerm.how.mup",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/long-term-residence-and-permanent-stay/281682"
+        },
+        { "labelKey": "cyGuide.longTerm.how.later" }
+      ],
+      "evidenceKey": "cyGuide.longTerm.evidence",
+      "facts": [
+        {
+          "id": "cy-long-term-fee",
+          "value": "€83.62",
+          "labelKey": "facts.longTermFee",
+          "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/long-term-residence-and-permanent-stay/281682",
+          "sourceTier": 1,
+          "sourceName": "MUP — Long-term residence and permanent stay",
+          "verifiedDate": "2026-07-31"
+        }
+      ],
+      "caseHintKeys": []
+    }
+  ]
+}

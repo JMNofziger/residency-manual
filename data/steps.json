@@ -508,52 +508,41 @@
       "nationalitySlots": [],
       "sections": [
         {
-          "id": "decision",
-          "titleKey": "steps.startWork.decision.title",
-          "bodyKey": "steps.startWork.decision.body"
-        },
-        {
-          "id": "biometrics",
-          "titleKey": "steps.startWork.biometrics.title",
-          "bodyKey": "steps.startWork.biometrics.body"
-        },
-        {
-          "id": "register",
-          "titleKey": "steps.startWork.register.title",
-          "bodyKey": "steps.startWork.register.body"
+          "id": "overview",
+          "titleKey": "steps.startWork.overview.title",
+          "bodyKey": "steps.startWork.overview.body"
         }
       ],
       "checklist": [
         {
-          "id": "sw-await-decision",
-          "labelKey": "steps.startWork.check.decision"
-        },
-        {
-          "id": "sw-biometrics",
-          "labelKey": "steps.startWork.check.biometrics"
-        },
-        {
-          "id": "sw-collect-card",
-          "labelKey": "steps.startWork.check.card"
-        },
-        {
-          "id": "sw-hzmo-hzzo",
-          "labelKey": "steps.startWork.check.social"
-        },
-        {
-          "id": "sw-start-only-authorized",
-          "labelKey": "steps.startWork.check.startAuthorized"
+          "id": "sw-guided-complete",
+          "labelKey": "steps.startWork.check.guided"
         }
       ],
       "sources": [
+        {
+          "labelKey": "sources.mupWorkTcn",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+          "tier": 1
+        },
         {
           "labelKey": "sources.mupTempStay",
           "url": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661",
           "tier": 1
         },
         {
-          "labelKey": "sources.mupWorkTcn",
-          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+          "labelKey": "sources.hzmo",
+          "url": "https://www.mirovinsko.hr/",
+          "tier": 1
+        },
+        {
+          "labelKey": "sources.hzzo",
+          "url": "https://hzzo.hr/",
+          "tier": 1
+        },
+        {
+          "labelKey": "sources.porezna",
+          "url": "https://eporezna.porezna-uprava.hr/",
           "tier": 1
         }
       ],
@@ -571,17 +560,13 @@
           "labelKey": "gates.priorFilePermit"
         },
         {
-          "type": "checklist",
-          "ids": [
-            "sw-await-decision",
-            "sw-biometrics",
-            "sw-collect-card",
-            "sw-hzmo-hzzo",
-            "sw-start-only-authorized"
-          ],
-          "labelKey": "gates.startWorkChecklist"
+          "type": "guidedComplete",
+          "panel": "start-work",
+          "labelKey": "gates.swGuided"
         }
-      ]
+      ],
+      "guidedPanel": "start-work",
+      "showEmployerCard": true
     },
     {
       "id": "comply",
@@ -591,9 +576,9 @@
       "nationalitySlots": [],
       "sections": [
         {
-          "id": "employer-change",
-          "titleKey": "steps.comply.employerChange.title",
-          "bodyKey": "steps.comply.employerChange.body",
+          "id": "overview",
+          "titleKey": "steps.comply.overview.title",
+          "bodyKey": "steps.comply.overview.body",
           "facts": [
             {
               "id": "employer-change-after",
@@ -603,52 +588,11 @@
               "sourceTier": 1,
               "sourceName": "Narodne novine — NN 55/2026",
               "verifiedDate": "2026-07-31"
-            }
-          ]
-        },
-        {
-          "id": "unemployment",
-          "titleKey": "steps.comply.unemployment.title",
-          "bodyKey": "steps.comply.unemployment.body",
-          "facts": [
+            },
             {
               "id": "unemployment-window-standard",
               "value": "3 months",
               "labelKey": "facts.unemploymentWindowStandard",
-              "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
-              "sourceTier": 1,
-              "sourceName": "Narodne novine — NN 55/2026",
-              "verifiedDate": "2026-07-31"
-            },
-            {
-              "id": "unemployment-window-long-hold",
-              "value": "6 months",
-              "labelKey": "facts.unemploymentWindowLongHold",
-              "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
-              "sourceTier": 1,
-              "sourceName": "Narodne novine — NN 55/2026",
-              "verifiedDate": "2026-07-31"
-            },
-            {
-              "id": "unemployment-long-hold-qualifier",
-              "value": "2 years",
-              "labelKey": "facts.unemploymentLongHoldQualifier",
-              "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
-              "sourceTier": 1,
-              "sourceName": "Narodne novine — NN 55/2026",
-              "verifiedDate": "2026-07-31"
-            }
-          ]
-        },
-        {
-          "id": "language-a1",
-          "titleKey": "steps.comply.language.title",
-          "bodyKey": "steps.comply.language.body",
-          "facts": [
-            {
-              "id": "a1-within",
-              "value": "1 year",
-              "labelKey": "facts.a1LanguageWithin",
               "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
               "sourceTier": 1,
               "sourceName": "Narodne novine — NN 55/2026",
@@ -664,40 +608,12 @@
               "verifiedDate": "2026-07-31"
             }
           ]
-        },
-        {
-          "id": "renewals",
-          "titleKey": "steps.comply.renewals.title",
-          "bodyKey": "steps.comply.renewals.body",
-          "facts": [
-            {
-              "id": "long-term-fee",
-              "value": "€83.62",
-              "labelKey": "facts.longTermFee",
-              "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/long-term-residence-and-permanent-stay/281682",
-              "sourceTier": 1,
-              "sourceName": "MUP — Long-term residence and permanent stay",
-              "verifiedDate": "2026-07-31"
-            }
-          ]
         }
       ],
       "checklist": [
         {
-          "id": "cy-track-permit-dates",
-          "labelKey": "steps.comply.check.dates"
-        },
-        {
-          "id": "cy-employer-change-rules",
-          "labelKey": "steps.comply.check.employerChange"
-        },
-        {
-          "id": "cy-a1-plan",
-          "labelKey": "steps.comply.check.a1"
-        },
-        {
-          "id": "cy-renewal-calendar",
-          "labelKey": "steps.comply.check.renewal"
+          "id": "cy-guided-complete",
+          "labelKey": "steps.comply.check.guided"
         }
       ],
       "sources": [
@@ -729,16 +645,13 @@
           "labelKey": "gates.priorStartWork"
         },
         {
-          "type": "checklist",
-          "ids": [
-            "cy-track-permit-dates",
-            "cy-employer-change-rules",
-            "cy-a1-plan",
-            "cy-renewal-calendar"
-          ],
-          "labelKey": "gates.complyChecklist"
+          "type": "guidedComplete",
+          "panel": "comply",
+          "labelKey": "gates.cyGuided"
         }
-      ]
+      ],
+      "guidedPanel": "comply",
+      "showEmployerCard": true
     }
   ]
 }

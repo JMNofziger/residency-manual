@@ -116,7 +116,10 @@
     "hzzFilingTips": "HZZ — Tips for submitting the request",
     "mvepStay": "MVEP — Granting stay in Croatia",
     "nn552026": "Narodne novine — Zakon o strancima amendments (NN 55/2026)",
-    "mupObrasci": "MUP — Official forms (Obrasci)"
+    "mupObrasci": "MUP — Official forms (Obrasci)",
+    "hzmo": "HZMO — Croatian Pension Insurance Institute",
+    "hzzo": "HZZO — Croatian Health Insurance Fund",
+    "porezna": "Tax Administration (ePorezna)"
   },
   "occupations": {
     "nkd90399": {
@@ -261,51 +264,24 @@
     },
     "startWork": {
       "title": "Decision, biometrics, start work",
-      "summary": "Collect the card, register with HZMO/HZZO/tax, start work only when authorized.",
-      "decision": {
-        "title": "Decision",
-        "body": "Wait for MUP’s decision. Do not put the worker on productive paid work in Croatia before stay-and-work authorization is in place. Visa-free presence (if any) is not a substitute."
-      },
-      "biometrics": {
-        "title": "Biometrics & card",
-        "body": "Attend biometrics when invited and collect the residence/work card. Keep scans of the decision and card. Card fee is listed under File permit facts."
-      },
-      "register": {
-        "title": "HZMO, HZZO, tax",
-        "body": "Register the employment for pension (HZMO), health (HZZO), and tax withholding as for any employee. Align the start date in payroll with the legal start of authorized work."
+      "summary": "After filing: wait for the decision, biometrics and card, then HZMO / HZZO / tax — start work only when authorized.",
+      "overview": {
+        "title": "After the application is filed",
+        "body": "Do not put the worker on productive paid work in Croatia until stay-and-work authorization is in place. Use the guided checklist for decision → fees on approval → biometrics → card → address registration → social/tax registrations → authorized start. Visa-free presence is not a substitute."
       },
       "check": {
-        "decision": "Positive decision received",
-        "biometrics": "Biometrics appointment completed",
-        "card": "Residence/work card collected",
-        "social": "HZMO / HZZO / tax registrations done",
-        "startAuthorized": "First working day is on/after authorized start"
+        "guided": "Start-work guided checks complete (decision through authorized start)"
       }
     },
     "comply": {
       "title": "Stay compliant",
-      "summary": "Employer change, unemployment windows, A1 language for extension, renewals.",
-      "employerChange": {
-        "title": "Changing employer",
-        "body": "Under the 2026 framework, workers may change employer after the cited period without the prior full new-permit pattern — verify the exact notification/approval mechanics on current MUP guidance before acting."
-      },
-      "unemployment": {
-        "title": "Unemployment windows",
-        "body": "Permitted unemployment windows after job loss are cited below. Confirm operative rules before relying on these periods."
-      },
-      "language": {
-        "title": "A1.1 Croatian for extension",
-        "body": "NN 55/2026 requires an A1.1 Croatian + Latin script exam after at least the cited stay period, and proof for extension — but Art. 92.a(1)/(4)/(6) is deferred until the cited force date. Plan learning early; treat the deferred date as the compliance planning milestone until then."
-      },
-      "renewals": {
-        "title": "Renewals & long-term stay",
-        "body": "Track expiry, keep employment continuous where required, and start renewal before the card lapses. Long-term residence is a separate later pathway; fee cite below."
+      "summary": "Track dates, employer-change and unemployment windows, A1.1 language plan, renewals.",
+      "overview": {
+        "title": "Compliance calendar",
+        "body": "After work starts, keep a shared calendar for card expiry, employer-change rules, unemployment windows, and the A1.1 language obligation (partly deferred). Re-open NN 55/2026 and MUP pages before relying on any window. Long-term residence is a later pathway."
       },
       "check": {
-        "dates": "Permit / card expiry dates logged",
-        "employerChange": "Team knows employer-change rules (verify before use)",
-        "a1": "A1.1 language plan scheduled against the cited stay/deferred-force facts",
-        "renewal": "Renewal reminder set before expiry"
+        "guided": "Compliance guided checks complete (dates through long-term awareness)"
       }
     }
   },
@@ -961,8 +937,163 @@
     "priorWorkerDocs": "Mark Step 5 (Worker documents) complete",
     "fpGuided": "Complete the filing guided checks",
     "priorFilePermit": "Mark Step 6 (File permit) complete",
-    "startWorkChecklist": "Complete every Start-work checklist item",
     "priorStartWork": "Mark Step 7 (Start work) complete",
-    "complyChecklist": "Complete every Compliance checklist item"
+    "swGuided": "Complete the start-work guided checks",
+    "cyGuided": "Complete the compliance guided checks"
+  },
+  "swGuide": {
+    "panelTitle": "Guided start-work checks",
+    "panelIntro": "Work top to bottom after the stay-and-work file is submitted. Completing every row marks Step 7 done. Fee amounts match Step 6 cites — pay when MUP instructs.",
+    "decision": {
+      "title": "Wait for a positive decision",
+      "why": "Authorization to work comes from MUP’s decision on the stay-and-work application, not from filing alone.",
+      "how": {
+        "wait": "Monitor the application / keep contact details current with the competent police desk.",
+        "timeline": "Plan against the cited decision window; confirm operative wording on the statute / MUP page.",
+        "noWork": "Do not schedule productive paid work in Croatia until the decision is positive."
+      },
+      "evidence": "Written or portal confirmation of a positive stay-and-work decision (or clear refusal path if negative)."
+    },
+    "fees": {
+      "title": "Pay fees when MUP instructs",
+      "why": "Stay-and-work and biometric fees are typically due when you are notified of approval / at card production — not necessarily at filing.",
+      "how": {
+        "mup": "Re-open the MUP Work of third-country nationals fee section on payment day.",
+        "when": "Pay the stay-and-work administrative fee and biometric amounts when instructed.",
+        "slips": "Keep separate payment slips as MUP requires."
+      },
+      "evidence": "Payment confirmations / slips for each cited fee paid."
+    },
+    "biometrics": {
+      "title": "Attend biometrics when invited",
+      "why": "A biometric residence/work card is issued after approval; the worker must appear when called.",
+      "how": {
+        "invite": "Follow the invitation from the competent police administration / MUP instructions.",
+        "zagreb": "For this Zagreb case, confirm the biometrics desk with PU Zagrebačka.",
+        "docs": "Bring the travel document and any papers listed on the invitation."
+      },
+      "evidence": "Biometrics appointment completed (stamp, confirmation, or desk note).",
+      "caseHint": "Card fee amounts are cited in the fees row above; attendance is this row."
+    },
+    "card": {
+      "title": "Collect the residence/work card",
+      "why": "The physical card is the day-to-day proof of authorized stay and work.",
+      "how": {
+        "collect": "Collect the card when notified it is ready.",
+        "scan": "Scan both sides and store with the decision."
+      },
+      "evidence": "Scans of the issued card + decision in the case file."
+    },
+    "address": {
+      "title": "Register temporary residence address",
+      "why": "Failing to register temporary residence with the competent police administration can put the permit at risk under MUP temporary-stay rules.",
+      "how": {
+        "mup": "Read the temporary-residence registration duty on the MUP temporary-stay page.",
+        "desk": "Register at the competent Zagreb police desk for the actual address.",
+        "verify": "Confirm the live deadline wording on MUP before you calendar it — do not invent a day-count here."
+      },
+      "evidence": "Registration confirmation / stamp for the worker’s temporary address."
+    },
+    "hzmo": {
+      "title": "Register employment with HZMO (pension)",
+      "why": "Employers must register workers for pension insurance like any other employee.",
+      "how": {
+        "site": "Use official HZMO channels for employer registrations.",
+        "employer": "File the employment registration as for a domestic hire.",
+        "align": "Align the registration effective date with authorized work start."
+      },
+      "evidence": "HZMO registration confirmation / printout in the file."
+    },
+    "hzzo": {
+      "title": "Register health insurance with HZZO",
+      "why": "Public health insurance registration follows authorized employment.",
+      "how": {
+        "site": "Use official HZZO channels for employer registration.",
+        "employer": "Complete health-insurance registration for the worker."
+      },
+      "evidence": "HZZO registration confirmation in the file."
+    },
+    "tax": {
+      "title": "Set up tax withholding (Porezna)",
+      "why": "Payroll must withhold and report tax correctly from the authorized start date.",
+      "how": {
+        "porezna": "Use Tax Administration / ePorezna employer tools as applicable.",
+        "withholding": "Configure withholding and start date to match authorized work."
+      },
+      "evidence": "Payroll/tax setup confirmation or first compliant payslip plan."
+    },
+    "start": {
+      "title": "First working day only when authorized",
+      "why": "Working before authorization risks misdemeanour sanctions for employer and worker.",
+      "how": {
+        "date": "Set the first productive working day on or after the authorized start.",
+        "payroll": "Match the HR/payroll start date to that authorization.",
+        "noVisaFree": "Do not treat visa-free presence as work permission."
+      },
+      "evidence": "HR note of authorized start date + first timesheet/payslip on or after that date."
+    }
+  },
+  "cyGuide": {
+    "panelTitle": "Guided compliance checks",
+    "panelIntro": "Keep these rows current for the life of the permit. Completing every row marks Step 8 done. Re-open NN 55/2026 and MUP before acting on any window.",
+    "dates": {
+      "title": "Log permit and card expiry dates",
+      "why": "Missed renewals create unlawful stay/work risk.",
+      "how": {
+        "card": "Copy expiry dates from the decision and the biometric card.",
+        "calendar": "Put renewals on a shared employer calendar with lead time.",
+        "owners": "Assign an owner (HR / agency) for each reminder."
+      },
+      "evidence": "Calendar entries + file note with card/decision expiry dates."
+    },
+    "employerChange": {
+      "title": "Know employer-change rules before using them",
+      "why": "NN 55/2026 changed when a worker may change employer; mechanics still need live MUP confirmation.",
+      "how": {
+        "nn": "Read the employer-change framing in NN 55/2026 (cited period below).",
+        "mup": "Confirm notification/approval steps on current MUP work-of-TCN guidance before any change.",
+        "verify": "Do not move the worker to a new employer until the live process is followed."
+      },
+      "evidence": "Internal note of the cited waiting period + link/date of the MUP page you verified."
+    },
+    "unemployment": {
+      "title": "Know unemployment windows",
+      "why": "Job loss does not automatically end stay immediately, but windows are limited and must be verified.",
+      "how": {
+        "nn": "Note the standard and longer unemployment windows and the longer-hold qualifier (cited facts).",
+        "notify": "If employment ends, follow employer notification duties to the police administration on live MUP rules.",
+        "verify": "Re-open NN/MUP before relying on a window for a real termination."
+      },
+      "evidence": "Playbook note with cited windows + owner who verifies before use."
+    },
+    "a1": {
+      "title": "Plan A1.1 Croatian (Latin script) for extension",
+      "why": "Extension rules can require A1.1 proof after a cited stay period; some articles are deferred.",
+      "how": {
+        "nn": "Read the A1.1 + Latin script obligation context in NN 55/2026.",
+        "deferred": "Treat the deferred force date as the planning milestone for the deferred articles.",
+        "schedule": "Start language learning early so the worker is ready when the rule applies to extensions."
+      },
+      "evidence": "Language plan with target level A1.1 Latin script + deferred-force date on the calendar."
+    },
+    "renewal": {
+      "title": "Set renewal reminders before expiry",
+      "why": "Starting renewal only after expiry risks a gap in lawful stay/work.",
+      "how": {
+        "remind": "Set reminders well before card/permit expiry.",
+        "mup": "Follow current MUP renewal / extension channels when the time comes.",
+        "continuous": "Keep employment continuous where the pathway requires it."
+      },
+      "evidence": "Renewal reminder dates + owner in the shared calendar."
+    },
+    "longTerm": {
+      "title": "Know long-term residence is a later path",
+      "why": "Long-term / permanent stay is separate from the first Single Permit cycle.",
+      "how": {
+        "mup": "Skim the MUP long-term / permanent stay page (fee cite below is for awareness only).",
+        "later": "Do not treat long-term residence as part of the first-year hiring checklist."
+      },
+      "evidence": "Short note that long-term stay was reviewed as out-of-scope for year one."
+    }
   }
 }

@@ -1,0 +1,195 @@
+{
+  "version": 1,
+  "titleKey": "swGuide.panelTitle",
+  "introKey": "swGuide.panelIntro",
+  "sourceHub": {
+    "labelKey": "sources.mupTempStay",
+    "url": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661",
+    "tier": 1
+  },
+  "parentChecklistId": "sw-guided-complete",
+  "checks": [
+    {
+      "id": "await-decision",
+      "order": 1,
+      "titleKey": "swGuide.decision.title",
+      "whyKey": "swGuide.decision.why",
+      "howSteps": [
+        { "labelKey": "swGuide.decision.how.wait" },
+        {
+          "labelKey": "swGuide.decision.how.timeline",
+          "url": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html"
+        },
+        { "labelKey": "swGuide.decision.how.noWork" }
+      ],
+      "evidenceKey": "swGuide.decision.evidence",
+      "facts": [
+        {
+          "id": "sw-permit-decision-timeline",
+          "value": "90 days",
+          "labelKey": "facts.permitDecisionTimeline",
+          "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+          "sourceTier": 1,
+          "sourceName": "Narodne novine — NN 55/2026",
+          "verifiedDate": "2026-07-31"
+        }
+      ],
+      "caseHintKeys": []
+    },
+    {
+      "id": "fees-on-approval",
+      "order": 2,
+      "titleKey": "swGuide.fees.title",
+      "whyKey": "swGuide.fees.why",
+      "howSteps": [
+        {
+          "labelKey": "swGuide.fees.how.mup",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663"
+        },
+        { "labelKey": "swGuide.fees.how.when" },
+        { "labelKey": "swGuide.fees.how.slips" }
+      ],
+      "evidenceKey": "swGuide.fees.evidence",
+      "facts": [
+        {
+          "id": "sw-permit-admin-fee",
+          "value": "€74.32",
+          "labelKey": "facts.permitFee",
+          "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+          "sourceTier": 1,
+          "sourceName": "MUP — Work of third-country nationals",
+          "verifiedDate": "2026-07-31"
+        },
+        {
+          "id": "sw-biometric-production-fee",
+          "value": "€31.85",
+          "labelKey": "facts.biometricProductionFee",
+          "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+          "sourceTier": 1,
+          "sourceName": "MUP — Work of third-country nationals",
+          "verifiedDate": "2026-07-31"
+        },
+        {
+          "id": "sw-biometric-admin-fee",
+          "value": "€9.29",
+          "labelKey": "facts.biometricAdminFee",
+          "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+          "sourceTier": 1,
+          "sourceName": "MUP — Work of third-country nationals",
+          "verifiedDate": "2026-07-31"
+        }
+      ],
+      "caseHintKeys": []
+    },
+    {
+      "id": "biometrics",
+      "order": 3,
+      "titleKey": "swGuide.biometrics.title",
+      "whyKey": "swGuide.biometrics.why",
+      "howSteps": [
+        {
+          "labelKey": "swGuide.biometrics.how.invite",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661"
+        },
+        { "labelKey": "swGuide.biometrics.how.zagreb" },
+        { "labelKey": "swGuide.biometrics.how.docs" }
+      ],
+      "evidenceKey": "swGuide.biometrics.evidence",
+      "facts": [],
+      "caseHintKeys": ["swGuide.biometrics.caseHint"]
+    },
+    {
+      "id": "collect-card",
+      "order": 4,
+      "titleKey": "swGuide.card.title",
+      "whyKey": "swGuide.card.why",
+      "howSteps": [
+        { "labelKey": "swGuide.card.how.collect" },
+        { "labelKey": "swGuide.card.how.scan" }
+      ],
+      "evidenceKey": "swGuide.card.evidence",
+      "facts": [],
+      "caseHintKeys": []
+    },
+    {
+      "id": "register-address",
+      "order": 5,
+      "titleKey": "swGuide.address.title",
+      "whyKey": "swGuide.address.why",
+      "howSteps": [
+        {
+          "labelKey": "swGuide.address.how.mup",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661"
+        },
+        { "labelKey": "swGuide.address.how.desk" },
+        { "labelKey": "swGuide.address.how.verify" }
+      ],
+      "evidenceKey": "swGuide.address.evidence",
+      "facts": [],
+      "caseHintKeys": []
+    },
+    {
+      "id": "hzmo",
+      "order": 6,
+      "titleKey": "swGuide.hzmo.title",
+      "whyKey": "swGuide.hzmo.why",
+      "howSteps": [
+        {
+          "labelKey": "swGuide.hzmo.how.site",
+          "url": "https://www.mirovinsko.hr/"
+        },
+        { "labelKey": "swGuide.hzmo.how.employer" },
+        { "labelKey": "swGuide.hzmo.how.align" }
+      ],
+      "evidenceKey": "swGuide.hzmo.evidence",
+      "facts": [],
+      "caseHintKeys": []
+    },
+    {
+      "id": "hzzo",
+      "order": 7,
+      "titleKey": "swGuide.hzzo.title",
+      "whyKey": "swGuide.hzzo.why",
+      "howSteps": [
+        {
+          "labelKey": "swGuide.hzzo.how.site",
+          "url": "https://hzzo.hr/"
+        },
+        { "labelKey": "swGuide.hzzo.how.employer" }
+      ],
+      "evidenceKey": "swGuide.hzzo.evidence",
+      "facts": [],
+      "caseHintKeys": []
+    },
+    {
+      "id": "tax",
+      "order": 8,
+      "titleKey": "swGuide.tax.title",
+      "whyKey": "swGuide.tax.why",
+      "howSteps": [
+        {
+          "labelKey": "swGuide.tax.how.porezna",
+          "url": "https://eporezna.porezna-uprava.hr/"
+        },
+        { "labelKey": "swGuide.tax.how.withholding" }
+      ],
+      "evidenceKey": "swGuide.tax.evidence",
+      "facts": [],
+      "caseHintKeys": []
+    },
+    {
+      "id": "start-authorized",
+      "order": 9,
+      "titleKey": "swGuide.start.title",
+      "whyKey": "swGuide.start.why",
+      "howSteps": [
+        { "labelKey": "swGuide.start.how.date" },
+        { "labelKey": "swGuide.start.how.payroll" },
+        { "labelKey": "swGuide.start.how.noVisaFree" }
+      ],
+      "evidenceKey": "swGuide.start.evidence",
+      "facts": [],
+      "caseHintKeys": []
+    }
+  ]
+}
