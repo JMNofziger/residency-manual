@@ -26,6 +26,7 @@ export function emptyProgress() {
     occupationPath: "labor_market_test",
     uvCandidate: null,
     stepIndex: 0,
+    view: "overview",
     locale: null,
     updatedAt: null,
   };
@@ -55,6 +56,7 @@ export function toBundle(caseData, progress) {
     occupationPath: progress.occupationPath === "uv_skip_candidate" ? "uv_skip_candidate" : "labor_market_test",
     uvCandidate: progress.uvCandidate && typeof progress.uvCandidate === "object" ? progress.uvCandidate : null,
     stepIndex: typeof progress.stepIndex === "number" ? progress.stepIndex : 0,
+    view: progress.view === "wizard" ? "wizard" : "overview",
     locale: progress.locale || null,
     updatedAt: progress.updatedAt || new Date().toISOString(),
   };
@@ -100,6 +102,7 @@ export function fromBundle(raw) {
     occupationPath: p.occupationPath === "uv_skip_candidate" ? "uv_skip_candidate" : "labor_market_test",
     uvCandidate: p.uvCandidate && typeof p.uvCandidate === "object" ? p.uvCandidate : null,
     stepIndex: typeof p.stepIndex === "number" ? p.stepIndex : 0,
+    view: p.view === "wizard" ? "wizard" : "overview",
     locale: p.locale || null,
     updatedAt: p.updatedAt || null,
   };

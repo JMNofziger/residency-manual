@@ -74,7 +74,10 @@
     "exportHint": "Izvoz je trajna datoteka za ovo zapošljavanje (slučaj + napredak). Spremanje u pregledniku je samo predmemorija sesije — izvezite prije zatvaranja ako trebate rad drugdje.",
     "zagrebScope": "Opseg: šalteri i nadležnost modelirani su za poslodavca/mjesto rada Grad Zagreb. Druge policijske uprave još nisu mapirane.",
     "casePicker": "Slučaj",
-    "privateCase": "privatno"
+    "privateCase": "privatno",
+    "overview": "Pregled tijeka",
+    "openChecklist": "Otvori kontrolni popis",
+    "backToOverview": "Natrag na pregled"
   },
   "facts": {
     "art99DomesticRatio": "Udio domaće radne snage (uvjet za poslodavca)",
@@ -1097,6 +1100,32 @@
         "later": "Ne tretirajte dugotrajni boravak kao dio kontrolnog popisa zapošljavanja u prvoj godini."
       },
       "evidence": "Kratka bilješka da je dugotrajni boravak pregledan kao izvan opsega prve godine."
+    }
+  },
+  "overview": {
+    "kicker": "Zagrebački put zapošljavanja",
+    "title": "Gdje je ovaj predmet",
+    "lead": "Vizualna karta grane testa tržišta rada i puta jedinstvene dozvole. Otvorite kontrolni popis kad ste spremni raditi korak.",
+    "caseLabel": "Aktivni predmet",
+    "noCase": "Nema učitanog predmeta",
+    "positionLabel": "Trenutni položaj",
+    "positionAt": "Korak {n}/{total}: {step}",
+    "notStarted": "Nije započeto — počnite provjerom zanimanja",
+    "branchLabel": "Aktivna grana",
+    "branchTitle": "Točka grananja nakon paketa",
+    "branchLead": "Ili pokrenite HZZ test tržišta rada, ili ga preskočite samo kad uvjeti čl. 99 / UV stvarno odgovaraju.",
+    "branchLmt": "Pokreće se HZZ test tržišta rada",
+    "branchUv": "UV / čl. 99 kandidat za preskok: {title}",
+    "railLmt": "HZZ TTR",
+    "railUv": "UV preskok",
+    "joinLabel": "Oba puta ponovno se spajaju na podnošenju MUP-u za boravak i rad",
+    "flowLabel": "Koraci tijeka",
+    "enterChecklist": "Otvori kontrolni popis — {step}",
+    "status": {
+      "done": "Gotovo",
+      "current": "Ovdje ste",
+      "locked": "Zaključano",
+      "upcoming": "Sljedeće"
     }
   },
   "uncertainty": {

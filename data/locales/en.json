@@ -74,7 +74,10 @@
     "exportHint": "Export is the durable file for this hire (case + progress). Browser storage is only a last-session cache — export before closing if you need the work elsewhere.",
     "zagrebScope": "Scope: desks and competence are modeled for a Grad Zagreb employer/workplace. Other police administrations are not mapped yet.",
     "casePicker": "Case",
-    "privateCase": "private"
+    "privateCase": "private",
+    "overview": "Workflow overview",
+    "openChecklist": "Open checklist",
+    "backToOverview": "Back to overview"
   },
   "facts": {
     "art99DomesticRatio": "Domestic workforce ratio (employer condition)",
@@ -1097,6 +1100,32 @@
         "later": "Do not treat long-term residence as part of the first-year hiring checklist."
       },
       "evidence": "Short note that long-term stay was reviewed as out-of-scope for year one."
+    }
+  },
+  "overview": {
+    "kicker": "Zagreb hiring path",
+    "title": "Where this case sits",
+    "lead": "A visual map of the labour-market test branch and the Single Permit track. Open the checklist when you are ready to work a step.",
+    "caseLabel": "Active case",
+    "noCase": "No case loaded yet",
+    "positionLabel": "Current position",
+    "positionAt": "Step {n}/{total}: {step}",
+    "notStarted": "Not started — begin at occupation check",
+    "branchLabel": "Active branch",
+    "branchTitle": "Branch point after the package",
+    "branchLead": "Either run the HZZ labour market test, or skip it only when Art. 99 / UV conditions truly fit.",
+    "branchLmt": "Running the HZZ labour market test",
+    "branchUv": "UV / Art. 99 skip candidate: {title}",
+    "railLmt": "HZZ LMT",
+    "railUv": "UV skip",
+    "joinLabel": "Both paths join again at MUP stay-and-work filing",
+    "flowLabel": "Workflow steps",
+    "enterChecklist": "Open checklist — {step}",
+    "status": {
+      "done": "Done",
+      "current": "You are here",
+      "locked": "Locked",
+      "upcoming": "Next"
     }
   },
   "uncertainty": {

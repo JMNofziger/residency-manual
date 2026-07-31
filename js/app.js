@@ -15,6 +15,7 @@ import { Reference } from "./reference.js";
 import { canEnterStep, canMarkStepComplete } from "./step-gates.js";
 import { toBundle, downloadBundle, parseFile } from "./case-file.js";
 import { Uncertainty } from "./uncertainty.js";
+import { renderWorkflowOverview } from "./overview.js";
 
 const GUIDED_PANELS = {
   art99: Art99,
@@ -110,6 +111,8 @@ const state = {
   dutyTemplates: null,
   stepIndex: 0,
   progress: null,
+  /** @type {'overview' | 'wizard'} */
+  view: "overview",
 };
 
 function storageKey() {
@@ -126,6 +129,7 @@ function normalizeProgress(raw) {
     occupationPath: "labor_market_test",
     uvCandidate: null,
     stepIndex: 0,
+    view: "overview",
     updatedAt: null,
   };
   if (!raw || typeof raw !== "object") return base;
@@ -137,6 +141,7 @@ function normalizeProgress(raw) {
     occupationPath: raw.occupationPath === "uv_skip_candidate" ? "uv_skip_candidate" : "labor_market_test",
     uvCandidate: raw.uvCandidate && typeof raw.uvCandidate === "object" ? raw.uvCandidate : null,
     stepIndex: typeof raw.stepIndex === "number" ? raw.stepIndex : 0,
+    view: raw.view === "wizard" ? "wizard" : "overview",
   };
 }
 
@@ -179,8 +184,23 @@ function saveProgress() {
   state.progress.updatedAt = new Date().toISOString();
   state.progress.theme = Theme.get();
   state.progress.stepIndex = state.stepIndex;
+  state.progress.view = state.view;
   localStorage.setItem(storageKey(), JSON.stringify(state.progress));
   localStorage.setItem("residency-runbook:locale", state.progress.locale);
+}
+
+function setView(view) {
+  state.view = view === "wizard" ? "wizard" : "overview";
+  saveProgress();
+  render();
+}
+
+function enterWizardAt(index) {
+  const steps = state.stepsData?.steps || [];
+  const idx = clampStepIndex(typeof index === "number" ? index : state.stepIndex);
+  if (!canEnterStep(steps, idx, state.progress) && idx !== 0) return;
+  state.stepIndex = idx;
+  setView("wizard");
 }
 
 function isChecked(id) {
@@ -465,7 +485,28 @@ function renderGateBanner(step) {
     </aside>`;
 }
 
-function renderMain() {
+function renderOverviewMain() {
+  document.getElementById("step-nav").innerHTML = renderStepNav();
+  document.getElementById("mobile-progress").textContent = I18n.t("ui.overview");
+  document.getElementById("main-panel").innerHTML = renderWorkflowOverview({
+    steps: state.stepsData.steps,
+    progress: state.progress,
+    caseData: state.caseData,
+    stepIndex: state.stepIndex,
+  });
+
+  document.getElementById("btn-enter-wizard")?.addEventListener("click", () => {
+    enterWizardAt(state.stepIndex);
+  });
+  document.querySelectorAll("[data-overview-step]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (btn.disabled) return;
+      enterWizardAt(Number(btn.getAttribute("data-overview-step")));
+    });
+  });
+}
+
+function renderWizardMain() {
   const step = currentStep();
   const completed = state.progress.completedStepIds.includes(step.id);
   const gate = canMarkStepComplete(step, gateContext());
@@ -594,6 +635,11 @@ function renderMain() {
   });
 }
 
+function renderMain() {
+  if (state.view === "overview") renderOverviewMain();
+  else renderWizardMain();
+}
+
 function renderChrome() {
   document.getElementById("app-title").textContent = I18n.t("ui.title");
   document.getElementById("app-subtitle").textContent = I18n.t("ui.subtitle");
@@ -612,6 +658,11 @@ function renderChrome() {
   document.getElementById("footer-glossary").textContent = I18n.t("ui.glossary");
   document.getElementById("footer-offices").textContent = I18n.t("ui.addressBook");
   document.getElementById("footer-sources-link").textContent = I18n.t("ui.sourceRegistry");
+  const footerOverview = document.getElementById("footer-overview");
+  if (footerOverview) {
+    footerOverview.textContent =
+      state.view === "overview" ? I18n.t("ui.openChecklist") : I18n.t("ui.backToOverview");
+  }
   document.getElementById("nav-heading").textContent = I18n.t("ui.steps");
   const exportHint = document.getElementById("export-hint");
   if (exportHint) exportHint.textContent = I18n.t("ui.exportHint");
@@ -635,6 +686,15 @@ function renderChrome() {
   if (mobileNav) mobileNav.textContent = I18n.t("ui.mobileMenu");
   document.getElementById("btn-lang-en").classList.toggle("is-active", state.progress.locale === "en");
   document.getElementById("btn-lang-hr").classList.toggle("is-active", state.progress.locale === "hr");
+
+  const btnOverview = document.getElementById("btn-overview");
+  if (btnOverview) {
+    btnOverview.textContent =
+      state.view === "overview" ? I18n.t("ui.openChecklist") : I18n.t("ui.overview");
+    btnOverview.classList.toggle("is-active-view", state.view === "overview");
+  }
+  document.getElementById("app-shell")?.classList.toggle("is-overview", state.view === "overview");
+  document.getElementById("app-shell")?.classList.toggle("is-wizard", state.view === "wizard");
 }
 
 async function applyImportedBundle(caseData, progress) {
@@ -651,6 +711,7 @@ async function applyImportedBundle(caseData, progress) {
   syncAllGuidedParents();
   reconcileStepCompletion();
   state.stepIndex = clampStepIndex(state.progress.stepIndex || 0);
+  state.view = state.progress.view === "wizard" ? "wizard" : "overview";
   saveProgress();
   render();
 }
@@ -667,6 +728,7 @@ async function switchCase(path) {
   syncAllGuidedParents();
   reconcileStepCompletion();
   state.stepIndex = clampStepIndex(state.progress.stepIndex || 0);
+  state.view = state.progress.view === "wizard" ? "wizard" : "overview";
   saveProgress();
   render();
 }
@@ -701,6 +763,15 @@ function bindGlobal() {
     e.preventDefault();
     Reference.open("offices");
   });
+  document.getElementById("btn-overview")?.addEventListener("click", () => {
+    if (state.view === "overview") enterWizardAt(state.stepIndex);
+    else setView("overview");
+  });
+  document.getElementById("footer-overview")?.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (state.view === "overview") enterWizardAt(state.stepIndex);
+    else setView("overview");
+  });
   document.getElementById("btn-reset").addEventListener("click", () => {
     if (!confirm(I18n.t("ui.resetConfirm"))) return;
     state.progress.completedStepIds = [];
@@ -710,7 +781,9 @@ function bindGlobal() {
     state.progress.occupationPath = "labor_market_test";
     state.progress.uvCandidate = null;
     state.progress.stepIndex = 0;
+    state.progress.view = "overview";
     state.stepIndex = 0;
+    state.view = "overview";
     saveProgress();
     render();
   });
@@ -736,6 +809,7 @@ function bindGlobal() {
     const idx = Number(btn.dataset.stepIndex);
     if (!canEnterStep(state.stepsData.steps, idx, state.progress)) return;
     state.stepIndex = idx;
+    state.view = "wizard";
     saveProgress();
     render();
   });
@@ -788,6 +862,7 @@ async function init() {
     syncAllGuidedParents();
     reconcileStepCompletion();
     state.stepIndex = clampStepIndex(state.progress.stepIndex || 0);
+    state.view = state.progress.view === "wizard" ? "wizard" : "overview";
     saveProgress();
     bindGlobal();
     loading.hidden = true;

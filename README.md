@@ -16,7 +16,9 @@ Open http://localhost:8080 (needed for JSON/`fetch`; do not open as `file://`).
 
 ## In the app
 
+- **Workflow overview** home — visual map of LMT vs UV branch and current step; open the checklist from the hero CTA, top bar, or footer
 - Eight guided steps from employer fitness through compliance
+- **Uncertainty cards** when Tier-1 pages disagree on fees (sources + last-verified dates)
 - **Case picker** in the sidebar (`cases/index.json`; private `cases/private/active.json` when present)
 - **Export case** / **Import case** — pretty-printed JSON (case + progress). Browser storage is a last-session cache only
 - Steps unlock in order; required guided checks must pass (completion is revoked if you uncheck a required item)
@@ -34,12 +36,12 @@ For multiple hires, export one `{id}-runbook.json` per worker. Do not commit pri
 ## Facts lint / CI
 
 ```bash
-npm run lint:facts
+npm run lint
 npm run test:gates
 npm run audit:facts
 ```
 
-GitHub Actions runs lint + gate smoke on pushes/PRs to `main`.
+GitHub Actions runs fact lint, EN/HR locale parity, and gate smoke on pushes/PRs to `main`.
 
 ## Docs
 
