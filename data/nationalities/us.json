@@ -11,10 +11,10 @@
           "id": "us-visa-free-window",
           "value": "90/180",
           "labelKey": "facts.usVisaFreeWindow",
-          "sourceUrl": "https://hr.usembassy.gov/entry-and-residence-requirements/",
+          "sourceUrl": "https://mvep.gov.hr/services-consular-portal/consular-information-22802/stay-of-foreigners/granting-stay-in-croatia/22839",
           "sourceTier": 1,
-          "sourceName": "U.S. Embassy Croatia — Entry and Residence",
-          "verifiedDate": "2026-07-30"
+          "sourceName": "MVEP — Granting Stay in Croatia",
+          "verifiedDate": "2026-07-31"
         }
       ]
     },
@@ -53,10 +53,10 @@
               "id": "us-visa-free-window-docs",
               "value": "90/180",
               "labelKey": "facts.usVisaFreeWindow",
-              "sourceUrl": "https://hr.usembassy.gov/entry-and-residence-requirements/",
+              "sourceUrl": "https://mvep.gov.hr/services-consular-portal/consular-information-22802/stay-of-foreigners/granting-stay-in-croatia/22839",
               "sourceTier": 1,
-              "sourceName": "U.S. Embassy Croatia — Entry and Residence",
-              "verifiedDate": "2026-07-30"
+              "sourceName": "MVEP — Granting Stay in Croatia",
+              "verifiedDate": "2026-07-31"
             }
           ],
           "links": [
@@ -73,12 +73,12 @@
           "facts": [
             {
               "id": "us-police-registration",
-              "value": "48 hours",
+              "value": "2 days",
               "labelKey": "facts.usPoliceRegistration",
-              "sourceUrl": "https://hr.usembassy.gov/entry-and-residence-requirements/",
+              "sourceUrl": "https://mvep.gov.hr/services-consular-portal/consular-information-22802/stay-of-foreigners/granting-stay-in-croatia/22839",
               "sourceTier": 1,
-              "sourceName": "U.S. Embassy Croatia — Entry and Residence",
-              "verifiedDate": "2026-07-30"
+              "sourceName": "MVEP — Granting Stay in Croatia",
+              "verifiedDate": "2026-07-31"
             }
           ],
           "links": [

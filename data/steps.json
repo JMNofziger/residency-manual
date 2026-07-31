@@ -8,7 +8,9 @@
       "order": 1,
       "titleKey": "steps.orient.title",
       "summaryKey": "steps.orient.summary",
-      "nationalitySlots": ["orient"],
+      "nationalitySlots": [
+        "orient"
+      ],
       "sections": [
         {
           "id": "overview",
@@ -32,7 +34,7 @@
               "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
               "sourceTier": 1,
               "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
-              "verifiedDate": "2026-07-30"
+              "verifiedDate": "2026-07-31"
             },
             {
               "id": "art99-continuous-employment",
@@ -41,7 +43,7 @@
               "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
               "sourceTier": 1,
               "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
-              "verifiedDate": "2026-07-30"
+              "verifiedDate": "2026-07-31"
             },
             {
               "id": "art99-blocked-account",
@@ -50,7 +52,7 @@
               "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
               "sourceTier": 1,
               "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
-              "verifiedDate": "2026-07-30"
+              "verifiedDate": "2026-07-31"
             },
             {
               "id": "art99-inflow-threshold",
@@ -59,25 +61,14 @@
               "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
               "sourceTier": 1,
               "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
-              "verifiedDate": "2026-07-30"
+              "verifiedDate": "2026-07-31"
             }
           ]
         },
         {
           "id": "wrong-paths",
           "titleKey": "steps.orient.wrongPaths.title",
-          "bodyKey": "steps.orient.wrongPaths.body",
-          "facts": [
-            {
-              "id": "blue-card-validity",
-              "value": "48 months",
-              "labelKey": "facts.blueCardValidity",
-              "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/stay-and-work-of-highly-qualified-third-country-nationals/281692",
-              "sourceTier": 1,
-              "sourceName": "MUP — Highly-qualified TCNs (EU Blue Card)",
-              "verifiedDate": "2026-07-30"
-            }
-          ]
+          "bodyKey": "steps.orient.wrongPaths.body"
         },
         {
           "id": "law-2026",
@@ -91,17 +82,32 @@
               "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
               "sourceTier": 1,
               "sourceName": "Narodne novine — NN 55/2026",
-              "verifiedDate": "2026-07-30"
+              "verifiedDate": "2026-07-31"
             }
           ]
         }
       ],
       "checklist": [
-        { "id": "orient-read-overview", "labelKey": "steps.orient.check.readOverview" },
-        { "id": "orient-art99-selfcheck", "labelKey": "steps.orient.check.art99" },
-        { "id": "orient-confirm-lmt-path", "labelKey": "steps.orient.check.lmtPath" },
-        { "id": "orient-exclude-blue-card", "labelKey": "steps.orient.check.excludeBlueCard" },
-        { "id": "orient-verify-revenue", "labelKey": "steps.orient.check.verifyRevenue" }
+        {
+          "id": "orient-read-overview",
+          "labelKey": "steps.orient.check.readOverview"
+        },
+        {
+          "id": "orient-art99-selfcheck",
+          "labelKey": "steps.orient.check.art99"
+        },
+        {
+          "id": "orient-confirm-lmt-path",
+          "labelKey": "steps.orient.check.lmtPath"
+        },
+        {
+          "id": "orient-exclude-blue-card",
+          "labelKey": "steps.orient.check.excludeBlueCard"
+        },
+        {
+          "id": "orient-verify-revenue",
+          "labelKey": "steps.orient.check.verifyRevenue"
+        }
       ],
       "sources": [
         {
@@ -154,10 +160,22 @@
         }
       ],
       "checklist": [
-        { "id": "occ-pick-title", "labelKey": "steps.occupation.check.pickTitle" },
-        { "id": "occ-match-nkd", "labelKey": "steps.occupation.check.matchNkd" },
-        { "id": "occ-check-uv-list", "labelKey": "steps.occupation.check.uvList" },
-        { "id": "occ-document-duties", "labelKey": "steps.occupation.check.documentDuties" }
+        {
+          "id": "occ-pick-title",
+          "labelKey": "steps.occupation.check.pickTitle"
+        },
+        {
+          "id": "occ-match-nkd",
+          "labelKey": "steps.occupation.check.matchNkd"
+        },
+        {
+          "id": "occ-check-uv-list",
+          "labelKey": "steps.occupation.check.uvList"
+        },
+        {
+          "id": "occ-document-duties",
+          "labelKey": "steps.occupation.check.documentDuties"
+        }
       ],
       "sources": [
         {
@@ -199,11 +217,26 @@
         }
       ],
       "checklist": [
-        { "id": "pkg-draft-contract", "labelKey": "steps.employerPackage.check.contract" },
-        { "id": "pkg-pay-parity", "labelKey": "steps.employerPackage.check.payParity" },
-        { "id": "pkg-form17a", "labelKey": "steps.employerPackage.check.form17a" },
-        { "id": "pkg-housing", "labelKey": "steps.employerPackage.check.housing" },
-        { "id": "pkg-tax-clear", "labelKey": "steps.employerPackage.check.taxClear" }
+        {
+          "id": "pkg-draft-contract",
+          "labelKey": "steps.employerPackage.check.contract"
+        },
+        {
+          "id": "pkg-pay-parity",
+          "labelKey": "steps.employerPackage.check.payParity"
+        },
+        {
+          "id": "pkg-form17a",
+          "labelKey": "steps.employerPackage.check.form17a"
+        },
+        {
+          "id": "pkg-housing",
+          "labelKey": "steps.employerPackage.check.housing"
+        },
+        {
+          "id": "pkg-tax-clear",
+          "labelKey": "steps.employerPackage.check.taxClear"
+        }
       ],
       "sources": [
         {
@@ -252,17 +285,32 @@
               "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
               "sourceTier": 1,
               "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
-              "verifiedDate": "2026-07-30"
+              "verifiedDate": "2026-07-31"
             }
           ]
         }
       ],
       "checklist": [
-        { "id": "lmt-prepare-request", "labelKey": "steps.lmt.check.prepare" },
-        { "id": "lmt-related-activity", "labelKey": "steps.lmt.check.relatedActivity" },
-        { "id": "lmt-submit-hzz", "labelKey": "steps.lmt.check.submit" },
-        { "id": "lmt-positive-notice", "labelKey": "steps.lmt.check.positiveNotice" },
-        { "id": "lmt-file-within-window", "labelKey": "steps.lmt.check.fileWindow" }
+        {
+          "id": "lmt-prepare-request",
+          "labelKey": "steps.lmt.check.prepare"
+        },
+        {
+          "id": "lmt-related-activity",
+          "labelKey": "steps.lmt.check.relatedActivity"
+        },
+        {
+          "id": "lmt-submit-hzz",
+          "labelKey": "steps.lmt.check.submit"
+        },
+        {
+          "id": "lmt-positive-notice",
+          "labelKey": "steps.lmt.check.positiveNotice"
+        },
+        {
+          "id": "lmt-file-within-window",
+          "labelKey": "steps.lmt.check.fileWindow"
+        }
       ],
       "sources": [
         {
@@ -287,7 +335,9 @@
       "order": 5,
       "titleKey": "steps.workerDocs.title",
       "summaryKey": "steps.workerDocs.summary",
-      "nationalitySlots": ["worker-docs"],
+      "nationalitySlots": [
+        "worker-docs"
+      ],
       "sections": [
         {
           "id": "core-docs",
@@ -301,12 +351,30 @@
         }
       ],
       "checklist": [
-        { "id": "wd-passport", "labelKey": "steps.workerDocs.check.passport" },
-        { "id": "wd-criminal-record", "labelKey": "steps.workerDocs.check.criminalRecord" },
-        { "id": "wd-insurance", "labelKey": "steps.workerDocs.check.insurance" },
-        { "id": "wd-accommodation", "labelKey": "steps.workerDocs.check.accommodation" },
-        { "id": "wd-photos", "labelKey": "steps.workerDocs.check.photos" },
-        { "id": "wd-translations", "labelKey": "steps.workerDocs.check.translations" }
+        {
+          "id": "wd-passport",
+          "labelKey": "steps.workerDocs.check.passport"
+        },
+        {
+          "id": "wd-criminal-record",
+          "labelKey": "steps.workerDocs.check.criminalRecord"
+        },
+        {
+          "id": "wd-insurance",
+          "labelKey": "steps.workerDocs.check.insurance"
+        },
+        {
+          "id": "wd-accommodation",
+          "labelKey": "steps.workerDocs.check.accommodation"
+        },
+        {
+          "id": "wd-photos",
+          "labelKey": "steps.workerDocs.check.photos"
+        },
+        {
+          "id": "wd-translations",
+          "labelKey": "steps.workerDocs.check.translations"
+        }
       ],
       "sources": [
         {
@@ -326,7 +394,9 @@
       "order": 6,
       "titleKey": "steps.filePermit.title",
       "summaryKey": "steps.filePermit.summary",
-      "nationalitySlots": ["file-permit"],
+      "nationalitySlots": [
+        "file-permit"
+      ],
       "sections": [
         {
           "id": "when",
@@ -350,16 +420,25 @@
               "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661",
               "sourceTier": 1,
               "sourceName": "MUP — Temporary Stay",
-              "verifiedDate": "2026-07-30"
+              "verifiedDate": "2026-07-31"
             },
             {
-              "id": "biometric-card-fee",
-              "value": "€9.29",
-              "labelKey": "facts.biometricCardFee",
+              "id": "biometric-production-fee",
+              "value": "€31.85",
+              "labelKey": "facts.biometricProductionFee",
               "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661",
               "sourceTier": 1,
               "sourceName": "MUP — Temporary Stay",
-              "verifiedDate": "2026-07-30"
+              "verifiedDate": "2026-07-31"
+            },
+            {
+              "id": "biometric-admin-fee",
+              "value": "€9.29",
+              "labelKey": "facts.biometricAdminFee",
+              "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661",
+              "sourceTier": 1,
+              "sourceName": "MUP — Temporary Stay",
+              "verifiedDate": "2026-07-31"
             }
           ]
         },
@@ -375,17 +454,32 @@
               "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
               "sourceTier": 1,
               "sourceName": "Narodne novine — NN 55/2026",
-              "verifiedDate": "2026-07-30"
+              "verifiedDate": "2026-07-31"
             }
           ]
         }
       ],
       "checklist": [
-        { "id": "fp-assemble-file", "labelKey": "steps.filePermit.check.assemble" },
-        { "id": "fp-confirm-competence", "labelKey": "steps.filePermit.check.competence" },
-        { "id": "fp-pay-fees", "labelKey": "steps.filePermit.check.fees" },
-        { "id": "fp-submit", "labelKey": "steps.filePermit.check.submit" },
-        { "id": "fp-keep-proof", "labelKey": "steps.filePermit.check.proof" }
+        {
+          "id": "fp-assemble-file",
+          "labelKey": "steps.filePermit.check.assemble"
+        },
+        {
+          "id": "fp-confirm-competence",
+          "labelKey": "steps.filePermit.check.competence"
+        },
+        {
+          "id": "fp-pay-fees",
+          "labelKey": "steps.filePermit.check.fees"
+        },
+        {
+          "id": "fp-submit",
+          "labelKey": "steps.filePermit.check.submit"
+        },
+        {
+          "id": "fp-keep-proof",
+          "labelKey": "steps.filePermit.check.proof"
+        }
       ],
       "sources": [
         {
@@ -429,11 +523,26 @@
         }
       ],
       "checklist": [
-        { "id": "sw-await-decision", "labelKey": "steps.startWork.check.decision" },
-        { "id": "sw-biometrics", "labelKey": "steps.startWork.check.biometrics" },
-        { "id": "sw-collect-card", "labelKey": "steps.startWork.check.card" },
-        { "id": "sw-hzmo-hzzo", "labelKey": "steps.startWork.check.social" },
-        { "id": "sw-start-only-authorized", "labelKey": "steps.startWork.check.startAuthorized" }
+        {
+          "id": "sw-await-decision",
+          "labelKey": "steps.startWork.check.decision"
+        },
+        {
+          "id": "sw-biometrics",
+          "labelKey": "steps.startWork.check.biometrics"
+        },
+        {
+          "id": "sw-collect-card",
+          "labelKey": "steps.startWork.check.card"
+        },
+        {
+          "id": "sw-hzmo-hzzo",
+          "labelKey": "steps.startWork.check.social"
+        },
+        {
+          "id": "sw-start-only-authorized",
+          "labelKey": "steps.startWork.check.startAuthorized"
+        }
       ],
       "sources": [
         {
@@ -467,7 +576,7 @@
               "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
               "sourceTier": 1,
               "sourceName": "Narodne novine — NN 55/2026",
-              "verifiedDate": "2026-07-30"
+              "verifiedDate": "2026-07-31"
             }
           ]
         },
@@ -483,7 +592,7 @@
               "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
               "sourceTier": 1,
               "sourceName": "Narodne novine — NN 55/2026",
-              "verifiedDate": "2026-07-30"
+              "verifiedDate": "2026-07-31"
             },
             {
               "id": "unemployment-window-long-hold",
@@ -492,7 +601,7 @@
               "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
               "sourceTier": 1,
               "sourceName": "Narodne novine — NN 55/2026",
-              "verifiedDate": "2026-07-30"
+              "verifiedDate": "2026-07-31"
             },
             {
               "id": "unemployment-long-hold-qualifier",
@@ -501,7 +610,7 @@
               "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
               "sourceTier": 1,
               "sourceName": "Narodne novine — NN 55/2026",
-              "verifiedDate": "2026-07-30"
+              "verifiedDate": "2026-07-31"
             }
           ]
         },
@@ -517,7 +626,16 @@
               "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
               "sourceTier": 1,
               "sourceName": "Narodne novine — NN 55/2026",
-              "verifiedDate": "2026-07-30"
+              "verifiedDate": "2026-07-31"
+            },
+            {
+              "id": "a1-deferred-force",
+              "value": "2027-06-04",
+              "labelKey": "facts.a1DeferredForce",
+              "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+              "sourceTier": 1,
+              "sourceName": "Narodne novine — NN 55/2026",
+              "verifiedDate": "2026-07-31"
             }
           ]
         },
@@ -533,16 +651,28 @@
               "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/long-term-residence-and-permanent-stay/281682",
               "sourceTier": 1,
               "sourceName": "MUP — Long-term residence and permanent stay",
-              "verifiedDate": "2026-07-30"
+              "verifiedDate": "2026-07-31"
             }
           ]
         }
       ],
       "checklist": [
-        { "id": "cy-track-permit-dates", "labelKey": "steps.comply.check.dates" },
-        { "id": "cy-employer-change-rules", "labelKey": "steps.comply.check.employerChange" },
-        { "id": "cy-a1-plan", "labelKey": "steps.comply.check.a1" },
-        { "id": "cy-renewal-calendar", "labelKey": "steps.comply.check.renewal" }
+        {
+          "id": "cy-track-permit-dates",
+          "labelKey": "steps.comply.check.dates"
+        },
+        {
+          "id": "cy-employer-change-rules",
+          "labelKey": "steps.comply.check.employerChange"
+        },
+        {
+          "id": "cy-a1-plan",
+          "labelKey": "steps.comply.check.a1"
+        },
+        {
+          "id": "cy-renewal-calendar",
+          "labelKey": "steps.comply.check.renewal"
+        }
       ],
       "sources": [
         {

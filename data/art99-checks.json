@@ -57,7 +57,7 @@
           "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
           "sourceTier": 1,
           "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
-          "verifiedDate": "2026-07-30"
+          "verifiedDate": "2026-07-31"
         }
       ],
       "caseHintKeys": ["art99.continuous.caseHint"]
@@ -87,7 +87,7 @@
           "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
           "sourceTier": 1,
           "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
-          "verifiedDate": "2026-07-30"
+          "verifiedDate": "2026-07-31"
         },
         {
           "id": "art99-check-ratio-10",
@@ -96,7 +96,7 @@
           "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
           "sourceTier": 1,
           "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
-          "verifiedDate": "2026-07-30"
+          "verifiedDate": "2026-07-31"
         }
       ],
       "caseHintKeys": ["art99.ratio.caseHint"]
@@ -148,7 +148,7 @@
           "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
           "sourceTier": 1,
           "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
-          "verifiedDate": "2026-07-30"
+          "verifiedDate": "2026-07-31"
         }
       ],
       "caseHintKeys": ["art99.inflow.caseHint"]
@@ -179,7 +179,7 @@
           "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
           "sourceTier": 1,
           "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
-          "verifiedDate": "2026-07-30"
+          "verifiedDate": "2026-07-31"
         }
       ],
       "caseHintKeys": []

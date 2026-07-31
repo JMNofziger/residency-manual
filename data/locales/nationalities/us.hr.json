@@ -2,7 +2,7 @@
   "label": "Sjedinjene Američke Države",
   "facts": {
     "usVisaFreeWindow": "Bezvizni kratki boravak za SAD (dani u razdoblju)",
-    "usPoliceRegistration": "Rok prijave boravka policiji nakon dolaska"
+    "usPoliceRegistration": "Rok samoprijave stranca ako pružatelj smještaja ne može prijaviti (MVEP)"
   },
   "orient": {
     "title": "Državljanin SAD-a — praktične razlike",
@@ -26,8 +26,8 @@
       "help": "Nositelji američke putovnice mogu ući bez vize za kratki boravak unutar citiranog prozora. To pomaže za termine, ali ne ovlašćuje za rad."
     },
     "registration": {
-      "label": "Organizirajte prijavu boravka policiji nakon dolaska",
-      "help": "Ambasada podsjeća na kratki rok prijave kod privatnog smještaja (hoteli često prijavljuju goste). Potvrdite aktualne obrasce. Rok citiran:"
+      "label": "Organizirajte prijavu smještaja / boravka nakon dolaska",
+      "help": "MVEP: pružatelj smještaja prijavljuje putem eVisitora u roku od jednog dana; ako ne može, državljanin treće zemlje mora se prijaviti unutar citiranog roka od ulaska ili promjene smještaja. Hoteli to često odrade. Potvrdite aktualnu MUP/eVisitor praksu. Rok citiran:"
     },
     "apostille": {
       "label": "Apostille + ovjereni hrvatski prijevod američkih isprava",

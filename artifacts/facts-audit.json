@@ -1,19 +1,33 @@
 {
-  "generatedAt": "2026-07-30",
+  "generatedAt": "2026-07-31",
   "caseId": "example-dool-us-manual-labor",
-  "factCount": 29,
-  "tier1Count": 29,
+  "factCount": 30,
+  "tier1Count": 30,
   "tier2Count": 0,
   "notes": [
-    "verifiedDate reflects last check against linked source registry / Tier 1 URLs in-repo, not a live MUP/HZZ/NN scrape on audit day.",
-    "LIVE RE-VERIFY BEFORE FILING: permit fee €46.45, biometric card fee €9.29, long-term fee €83.62 (MUP pages).",
-    "LIVE RE-VERIFY: Art. 99-style 20% / 12 months / 30 days / €100,000 (HZZ novi sustav + NN text).",
-    "LIVE RE-VERIFY: LMT positive-notice window 90 days; permit decision window 90 days; employer-change 6 months; unemployment 3/6 months; A1 within 1 year (NN 55/2026 + MUP/HZZ).",
-    "LIVE RE-VERIFY (US pack): visa-free 90/180 and police registration 48 hours (U.S. Embassy Croatia page).",
-    "Omitted on purpose: Blue Card fee amounts (wrong path for this job); seasonal/student numeric rules; Form 17a field-level specs (confirm current form template).",
-    "Employer revenue in the case fixture is case data (number field), not a cited legal fact — still needs live tax/bank verification."
+    "Phase 5 live Tier-1 pass completed 2026-07-31 — see artifacts/phase5-verification.md.",
+    "CONFIRMED on HZZ novi sustav: Art. 99 20%/10%, 12 months continuous FTE, €100,000 legal-entity inflow, 30-day blockade, 90-day LMT positive-notice window.",
+    "CONFIRMED on MUP temporary stay: €46.45 stay fee, €31.85 biometric production (regular), €9.29 biometric admin fee. Accelerated biometric production (€59.73) omitted from wizard facts.",
+    "CONFIRMED on MUP long-term page: €83.62 decision fee.",
+    "CONFIRMED on NN 55/2026: general force 2026-06-04; 90-day decision deadline; employer-change after 6 months; unemployment 3/6 months with 2-year qualifier; A1.1 after 1 year stay; Art. 92.a(1)/(4)/(6) deferred to 2027-06-04.",
+    "CONFIRMED on MVEP granting-stay page: short-stay 90/180; alien self-registration within 2 days if provider cannot register (provider: 1 day via eVisitor).",
+    "UV list: no newer public UV decision PDF found; still shipping official 2023-03 MUP/HZZ PDF with stale-edition banner.",
+    "OMITTED: Blue Card validity months (not stated on live MUP Blue Card page / not confirmed in NN 55/2026 excerpt); Blue Card fee schedule (wrong path); seasonal/student numerics; Form 17a field specs.",
+    "Case revenue remains case data, not a legal fact — still needs live tax/bank verification before filing."
   ],
   "facts": [
+    {
+      "id": "a1-deferred-force",
+      "value": "2027-06-04",
+      "labelKey": "facts.a1DeferredForce",
+      "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+      "sourceTier": 1,
+      "sourceName": "Narodne novine — NN 55/2026",
+      "verifiedDate": "2026-07-31",
+      "ageDaysAsOfAudit": 0,
+      "file": "data/steps.json",
+      "path": "steps[7].sections[2].facts[1]"
+    },
     {
       "id": "a1-within",
       "value": "1 year",
@@ -21,7 +35,7 @@
       "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
       "sourceTier": 1,
       "sourceName": "Narodne novine — NN 55/2026",
-      "verifiedDate": "2026-07-30",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/steps.json",
       "path": "steps[7].sections[2].facts[0]"
@@ -33,7 +47,7 @@
       "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
       "sourceTier": 1,
       "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
-      "verifiedDate": "2026-07-30",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/steps.json",
       "path": "steps[0].sections[2].facts[2]"
@@ -45,7 +59,7 @@
       "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
       "sourceTier": 1,
       "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
-      "verifiedDate": "2026-07-30",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/art99-checks.json",
       "path": "checks[5].facts[0]"
@@ -57,7 +71,7 @@
       "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
       "sourceTier": 1,
       "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
-      "verifiedDate": "2026-07-30",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/art99-checks.json",
       "path": "checks[1].facts[0]"
@@ -69,7 +83,7 @@
       "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
       "sourceTier": 1,
       "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
-      "verifiedDate": "2026-07-30",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/art99-checks.json",
       "path": "checks[4].facts[0]"
@@ -81,7 +95,7 @@
       "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
       "sourceTier": 1,
       "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
-      "verifiedDate": "2026-07-30",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/art99-checks.json",
       "path": "checks[2].facts[1]"
@@ -93,7 +107,7 @@
       "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
       "sourceTier": 1,
       "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
-      "verifiedDate": "2026-07-30",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/art99-checks.json",
       "path": "checks[2].facts[0]"
@@ -105,7 +119,7 @@
       "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
       "sourceTier": 1,
       "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
-      "verifiedDate": "2026-07-30",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/steps.json",
       "path": "steps[0].sections[2].facts[1]"
@@ -117,7 +131,7 @@
       "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
       "sourceTier": 1,
       "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
-      "verifiedDate": "2026-07-30",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/steps.json",
       "path": "steps[0].sections[2].facts[0]"
@@ -129,34 +143,34 @@
       "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
       "sourceTier": 1,
       "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
-      "verifiedDate": "2026-07-30",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/steps.json",
       "path": "steps[0].sections[2].facts[3]"
     },
     {
-      "id": "biometric-card-fee",
+      "id": "biometric-admin-fee",
       "value": "€9.29",
-      "labelKey": "facts.biometricCardFee",
+      "labelKey": "facts.biometricAdminFee",
       "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661",
       "sourceTier": 1,
       "sourceName": "MUP — Temporary Stay",
-      "verifiedDate": "2026-07-30",
+      "verifiedDate": "2026-07-31",
+      "ageDaysAsOfAudit": 0,
+      "file": "data/steps.json",
+      "path": "steps[5].sections[2].facts[2]"
+    },
+    {
+      "id": "biometric-production-fee",
+      "value": "€31.85",
+      "labelKey": "facts.biometricProductionFee",
+      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661",
+      "sourceTier": 1,
+      "sourceName": "MUP — Temporary Stay",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/steps.json",
       "path": "steps[5].sections[2].facts[1]"
-    },
-    {
-      "id": "blue-card-validity",
-      "value": "48 months",
-      "labelKey": "facts.blueCardValidity",
-      "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/stay-and-work-of-highly-qualified-third-country-nationals/281692",
-      "sourceTier": 1,
-      "sourceName": "MUP — Highly-qualified TCNs (EU Blue Card)",
-      "verifiedDate": "2026-07-30",
-      "ageDaysAsOfAudit": 0,
-      "file": "data/steps.json",
-      "path": "steps[0].sections[3].facts[0]"
     },
     {
       "id": "case-art99-blocked",
@@ -165,7 +179,7 @@
       "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
       "sourceTier": 1,
       "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
-      "verifiedDate": "2026-07-30",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "cases/example-dool-us-manual-labor.json",
       "path": "riskFlags[0].facts[2]"
@@ -177,7 +191,7 @@
       "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
       "sourceTier": 1,
       "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
-      "verifiedDate": "2026-07-30",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "cases/example-dool-us-manual-labor.json",
       "path": "riskFlags[0].facts[1]"
@@ -189,7 +203,7 @@
       "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
       "sourceTier": 1,
       "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
-      "verifiedDate": "2026-07-30",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "cases/example-dool-us-manual-labor.json",
       "path": "riskFlags[0].facts[0]"
@@ -201,7 +215,7 @@
       "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
       "sourceTier": 1,
       "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
-      "verifiedDate": "2026-07-30",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "cases/example-dool-us-manual-labor.json",
       "path": "riskFlags[3].facts[0]"
@@ -213,7 +227,7 @@
       "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
       "sourceTier": 1,
       "sourceName": "Narodne novine — NN 55/2026",
-      "verifiedDate": "2026-07-30",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/steps.json",
       "path": "steps[7].sections[0].facts[0]"
@@ -225,7 +239,7 @@
       "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
       "sourceTier": 1,
       "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
-      "verifiedDate": "2026-07-30",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/steps.json",
       "path": "steps[3].sections[2].facts[0]"
@@ -237,7 +251,7 @@
       "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/long-term-residence-and-permanent-stay/281682",
       "sourceTier": 1,
       "sourceName": "MUP — Long-term residence and permanent stay",
-      "verifiedDate": "2026-07-30",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/steps.json",
       "path": "steps[7].sections[3].facts[0]"
@@ -249,7 +263,7 @@
       "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
       "sourceTier": 1,
       "sourceName": "Narodne novine — NN 55/2026",
-      "verifiedDate": "2026-07-30",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/steps.json",
       "path": "steps[0].sections[4].facts[0]"
@@ -261,7 +275,7 @@
       "sourceUrl": "https://mup.gov.hr/UserDocsImages/2024/8/Lista-zanimanja-izuzetak-od-provedbe-testa-trzista-rada_2023.pdf",
       "sourceTier": 1,
       "sourceName": "MUP/HZZ — Lista zanimanja (izuzetak od TTR) PDF",
-      "verifiedDate": "2026-07-30",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/uv-occupations.json",
       "path": "listMeta"
@@ -273,7 +287,7 @@
       "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661",
       "sourceTier": 1,
       "sourceName": "MUP — Temporary Stay",
-      "verifiedDate": "2026-07-30",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/steps.json",
       "path": "steps[5].sections[2].facts[0]"
@@ -285,7 +299,7 @@
       "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
       "sourceTier": 1,
       "sourceName": "Narodne novine — NN 55/2026",
-      "verifiedDate": "2026-07-30",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/steps.json",
       "path": "steps[5].sections[3].facts[0]"
@@ -297,7 +311,7 @@
       "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
       "sourceTier": 1,
       "sourceName": "Narodne novine — NN 55/2026",
-      "verifiedDate": "2026-07-30",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/steps.json",
       "path": "steps[7].sections[1].facts[2]"
@@ -309,7 +323,7 @@
       "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
       "sourceTier": 1,
       "sourceName": "Narodne novine — NN 55/2026",
-      "verifiedDate": "2026-07-30",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/steps.json",
       "path": "steps[7].sections[1].facts[1]"
@@ -321,19 +335,19 @@
       "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
       "sourceTier": 1,
       "sourceName": "Narodne novine — NN 55/2026",
-      "verifiedDate": "2026-07-30",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/steps.json",
       "path": "steps[7].sections[1].facts[0]"
     },
     {
       "id": "us-police-registration",
-      "value": "48 hours",
+      "value": "2 days",
       "labelKey": "facts.usPoliceRegistration",
-      "sourceUrl": "https://hr.usembassy.gov/entry-and-residence-requirements/",
+      "sourceUrl": "https://mvep.gov.hr/services-consular-portal/consular-information-22802/stay-of-foreigners/granting-stay-in-croatia/22839",
       "sourceTier": 1,
-      "sourceName": "U.S. Embassy Croatia — Entry and Residence",
-      "verifiedDate": "2026-07-30",
+      "sourceName": "MVEP — Granting Stay in Croatia",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/nationalities/us.json",
       "path": "slots.worker-docs.checklist[3].facts[0]"
@@ -342,10 +356,10 @@
       "id": "us-visa-free-window",
       "value": "90/180",
       "labelKey": "facts.usVisaFreeWindow",
-      "sourceUrl": "https://hr.usembassy.gov/entry-and-residence-requirements/",
+      "sourceUrl": "https://mvep.gov.hr/services-consular-portal/consular-information-22802/stay-of-foreigners/granting-stay-in-croatia/22839",
       "sourceTier": 1,
-      "sourceName": "U.S. Embassy Croatia — Entry and Residence",
-      "verifiedDate": "2026-07-30",
+      "sourceName": "MVEP — Granting Stay in Croatia",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/nationalities/us.json",
       "path": "slots.orient.facts[0]"
@@ -354,10 +368,10 @@
       "id": "us-visa-free-window-docs",
       "value": "90/180",
       "labelKey": "facts.usVisaFreeWindow",
-      "sourceUrl": "https://hr.usembassy.gov/entry-and-residence-requirements/",
+      "sourceUrl": "https://mvep.gov.hr/services-consular-portal/consular-information-22802/stay-of-foreigners/granting-stay-in-croatia/22839",
       "sourceTier": 1,
-      "sourceName": "U.S. Embassy Croatia — Entry and Residence",
-      "verifiedDate": "2026-07-30",
+      "sourceName": "MVEP — Granting Stay in Croatia",
+      "verifiedDate": "2026-07-31",
       "ageDaysAsOfAudit": 0,
       "file": "data/nationalities/us.json",
       "path": "slots.worker-docs.checklist[2].facts[0]"

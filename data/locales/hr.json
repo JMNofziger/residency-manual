@@ -49,18 +49,20 @@
     "art99ContinuousEmployment": "Razdoblje kontinuiranog zaposlenja HR/EEA radnika",
     "art99BlockedAccount": "Maksimalno razdoblje blokiranog računa prije diskvalifikacije",
     "art99InflowThreshold": "Prag priljeva na transakcijski račun (pravna osoba)",
-    "blueCardValidity": "Maksimalna valjanost EU Blue Card (nije ovaj put)",
-    "nn552026InForce": "Datum stupanja na snagu NN 55/2026",
+    "nn552026InForce": "Opći datum stupanja na snagu NN 55/2026",
     "lmtPositiveNoticeWindow": "Rok za podnošenje jedinstvene dozvole nakon pozitivnog mišljenja",
-    "permitFee": "Administrativna pristojba za privremeni boravak / dozvolu",
-    "biometricCardFee": "Pristojba za biometrijsku boravišnu iskaznicu",
-    "permitDecisionTimeline": "Okvirni rok odluke o zahtjevu",
+    "permitFee": "Administrativna pristojba za privremeni boravak (podnošenje u policiji)",
+    "biometricProductionFee": "Pristojba za izradu biometrijske boravišne iskaznice (redovni postupak)",
+    "biometricAdminFee": "Dodatna administrativna pristojba za izdavanje biometrijske iskaznice",
+    "biometricCardFee": "Dodatna administrativna pristojba za izdavanje biometrijske iskaznice",
+    "permitDecisionTimeline": "Rok MUP-a za odluku od urednog zahtjeva za boravak i rad (uključuje TTR)",
     "employerChangeAfter": "Promjena poslodavca bez nove dozvole (nakon)",
     "unemploymentWindowStandard": "Dopuštena nezaposlenost (standardno)",
     "unemploymentWindowLongHold": "Dopuštena nezaposlenost (duže držanje dozvole)",
     "unemploymentLongHoldQualifier": "Dozvola držana najmanje ovoliko za duži prozor nezaposlenosti",
-    "a1LanguageWithin": "A1 hrvatski + latinica obvezno unutar",
-    "longTermFee": "Pristojba za dugotrajni boravak (kasniji put)"
+    "a1LanguageWithin": "Ispit A1.1 hrvatskog + latinice nakon najmanje ovoliko boravka (za produženje kad je na snazi)",
+    "a1DeferredForce": "Odgođeno stupanje na snagu obveze iz čl. 92.a st. 1./4./6. (NN 55/2026)",
+    "longTermFee": "Administrativna pristojba za rješenje o dugotrajnom / stalnom boravku"
   },
   "case": {
     "occupation": {
@@ -125,11 +127,11 @@
       },
       "wrongPaths": {
         "title": "Pogrešni putevi za ovaj posao",
-        "body": "EU Blue Card namijenjen je visokokvalificiranim ulogama s pragovima plaće/kvalifikacija — ne fizičkom event crew radu. Sezonski turistički prečaci vrijede samo kad zanimanje i sektor stvarno odgovaraju. Studentske dozvole su drugi režim. Valjanost Blue Card (samo za kontrast):"
+        "body": "EU Blue Card namijenjen je visokokvalificiranim ulogama s pragovima plaće/kvalifikacija — ne fizičkom event crew radu (ne koristite Blue Card pristojbe ni rokove valjanosti za ovo zapošljavanje). Sezonski turistički prečaci vrijede samo kad zanimanje i sektor stvarno odgovaraju. Studentske dozvole su drugi režim."
       },
       "law2026": {
         "title": "Napomena o zakonu 2026. (NN 55/2026)",
-        "body": "Izmjene uključuju okvir jedinstvene dozvole, duže rokove odlučivanja, pravila mobilnosti radnika, prozore nezaposlenosti, obrazac 17a / standarde smještaja te A1 hrvatski + latinicu za produženje. Datum stupanja na snagu:"
+        "body": "Izmjene uključuju okvir jedinstvene dozvole, duže rokove odlučivanja, pravila mobilnosti radnika, prozore nezaposlenosti, obrazac 17a / standarde smještaja te pravila A1.1 hrvatskog + latinice za produženje (dio jezičnih odredbi je odgođen — vidi činjenice u Koraku o usklađenosti). Opći datum stupanja na snagu:"
       },
       "check": {
         "readOverview": "Razumijem da je namjeravani put jedinstvena dozvola + TTR",
@@ -240,7 +242,7 @@
       },
       "fees": {
         "title": "Pristojbe",
-        "body": "Administrativne pristojbe za privremeni boravak / iskaznicu citirane su ispod prema MUP-u. Pristojbe za Blue Card ovdje ne vrijede. Na dan plaćanja ponovno otvorite MUP stranicu."
+        "body": "MUP pristojbe za privremeni boravak pri podnošenju u policiji citirane su ispod: administrativna pristojba za privremeni boravak, pristojba za izradu biometrijske iskaznice (redovni postupak; ubrzani se razlikuje) te dodatna administrativna pristojba za izdavanje. Rasporedi pristojbi za Blue Card ovdje ne vrijede. Na dan plaćanja ponovno otvorite MUP stranicu."
       },
       "timeline": {
         "title": "Rok odluke",
@@ -289,8 +291,8 @@
         "body": "Dopušteni prozori nezaposlenosti nakon gubitka posla citirani su ispod. Potvrdite operativna pravila prije oslanjanja na ta razdoblja."
       },
       "language": {
-        "title": "A1 hrvatski za produženje",
-        "body": "Planirajte obvezni A1 test hrvatskog jezika i latinice unutar citiranog razdoblja; potreban je za produženje dozvole. Rano zakažite učenje."
+        "title": "A1.1 hrvatski za produženje",
+        "body": "NN 55/2026 nalaže ispit A1.1 hrvatskog + latinice nakon najmanje citiranog boravka te dokaz uz produženje — no čl. 92.a st. 1./4./6. odgođen je do citiranog datuma stupanja na snagu. Rano planirajte učenje; do tada koristite odgođeni datum kao orijentir usklađenosti."
       },
       "renewals": {
         "title": "Obnove i dugotrajni boravak",
@@ -299,7 +301,7 @@
       "check": {
         "dates": "Datumi isteka dozvole / iskaznice zabilježeni",
         "employerChange": "Tim poznaje pravila promjene poslodavca (provjeriti prije uporabe)",
-        "a1": "Plan A1 jezika zakazan unutar citiranog razdoblja",
+        "a1": "Plan A1.1 jezika usklađen s citiranim činjenicama o boravku / odgođenom stupanju na snagu",
         "renewal": "Podsjetnik za obnovu postavljen prije isteka"
       }
     }

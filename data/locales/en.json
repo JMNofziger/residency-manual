@@ -49,18 +49,20 @@
     "art99ContinuousEmployment": "Continuous HR/EEA employee lookback",
     "art99BlockedAccount": "Max blocked-account period before disqualification",
     "art99InflowThreshold": "Employer inflow / turnover threshold (legal entity)",
-    "blueCardValidity": "EU Blue Card max validity (not this path)",
-    "nn552026InForce": "NN 55/2026 in-force date",
+    "nn552026InForce": "NN 55/2026 general in-force date",
     "lmtPositiveNoticeWindow": "File Single Permit after positive LMT notice",
-    "permitFee": "Temporary stay / permit administrative fee",
-    "biometricCardFee": "Biometric residence card fee",
-    "permitDecisionTimeline": "Employer / permit decision planning window",
+    "permitFee": "Temporary stay administrative fee (police filing)",
+    "biometricProductionFee": "Biometric residence permit production fee (regular procedure)",
+    "biometricAdminFee": "Additional administrative fee for biometric residence permit issuance",
+    "biometricCardFee": "Additional administrative fee for biometric residence permit issuance",
+    "permitDecisionTimeline": "MUP decision deadline from complete stay-and-work application (includes LMT time)",
     "employerChangeAfter": "Change employer without new permit (after)",
     "unemploymentWindowStandard": "Permitted unemployment (standard)",
     "unemploymentWindowLongHold": "Permitted unemployment (longer hold)",
     "unemploymentLongHoldQualifier": "Permit held at least this long for longer unemployment window",
-    "a1LanguageWithin": "A1 Croatian + Latin script required within",
-    "longTermFee": "Long-term residence fee (later pathway)"
+    "a1LanguageWithin": "A1.1 Croatian + Latin script exam after at least this much stay (required for extension when in force)",
+    "a1DeferredForce": "Deferred force date for Aliens Act Art. 92.a(1)/(4)/(6) language obligation (NN 55/2026)",
+    "longTermFee": "Long-term / permanent stay decision administrative fee"
   },
   "case": {
     "occupation": {
@@ -125,11 +127,11 @@
       },
       "wrongPaths": {
         "title": "Wrong paths for this job",
-        "body": "EU Blue Card is for highly qualified roles meeting salary/qualification thresholds — not physical event crew. Seasonal-tourism shortcuts only apply when the occupation and sector truly fit. Student permits are a different regime. Blue Card validity (for contrast only):"
+        "body": "EU Blue Card is for highly qualified roles meeting salary/qualification thresholds — not physical event crew (do not use Blue Card fees or validity rules for this hire). Seasonal-tourism shortcuts only apply when the occupation and sector truly fit. Student permits are a different regime."
       },
       "law2026": {
         "title": "2026 law note (NN 55/2026)",
-        "body": "Amendments include Single Permit framing, longer decision planning windows, worker mobility rules, unemployment windows, Form 17a / housing standards, and A1 Croatian + Latin script for extensions. In-force date:"
+        "body": "Amendments include Single Permit framing, longer decision planning windows, worker mobility rules, unemployment windows, Form 17a / housing standards, and A1.1 Croatian + Latin script rules for extensions (some language provisions are deferred — see Compliance facts). General in-force date:"
       },
       "check": {
         "readOverview": "I understand Single Permit + LMT is the intended path",
@@ -240,7 +242,7 @@
       },
       "fees": {
         "title": "Fees",
-        "body": "Administrative fees for temporary stay / card issuance are cited below from MUP. Blue Card fees differ and do not apply here. Re-open the MUP page on payment day."
+        "body": "MUP temporary-stay fees for police filing are cited below: temporary-stay administrative fee, biometric production fee (regular procedure; accelerated differs), and an additional biometric administrative fee. Blue Card fee schedules differ and do not apply here. Re-open the MUP page on payment day."
       },
       "timeline": {
         "title": "Decision timeline",
@@ -289,8 +291,8 @@
         "body": "Permitted unemployment windows after job loss are cited below. Confirm operative rules before relying on these periods."
       },
       "language": {
-        "title": "A1 Croatian for extension",
-        "body": "Plan for a mandatory A1-level Croatian language and Latin script test within the cited period; it is required for permit extension. Book learning early for physical-labor hires who may not use Croatian daily at work."
+        "title": "A1.1 Croatian for extension",
+        "body": "NN 55/2026 requires an A1.1 Croatian + Latin script exam after at least the cited stay period, and proof for extension — but Art. 92.a(1)/(4)/(6) is deferred until the cited force date. Plan learning early; treat the deferred date as the compliance planning milestone until then."
       },
       "renewals": {
         "title": "Renewals & long-term stay",
@@ -299,7 +301,7 @@
       "check": {
         "dates": "Permit / card expiry dates logged",
         "employerChange": "Team knows employer-change rules (verify before use)",
-        "a1": "A1 language plan scheduled within the cited period",
+        "a1": "A1.1 language plan scheduled against the cited stay/deferred-force facts",
         "renewal": "Renewal reminder set before expiry"
       }
     }

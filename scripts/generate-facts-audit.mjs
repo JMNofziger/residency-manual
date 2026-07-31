@@ -51,7 +51,7 @@ function walk(node, file, pathStr, acc) {
   if (!node || typeof node !== "object") return;
   if (isFactObject(node)) {
     const ageDays = Math.floor(
-      (Date.UTC(2026, 6, 30) - Date.parse(node.verifiedDate)) / (24 * 3600 * 1000)
+      (Date.UTC(2026, 6, 31) - Date.parse(node.verifiedDate)) / (24 * 3600 * 1000)
     );
     acc.push({
       id: node.id || null,
@@ -84,7 +84,7 @@ for (const file of TARGETS.flatMap(listJsonFiles)) {
 
 facts.sort((a, b) => String(a.id).localeCompare(String(b.id)) || a.path.localeCompare(b.path));
 
-const auditDate = "2026-07-30";
+const auditDate = "2026-07-31";
 const payload = {
   generatedAt: auditDate,
   caseId: "example-dool-us-manual-labor",
@@ -92,13 +92,15 @@ const payload = {
   tier1Count: facts.filter((f) => f.sourceTier === 1).length,
   tier2Count: facts.filter((f) => f.sourceTier === 2).length,
   notes: [
-    "verifiedDate reflects last check against linked source registry / Tier 1 URLs in-repo, not a live MUP/HZZ/NN scrape on audit day.",
-    "LIVE RE-VERIFY BEFORE FILING: permit fee €46.45, biometric card fee €9.29, long-term fee €83.62 (MUP pages).",
-    "LIVE RE-VERIFY: Art. 99-style 20% / 12 months / 30 days / €100,000 (HZZ novi sustav + NN text).",
-    "LIVE RE-VERIFY: LMT positive-notice window 90 days; permit decision window 90 days; employer-change 6 months; unemployment 3/6 months; A1 within 1 year (NN 55/2026 + MUP/HZZ).",
-    "LIVE RE-VERIFY (US pack): visa-free 90/180 and police registration 48 hours (U.S. Embassy Croatia page).",
-    "Omitted on purpose: Blue Card fee amounts (wrong path for this job); seasonal/student numeric rules; Form 17a field-level specs (confirm current form template).",
-    "Employer revenue in the case fixture is case data (number field), not a cited legal fact — still needs live tax/bank verification.",
+    "Phase 5 live Tier-1 pass completed 2026-07-31 — see artifacts/phase5-verification.md.",
+    "CONFIRMED on HZZ novi sustav: Art. 99 20%/10%, 12 months continuous FTE, €100,000 legal-entity inflow, 30-day blockade, 90-day LMT positive-notice window.",
+    "CONFIRMED on MUP temporary stay: €46.45 stay fee, €31.85 biometric production (regular), €9.29 biometric admin fee. Accelerated biometric production (€59.73) omitted from wizard facts.",
+    "CONFIRMED on MUP long-term page: €83.62 decision fee.",
+    "CONFIRMED on NN 55/2026: general force 2026-06-04; 90-day decision deadline; employer-change after 6 months; unemployment 3/6 months with 2-year qualifier; A1.1 after 1 year stay; Art. 92.a(1)/(4)/(6) deferred to 2027-06-04.",
+    "CONFIRMED on MVEP granting-stay page: short-stay 90/180; alien self-registration within 2 days if provider cannot register (provider: 1 day via eVisitor).",
+    "UV list: no newer public UV decision PDF found; still shipping official 2023-03 MUP/HZZ PDF with stale-edition banner.",
+    "OMITTED: Blue Card validity months (not stated on live MUP Blue Card page / not confirmed in NN 55/2026 excerpt); Blue Card fee schedule (wrong path); seasonal/student numerics; Form 17a field specs.",
+    "Case revenue remains case data, not a legal fact — still needs live tax/bank verification before filing.",
   ],
   facts,
 };

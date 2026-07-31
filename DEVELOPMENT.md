@@ -17,8 +17,8 @@ Living progress board for the Croatia employer hiring wizard. Update this file w
 | 2 | Cited facts system + lint + audit | Done |
 | 3 | Core EN/HR step content + US nationality pack | Done |
 | 4 | Art. 99 guided self-check + searchable UV list | Done |
-| 5 | Live Tier-1 re-verification pass | Next |
-| 6 | Harden remaining wizard steps (2–8 workflows) | Planned |
+| 5 | Live Tier-1 re-verification pass | Done |
+| 6 | Harden remaining wizard steps (2–8 workflows) | Next |
 | 7 | More nationality packs + case picker | Planned |
 | 8 | Hosting, CI, and ops polish | Planned |
 
@@ -79,28 +79,34 @@ Living progress board for the Croatia employer hiring wizard. Update this file w
 
 ---
 
-## Phase 5 — Live Tier-1 re-verification pass *(next)*
+## Phase 5 — Live Tier-1 re-verification pass
 
-**Status:** Next up
+**Status:** Done (2026-07-31)
 
-Every fee, deadline, ratio, and window in the facts audit still needs a fresh check against live MUP / HZZ / Narodne novine pages. Goal: bump `verifiedDate` only when confirmed, or omit numbers that cannot be confirmed.
+Live pass against HZZ / MUP / NN 55/2026 / MVEP. Report: [`artifacts/phase5-verification.md`](artifacts/phase5-verification.md).
+
+**Material corrections from the pass**
+
+- Biometric fees split into production (€31.85 regular) + admin (€9.29); stay fee €46.45 confirmed
+- US registration retargeted to MVEP **2 days** (not Embassy “48 hours”)
+- Blue Card **48-month** claim removed (unconfirmed on Tier 1 pages in this pass)
+- A1 clarified as **A1.1**; deferred force of Art. 92.a(1)/(4)/(6) cited as **2027-06-04**
+- UV list remains official **2023-03** PDF (no newer public decision PDF found)
 
 **Exit criteria**
 
-- [ ] Walk [`artifacts/facts-audit.md`](artifacts/facts-audit.md) end-to-end against Tier 1 URLs
-- [ ] Confirm or replace UV list edition if HZZ publishes a newer decision PDF
-- [ ] Confirm Art. 99 thresholds (20% / 10%, 12 months, €100k, 30 days) against current statute + HZZ wording
-- [ ] Confirm permit / biometric fees on current MUP temporary-stay pages
-- [ ] Re-run `node scripts/lint-facts.mjs` and regenerate the audit artifact
-- [ ] Note any intentional omissions in the audit “live re-verify” section
-
-**Owner note:** Do this before treating the wizard as filing-ready for a real hire.
+- [x] Walk facts audit against Tier 1 URLs
+- [x] Confirm or keep UV list edition
+- [x] Confirm Art. 99 thresholds
+- [x] Confirm permit / biometric fees
+- [x] Re-run lint + regenerate audit
+- [x] Note intentional omissions
 
 ---
 
-## Phase 6 — Harden steps 2–8
+## Phase 6 — Harden steps 2–8 *(next)*
 
-**Status:** Planned
+**Status:** Next up
 
 Step 1 is the deepest workflow. Later steps still need the same “how exactly” treatment:
 

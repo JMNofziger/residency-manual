@@ -2,7 +2,7 @@
   "label": "United States",
   "facts": {
     "usVisaFreeWindow": "U.S. visa-free short stay (days in period)",
-    "usPoliceRegistration": "Police registration deadline after arrival"
+    "usPoliceRegistration": "Alien self-registration deadline if accommodation provider cannot register (MVEP)"
   },
   "orient": {
     "title": "U.S. citizen — practical differences",
@@ -26,8 +26,8 @@
       "help": "U.S. passport holders may enter visa-free for short stays within the cited window. That window can help attend appointments, but it does not authorize employment."
     },
     "registration": {
-      "label": "Arrange police registration after arrival",
-      "help": "U.S. Embassy guidance reminds citizens about short-deadline registration with police when staying in private accommodation (hotels often register guests). Confirm current forms on the Embassy/MUP pages. Deadline cited:"
+      "label": "Arrange accommodation / police registration after arrival",
+      "help": "MVEP: accommodation providers register via eVisitor within one day; if they cannot, the third-country national must register within the cited period from entry or change of accommodation. Hotels often handle this. Confirm current MUP/eVisitor practice. Deadline cited:"
     },
     "apostille": {
       "label": "Apostille + certified Croatian translation of U.S. documents",

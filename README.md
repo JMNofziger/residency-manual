@@ -4,7 +4,7 @@ Static guided runbook for hiring a third-country national via **HZZ labor market
 
 Not legal advice. Numeric legal claims are **structured cited facts** (value + Tier 1/2 source URL + `verifiedDate`), rendered in the UI with the citation attached.
 
-**Progress & next steps:** see [DEVELOPMENT.md](DEVELOPMENT.md).
+**Progress & next steps:** see [DEVELOPMENT.md](DEVELOPMENT.md) (phases 0–5 done; phase 6 = deepen steps 2–8). Latest verification: [artifacts/phase5-verification.md](artifacts/phase5-verification.md).
 
 ## Prerequisites
 
@@ -82,7 +82,11 @@ Source PDF: [MUP-hosted list](https://mup.gov.hr/UserDocsImages/2024/8/Lista-zan
 
 ## Development roadmap
 
-Full phase board: **[DEVELOPMENT.md](DEVELOPMENT.md)**.
+| Done | Next |
+|---|---|
+| Wizard shell, cited facts, US pack, Art. 99 + UV tools, Phase 5 live Tier-1 re-verify | Deepen steps 2–8 workflows |
+
+Full phase board, exit criteria, and contribution notes: **[DEVELOPMENT.md](DEVELOPMENT.md)**.
 
 ## Source registry
 
