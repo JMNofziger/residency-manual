@@ -73,7 +73,7 @@
     "art99InflowThreshold": "Employer inflow / turnover threshold (legal entity)",
     "nn552026InForce": "NN 55/2026 general in-force date",
     "lmtPositiveNoticeWindow": "File Single Permit after positive LMT notice",
-    "permitFee": "Temporary stay administrative fee (police filing)",
+    "permitFee": "Stay-and-work permit administrative fee (police filing; due when notified of approval)",
     "biometricProductionFee": "Biometric residence permit production fee (regular procedure)",
     "biometricAdminFee": "Additional administrative fee for biometric residence permit issuance",
     "biometricCardFee": "Additional administrative fee for biometric residence permit issuance",

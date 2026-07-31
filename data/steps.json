@@ -351,29 +351,29 @@
           "facts": [
             {
               "id": "permit-admin-fee",
-              "value": "€46.45",
+              "value": "€74.32",
               "labelKey": "facts.permitFee",
-              "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661",
+              "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
               "sourceTier": 1,
-              "sourceName": "MUP — Temporary Stay",
+              "sourceName": "MUP — Work of third-country nationals",
               "verifiedDate": "2026-07-31"
             },
             {
               "id": "biometric-production-fee",
               "value": "€31.85",
               "labelKey": "facts.biometricProductionFee",
-              "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661",
+              "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
               "sourceTier": 1,
-              "sourceName": "MUP — Temporary Stay",
+              "sourceName": "MUP — Work of third-country nationals",
               "verifiedDate": "2026-07-31"
             },
             {
               "id": "biometric-admin-fee",
               "value": "€9.29",
               "labelKey": "facts.biometricAdminFee",
-              "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661",
+              "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
               "sourceTier": 1,
-              "sourceName": "MUP — Temporary Stay",
+              "sourceName": "MUP — Work of third-country nationals",
               "verifiedDate": "2026-07-31"
             }
           ]
