@@ -1,0 +1,159 @@
+{
+  "version": 1,
+  "noteKey": "offices.bookNote",
+  "offices": [
+    {
+      "id": "hzz",
+      "sort": "HZZ",
+      "nameKey": "offices.hzz.name",
+      "roleKey": "offices.hzz.role",
+      "stepIds": [
+        "orient",
+        "occupation",
+        "employer-package",
+        "lmt"
+      ],
+      "website": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+      "hubLabelKey": "offices.hzz.hubLabel",
+      "address": "Radnička cesta 1, 10000 Zagreb",
+      "phones": [],
+      "emails": [],
+      "verifyKey": "offices.verifyOnSite"
+    },
+    {
+      "id": "mup",
+      "sort": "MUP",
+      "nameKey": "offices.mup.name",
+      "roleKey": "offices.mup.role",
+      "stepIds": [
+        "orient",
+        "occupation",
+        "employer-package",
+        "worker-docs",
+        "file-permit",
+        "start-work",
+        "comply"
+      ],
+      "website": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+      "hubLabelKey": "offices.mup.hubLabel",
+      "address": null,
+      "phones": [],
+      "emails": [],
+      "verifyKey": "offices.verifyOnSite"
+    },
+    {
+      "id": "pu-zagreb",
+      "sort": "PU Zagreb",
+      "nameKey": "offices.puZagreb.name",
+      "roleKey": "offices.puZagreb.role",
+      "stepIds": [
+        "file-permit",
+        "start-work",
+        "comply"
+      ],
+      "website": "https://mup.gov.hr/",
+      "hubLabelKey": "offices.puZagreb.hubLabel",
+      "address": "Grad Zagreb — confirm the competent police administration desk for your workplace on MUP pages before you go",
+      "phones": [],
+      "emails": [],
+      "verifyKey": "offices.verifyOnSite"
+    },
+    {
+      "id": "fina",
+      "sort": "Fina",
+      "nameKey": "offices.fina.name",
+      "roleKey": "offices.fina.role",
+      "stepIds": [
+        "orient",
+        "occupation",
+        "employer-package"
+      ],
+      "website": "https://infobiz.fina.hr/",
+      "hubLabelKey": "offices.fina.hubLabel",
+      "address": null,
+      "phones": [],
+      "emails": [],
+      "verifyKey": "offices.verifyOnSite"
+    },
+    {
+      "id": "porezna",
+      "sort": "Porezna uprava",
+      "nameKey": "offices.porezna.name",
+      "roleKey": "offices.porezna.role",
+      "stepIds": [
+        "orient",
+        "employer-package",
+        "start-work"
+      ],
+      "website": "https://eporezna.porezna-uprava.hr/",
+      "hubLabelKey": "offices.porezna.hubLabel",
+      "address": null,
+      "phones": [],
+      "emails": [],
+      "verifyKey": "offices.verifyOnSite"
+    },
+    {
+      "id": "hzmo",
+      "sort": "HZMO",
+      "nameKey": "offices.hzmo.name",
+      "roleKey": "offices.hzmo.role",
+      "stepIds": [
+        "orient",
+        "employer-package",
+        "start-work"
+      ],
+      "website": "https://www.mirovinsko.hr/",
+      "hubLabelKey": "offices.hzmo.hubLabel",
+      "address": null,
+      "phones": [],
+      "emails": [],
+      "verifyKey": "offices.verifyOnSite"
+    },
+    {
+      "id": "hzzo",
+      "sort": "HZZO",
+      "nameKey": "offices.hzzo.name",
+      "roleKey": "offices.hzzo.role",
+      "stepIds": [
+        "start-work",
+        "comply"
+      ],
+      "website": "https://hzzo.hr/",
+      "hubLabelKey": "offices.hzzo.hubLabel",
+      "address": null,
+      "phones": [],
+      "emails": [],
+      "verifyKey": "offices.verifyOnSite"
+    },
+    {
+      "id": "mvep",
+      "sort": "MVEP",
+      "nameKey": "offices.mvep.name",
+      "roleKey": "offices.mvep.role",
+      "stepIds": [
+        "worker-docs"
+      ],
+      "website": "https://mvep.gov.hr/services-consular-portal/consular-information-22802/stay-of-foreigners/granting-stay-in-croatia/22839",
+      "hubLabelKey": "offices.mvep.hubLabel",
+      "address": null,
+      "phones": [],
+      "emails": [],
+      "verifyKey": "offices.verifyOnSite"
+    },
+    {
+      "id": "us-embassy",
+      "sort": "US Embassy",
+      "nameKey": "offices.usEmbassy.name",
+      "roleKey": "offices.usEmbassy.role",
+      "stepIds": [
+        "worker-docs"
+      ],
+      "website": "https://hr.usembassy.gov/entry-and-residence-requirements/",
+      "hubLabelKey": "offices.usEmbassy.hubLabel",
+      "address": "Thomas Jefferson 2, 10010 Zagreb",
+      "phones": [],
+      "emails": [],
+      "verifyKey": "offices.verifyOnSite"
+    }
+  ]
+}

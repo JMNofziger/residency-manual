@@ -50,7 +50,20 @@
     "defensibility.high": "Jaka usklađenost djelatnosti",
     "defensibility.medium": "Prihvatljivo — pažljivo dokumentirajte dužnosti",
     "mobileMenu": "Koraci",
-    "employeesApprox": "Približan broj zaposlenih (podatak slučaja)"
+    "employeesApprox": "Približan broj zaposlenih (podatak slučaja)",
+    "whatIsLmt": "Što je test tržišta rada?",
+    "whatIsPermit": "Što je dozvola za boravak i rad?",
+    "glossary": "Pojmovnik",
+    "addressBook": "Uredi",
+    "close": "Zatvori",
+    "search": "Traži",
+    "searchReference": "Traži pojmove ili urede",
+    "referenceEmpty": "Nema pogodaka.",
+    "stepOffices": "Uredi za ovaj korak",
+    "stepOfficesIntro": "Javna tijela s kojima ćete vjerojatno imati kontakt. Telefoni i šalteri se mijenjaju — uvijek potvrdite na službenoj stranici prije posjeta ili poziva.",
+    "openInAddressBook": "Otvori u Uredima",
+    "relatedOffices": "Povezani uredi",
+    "officialWebsite": "Službena stranica"
   },
   "facts": {
     "art99DomesticRatio": "Udio domaće radne snage (uvjet za poslodavca)",
@@ -656,6 +669,122 @@
       "locksmith": "Bravarski poslovi moraju odgovarati stvarnoj metalnoj izradi za produkciju, ne oznaci iz pogodnosti.",
       "steelRope": "Montaža čelične užadi može se odnositi na venue lift / flying sustave — samo ako je to stvarni posao.",
       "cleaner": "Čistač je na UV listi za Grad Zagreb. Koristite samo ako je zapošljavanje stvarno čišćenje vezano uz djelatnost — ne zamjenska oznaka za stagehand."
+    }
+  },
+  "offices": {
+    "bookNote": "Ovaj adresar navodi tijela koja se pojavljuju u priručniku. Za aktualne telefone, e-usluge i šaltere koristite službene poveznice. Ne izmišljamo neobjavljene brojeve telefona.",
+    "verifyOnSite": "Prije radnje potvrdite radno vrijeme i kontakte na službenoj stranici.",
+    "hzz": {
+      "name": "Hrvatski zavod za zapošljavanje (HZZ)",
+      "role": "Provodi test tržišta rada i objavljuje pravila za zapošljavanje stranaca.",
+      "hubLabel": "HZZ — stranci / test tržišta rada"
+    },
+    "mup": {
+      "name": "Ministarstvo unutarnjih poslova (MUP)",
+      "role": "Izdaje odluke o boravku i radu te objavljuje pravila za državljane trećih zemalja.",
+      "hubLabel": "MUP — rad državljana trećih zemalja"
+    },
+    "puZagreb": {
+      "name": "Policijska uprava (područje Zagreba)",
+      "role": "Lokalni šalter za mnoga podnošenja boravka i rada te biometriju za zagrebačke poslodavce/mjesta rada.",
+      "hubLabel": "MUP početna — pronađite nadležnu policijsku upravu"
+    },
+    "fina": {
+      "name": "Fina (registar tvrtki / Info.BIZ)",
+      "role": "Javni podaci o tvrtkama za potvrdu djelatnosti, adrese i identifikatora.",
+      "hubLabel": "Fina Info.BIZ pretraga"
+    },
+    "porezna": {
+      "name": "Porezna uprava",
+      "role": "Porezni status i ePorezna usluge u provjerama podobnosti poslodavca.",
+      "hubLabel": "Portal ePorezna"
+    },
+    "hzmo": {
+      "name": "Hrvatski zavod za mirovinsko osiguranje (HZMO)",
+      "role": "Mirovinski doprinosi i dokazi o kontinuiranom zaposlenju.",
+      "hubLabel": "HZMO web"
+    },
+    "hzzo": {
+      "name": "Hrvatski zavod za zdravstveno osiguranje (HZZO)",
+      "role": "Prijava zdravstvenog osiguranja nakon što je rad odobren.",
+      "hubLabel": "HZZO web"
+    },
+    "mvep": {
+      "name": "Ministarstvo vanjskih i europskih poslova (MVEP)",
+      "role": "Konzularne smjernice o boravku (ulazak, kratki boravak, rokovi prijave).",
+      "hubLabel": "MVEP — odobravanje boravka"
+    },
+    "usEmbassy": {
+      "name": "Veleposlanstvo SAD-a u Zagrebu",
+      "role": "Praktične smjernice za državljane SAD-a (ulazak/boravak, FBI pozadinska provjera). Ne zamjenjuje hrvatska MUP/HZZ pravila.",
+      "hubLabel": "Veleposlanstvo SAD-a — ulazak i boravak"
+    }
+  },
+  "glossary": {
+    "singlePermit": {
+      "title": "Dozvola za boravak i rad (jedinstvena dozvola)",
+      "body": "Jedna odluka koja pokriva boravak i rad državljanina treće zemlje. Obično slijedi nakon pozitivnog testa tržišta rada (osim ako vrijedi službeno izuzeće)."
+    },
+    "lmt": {
+      "title": "Test tržišta rada",
+      "body": "Provjera Hrvatskog zavoda za zapošljavanje (HZZ) može li se radno mjesto popuniti iz domaćeg/EEA tržišta prije zapošljavanja državljanina treće zemlje."
+    },
+    "hzz": {
+      "name": "HZZ — Hrvatski zavod za zapošljavanje",
+      "title": "HZZ — Hrvatski zavod za zapošljavanje",
+      "body": "Javna služba za zapošljavanje. U ovom priručniku HZZ je mjesto gdje poslodavci podnose test tržišta rada i pronalaze pravila podobnosti."
+    },
+    "mup": {
+      "title": "MUP — Ministarstvo unutarnjih poslova",
+      "body": "Ministarstvo koje vodi zahtjeve za boravak i rad te mnoga pravila boravka stranaca."
+    },
+    "art99": {
+      "title": "Uvjeti poslodavca iz članka 99.",
+      "body": "Zakonski uvjeti (omjer radne snage, kontinuirano domaće zaposlenje, porezi/doprinosi, blokirani računi i povezane provjere) koje HZZ očekuje prije pozitivnog mišljenja. Ovaj priručnik ih pretvara u vođeni popis."
+    },
+    "uvList": {
+      "title": "UV lista zanimanja (izuzeće od testa tržišta rada)",
+      "body": "Službena lista naziva zanimanja za koja poslodavac može preskočiti test tržišta rada. Broje se samo točni navedeni nazivi koji odgovaraju stvarnim dužnostima."
+    },
+    "nkd": {
+      "title": "NKD — šifra djelatnosti",
+      "body": "Registrirana gospodarska djelatnost tvrtke. Traženo radno mjesto treba odgovarati toj djelatnosti."
+    },
+    "tcn": {
+      "title": "Državljanin treće zemlje",
+      "body": "Osoba koja nije državljanin RH, druge države EU/EGP-a ili Švicarske. Državljani SAD-a su državljani trećih zemalja za pravila o radnim dozvolama."
+    },
+    "form17a": {
+      "title": "Obrazac 17a",
+      "body": "Obrazac usklađenosti/odgovornosti poslodavca uveden izmjenama 2026. Uvijek preuzmite aktualni službeni predložak — ovaj priručnik ne izmišlja polja."
+    },
+    "oib": {
+      "title": "OIB",
+      "body": "Hrvatski identifikacijski broj na podnescima tvrtke i osobe. Na zahtjevima moraju biti točni OIB-ovi."
+    },
+    "hzmo": {
+      "title": "HZMO — mirovinsko osiguranje",
+      "body": "Vodi mirovinsko osiguranje. Poslodavci ga koriste za status doprinosa i dokaz kontinuiranog zaposlenja."
+    },
+    "hzzo": {
+      "title": "HZZO — zdravstveno osiguranje",
+      "body": "Vodi prijavu javnog zdravstvenog osiguranja nakon što je rad odobren."
+    },
+    "mvep": {
+      "title": "MVEP — ministarstvo vanjskih poslova",
+      "body": "Objavljuje konzularne informacije o boravku i ulasku (uključujući kratki boravak i rokove prijave)."
+    },
+    "nn": {
+      "title": "Narodne novine",
+      "body": "Službeno glasilo u kojem se objavljuju zakoni. Izmjene poput NN 55/2026 ažuriraju Zakon o strancima."
+    },
+    "blueCard": {
+      "title": "EU plava karta",
+      "body": "Zaseban put za visokokvalificirane radnike s pragovima plaće/kvalifikacija. Fizički event crew nije Blue Card zapošljavanje."
+    },
+    "a1": {
+      "title": "A1.1 hrvatski jezik",
+      "body": "Razina jezika (A1.1, latinica) koja može biti potrebna za produženje boravka prema pravilima 2026. Dio odredbi ima odgođeno stupanje na snagu — vidi činjenice u koraku o usklađenosti."
     }
   }
 }

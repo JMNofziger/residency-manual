@@ -398,6 +398,203 @@ a:hover {
   padding: 0 0.35rem;
   font-weight: 650;
 }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.term-chip {
+  display: inline;
+  margin-left: 0.45rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  font-size: 0.85em;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  cursor: pointer;
+}
+
+.office-card-grid {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 0.75rem;
+}
+
+.office-card {
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg-elev) 80%, var(--bg-soft));
+  border-left: 4px solid var(--accent);
+}
+
+.office-card.is-compact {
+  background: var(--bg-soft);
+}
+
+.office-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.35rem;
+}
+
+.office-card-head h3 {
+  margin: 0;
+  font-size: 1.02rem;
+}
+
+.office-role {
+  margin: 0.25rem 0;
+}
+
+.office-address {
+  margin: 0.35rem 0;
+  font-size: 0.92rem;
+}
+
+.office-links {
+  margin: 0.45rem 0;
+}
+
+.office-contacts {
+  margin: 0.35rem 0;
+  padding-left: 1.1rem;
+}
+
+.office-verify {
+  margin: 0.45rem 0 0;
+  font-size: 0.85rem;
+}
+
+.reference-drawer[hidden] {
+  display: none !important;
+}
+
+.reference-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+}
+
+.reference-backdrop {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, #000 55%, transparent);
+}
+
+.reference-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(34rem, 100%);
+  height: 100%;
+  background: var(--bg);
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  box-shadow: -12px 0 40px color-mix(in srgb, #000 35%, transparent);
+}
+
+.reference-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem 1.1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.reference-head h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.reference-search {
+  display: block;
+  padding: 0.75rem 1.1rem 0;
+}
+
+.reference-search input {
+  width: 100%;
+  padding: 0.65rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  color: var(--text);
+}
+
+.reference-body {
+  overflow: auto;
+  padding: 1rem 1.1rem 2rem;
+  flex: 1;
+}
+
+.glossary-list {
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.glossary-item {
+  padding: 0.85rem 0.95rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+}
+
+.glossary-item.is-focus {
+  border-color: var(--accent);
+}
+
+.glossary-item dt {
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.glossary-item dd {
+  margin: 0;
+}
+
+.glossary-related {
+  margin: 0.55rem 0 0;
+  font-size: 0.9rem;
+}
+
+.term-office-link {
+  margin-right: 0.35rem;
+  margin-top: 0.25rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.footer-links a {
+  color: inherit;
+}
+
+@media (max-width: 720px) {
+  .reference-panel {
+    width: 100%;
+  }
 }
 
 .occ-title {

@@ -50,7 +50,20 @@
     "defensibility.high": "Strong activity match",
     "defensibility.medium": "Plausible — document duties carefully",
     "mobileMenu": "Steps",
-    "employeesApprox": "Approx. employees (case data)"
+    "employeesApprox": "Approx. employees (case data)",
+    "whatIsLmt": "What is the labor market test?",
+    "whatIsPermit": "What is the stay-and-work permit?",
+    "glossary": "Glossary",
+    "addressBook": "Offices",
+    "close": "Close",
+    "search": "Search",
+    "searchReference": "Search terms or offices",
+    "referenceEmpty": "No matches.",
+    "stepOffices": "Offices for this step",
+    "stepOfficesIntro": "Public agencies you will likely deal with here. Phone and desk details change — always confirm on the official website before you visit or call.",
+    "openInAddressBook": "Open in Offices",
+    "relatedOffices": "Related offices",
+    "officialWebsite": "Official website"
   },
   "facts": {
     "art99DomesticRatio": "Domestic workforce ratio (employer condition)",
@@ -656,6 +669,121 @@
       "locksmith": "Metalworker/locksmith duties must match actual production metalwork, not a label of convenience.",
       "steelRope": "Steel-rope / lift-cable fitting may relate to venue lift or flying systems — only if that is the real job.",
       "cleaner": "Cleaner appears on the UV list for Grad Zagreb. Use only if the hire is genuinely cleaning work tied to your activity — not a substitute label for stagehand."
+    }
+  },
+  "offices": {
+    "bookNote": "This address book lists agencies that appear in the runbook. Prefer the official website links for current phone numbers, e-services, and counters. We do not invent unpublished phone numbers.",
+    "verifyOnSite": "Verify opening hours and contact details on the official site before you act.",
+    "hzz": {
+      "name": "Croatian Employment Service (HZZ)",
+      "role": "Runs the labor market test and publishes employer rules for hiring foreign workers.",
+      "hubLabel": "HZZ — foreign workers / labor market test"
+    },
+    "mup": {
+      "name": "Ministry of the Interior (MUP)",
+      "role": "Issues stay-and-work decisions and publishes rules for third-country nationals.",
+      "hubLabel": "MUP — work of third-country nationals"
+    },
+    "puZagreb": {
+      "name": "Police administration (Zagreb area)",
+      "role": "Local police desk for many stay-and-work filings and biometrics for Zagreb employers/workplaces.",
+      "hubLabel": "MUP homepage — find the competent police administration"
+    },
+    "fina": {
+      "name": "Fina (company register / Info.BIZ)",
+      "role": "Public company data used to confirm activity, address, and identifiers.",
+      "hubLabel": "Fina Info.BIZ company search"
+    },
+    "porezna": {
+      "name": "Tax Administration (Porezna uprava)",
+      "role": "Tax standing and ePorezna services used in employer eligibility checks.",
+      "hubLabel": "ePorezna portal"
+    },
+    "hzmo": {
+      "name": "Croatian Pension Insurance Institute (HZMO)",
+      "role": "Pension contributions and employment continuity evidence.",
+      "hubLabel": "HZMO website"
+    },
+    "hzzo": {
+      "name": "Croatian Health Insurance Fund (HZZO)",
+      "role": "Health insurance registration after authorized work starts.",
+      "hubLabel": "HZZO website"
+    },
+    "mvep": {
+      "name": "Ministry of Foreign and European Affairs (MVEP)",
+      "role": "Consular stay guidance (entry, short stay, registration timing).",
+      "hubLabel": "MVEP — granting stay in Croatia"
+    },
+    "usEmbassy": {
+      "name": "U.S. Embassy Zagreb",
+      "role": "U.S.-citizen practical guidance (entry/residence notes, FBI background-check pointers). Does not replace Croatian MUP/HZZ rules.",
+      "hubLabel": "U.S. Embassy — entry and residence"
+    }
+  },
+  "glossary": {
+    "singlePermit": {
+      "title": "Stay-and-work permit (Single Permit)",
+      "body": "One decision that covers both living and working in Croatia for a third-country national employee. It is usually issued after a positive labor market test (unless an official exemption applies)."
+    },
+    "lmt": {
+      "title": "Labor market test (test tržišta rada)",
+      "body": "A check run by the Croatian Employment Service (HZZ). It asks whether the job could be filled by a worker already available on the domestic/EEA market before a third-country national is hired."
+    },
+    "hzz": {
+      "title": "HZZ — Croatian Employment Service",
+      "body": "The public employment service. For this runbook, HZZ is where employers file the labor market test and find employer eligibility rules."
+    },
+    "mup": {
+      "title": "MUP — Ministry of the Interior",
+      "body": "The ministry that handles stay-and-work applications and many residence rules for foreigners."
+    },
+    "art99": {
+      "title": "Article 99 employer conditions",
+      "body": "Legal employer conditions (workforce ratio, continuous domestic employment, tax/contribution standing, blocked accounts, and related checks) that HZZ expects before a positive opinion. This runbook turns them into a guided checklist."
+    },
+    "uvList": {
+      "title": "UV occupations list (LMT exemption list)",
+      "body": "An official list of occupation titles for which the employer may skip the labor market test. Only exact listed titles that match real duties count — do not invent a title to skip the test."
+    },
+    "nkd": {
+      "title": "NKD — activity classification code",
+      "body": "The company’s registered economic activity code. The job you request should fit that activity (for example arts/event support codes for physical event crew)."
+    },
+    "tcn": {
+      "title": "Third-country national",
+      "body": "A person who is not a citizen of Croatia, another EU/EEA country, or Switzerland. U.S. citizens are third-country nationals for Croatian work-permit rules."
+    },
+    "form17a": {
+      "title": "Form 17a",
+      "body": "An employer compliance/liability form introduced in the 2026 foreigners-law updates. Always download the current official template — this runbook does not invent form fields."
+    },
+    "oib": {
+      "title": "OIB — personal/company tax ID",
+      "body": "The Croatian identification number used on company and personal filings. Employers and workers both need the correct OIB on applications."
+    },
+    "hzmo": {
+      "title": "HZMO — pension insurance institute",
+      "body": "Handles pension insurance. Employers use it for contribution standing and proof that domestic staff are employed continuously."
+    },
+    "hzzo": {
+      "title": "HZZO — health insurance fund",
+      "body": "Handles public health insurance registration once work is authorized."
+    },
+    "mvep": {
+      "title": "MVEP — foreign affairs ministry",
+      "body": "Publishes consular information about stay and entry (including short-stay and registration timing)."
+    },
+    "nn": {
+      "title": "Narodne novine (Official Gazette)",
+      "body": "Where Croatian laws are officially published. Amendments such as NN 55/2026 update the Aliens Act (Zakon o strancima)."
+    },
+    "blueCard": {
+      "title": "EU Blue Card",
+      "body": "A separate path for highly qualified workers with salary/qualification thresholds. Manual event crew / physical labor is not a Blue Card hire."
+    },
+    "a1": {
+      "title": "A1.1 Croatian language requirement",
+      "body": "A language level (A1.1, Latin script) that can be required for extending stay under 2026 rules. Some related articles have a deferred force date — see the Compliance step facts."
     }
   }
 }

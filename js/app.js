@@ -7,6 +7,7 @@ import { EmployerPackage } from "./employer-package.js";
 import { LmtGuide } from "./lmt-guide.js";
 import { OccupationGuide } from "./occupation-guide.js";
 import { UvList } from "./uv-list.js";
+import { Reference } from "./reference.js";
 
 const GUIDED_PANELS = {
   art99: Art99,
@@ -374,6 +375,8 @@ function renderMain() {
   document.getElementById("main-panel").innerHTML = `
     <header class="step-header">
       <p class="eyebrow">${esc(I18n.t("ui.pathLmt"))}
+        <button type="button" class="term-chip" data-open-term="lmt">${esc(I18n.t("ui.whatIsLmt"))}</button>
+        <button type="button" class="term-chip" data-open-term="single-permit">${esc(I18n.t("ui.whatIsPermit"))}</button>
       </p>
       <h2>${esc(I18n.t(step.titleKey))}</h2>
       <p class="step-summary">${esc(I18n.t(step.summaryKey))}</p>
@@ -387,6 +390,7 @@ function renderMain() {
     ${resolveGuidedPanel(step)?.render(isChecked, state.caseData) || ""}
     ${nationalityHtml}
     ${renderChecklist(step)}
+    ${Reference.renderStepOffices(step.id)}
     ${renderSources(step)}
     <footer class="step-actions">
       <button type="button" class="btn ghost" id="btn-prev" ${state.stepIndex === 0 ? "disabled" : ""}>${esc(
@@ -438,6 +442,15 @@ function renderMain() {
     render();
   });
 
+  document.querySelectorAll("[data-open-reference]").forEach((btn) => {
+    btn.addEventListener("click", () => Reference.open(btn.getAttribute("data-open-reference")));
+  });
+  document.querySelectorAll("[data-open-office]").forEach((btn) => {
+    btn.addEventListener("click", () => Reference.open("offices", btn.getAttribute("data-open-office")));
+  });
+  document.querySelectorAll("[data-open-term]").forEach((btn) => {
+    btn.addEventListener("click", () => Reference.open("glossary", btn.getAttribute("data-open-term")));
+  });
 
   document.getElementById("btn-prev")?.addEventListener("click", () => {
     state.stepIndex = Math.max(0, state.stepIndex - 1);
@@ -465,8 +478,12 @@ function renderChrome() {
   document.getElementById("btn-theme").textContent =
     Theme.get() === "dark" ? I18n.t("ui.themeLight") : I18n.t("ui.themeDark");
   document.getElementById("btn-reset").textContent = I18n.t("ui.reset");
+  document.getElementById("btn-glossary").textContent = I18n.t("ui.glossary");
+  document.getElementById("btn-offices").textContent = I18n.t("ui.addressBook");
   document.getElementById("nationality-chip").textContent = `${I18n.t("ui.nationality")}: ${Nationality.chipLabel()}`;
   document.getElementById("footer-disclaimer").textContent = I18n.t("ui.disclaimer");
+  document.getElementById("footer-glossary").textContent = I18n.t("ui.glossary");
+  document.getElementById("footer-offices").textContent = I18n.t("ui.addressBook");
   document.getElementById("footer-sources-link").textContent = I18n.t("ui.sourceRegistry");
   document.getElementById("nav-heading").textContent = I18n.t("ui.steps");
   const mobileNav = document.getElementById("btn-mobile-nav");
@@ -494,6 +511,16 @@ function bindGlobal() {
     Theme.toggle();
     saveProgress();
     renderChrome();
+  });
+  document.getElementById("btn-glossary")?.addEventListener("click", () => Reference.open("glossary"));
+  document.getElementById("btn-offices")?.addEventListener("click", () => Reference.open("offices"));
+  document.getElementById("footer-glossary")?.addEventListener("click", (e) => {
+    e.preventDefault();
+    Reference.open("glossary");
+  });
+  document.getElementById("footer-offices")?.addEventListener("click", (e) => {
+    e.preventDefault();
+    Reference.open("offices");
   });
   document.getElementById("btn-reset").addEventListener("click", () => {
     if (!confirm(I18n.t("ui.resetConfirm"))) return;
@@ -549,6 +576,7 @@ async function init() {
       fetch("data/duty-templates.json").then((r) => r.json()),
       ...Object.values(GUIDED_PANELS).map((p) => p.load()),
       UvList.load(),
+      Reference.load(),
     ]);
     state.caseData = caseData;
     state.stepsData = stepsData;

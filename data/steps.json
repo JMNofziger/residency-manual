@@ -134,7 +134,14 @@
       "showCaseRisks": true,
       "showEmployerCard": true,
       "guidedPanel": "art99",
-      "showUvList": true
+      "showUvList": true,
+      "officeIds": [
+        "hzz",
+        "mup",
+        "fina",
+        "porezna",
+        "hzmo"
+      ]
     },
     {
       "id": "occupation",
@@ -177,6 +184,11 @@
           "url": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/savjeti-za-predaju-zahtjeva/",
           "tier": 1
         }
+      ],
+      "officeIds": [
+        "hzz",
+        "mup",
+        "fina"
       ]
     },
     {
@@ -216,6 +228,13 @@
           "url": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/savjeti-za-predaju-zahtjeva/",
           "tier": 1
         }
+      ],
+      "officeIds": [
+        "mup",
+        "hzz",
+        "fina",
+        "porezna",
+        "hzmo"
       ]
     },
     {
@@ -255,6 +274,9 @@
           "url": "https://mup.gov.hr/radne-dozvole/286764",
           "tier": 1
         }
+      ],
+      "officeIds": [
+        "hzz"
       ]
     },
     {
@@ -315,6 +337,11 @@
           "url": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
           "tier": 1
         }
+      ],
+      "officeIds": [
+        "mup",
+        "mvep",
+        "us-embassy"
       ]
     },
     {
@@ -425,6 +452,10 @@
           "url": "https://mvep.gov.hr/services-consular-portal/consular-information-22802/stay-of-foreigners/granting-stay-in-croatia/22839",
           "tier": 1
         }
+      ],
+      "officeIds": [
+        "mup",
+        "pu-zagreb"
       ]
     },
     {
@@ -483,6 +514,13 @@
           "url": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
           "tier": 1
         }
+      ],
+      "officeIds": [
+        "mup",
+        "pu-zagreb",
+        "hzmo",
+        "hzzo",
+        "porezna"
       ]
     },
     {
@@ -618,6 +656,11 @@
           "url": "https://mup.gov.hr/aliens-281621/stay-and-work/long-term-residence-and-permanent-stay/281682",
           "tier": 1
         }
+      ],
+      "officeIds": [
+        "mup",
+        "pu-zagreb",
+        "hzzo"
       ]
     }
   ]

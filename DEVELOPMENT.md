@@ -2,7 +2,7 @@
 
 Progress board for the Croatia employer hiring runbook.
 
-**Goal:** Static guided checklist: labor market test (HZZ) → stay-and-work permit (MUP), with nationality packs and cited facts. Real employer cases stay local (`cases/private/`).
+**Goal:** Static guided checklist: labor market test (HZZ) → stay-and-work permit (MUP), with nationality packs, cited facts, glossary, and offices address book. Real employer cases stay local (`cases/private/`).
 
 **Not legal advice.** Numeric claims must be cited fact objects; `node scripts/lint-facts.mjs` is build-blocking.
 
@@ -13,6 +13,7 @@ Progress board for the Croatia employer hiring runbook.
 | 0–5 | Sources, shell, facts, US pack, Art. 99 + UV, live Tier-1 verify | Done |
 | 6a | Guided steps 3–4 (employer package + labor market test) | Done |
 | 6b | Guided step 2 (occupation + duties + UV path decision) | Done |
+| 6c | Glossary + offices address book; docs/copy clarity | Done |
 | 6 | Remaining: steps 5–8 deepen | Next |
 | 7 | More nationality packs + case picker | Planned |
 | 8 | Hosting + CI lint | Planned |
@@ -27,6 +28,7 @@ Progress board for the Croatia employer hiring runbook.
 ## Done highlights
 
 - Guided panels via [`js/guided-checks.js`](js/guided-checks.js) (Art. 99, occupation, employer package, LMT)
+- Glossary + offices: [`data/glossary.json`](data/glossary.json), [`data/offices.json`](data/offices.json)
 - Phase 5 verification: [`artifacts/phase5-verification.md`](artifacts/phase5-verification.md)
 
 ## Contribute
