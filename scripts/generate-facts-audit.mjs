@@ -13,11 +13,22 @@ const ROOT = path.resolve(__dirname, "..");
 const OUT_DIR = path.join(ROOT, "artifacts");
 const TARGETS = [path.join(ROOT, "data"), path.join(ROOT, "cases")];
 
+/** Skip gitignored private / real-employer fixtures so audit artifacts stay clean. */
+function isPrivateCasePath(fullPath) {
+  const rel = path.relative(ROOT, fullPath).split(path.sep).join("/");
+  if (rel.startsWith("cases/private/")) return true;
+  if (/^cases\/.*-private\.json$/i.test(rel)) return true;
+  if (/^cases\/vpr-/i.test(rel)) return true;
+  if (/^cases\/.*\.local\.json$/i.test(rel)) return true;
+  return false;
+}
+
 function listJsonFiles(dir) {
   const out = [];
   if (!fs.existsSync(dir)) return out;
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name);
+    if (isPrivateCasePath(full)) continue;
     if (entry.isDirectory()) out.push(...listJsonFiles(full));
     else if (entry.isFile() && entry.name.endsWith(".json")) out.push(full);
   }

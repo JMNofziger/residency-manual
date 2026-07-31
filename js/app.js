@@ -5,8 +5,23 @@ import { renderFactList } from "./facts.js";
 import { Art99 } from "./art99.js";
 import { UvList } from "./uv-list.js";
 
-const CASE_PATH = "cases/example-dool-us-manual-labor.json";
+/** Public anonymized fixture (committed). */
+const DEFAULT_CASE_PATH = "cases/example-dool-us-manual-labor.json";
+/** Local real-case override (gitignored). Prefer this when present. */
+const LOCAL_CASE_PATH = "cases/private/active.json";
 const DEFAULT_LOCALE = "en";
+
+async function loadCaseData() {
+  try {
+    const local = await fetch(LOCAL_CASE_PATH, { cache: "no-store" });
+    if (local.ok) return local.json();
+  } catch {
+    /* fall through to default */
+  }
+  const pub = await fetch(DEFAULT_CASE_PATH);
+  if (!pub.ok) throw new Error(`Failed to load case: ${DEFAULT_CASE_PATH}`);
+  return pub.json();
+}
 
 const state = {
   caseData: null,
@@ -386,7 +401,7 @@ async function init() {
   const loading = document.getElementById("loading-state");
   try {
     const [caseData, stepsData, occupations] = await Promise.all([
-      fetch(CASE_PATH).then((r) => r.json()),
+      loadCaseData(),
       fetch("data/steps.json").then((r) => r.json()),
       fetch("data/occupations.json").then((r) => r.json()),
       Art99.load(),

@@ -25,6 +25,8 @@ config.local.*
 *.local.yml
 
 # Real employer / private case fixtures — never commit
+# Local testing: copy your real case to cases/private/active.json (app prefers it)
 cases/private/
 cases/*-private.json
 cases/vpr-*.json
+cases/*.local.json

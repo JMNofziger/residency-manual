@@ -51,7 +51,7 @@ php -S localhost:8080
 | Locales | `data/locales/` | EN/HR UI + step copy (no bare fee/day/% strings) |
 | Facts schema | `data/facts.schema.md` | Required fact object shape |
 
-Private/real cases: put under `cases/private/` (gitignored) or name `cases/*-private.json`.
+**Local testing with a real case (not pushed):** put the fixture at `cases/private/active.json` (gitignored). The app loads that first and falls back to the anonymized example. You can also keep a named copy under `cases/private/` or use `cases/*-private.json` / `cases/vpr-*.json` (all ignored).
 
 ## Cited facts (build-blocking)
 
