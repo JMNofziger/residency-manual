@@ -3,8 +3,26 @@
 .idea/
 .vscode/
 *.swp
+
+# Secrets & local config — never commit
 .env
 .env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+*credentials*
+*secrets*
+secrets/
+config.local.*
+*.local.json
+*.local.js
+*.local.toml
+*.local.yaml
+*.local.yml
 
 # Real employer / private case fixtures — never commit
 cases/private/
