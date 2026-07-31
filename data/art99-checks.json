@@ -1,0 +1,224 @@
+{
+  "version": 1,
+  "titleKey": "art99.panelTitle",
+  "introKey": "art99.panelIntro",
+  "sourceHub": {
+    "labelKey": "sources.hzzLmt",
+    "url": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+    "tier": 1
+  },
+  "parentChecklistId": "orient-art99-selfcheck",
+  "checks": [
+    {
+      "id": "activity-match",
+      "order": 1,
+      "titleKey": "art99.activity.title",
+      "whyKey": "art99.activity.why",
+      "howSteps": [
+        {
+          "labelKey": "art99.activity.how.fina",
+          "url": "https://infobiz.fina.hr/"
+        },
+        {
+          "labelKey": "art99.activity.how.court",
+          "url": "https://sudreg.pravosudje.hr/"
+        },
+        {
+          "labelKey": "art99.activity.how.match"
+        }
+      ],
+      "evidenceKey": "art99.activity.evidence",
+      "facts": [],
+      "caseHintKeys": ["art99.activity.caseHint"]
+    },
+    {
+      "id": "continuous-fte",
+      "order": 2,
+      "titleKey": "art99.continuous.title",
+      "whyKey": "art99.continuous.why",
+      "howSteps": [
+        {
+          "labelKey": "art99.continuous.how.hzmo",
+          "url": "https://www.mirovinsko.hr/"
+        },
+        {
+          "labelKey": "art99.continuous.how.payroll"
+        },
+        {
+          "labelKey": "art99.continuous.how.continuity"
+        }
+      ],
+      "evidenceKey": "art99.continuous.evidence",
+      "facts": [
+        {
+          "id": "art99-check-continuous",
+          "value": "12 months",
+          "labelKey": "facts.art99ContinuousEmployment",
+          "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+          "sourceTier": 1,
+          "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
+          "verifiedDate": "2026-07-30"
+        }
+      ],
+      "caseHintKeys": ["art99.continuous.caseHint"]
+    },
+    {
+      "id": "domestic-ratio",
+      "order": 3,
+      "titleKey": "art99.ratio.title",
+      "whyKey": "art99.ratio.why",
+      "howSteps": [
+        {
+          "labelKey": "art99.ratio.how.count"
+        },
+        {
+          "labelKey": "art99.ratio.how.compare"
+        },
+        {
+          "labelKey": "art99.ratio.how.uvNote"
+        }
+      ],
+      "evidenceKey": "art99.ratio.evidence",
+      "facts": [
+        {
+          "id": "art99-check-ratio-20",
+          "value": "20%",
+          "labelKey": "facts.art99DomesticRatio",
+          "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+          "sourceTier": 1,
+          "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
+          "verifiedDate": "2026-07-30"
+        },
+        {
+          "id": "art99-check-ratio-10",
+          "value": "10%",
+          "labelKey": "facts.art99DeficitaryDomesticRatio",
+          "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+          "sourceTier": 1,
+          "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
+          "verifiedDate": "2026-07-30"
+        }
+      ],
+      "caseHintKeys": ["art99.ratio.caseHint"]
+    },
+    {
+      "id": "tax-dues",
+      "order": 4,
+      "titleKey": "art99.tax.title",
+      "whyKey": "art99.tax.why",
+      "howSteps": [
+        {
+          "labelKey": "art99.tax.how.eporezna",
+          "url": "https://eporezna.porezna-uprava.hr/"
+        },
+        {
+          "labelKey": "art99.tax.how.hzmo",
+          "url": "https://www.mirovinsko.hr/"
+        },
+        {
+          "labelKey": "art99.tax.how.certificate"
+        }
+      ],
+      "evidenceKey": "art99.tax.evidence",
+      "facts": [],
+      "caseHintKeys": []
+    },
+    {
+      "id": "inflow",
+      "order": 5,
+      "titleKey": "art99.inflow.title",
+      "whyKey": "art99.inflow.why",
+      "howSteps": [
+        {
+          "labelKey": "art99.inflow.how.bank"
+        },
+        {
+          "labelKey": "art99.inflow.how.window"
+        },
+        {
+          "labelKey": "art99.inflow.how.notFina"
+        }
+      ],
+      "evidenceKey": "art99.inflow.evidence",
+      "facts": [
+        {
+          "id": "art99-check-inflow",
+          "value": "€100,000",
+          "labelKey": "facts.art99InflowThreshold",
+          "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+          "sourceTier": 1,
+          "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
+          "verifiedDate": "2026-07-30"
+        }
+      ],
+      "caseHintKeys": ["art99.inflow.caseHint"]
+    },
+    {
+      "id": "blocked-account",
+      "order": 6,
+      "titleKey": "art99.blocked.title",
+      "whyKey": "art99.blocked.why",
+      "howSteps": [
+        {
+          "labelKey": "art99.blocked.how.bank"
+        },
+        {
+          "labelKey": "art99.blocked.how.fina",
+          "url": "https://www.fina.hr/"
+        },
+        {
+          "labelKey": "art99.blocked.how.window"
+        }
+      ],
+      "evidenceKey": "art99.blocked.evidence",
+      "facts": [
+        {
+          "id": "art99-check-blocked",
+          "value": "30 days",
+          "labelKey": "facts.art99BlockedAccount",
+          "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+          "sourceTier": 1,
+          "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
+          "verifiedDate": "2026-07-30"
+        }
+      ],
+      "caseHintKeys": []
+    },
+    {
+      "id": "criminal-labour",
+      "order": 7,
+      "titleKey": "art99.criminal.title",
+      "whyKey": "art99.criminal.why",
+      "howSteps": [
+        {
+          "labelKey": "art99.criminal.how.review"
+        },
+        {
+          "labelKey": "art99.criminal.how.counsel"
+        }
+      ],
+      "evidenceKey": "art99.criminal.evidence",
+      "facts": [],
+      "caseHintKeys": []
+    },
+    {
+      "id": "undeclared-work",
+      "order": 8,
+      "titleKey": "art99.undeclared.title",
+      "whyKey": "art99.undeclared.why",
+      "howSteps": [
+        {
+          "labelKey": "art99.undeclared.how.hzz",
+          "url": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/"
+        },
+        {
+          "labelKey": "art99.undeclared.how.inspectorate",
+          "url": "https://mrosp.gov.hr/"
+        }
+      ],
+      "evidenceKey": "art99.undeclared.evidence",
+      "facts": [],
+      "caseHintKeys": []
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "id": "example-dool-us-manual-labor",
+  "title": "Example d.o.o. — US citizen, manual event crew (LMT)",
+  "employer": {
+    "name": "Example Event Support d.o.o.",
+    "address": "Example Street 1, 10000 Zagreb",
+    "city": "Zagreb",
+    "policeAdmin": "grad_zagreb",
+    "hzzRegion": "grad_zagreb",
+    "oib": "00000000000",
+    "mb": "00000000",
+    "legalForm": "d.o.o.",
+    "nkd2025": "90399",
+    "nkd2025Label": "Ostale pomoćne djelatnosti u umjetničkom stvaralaštvu i izvedbenim umjetnostima",
+    "nkd2007": "9002",
+    "nkd2007Label": "Pomoćne djelatnosti u izvođačkoj umjetnosti",
+    "size": "micro",
+    "employeesApprox": 1,
+    "revenue2025Eur": null,
+    "representative": "Example Director",
+    "role": "director",
+    "finaUrl": "https://infobiz.fina.hr/"
+  },
+  "worker": {
+    "nationalityId": "us",
+    "roleIntent": "manual event crew / physical labor",
+    "placeholderName": "Worker (example)"
+  },
+  "intendedOccupation": {
+    "id": "manual-event-crew",
+    "titleKey": "case.occupation.manualEventCrew"
+  },
+  "primaryPath": "labor_market_test",
+  "suggestedOccupationIds": [
+    "manual-event-crew",
+    "stage-hand",
+    "event-setup-worker",
+    "venue-support-worker"
+  ],
+  "riskFlags": [
+    {
+      "id": "art99_employer_conditions",
+      "severity": "employer",
+      "stepIds": ["orient"],
+      "narrativeKey": "case.risk.art99",
+      "facts": [
+        {
+          "id": "case-art99-ratio",
+          "value": "20%",
+          "labelKey": "facts.art99DomesticRatio",
+          "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+          "sourceTier": 1,
+          "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
+          "verifiedDate": "2026-07-30"
+        },
+        {
+          "id": "case-art99-continuous",
+          "value": "12 months",
+          "labelKey": "facts.art99ContinuousEmployment",
+          "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+          "sourceTier": 1,
+          "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
+          "verifiedDate": "2026-07-30"
+        },
+        {
+          "id": "case-art99-blocked",
+          "value": "30 days",
+          "labelKey": "facts.art99BlockedAccount",
+          "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+          "sourceTier": 1,
+          "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
+          "verifiedDate": "2026-07-30"
+        }
+      ]
+    },
+    {
+      "id": "nkd_activity_match",
+      "severity": "employer",
+      "stepIds": ["orient", "occupation"],
+      "narrativeKey": "case.risk.nkdMatch"
+    },
+    {
+      "id": "not_blue_card",
+      "severity": "job",
+      "stepIds": ["orient", "occupation"],
+      "narrativeKey": "case.risk.notBlueCard"
+    },
+    {
+      "id": "revenue_verify_live",
+      "severity": "employer",
+      "stepIds": ["orient"],
+      "narrativeKey": "case.risk.revenueVerify",
+      "facts": [
+        {
+          "id": "case-inflow-threshold",
+          "value": "€100,000",
+          "labelKey": "facts.art99InflowThreshold",
+          "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+          "sourceTier": 1,
+          "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
+          "verifiedDate": "2026-07-30"
+        }
+      ]
+    }
+  ],
+  "sourceLinks": [
+    {
+      "label": "MUP — Work of third-country nationals",
+      "url": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663"
+    },
+    {
+      "label": "HZZ — Labor market test",
+      "url": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/"
+    }
+  ]
+}

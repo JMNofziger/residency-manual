@@ -1,0 +1,12 @@
+.DS_Store
+*.log
+.idea/
+.vscode/
+*.swp
+.env
+.env.*
+
+# Real employer / private case fixtures — never commit
+cases/private/
+cases/*-private.json
+cases/vpr-*.json

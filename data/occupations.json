@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "byNkd": {
+    "90399": {
+      "nkdLabelEn": "Other support activities to artistic creation and performing arts",
+      "nkdLabelHr": "Ostale pomoćne djelatnosti u umjetničkom stvaralaštvu i izvedbenim umjetnostima",
+      "legacyNkd2007": "9002",
+      "noteKey": "occupations.nkd90399.note",
+      "occupations": [
+        {
+          "id": "manual-event-crew",
+          "titleKey": "occupations.manualEventCrew.title",
+          "blurbKey": "occupations.manualEventCrew.blurb",
+          "primary": true,
+          "pathHint": "labor_market_test",
+          "defensibility": "high"
+        },
+        {
+          "id": "stage-hand",
+          "titleKey": "occupations.stageHand.title",
+          "blurbKey": "occupations.stageHand.blurb",
+          "primary": false,
+          "pathHint": "labor_market_test",
+          "defensibility": "high"
+        },
+        {
+          "id": "event-setup-worker",
+          "titleKey": "occupations.eventSetup.title",
+          "blurbKey": "occupations.eventSetup.blurb",
+          "primary": false,
+          "pathHint": "labor_market_test",
+          "defensibility": "medium"
+        },
+        {
+          "id": "venue-support-worker",
+          "titleKey": "occupations.venueSupport.title",
+          "blurbKey": "occupations.venueSupport.blurb",
+          "primary": false,
+          "pathHint": "labor_market_test",
+          "defensibility": "medium"
+        }
+      ],
+      "uvListReminderKey": "occupations.uvListReminder"
+    }
+  }
+}

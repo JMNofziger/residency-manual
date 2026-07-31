@@ -1,0 +1,42 @@
+{
+  "label": "Sjedinjene Američke Države",
+  "facts": {
+    "usVisaFreeWindow": "Bezvizni kratki boravak za SAD (dani u razdoblju)",
+    "usPoliceRegistration": "Rok prijave boravka policiji nakon dolaska"
+  },
+  "orient": {
+    "title": "Državljanin SAD-a — praktične razlike",
+    "blurb": "Državljani SAD-a podliježu istim pravilima Zakona o strancima / jedinstvene dozvole kao i drugi DTZ. U praksi se razlikuju: bezvizni kratki ulazak (citirano), stranice Ambasade SAD-a u Hrvatskoj te američki kazneni list (FBI Identity History Summary). Bezvizni boravak nije odobrenje za rad."
+  },
+  "workerDocs": {
+    "title": "Dokumentacija specifična za SAD",
+    "blurb": "Koristite uz osnovnu DTZ listu iznad. Primarni izvori: Ambasada SAD-a — ulazak i boravak te FBI Identity History Summary Checks.",
+    "fbi": {
+      "label": "Naručite FBI Identity History Summary (kaznena evidencija)",
+      "help": "Hrvatska tipično očekuje američki dokument o kaznenoj evidenciji. Koristite službeni FBI postupak; ostavite vrijeme za obradu, zatim apostille/prijevod prema MUP zahtjevima.",
+      "link": "FBI — Identity History Summary Checks"
+    },
+    "embassy": {
+      "label": "Pročitajte zahtjeve Ambasade SAD-a za ulazak i boravak",
+      "help": "Službeni sažetak vlade SAD-a o bezviznom boravku, zahtjevima za privremeni boravak i prijavi boravka.",
+      "link": "Ambasada SAD-a u HR — Entry and Residence"
+    },
+    "visaFree": {
+      "label": "Planirajte ulazak unutar bezviznih pravila (i dalje bez rada)",
+      "help": "Nositelji američke putovnice mogu ući bez vize za kratki boravak unutar citiranog prozora. To pomaže za termine, ali ne ovlašćuje za rad."
+    },
+    "registration": {
+      "label": "Organizirajte prijavu boravka policiji nakon dolaska",
+      "help": "Ambasada podsjeća na kratki rok prijave kod privatnog smještaja (hoteli često prijavljuju goste). Potvrdite aktualne obrasce. Rok citiran:"
+    },
+    "apostille": {
+      "label": "Apostille + ovjereni hrvatski prijevod američkih isprava",
+      "help": "Očekujte apostille (Haag) na FBI/civilnim ispravama i sudski tumač za hrvatski prijevod. Pokrenite lanac prije nego TTR rok postane tijesan."
+    }
+  },
+  "filePermit": {
+    "title": "Napomene o kanalu podnošenja (SAD)",
+    "notes": "Mnogi državljani SAD-a koji su zakonito prisutni mogu podnijeti zahtjev u zemlji kod nadležne policije/MUP-a nakon TTR; drugima treba konzularni kanal ovisno o statusu i uputama MUP-a. Potvrdite kanal na MUP-u i stranici Ambasade. Nema posebnog ugovora SAD-a koji ublažava standarde radne dozvole.",
+    "embassyLink": "Ambasada SAD-a u HR — Entry and Residence"
+  }
+}

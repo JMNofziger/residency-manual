@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Residency runbook — Croatia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Sora:wght@400;550;650;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div id="loading-state" class="loading">Loading…</div>
+
+    <div id="app-shell" hidden>
+      <header class="topbar">
+        <div class="brand">
+          <h1 id="app-title">Employer hiring wizard</h1>
+          <p id="app-subtitle">Labor market test → Single Permit</p>
+        </div>
+        <div class="top-actions">
+          <span class="nationality-chip" id="nationality-chip"></span>
+          <div class="seg" role="group" aria-label="Language">
+            <button type="button" id="btn-lang-en" class="is-active">EN</button>
+            <button type="button" id="btn-lang-hr">HR</button>
+          </div>
+          <button type="button" class="btn ghost" id="btn-theme">Light</button>
+          <button type="button" class="btn ghost" id="btn-reset">Reset progress</button>
+        </div>
+      </header>
+
+      <div class="layout">
+        <div class="mobile-bar">
+          <button type="button" class="btn ghost" id="btn-mobile-nav">Steps</button>
+          <span id="mobile-progress" class="muted"></span>
+        </div>
+        <aside class="sidebar" id="sidebar">
+          <h2 id="nav-heading">Steps</h2>
+          <nav class="step-nav" id="step-nav" aria-label="Wizard steps"></nav>
+        </aside>
+        <main class="main-panel" id="main-panel"></main>
+      </div>
+
+      <footer class="site-footer">
+        <p id="footer-disclaimer"></p>
+        <p>
+          <a id="footer-sources-link" href="croatia-foreign-worker-sources.md">Source registry</a>
+          ·
+          <a href="artifacts/facts-audit.md">Facts audit</a>
+          ·
+          <a href="DEVELOPMENT.md">Development phases</a>
+          ·
+          <a href="README.md">README</a>
+        </p>
+      </footer>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

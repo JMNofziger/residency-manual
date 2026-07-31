@@ -1,0 +1,42 @@
+{
+  "label": "United States",
+  "facts": {
+    "usVisaFreeWindow": "U.S. visa-free short stay (days in period)",
+    "usPoliceRegistration": "Police registration deadline after arrival"
+  },
+  "orient": {
+    "title": "U.S. citizen — practical differences",
+    "blurb": "U.S. citizens follow the same Zakon o strancima / Single Permit rules as other third-country nationals. What differs in practice: visa-free short-stay entry (cited), U.S. Embassy Croatia guidance pages, and U.S.-side criminal-record process (FBI Identity History Summary). Visa-free stay is not work authorization — productive work still needs the stay-and-work permit."
+  },
+  "workerDocs": {
+    "title": "U.S.-specific document guidance",
+    "blurb": "Use this checklist alongside the core TCN list above. Primary references: U.S. Embassy Croatia entry & residence page and FBI Identity History Summary Checks.",
+    "fbi": {
+      "label": "Order FBI Identity History Summary (criminal record)",
+      "help": "Croatia typically expects a U.S. criminal-record document. Use the official FBI Identity History Summary process; allow processing time, then arrange apostille/translation as required for MUP.",
+      "link": "FBI — Identity History Summary Checks"
+    },
+    "embassy": {
+      "label": "Read U.S. Embassy Croatia entry & residence requirements",
+      "help": "Official U.S. government summary for citizens on visa-free stay, residence applications, and local registration expectations.",
+      "link": "U.S. Embassy Croatia — Entry and Residence"
+    },
+    "visaFree": {
+      "label": "Plan entry within visa-free short-stay rules (still no work)",
+      "help": "U.S. passport holders may enter visa-free for short stays within the cited window. That window can help attend appointments, but it does not authorize employment."
+    },
+    "registration": {
+      "label": "Arrange police registration after arrival",
+      "help": "U.S. Embassy guidance reminds citizens about short-deadline registration with police when staying in private accommodation (hotels often register guests). Confirm current forms on the Embassy/MUP pages. Deadline cited:"
+    },
+    "apostille": {
+      "label": "Apostille + certified Croatian translation of U.S. documents",
+      "help": "Expect apostille (Hague) on FBI/civil documents and a court-sworn Croatian translation. Start this pipeline before the LMT window gets tight."
+    }
+  },
+  "filePermit": {
+    "title": "Filing channel notes (U.S.)",
+    "notes": "Many U.S. citizens who are already legally present may file in-country at the competent police/MUP office after LMT; others may need consular channels depending on status and MUP instructions. Confirm the correct channel on MUP and the U.S. Embassy residence page for your worker’s situation. No separate U.S. treaty creates lighter work-permit standards.",
+    "embassyLink": "U.S. Embassy Croatia — Entry and Residence"
+  }
+}

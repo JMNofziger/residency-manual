@@ -1,0 +1,566 @@
+{
+  "version": 1,
+  "primaryPath": "labor_market_test",
+  "disclaimerKey": "ui.disclaimer",
+  "steps": [
+    {
+      "id": "orient",
+      "order": 1,
+      "titleKey": "steps.orient.title",
+      "summaryKey": "steps.orient.summary",
+      "nationalitySlots": ["orient"],
+      "sections": [
+        {
+          "id": "overview",
+          "titleKey": "steps.orient.overview.title",
+          "bodyKey": "steps.orient.overview.body"
+        },
+        {
+          "id": "path",
+          "titleKey": "steps.orient.path.title",
+          "bodyKey": "steps.orient.path.body"
+        },
+        {
+          "id": "employer-thresholds",
+          "titleKey": "steps.orient.employerThresholds.title",
+          "bodyKey": "steps.orient.employerThresholds.body",
+          "facts": [
+            {
+              "id": "art99-domestic-ratio",
+              "value": "20%",
+              "labelKey": "facts.art99DomesticRatio",
+              "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+              "sourceTier": 1,
+              "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
+              "verifiedDate": "2026-07-30"
+            },
+            {
+              "id": "art99-continuous-employment",
+              "value": "12 months",
+              "labelKey": "facts.art99ContinuousEmployment",
+              "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+              "sourceTier": 1,
+              "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
+              "verifiedDate": "2026-07-30"
+            },
+            {
+              "id": "art99-blocked-account",
+              "value": "30 days",
+              "labelKey": "facts.art99BlockedAccount",
+              "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+              "sourceTier": 1,
+              "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
+              "verifiedDate": "2026-07-30"
+            },
+            {
+              "id": "art99-inflow-threshold",
+              "value": "€100,000",
+              "labelKey": "facts.art99InflowThreshold",
+              "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+              "sourceTier": 1,
+              "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
+              "verifiedDate": "2026-07-30"
+            }
+          ]
+        },
+        {
+          "id": "wrong-paths",
+          "titleKey": "steps.orient.wrongPaths.title",
+          "bodyKey": "steps.orient.wrongPaths.body",
+          "facts": [
+            {
+              "id": "blue-card-validity",
+              "value": "48 months",
+              "labelKey": "facts.blueCardValidity",
+              "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/stay-and-work-of-highly-qualified-third-country-nationals/281692",
+              "sourceTier": 1,
+              "sourceName": "MUP — Highly-qualified TCNs (EU Blue Card)",
+              "verifiedDate": "2026-07-30"
+            }
+          ]
+        },
+        {
+          "id": "law-2026",
+          "titleKey": "steps.orient.law2026.title",
+          "bodyKey": "steps.orient.law2026.body",
+          "facts": [
+            {
+              "id": "nn552026-in-force",
+              "value": "2026-06-04",
+              "labelKey": "facts.nn552026InForce",
+              "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+              "sourceTier": 1,
+              "sourceName": "Narodne novine — NN 55/2026",
+              "verifiedDate": "2026-07-30"
+            }
+          ]
+        }
+      ],
+      "checklist": [
+        { "id": "orient-read-overview", "labelKey": "steps.orient.check.readOverview" },
+        { "id": "orient-art99-selfcheck", "labelKey": "steps.orient.check.art99" },
+        { "id": "orient-confirm-lmt-path", "labelKey": "steps.orient.check.lmtPath" },
+        { "id": "orient-exclude-blue-card", "labelKey": "steps.orient.check.excludeBlueCard" },
+        { "id": "orient-verify-revenue", "labelKey": "steps.orient.check.verifyRevenue" }
+      ],
+      "sources": [
+        {
+          "labelKey": "sources.mupStayWork",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/281622",
+          "tier": 1
+        },
+        {
+          "labelKey": "sources.mupWorkTcn",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+          "tier": 1
+        },
+        {
+          "labelKey": "sources.hzzLmt",
+          "url": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+          "tier": 1
+        },
+        {
+          "labelKey": "sources.nn552026",
+          "url": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+          "tier": 1
+        }
+      ],
+      "showCaseRisks": true,
+      "showEmployerCard": true,
+      "showArt99Checks": true,
+      "showUvList": true
+    },
+    {
+      "id": "occupation",
+      "order": 2,
+      "titleKey": "steps.occupation.title",
+      "summaryKey": "steps.occupation.summary",
+      "nationalitySlots": [],
+      "sections": [
+        {
+          "id": "primary",
+          "titleKey": "steps.occupation.primary.title",
+          "bodyKey": "steps.occupation.primary.body"
+        },
+        {
+          "id": "nkd",
+          "titleKey": "steps.occupation.nkd.title",
+          "bodyKey": "steps.occupation.nkd.body"
+        },
+        {
+          "id": "lmt-vs-deficit",
+          "titleKey": "steps.occupation.lmtVsDeficit.title",
+          "bodyKey": "steps.occupation.lmtVsDeficit.body"
+        }
+      ],
+      "checklist": [
+        { "id": "occ-pick-title", "labelKey": "steps.occupation.check.pickTitle" },
+        { "id": "occ-match-nkd", "labelKey": "steps.occupation.check.matchNkd" },
+        { "id": "occ-check-uv-list", "labelKey": "steps.occupation.check.uvList" },
+        { "id": "occ-document-duties", "labelKey": "steps.occupation.check.documentDuties" }
+      ],
+      "sources": [
+        {
+          "labelKey": "sources.mupRadneDozvole",
+          "url": "https://mup.gov.hr/radne-dozvole/286764",
+          "tier": 1
+        },
+        {
+          "labelKey": "sources.hzzLmt",
+          "url": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+          "tier": 1
+        }
+      ],
+      "showOccupations": true,
+      "showCaseRisks": true,
+      "showUvList": true
+    },
+    {
+      "id": "employer-package",
+      "order": 3,
+      "titleKey": "steps.employerPackage.title",
+      "summaryKey": "steps.employerPackage.summary",
+      "nationalitySlots": [],
+      "sections": [
+        {
+          "id": "contract",
+          "titleKey": "steps.employerPackage.contract.title",
+          "bodyKey": "steps.employerPackage.contract.body"
+        },
+        {
+          "id": "form17a",
+          "titleKey": "steps.employerPackage.form17a.title",
+          "bodyKey": "steps.employerPackage.form17a.body"
+        },
+        {
+          "id": "tax",
+          "titleKey": "steps.employerPackage.tax.title",
+          "bodyKey": "steps.employerPackage.tax.body"
+        }
+      ],
+      "checklist": [
+        { "id": "pkg-draft-contract", "labelKey": "steps.employerPackage.check.contract" },
+        { "id": "pkg-pay-parity", "labelKey": "steps.employerPackage.check.payParity" },
+        { "id": "pkg-form17a", "labelKey": "steps.employerPackage.check.form17a" },
+        { "id": "pkg-housing", "labelKey": "steps.employerPackage.check.housing" },
+        { "id": "pkg-tax-clear", "labelKey": "steps.employerPackage.check.taxClear" }
+      ],
+      "sources": [
+        {
+          "labelKey": "sources.mupWorkTcn",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+          "tier": 1
+        },
+        {
+          "labelKey": "sources.nn552026",
+          "url": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+          "tier": 1
+        },
+        {
+          "labelKey": "sources.hzzFilingTips",
+          "url": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/savjeti-za-predaju-zahtjeva/",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "lmt",
+      "order": 4,
+      "titleKey": "steps.lmt.title",
+      "summaryKey": "steps.lmt.summary",
+      "nationalitySlots": [],
+      "sections": [
+        {
+          "id": "what",
+          "titleKey": "steps.lmt.what.title",
+          "bodyKey": "steps.lmt.what.body"
+        },
+        {
+          "id": "filing",
+          "titleKey": "steps.lmt.filing.title",
+          "bodyKey": "steps.lmt.filing.body"
+        },
+        {
+          "id": "window",
+          "titleKey": "steps.lmt.window.title",
+          "bodyKey": "steps.lmt.window.body",
+          "facts": [
+            {
+              "id": "lmt-positive-notice-window",
+              "value": "90 days",
+              "labelKey": "facts.lmtPositiveNoticeWindow",
+              "sourceUrl": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+              "sourceTier": 1,
+              "sourceName": "HZZ — Novi sustav zapošljavanja stranaca",
+              "verifiedDate": "2026-07-30"
+            }
+          ]
+        }
+      ],
+      "checklist": [
+        { "id": "lmt-prepare-request", "labelKey": "steps.lmt.check.prepare" },
+        { "id": "lmt-related-activity", "labelKey": "steps.lmt.check.relatedActivity" },
+        { "id": "lmt-submit-hzz", "labelKey": "steps.lmt.check.submit" },
+        { "id": "lmt-positive-notice", "labelKey": "steps.lmt.check.positiveNotice" },
+        { "id": "lmt-file-within-window", "labelKey": "steps.lmt.check.fileWindow" }
+      ],
+      "sources": [
+        {
+          "labelKey": "sources.hzzLmt",
+          "url": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/",
+          "tier": 1
+        },
+        {
+          "labelKey": "sources.hzzFilingTips",
+          "url": "https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/savjeti-za-predaju-zahtjeva/",
+          "tier": 1
+        },
+        {
+          "labelKey": "sources.mupRadneDozvole",
+          "url": "https://mup.gov.hr/radne-dozvole/286764",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "worker-docs",
+      "order": 5,
+      "titleKey": "steps.workerDocs.title",
+      "summaryKey": "steps.workerDocs.summary",
+      "nationalitySlots": ["worker-docs"],
+      "sections": [
+        {
+          "id": "core-docs",
+          "titleKey": "steps.workerDocs.core.title",
+          "bodyKey": "steps.workerDocs.core.body"
+        },
+        {
+          "id": "translations",
+          "titleKey": "steps.workerDocs.translations.title",
+          "bodyKey": "steps.workerDocs.translations.body"
+        }
+      ],
+      "checklist": [
+        { "id": "wd-passport", "labelKey": "steps.workerDocs.check.passport" },
+        { "id": "wd-criminal-record", "labelKey": "steps.workerDocs.check.criminalRecord" },
+        { "id": "wd-insurance", "labelKey": "steps.workerDocs.check.insurance" },
+        { "id": "wd-accommodation", "labelKey": "steps.workerDocs.check.accommodation" },
+        { "id": "wd-photos", "labelKey": "steps.workerDocs.check.photos" },
+        { "id": "wd-translations", "labelKey": "steps.workerDocs.check.translations" }
+      ],
+      "sources": [
+        {
+          "labelKey": "sources.mupTempStay",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661",
+          "tier": 1
+        },
+        {
+          "labelKey": "sources.mupWorkTcn",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "file-permit",
+      "order": 6,
+      "titleKey": "steps.filePermit.title",
+      "summaryKey": "steps.filePermit.summary",
+      "nationalitySlots": ["file-permit"],
+      "sections": [
+        {
+          "id": "when",
+          "titleKey": "steps.filePermit.when.title",
+          "bodyKey": "steps.filePermit.when.body"
+        },
+        {
+          "id": "where",
+          "titleKey": "steps.filePermit.where.title",
+          "bodyKey": "steps.filePermit.where.body"
+        },
+        {
+          "id": "fees",
+          "titleKey": "steps.filePermit.fees.title",
+          "bodyKey": "steps.filePermit.fees.body",
+          "facts": [
+            {
+              "id": "permit-admin-fee",
+              "value": "€46.45",
+              "labelKey": "facts.permitFee",
+              "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661",
+              "sourceTier": 1,
+              "sourceName": "MUP — Temporary Stay",
+              "verifiedDate": "2026-07-30"
+            },
+            {
+              "id": "biometric-card-fee",
+              "value": "€9.29",
+              "labelKey": "facts.biometricCardFee",
+              "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661",
+              "sourceTier": 1,
+              "sourceName": "MUP — Temporary Stay",
+              "verifiedDate": "2026-07-30"
+            }
+          ]
+        },
+        {
+          "id": "timeline",
+          "titleKey": "steps.filePermit.timeline.title",
+          "bodyKey": "steps.filePermit.timeline.body",
+          "facts": [
+            {
+              "id": "permit-decision-timeline",
+              "value": "90 days",
+              "labelKey": "facts.permitDecisionTimeline",
+              "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+              "sourceTier": 1,
+              "sourceName": "Narodne novine — NN 55/2026",
+              "verifiedDate": "2026-07-30"
+            }
+          ]
+        }
+      ],
+      "checklist": [
+        { "id": "fp-assemble-file", "labelKey": "steps.filePermit.check.assemble" },
+        { "id": "fp-confirm-competence", "labelKey": "steps.filePermit.check.competence" },
+        { "id": "fp-pay-fees", "labelKey": "steps.filePermit.check.fees" },
+        { "id": "fp-submit", "labelKey": "steps.filePermit.check.submit" },
+        { "id": "fp-keep-proof", "labelKey": "steps.filePermit.check.proof" }
+      ],
+      "sources": [
+        {
+          "labelKey": "sources.mupTempStay",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661",
+          "tier": 1
+        },
+        {
+          "labelKey": "sources.mupWorkTcn",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+          "tier": 1
+        },
+        {
+          "labelKey": "sources.mvepStay",
+          "url": "https://mvep.gov.hr/services-consular-portal/consular-information-22802/stay-of-foreigners/granting-stay-in-croatia/22839",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "start-work",
+      "order": 7,
+      "titleKey": "steps.startWork.title",
+      "summaryKey": "steps.startWork.summary",
+      "nationalitySlots": [],
+      "sections": [
+        {
+          "id": "decision",
+          "titleKey": "steps.startWork.decision.title",
+          "bodyKey": "steps.startWork.decision.body"
+        },
+        {
+          "id": "biometrics",
+          "titleKey": "steps.startWork.biometrics.title",
+          "bodyKey": "steps.startWork.biometrics.body"
+        },
+        {
+          "id": "register",
+          "titleKey": "steps.startWork.register.title",
+          "bodyKey": "steps.startWork.register.body"
+        }
+      ],
+      "checklist": [
+        { "id": "sw-await-decision", "labelKey": "steps.startWork.check.decision" },
+        { "id": "sw-biometrics", "labelKey": "steps.startWork.check.biometrics" },
+        { "id": "sw-collect-card", "labelKey": "steps.startWork.check.card" },
+        { "id": "sw-hzmo-hzzo", "labelKey": "steps.startWork.check.social" },
+        { "id": "sw-start-only-authorized", "labelKey": "steps.startWork.check.startAuthorized" }
+      ],
+      "sources": [
+        {
+          "labelKey": "sources.mupTempStay",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661",
+          "tier": 1
+        },
+        {
+          "labelKey": "sources.mupWorkTcn",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "comply",
+      "order": 8,
+      "titleKey": "steps.comply.title",
+      "summaryKey": "steps.comply.summary",
+      "nationalitySlots": [],
+      "sections": [
+        {
+          "id": "employer-change",
+          "titleKey": "steps.comply.employerChange.title",
+          "bodyKey": "steps.comply.employerChange.body",
+          "facts": [
+            {
+              "id": "employer-change-after",
+              "value": "6 months",
+              "labelKey": "facts.employerChangeAfter",
+              "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+              "sourceTier": 1,
+              "sourceName": "Narodne novine — NN 55/2026",
+              "verifiedDate": "2026-07-30"
+            }
+          ]
+        },
+        {
+          "id": "unemployment",
+          "titleKey": "steps.comply.unemployment.title",
+          "bodyKey": "steps.comply.unemployment.body",
+          "facts": [
+            {
+              "id": "unemployment-window-standard",
+              "value": "3 months",
+              "labelKey": "facts.unemploymentWindowStandard",
+              "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+              "sourceTier": 1,
+              "sourceName": "Narodne novine — NN 55/2026",
+              "verifiedDate": "2026-07-30"
+            },
+            {
+              "id": "unemployment-window-long-hold",
+              "value": "6 months",
+              "labelKey": "facts.unemploymentWindowLongHold",
+              "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+              "sourceTier": 1,
+              "sourceName": "Narodne novine — NN 55/2026",
+              "verifiedDate": "2026-07-30"
+            },
+            {
+              "id": "unemployment-long-hold-qualifier",
+              "value": "2 years",
+              "labelKey": "facts.unemploymentLongHoldQualifier",
+              "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+              "sourceTier": 1,
+              "sourceName": "Narodne novine — NN 55/2026",
+              "verifiedDate": "2026-07-30"
+            }
+          ]
+        },
+        {
+          "id": "language-a1",
+          "titleKey": "steps.comply.language.title",
+          "bodyKey": "steps.comply.language.body",
+          "facts": [
+            {
+              "id": "a1-within",
+              "value": "1 year",
+              "labelKey": "facts.a1LanguageWithin",
+              "sourceUrl": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+              "sourceTier": 1,
+              "sourceName": "Narodne novine — NN 55/2026",
+              "verifiedDate": "2026-07-30"
+            }
+          ]
+        },
+        {
+          "id": "renewals",
+          "titleKey": "steps.comply.renewals.title",
+          "bodyKey": "steps.comply.renewals.body",
+          "facts": [
+            {
+              "id": "long-term-fee",
+              "value": "€83.62",
+              "labelKey": "facts.longTermFee",
+              "sourceUrl": "https://mup.gov.hr/aliens-281621/stay-and-work/long-term-residence-and-permanent-stay/281682",
+              "sourceTier": 1,
+              "sourceName": "MUP — Long-term residence and permanent stay",
+              "verifiedDate": "2026-07-30"
+            }
+          ]
+        }
+      ],
+      "checklist": [
+        { "id": "cy-track-permit-dates", "labelKey": "steps.comply.check.dates" },
+        { "id": "cy-employer-change-rules", "labelKey": "steps.comply.check.employerChange" },
+        { "id": "cy-a1-plan", "labelKey": "steps.comply.check.a1" },
+        { "id": "cy-renewal-calendar", "labelKey": "steps.comply.check.renewal" }
+      ],
+      "sources": [
+        {
+          "labelKey": "sources.nn552026",
+          "url": "https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html",
+          "tier": 1
+        },
+        {
+          "labelKey": "sources.mupWorkTcn",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/work-of-third-country-nationals/281663",
+          "tier": 1
+        },
+        {
+          "labelKey": "sources.mupLongTerm",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/long-term-residence-and-permanent-stay/281682",
+          "tier": 1
+        }
+      ]
+    }
+  ]
+}

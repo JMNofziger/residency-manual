@@ -1,0 +1,432 @@
+{
+  "ui": {
+    "title": "Čarobnjak za zapošljavanje stranaca",
+    "subtitle": "Test tržišta rada → Jedinstvena dozvola",
+    "langEn": "EN",
+    "langHr": "HR",
+    "themeDark": "Tamno",
+    "themeLight": "Svijetlo",
+    "reset": "Resetiraj napredak",
+    "resetConfirm": "Obrisati sav napredak kontrolnih lista za ovaj slučaj?",
+    "nationality": "Državljanstvo",
+    "steps": "Koraci",
+    "checklist": "Kontrolna lista",
+    "sources": "Izvori (razina 1)",
+    "caseRisks": "Rizici slučaja",
+    "employer": "Poslodavac (testni slučaj)",
+    "occupations": "Prijedlozi zanimanja (NKD)",
+    "primary": "Primarno",
+    "nationalityPanel": "Vodič po državljanstvu",
+    "citedFacts": "Citirane brojke",
+    "factCitation": "{value} — {source}, provjereno {date}",
+    "tier": "Razina {n}",
+    "prev": "Prethodni",
+    "next": "Sljedeći",
+    "markComplete": "Označi korak završenim",
+    "stepComplete": "Korak završen",
+    "progress": "Napredak",
+    "disclaimer": "Ovo nije pravni savjet. Svaka brojčana pravna tvrdnja u čarobnjaku je citirani objekt s izvorom i datumom provjere. Prije podnošenja ponovno provjerite povezanu službenu stranicu. Sekundarni vodiči prije lipnja 2026. mogu odražavati stara pravila (vidi NN 55/2026).",
+    "sourceRegistry": "Registar izvora",
+    "loading": "Učitavanje…",
+    "errorLoad": "Nije moguće učitati podatke. Otvorite putem lokalnog statičkog poslužitelja (vidi README).",
+    "pathLmt": "Primarni put: test tržišta rada",
+    "oib": "OIB",
+    "mb": "MB",
+    "nkd": "NKD",
+    "address": "Adresa",
+    "representative": "Zastupnik",
+    "fina": "Fina Info.BIZ",
+    "revenueReported": "Prijavljeni prihod (podatak slučaja)",
+    "defensibility": "Usklađenost s NKD",
+    "defensibility.high": "Jaka usklađenost djelatnosti",
+    "defensibility.medium": "Prihvatljivo — pažljivo dokumentirajte dužnosti",
+    "mobileMenu": "Koraci",
+    "employeesApprox": "Približan broj zaposlenih (podatak slučaja)"
+  },
+  "facts": {
+    "art99DomesticRatio": "Udio domaće radne snage (uvjet za poslodavca)",
+    "art99DeficitaryDomesticRatio": "Udio domaće radne snage pri zapošljavanju na UV deficitarnom zanimanju",
+    "art99ContinuousEmployment": "Razdoblje kontinuiranog zaposlenja HR/EEA radnika",
+    "art99BlockedAccount": "Maksimalno razdoblje blokiranog računa prije diskvalifikacije",
+    "art99InflowThreshold": "Prag priljeva na transakcijski račun (pravna osoba)",
+    "blueCardValidity": "Maksimalna valjanost EU Blue Card (nije ovaj put)",
+    "nn552026InForce": "Datum stupanja na snagu NN 55/2026",
+    "lmtPositiveNoticeWindow": "Rok za podnošenje jedinstvene dozvole nakon pozitivnog mišljenja",
+    "permitFee": "Administrativna pristojba za privremeni boravak / dozvolu",
+    "biometricCardFee": "Pristojba za biometrijsku boravišnu iskaznicu",
+    "permitDecisionTimeline": "Okvirni rok odluke o zahtjevu",
+    "employerChangeAfter": "Promjena poslodavca bez nove dozvole (nakon)",
+    "unemploymentWindowStandard": "Dopuštena nezaposlenost (standardno)",
+    "unemploymentWindowLongHold": "Dopuštena nezaposlenost (duže držanje dozvole)",
+    "unemploymentLongHoldQualifier": "Dozvola držana najmanje ovoliko za duži prozor nezaposlenosti",
+    "a1LanguageWithin": "A1 hrvatski + latinica obvezno unutar",
+    "longTermFee": "Pristojba za dugotrajni boravak (kasniji put)"
+  },
+  "case": {
+    "occupation": {
+      "manualEventCrew": "Fizički radnik na događajima / ručni rad"
+    },
+    "risk": {
+      "art99": "Prije podnošenja potvrdite uvjete za poslodavca u stilu čl. 99.: kontinuirano zaposlenje domaćeg/EEA radnika, udio domaće radne snage, nema neplaćenih poreza/doprinosa te nema dugotrajno blokiranog računa. Mikro veličina ne ukida provjere. Citirani pragovi:",
+      "nkdMatch": "Traženo zanimanje mora odgovarati registriranoj djelatnosti. NKD 90399 (pomoć umjetnosti/događajima) odgovara stage/event crew; nepovezani uredski ili IT poslovi ne.",
+      "notBlueCard": "Fizički rad na događajima nije put EU Blue Card. Ne usmjeravajte ovo zapošljavanje kroz pravila za visokokvalificirane.",
+      "revenueVerify": "Testni slučaj sadrži prijavljeni prihod iz javnih podataka o tvrtki. Usporedite ga s citiranim pragom priljeva i potvrdite živim poreznim/bankovnim dokazima prije podnošenja."
+    }
+  },
+  "sources": {
+    "mupStayWork": "MUP — Boravak i rad (središte)",
+    "mupWorkTcn": "MUP — Rad državljana trećih zemalja",
+    "mupTempStay": "MUP — Privremeni boravak državljana trećih zemalja",
+    "mupBlueCard": "MUP — Visokokvalificirani DTZ (EU Blue Card)",
+    "mupLongTerm": "MUP — Dugotrajni boravak i stalni boravak",
+    "mupRadneDozvole": "MUP — Radne dozvole (izuzeci / deficitarna lista)",
+    "hzzLmt": "HZZ — Test tržišta rada (novi sustav)",
+    "hzzFilingTips": "HZZ — Savjeti za predaju zahtjeva",
+    "mvepStay": "MVEP — Odobrenje boravka u Hrvatskoj",
+    "nn552026": "Narodne novine — Izmjene Zakona o strancima (NN 55/2026)"
+  },
+  "occupations": {
+    "nkd90399": {
+      "note": "Nazivi ispod usklađeni su s NKD 90399. Poslodavac i dalje mora provjeriti je li zanimanje na aktualnoj deficitarnom (UV) listi prije pretpostavke izuzeća od testa tržišta rada."
+    },
+    "uvListReminder": "Koristite UV pretragu (službeni PDF izuzeća od TTR) i ponovno provjerite živi HZZ hub prije preskakanja testa tržišta rada. Kategorije iz čl. 110. zaseban su kanal putem policije.",
+    "manualEventCrew": {
+      "title": "Fizički radnik na događajima / ručni rad",
+      "blurb": "Utovar/istovar, nošenje opreme, fizička podrška sceni. Primarna namjera ovog slučaja; očekujte test tržišta rada osim ako je zanimanje deficitarno."
+    },
+    "stageHand": {
+      "title": "Scenski radnik / scenotehničar (podrška)",
+      "blurb": "Ručna podrška sceni i scenografiji unutar umjetničke/event djelatnosti. Često prepoznatljivije HZZ-u od neodređenog „radnika“."
+    },
+    "eventSetup": {
+      "title": "Radnik na postavljanju / razmontaži događaja",
+      "blurb": "Postavljanje privremenih struktura, sjedala i opreme. Dokumentirajte konkretne dužnosti vezane uz registriranu djelatnost."
+    },
+    "venueSupport": {
+      "title": "Radnik podrške prostoru / produkciji",
+      "blurb": "Fizička podrška na lokaciji. Opis posla neka ne sadrži nepovezane uredske zadatke."
+    }
+  },
+  "steps": {
+    "orient": {
+      "title": "Orijentacija i podobnost",
+      "summary": "Potvrdite put jedinstvene dozvole + TTR te da poslodavac može zapošljavati uz uvjete čl. 99.",
+      "overview": {
+        "title": "Za što podnosite zahtjev",
+        "body": "Za većinu državljana trećih zemalja u radnom odnosu u Hrvatskoj standardni je put kombinirano odobrenje boravka i rada (jedinstvena dozvola) koje izdaje MUP. Zapošljavanje uobičajeno zahtijeva prethodni HZZ test tržišta rada, osim ako je zanimanje na listi Upravnog vijeća HZZ-a (UV — bez TTR, online) ili vrijedi zasebna kategorija iz čl. 110. (policija — ključno osoblje, plava karta, ICT itd.). Ovaj čarobnjak prati put TTR → jedinstvena dozvola za fizički rad na događajima."
+      },
+      "path": {
+        "title": "Primarni put za ovaj slučaj",
+        "body": "Potvrdite podobnost poslodavca vođenom provjerom čl. 99. → pretražite UV listu za mogući preskok TTR usklađen s NKD → odaberite zanimanje → pripremite paket → pokrenite TTR (zadano) → dokumenti radnika → zahtjev za boravak i rad → biometrija / prijave → usklađenost. Bezvizni ulazak nije odobrenje za rad."
+      },
+      "employerThresholds": {
+        "title": "Pragovi podobnosti poslodavca",
+        "body": "Koristite vođenu samoprovjeru čl. 99. niže za točan način provjere svakog uvjeta. Citirani brojčani pragovi:"
+      },
+      "wrongPaths": {
+        "title": "Pogrešni putevi za ovaj posao",
+        "body": "EU Blue Card namijenjen je visokokvalificiranim ulogama s pragovima plaće/kvalifikacija — ne fizičkom event crew radu. Sezonski turistički prečaci vrijede samo kad zanimanje i sektor stvarno odgovaraju. Studentske dozvole su drugi režim. Valjanost Blue Card (samo za kontrast):"
+      },
+      "law2026": {
+        "title": "Napomena o zakonu 2026. (NN 55/2026)",
+        "body": "Izmjene uključuju okvir jedinstvene dozvole, duže rokove odlučivanja, pravila mobilnosti radnika, prozore nezaposlenosti, obrazac 17a / standarde smještaja te A1 hrvatski + latinicu za produženje. Datum stupanja na snagu:"
+      },
+      "check": {
+        "readOverview": "Razumijem da je namjeravani put jedinstvena dozvola + TTR",
+        "art99": "Završio/la sam vođenu samoprovjeru čl. 99. (svi redovi niže)",
+        "lmtPath": "Koristio/la sam UV pretragu i ne pretpostavljam preskok TTR bez zanimanja s liste",
+        "excludeBlueCard": "Potvrdio/la sam da Blue Card / sezonski prečaci ne odgovaraju ovoj ulozi",
+        "verifyRevenue": "Prag priljeva provjerit ću živim dokazima"
+      }
+    },
+    "occupation": {
+      "title": "Odaberite zanimanje",
+      "summary": "Odaberite obraniv naziv vezan uz NKD 90399; odlučite TTR naspram mogućeg deficitarnog izuzeća.",
+      "primary": {
+        "title": "Namjeravana uloga",
+        "body": "Primarna namjera: fizički radnik na događajima (utovar, nošenje, fizička produkcijska podrška). Napišite dužnosti koje inspektor rada i HZZ mogu povezati s registriranom djelatnošću."
+      },
+      "nkd": {
+        "title": "Uskladite s NKD tvrtke",
+        "body": "Uskladite zanimanje s registriranom NKD djelatnošću poslodavca. Za tvrtke podrške umjetnosti/događajima (npr. NKD 90399 / starija 9002) preferirajte nazive unutar te djelatnosti. Izbjegavajte zanimanja koja izgledaju kao nepovezani uredski, IT ili ugostiteljski poslovi."
+      },
+      "lmtVsDeficit": {
+        "title": "Test tržišta rada naspram deficitarne liste",
+        "body": "Zadano: podnesite test tržišta rada HZZ-u. Pretraživa UV ploča prikazuje zanimanja iz službenog HZZ/MUP PDF-a o izuzeću od TTR (filtrirano po regiji i NKD). Kategorije iz čl. 110. (ključno osoblje, plava karta itd.) zaseban su kanal putem policije — nisu ova UV tablica. Prije podnošenja ponovno provjerite živi HZZ hub."
+      },
+      "check": {
+        "pickTitle": "Odabrao/la sam konkretan naziv zanimanja za zahtjev",
+        "matchNkd": "Naziv i dužnosti odgovaraju NKD 90399",
+        "uvList": "Pretražio/la sam UV listu izuzeća od TTR za ovu regiju/NKD (i ponovno provjeravam živi HZZ prije podnošenja)",
+        "documentDuties": "Nacrtao/la sam dužnosti pogodne za HZZ / MUP pregled"
+      }
+    },
+    "employerPackage": {
+      "title": "Pripremite paket poslodavca",
+      "summary": "Ugovor, usklađenost plaće, obrazac 17a / smještaj i porezna spremnost prije HZZ/MUP.",
+      "contract": {
+        "title": "Ugovor o radu i plaća",
+        "body": "Pripremite ugovor o radu po hrvatskom pravu (ili obvezujuću ponudu) s radnim mjestom, mjestom rada, satima i plaćom. Naknada treba zadovoljiti primjenjive minimume i biti usporediva s domaćim radnicima. Pripremite OIB, izvatke i dokaz registrirane djelatnosti."
+      },
+      "form17a": {
+        "title": "Obrazac 17a i smještaj (2026.)",
+        "body": "NN 55/2026 uveo je obrazac 17a (usklađenost/odgovornost poslodavca) i jasnije standarde kad poslodavac osigurava smještaj. Ako smještate radnika, dokumentirajte standarde; ako radnik sam uređuje smještaj, čuvajte ugovor o najmu/dokaz. Potvrdite aktualni obrazac na službenim kanalima."
+      },
+      "tax": {
+        "title": "Porez, doprinosi, bankovni račun",
+        "body": "Podmirite neplaćene poreze/doprinose i izbjegavajte dugotrajno blokirane račune (vidi citirani prag na koraku Orijentacija). Pripremite dokaze o priljevu/pragu."
+      },
+      "check": {
+        "contract": "Nacrt ugovora / ponude spreman (uloga, mjesto, plaća)",
+        "payParity": "Plaća zadovoljava minimume i očekivanja usklađenosti",
+        "form17a": "Obrazac 17a / izjave pripremljene (provjerite aktualni obrazac)",
+        "housing": "Plan smještaja dokumentiran",
+        "taxClear": "Porezni/doprinosni status i račun provjereni"
+      }
+    },
+    "lmt": {
+      "title": "Pokrenite HZZ test tržišta rada",
+      "summary": "Podnesite test tržišta rada, držite usklađenost djelatnosti, iskoristite rok pozitivnog mišljenja.",
+      "what": {
+        "title": "Što je test",
+        "body": "Test tržišta rada omogućuje HZZ-u da procijeni može li se radno mjesto popuniti iz domaćeg/EEA registra prije zapošljavanja državljanina treće zemlje. Pravni temelj opisan je na HZZ stranicama novog sustava (kontekst čl. 98.–99.)."
+      },
+      "filing": {
+        "title": "Savjeti za predaju",
+        "body": "Slijedite HZZ praktične savjete: usklađen naziv zanimanja, mjesto rada i djelatnost; potpuni prilozi; izbjegavajte nesklad NKD-a i opisa posla. Koristite HZZ Savjeti za predaju zahtjeva."
+      },
+      "window": {
+        "title": "Nakon pozitivnog mišljenja",
+        "body": "Pozitivno mišljenje vremenski je ograničeno. Podnesite zahtjev za boravak i rad unutar citiranog roka. Ako je odbijeno, revidirajte zanimanje/dužnosti ili procijenite izuzeća."
+      },
+      "check": {
+        "prepare": "Paket zahtjeva za TTR sastavljen",
+        "relatedActivity": "Zanimanje je jasno povezano s registriranom djelatnošću",
+        "submit": "Zahtjev podnesen HZZ-u prema aktualnom postupku",
+        "positiveNotice": "Pozitivno mišljenje zaprimljeno i pohranjeno",
+        "fileWindow": "Kalendar postavljen za podnošenje jedinstvene dozvole unutar citiranog roka"
+      }
+    },
+    "workerDocs": {
+      "title": "Prikupite dokumente radnika",
+      "summary": "Osnovni komplet za DTZ; paket državljanstva dodaje specifikacije u panelu ispod.",
+      "core": {
+        "title": "Osnovni dokumenti (svi DTZ)",
+        "body": "Tipični MUP spisi za privremeni boravak / boravak i rad traže: važeću putovnicu; uvjerenje o nekažnjavanju; dokaz zdravstvenog osiguranja; dokaz smještaja; fotografije; obrasce; te dokumente poslodavca. Točne liste na MUP stranicama — one su mjerodavne."
+      },
+      "translations": {
+        "title": "Prijevodi i formalnosti",
+        "body": "Inozemne javne isprave obično trebaju ovjereni hrvatski prijevod (i apostille/legalizaciju gdje je potrebno). Rano pokrenite provjere kaznene evidencije."
+      },
+      "check": {
+        "passport": "Kopija važeće putovnice prikupljena",
+        "criminalRecord": "Uvjerenje o nekažnjavanju naručeno (postupak u panelu državljanstva)",
+        "insurance": "Dokaz zdravstvenog osiguranja spreman",
+        "accommodation": "Dokaz smještaja spreman",
+        "photos": "Fotografije prema specifikaciji",
+        "translations": "Plan prijevoda / apostillea u tijeku"
+      }
+    },
+    "filePermit": {
+      "title": "Podnesite boravak i rad (jedinstvena dozvola)",
+      "summary": "Podnesite nakon TTR (osim izuzeća); pristojbe i nadležnost koriste citirane brojke.",
+      "when": {
+        "title": "Kada podnijeti",
+        "body": "Podnesite zahtjev kad je preduvjet tržišta rada ispunjen (pozitivno mišljenje ili izuzeće) i dokumenti poslodavca + radnika potpuni. Pazite na rok valjanosti TTR."
+      },
+      "where": {
+        "title": "Gdje podnijeti (ovaj slučaj)",
+        "body": "Nadležnost općenito slijedi sjedište / mjesto rada poslodavca. Za poslodavca sa sjedištem u Zagrebu očekujte nadležnu policijsku upravu — potvrdite točan šalter na MUP stranicama. Neka državljanstva podnose konzularno; vidi panel državljanstva."
+      },
+      "fees": {
+        "title": "Pristojbe",
+        "body": "Administrativne pristojbe za privremeni boravak / iskaznicu citirane su ispod prema MUP-u. Pristojbe za Blue Card ovdje ne vrijede. Na dan plaćanja ponovno otvorite MUP stranicu."
+      },
+      "timeline": {
+        "title": "Rok odluke",
+        "body": "Planirani okvir roka odluke prema izmjenama 2026. (citirano ispod). Potvrdite operativni tekst na zakonu / MUP stranici za vaš postupak."
+      },
+      "check": {
+        "assemble": "Cjelovit spis sastavljen (poslodavac + radnik + dokaz TTR)",
+        "competence": "Nadležna policija/MUP potvrđena za zagrebačku adresu",
+        "fees": "Iznosi pristojbi ponovno provjereni na MUP-u na dan plaćanja",
+        "submit": "Zahtjev podnesen / termin obavljen",
+        "proof": "Dokaz podnošenja i kopija spisa sačuvani"
+      }
+    },
+    "startWork": {
+      "title": "Odluka, biometrija, početak rada",
+      "summary": "Preuzmite iskaznicu, prijavite HZMO/HZZO/porez, radite tek kad ste ovlašteni.",
+      "decision": {
+        "title": "Odluka",
+        "body": "Pričekajte MUP odluku. Ne stavljajte radnika na produktivni plaćeni rad u Hrvatskoj prije odobrenja boravka i rada. Bezvizna prisutnost nije zamjena."
+      },
+      "biometrics": {
+        "title": "Biometrija i iskaznica",
+        "body": "Dođite na biometriju po pozivu i preuzmite boravišnu/radnu iskaznicu. Čuvajte skenove odluke i iskaznice. Pristojba za iskaznicu navedena je u činjenicama koraka Podnošenje."
+      },
+      "register": {
+        "title": "HZMO, HZZO, porez",
+        "body": "Prijavite zaposlenje za mirovinsko (HZMO), zdravstveno (HZZO) i poreznu obustavu kao za svakog radnika. Uskladite datum početka u plaći s pravnim početkom ovlaštenog rada."
+      },
+      "check": {
+        "decision": "Pozitivna odluka zaprimljena",
+        "biometrics": "Biometrija obavljena",
+        "card": "Boravišna/radna iskaznica preuzeta",
+        "social": "HZMO / HZZO / porezne prijave obavljene",
+        "startAuthorized": "Prvi radni dan na/nakon ovlaštenog početka"
+      }
+    },
+    "comply": {
+      "title": "Ostanite usklađeni",
+      "summary": "Promjena poslodavca, prozori nezaposlenosti, A1 za produženje, obnove.",
+      "employerChange": {
+        "title": "Promjena poslodavca",
+        "body": "Prema okviru 2026. radnici mogu promijeniti poslodavca nakon citiranog razdoblja bez prethodnog punog obrasca nove dozvole — prije postupanja potvrdite točan mehanizam obavijesti/odobrenja na aktualnom MUP vodiču."
+      },
+      "unemployment": {
+        "title": "Prozori nezaposlenosti",
+        "body": "Dopušteni prozori nezaposlenosti nakon gubitka posla citirani su ispod. Potvrdite operativna pravila prije oslanjanja na ta razdoblja."
+      },
+      "language": {
+        "title": "A1 hrvatski za produženje",
+        "body": "Planirajte obvezni A1 test hrvatskog jezika i latinice unutar citiranog razdoblja; potreban je za produženje dozvole. Rano zakažite učenje."
+      },
+      "renewals": {
+        "title": "Obnove i dugotrajni boravak",
+        "body": "Pratite istek, održavajte zaposlenje gdje je potrebno i pokrenite obnovu prije isteka iskaznice. Dugotrajni boravak je zaseban kasniji put; pristojba citirana ispod."
+      },
+      "check": {
+        "dates": "Datumi isteka dozvole / iskaznice zabilježeni",
+        "employerChange": "Tim poznaje pravila promjene poslodavca (provjeriti prije uporabe)",
+        "a1": "Plan A1 jezika zakazan unutar citiranog razdoblja",
+        "renewal": "Podsjetnik za obnovu postavljen prije isteka"
+      }
+    }
+  },
+  "art99": {
+    "panelTitle": "Samoprovjera poslodavca po čl. 99. (vođeno)",
+    "panelIntro": "Prođite svaki uvjet redom. Označite red samo nakon što ste prikupili dokaze. Dovršetak svih redova označava stavku Art. 99. na kontrolnom popisu Koraka 1.",
+    "progress": "{done}/{total} provjera gotovo",
+    "howLabel": "Kako provjeriti",
+    "evidenceLabel": "Dokazi koje zadržati:",
+    "passLabel": "Završio/la sam ovu provjeru s aktualnim dokazima",
+    "activity": {
+      "title": "Registrirana djelatnost odgovara namjeravanom zanimanju",
+      "why": "HZZ očekuje da traženo zanimanje bude povezano s registriranom gospodarskom djelatnošću poslodavca u RH.",
+      "how": {
+        "fina": "Otvorite tvrtku na Fina Info.BIZ i potvrdite status, adresu te NKD / opis djelatnosti.",
+        "court": "Po potrebi potvrdite izvadak iz sudskog registra (pravni oblik i zastupanje).",
+        "match": "Napišite dužnosti radnog mjesta i potvrdite da spadaju u registriranu umjetničku/event podršku — ne u nepovezani uredski, IT ili ugostiteljski posao."
+      },
+      "evidence": "Aktualni izvadak / Info.BIZ ispis + nacrt dužnosti mapiran na NKD.",
+      "caseHint": "Primjer NKD 90399 (starija 9002): ostale pomoćne djelatnosti u umjetničkom stvaralaštvu i izvedbenim umjetnostima. Fizička podrška sceni/događaju odgovara; nepovezani nazivi ne."
+    },
+    "continuous": {
+      "title": "Kontinuirani radnik državljanin RH / EGP-a / Švicarske na puno radno vrijeme",
+      "why": "Pozitivno mišljenje HZZ-a uobičajeno zahtijeva kontinuirano zaposlenje najmanje jednog radnika RH/EGP/Švicarska na neodređeno i puno radno vrijeme u citiranom razdoblju unatrag.",
+      "how": {
+        "hzmo": "Pregledajte evidencije doprinosa / osiguranika putem poslodavačkih kanala HZMO-a.",
+        "payroll": "Izvadite plaće / ugovore koji pokazuju istog domaćeg/EGP/švicarskog radnika na neodređeno i puno radno vrijeme.",
+        "continuity": "Potvrdite da nema prekida koji bi narušio kontinuiranost u citiranom razdoblju."
+      },
+      "evidence": "Dokazi iz plaća/HZMO s imenom kontinuiranog FTE radnika i datumima.",
+      "caseHint": "Mikro poslodavci s ~jednim zaposlenikom i dalje moraju provjeriti da je ta osoba RH/EGP/Švicarska, na neodređeno, puno radno vrijeme i kontinuirano — mikro veličina ne ukida uvjet."
+    },
+    "ratio": {
+      "title": "Omjer domaćih i državljana trećih zemalja",
+      "why": "U trenutku podnošenja broj domaćih/EGP/švicarskih radnika na puno radno vrijeme mora zadovoljiti citirani minimalni udio u odnosu na državljane trećih zemalja (HZZ u mehanizam omjera uračunava i prethodna pozitivna mišljenja).",
+      "how": {
+        "count": "Prebrojite trenutne FTE radnike RH/EGP/Švicarska i trenutne državljane trećih zemalja (plus pozitivna mišljenja HZZ-a koja ulaze u stranu trećih zemalja prema pravilima HZZ-a).",
+        "compare": "Usporedite domaći FTE s trećezemaljskom stranom pomoću općeg postotka niže.",
+        "uvNote": "Ako kasnije zapošljavate na UV deficitarnom zanimanju, primjenjuje se niži deficitarni postotak — i dalje provjerite živi tekst HZZ-a."
+      },
+      "evidence": "Tablica broja zaposlenih s statusom + izračun prema citiranom postotku.",
+      "caseHint": "S ~jednim domaćim zaposlenikom zapošljavanje i jednog državljanina treće zemlje može pasti na općem omjeru. Modelirajte zapošljavanje prije podnošenja."
+    },
+    "tax": {
+      "title": "Nema nepodmirenih javnih davanja (porez / doprinosi)",
+      "why": "Poslodavac mora imati podmirene obveze po javnim davanjima o kojima evidenciju vodi ministarstvo nadležno za financije te dostavljena propisana porezna izvješća.",
+      "how": {
+        "eporezna": "Provjerite porezni status u ePoreznoj za OIB tvrtke.",
+        "hzmo": "Potvrdite status doprinosa putem HZMO / povezanih kanala.",
+        "certificate": "Prije HZZ/MUP podnošenja ishodite aktualnu potvrdu / izvadak o nepostojanju duga."
+      },
+      "evidence": "Nedavna službena potvrda ili portalni izvadak o čistom statusu davanja."
+    },
+    "inflow": {
+      "title": "Prag priljeva na transakcijski račun (pravna osoba)",
+      "why": "Poslodavac — pravna osoba mora pokazati citirani minimalni priljev na transakcijski račun u razdoblju koje primjenjuje HZZ.",
+      "how": {
+        "bank": "Zatražite izvatke prometa / potvrdu banke za transakcijski račun tvrtke.",
+        "window": "Zbrojite priljeve za razdoblje koje HZZ traži i usporedite s citiranim pragom za pravnu osobu.",
+        "notFina": "Objavljeni godišnji prihod na Fini sam po sebi nije dokaz priljeva na transakcijski račun."
+      },
+      "evidence": "Bankovni dokazi priljeva za traženo razdoblje najmanje u citiranom iznosu.",
+      "caseHint": "Objavljeni prihod tvrtke (ako postoji) nije dokaz bankovnog priljeva. Prije podnošenja pribavite žive bankovne dokaze."
+    },
+    "blocked": {
+      "title": "Nema dugotrajne blokade računa",
+      "why": "Kontinuirana blokada dulja od citiranog maksimuma u relevantnom razdoblju može spriječiti pozitivno mišljenje.",
+      "how": {
+        "bank": "Pitajte banku je li račun bio blokiran i koliko uzastopnih dana.",
+        "fina": "Provjerite FINA / ovršne kanale dostupne tvrtki o blokadama.",
+        "window": "Potvrdite da nijedna kontinuirana blokada nije premašila citirani maksimum dana u primjenjivom razdoblju."
+      },
+      "evidence": "Potvrda banke/FINE o povijesti blokada (ili njenom nepostojanju) za razdoblje unatrag."
+    },
+    "criminal": {
+      "title": "Nema diskvalificirajućih kaznenih / prekršajnih sankcija iz radnih odnosa",
+      "why": "HZZ provjerava pravomoćne osude i najteže prekršaje protiv radnih odnosa, socijalnog osiguranja ili zaštite na radu koji sprječavaju pozitivno mišljenje.",
+      "how": {
+        "review": "Pregledajte povijest tvrtke i odgovornih osoba za radne odnose, socijalno osiguranje i zaštitu na radu.",
+        "counsel": "Ako niste sigurni, prije podnošenja zatražite savjet ili službene izvatke umjesto nagađanja."
+      },
+      "evidence": "Interna bilješka o provjeri i službeni izvadci koje preporuči savjetnik."
+    },
+    "undeclared": {
+      "title": "Niste na popisu zbog neprijavljenog rada",
+      "why": "Poslodavci na popisu neprijavljenog rada prema posebnom propisu ne mogu dobiti pozitivno mišljenje.",
+      "how": {
+        "hzz": "Putem HZZ smjernica / postupka podnošenja potvrdite da poslodavac nije tretiran kao upisan zbog neprijavljenog rada.",
+        "inspectorate": "Ako status nije jasan, prije podnošenja obratite se inspekciji rada / nadležnom ministarstvu."
+      },
+      "evidence": "Pisana potvrda ili jasan status u sustavu podnošenja da poslodavac nije na zabranjenom popisu."
+    }
+  },
+  "uv": {
+    "panelTitle": "UV / deficitarna zanimanja (lista izuzeća od TTR)",
+    "panelIntro": "Pretražite zanimanja iz službenog HZZ/MUP PDF-a za koja poslodavac nije dužan zatražiti test tržišta rada. Zadani filtar: nazivi označeni kao vjerojatno relevantni za NKD ove tvrtke i važeći u Gradu Zagrebu (ili na cijeloj listi).",
+    "art110Note": "Zaseban kanal: kategorije iz čl. 110. (ključno osoblje, plava karta, ICT premještaj itd.) podnose se u policiji — nisu ova pretraživa UV tablica.",
+    "listEdition": "Ingestirano izdanje službene UV liste izuzeća od TTR",
+    "listStaleBanner": "Ovaj alat koristi službeni PDF iz 2023. koji MUP/HZZ još hosta. Prije podnošenja ponovno otvorite živi HZZ hub „Lista zanimanja…” — lista se može dopunjavati nakon ovog izdanja.",
+    "openPdf": "Otvori službeni PDF (razina 1)",
+    "openHub": "Otvori HZZ hub za radne dozvole",
+    "searchLabel": "Pretraži zanimanja",
+    "searchPlaceholder": "npr. električar, kran, čistač…",
+    "toggleAllZagreb": "Prikaži sva UV zanimanja važeća u Gradu Zagrebu (ne samo NKD-relevantna)",
+    "nkdRelevantBadge": "Relevantno za NKD",
+    "regionAll": "Važi u svim županijama (nacionalno na ovoj listi)",
+    "regionLimited": "Regionalno zanimanje — uključuje Grad Zagreb na ovom izdanju",
+    "regionChip": "Regija: {region}",
+    "nkdChip": "NKD {nkd}",
+    "emptyState": "Nema UV zanimanja za ovaj filtar. Za ručni event crew pod NKD 90399 tretirajte test tržišta rada kao primarni put — nemojte izmišljati UV naziv koji nije na službenoj listi ili ne odgovara stvarnim dužnostima.",
+    "noTitleShopping": "Preskok TTR vrijedi samo ako točan naziv zanimanja i stvarne dužnosti odgovaraju navedenom UV zanimanju i vašoj registriranoj djelatnosti. Kupovina naziva mimo stvarnog rada rizik je odbijanja.",
+    "regions": {
+      "grad_zagreb": "Grad Zagreb"
+    },
+    "seasonal": {
+      "sales": "Sezonsko zanimanje prodavača na službenoj listi — samo za razdoblje rada navedeno u PDF-u i samo u navedenim županijama (ne Grad Zagreb na ovom izdanju)."
+    },
+    "relevance": {
+      "crane": "Moguće relevantno za utovar na događajima ako radnik stvarno rukuje kranom u okviru registrirane djelatnosti — pažljivo dokumentirajte dužnosti.",
+      "joiner": "Stolarski / scenski drvni radovi mogu podržati izvedbene produkcije kada dužnosti odgovaraju.",
+      "electrical": "Elektroinstalacijski / elektromonterski rad može podržati scensku i venue struju kada dužnosti i kvalifikacije odgovaraju.",
+      "metalStructure": "Montaža metalnih konstrukcija može podržati scenske/set konstrukcije kada dužnosti odgovaraju event/umjetničkoj podršci.",
+      "sheetMetal": "Limarski rad relevantan je samo ako je stvarni posao metalna izrada za produkcije — ne generički event crew.",
+      "locksmith": "Bravarski poslovi moraju odgovarati stvarnoj metalnoj izradi za produkciju, ne oznaci iz pogodnosti.",
+      "steelRope": "Montaža čelične užadi može se odnositi na venue lift / flying sustave — samo ako je to stvarni posao.",
+      "cleaner": "Čistač je na UV listi za Grad Zagreb. Koristite samo ako je zapošljavanje stvarno čišćenje vezano uz djelatnost — ne zamjenska oznaka za stagehand."
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "id": "us",
+  "labelKey": "label",
+  "flagEmoji": "🇺🇸",
+  "slots": {
+    "orient": {
+      "blurbKey": "orient.blurb",
+      "titleKey": "orient.title",
+      "facts": [
+        {
+          "id": "us-visa-free-window",
+          "value": "90/180",
+          "labelKey": "facts.usVisaFreeWindow",
+          "sourceUrl": "https://hr.usembassy.gov/entry-and-residence-requirements/",
+          "sourceTier": 1,
+          "sourceName": "U.S. Embassy Croatia — Entry and Residence",
+          "verifiedDate": "2026-07-30"
+        }
+      ]
+    },
+    "worker-docs": {
+      "titleKey": "workerDocs.title",
+      "blurbKey": "workerDocs.blurb",
+      "checklist": [
+        {
+          "id": "us-fbi",
+          "labelKey": "workerDocs.fbi.label",
+          "helpKey": "workerDocs.fbi.help",
+          "links": [
+            {
+              "labelKey": "workerDocs.fbi.link",
+              "url": "https://www.fbi.gov/how-we-can-help-you/need-an-fbi-service-or-more-information/identity-history-summary-checks"
+            }
+          ]
+        },
+        {
+          "id": "us-embassy-guidance",
+          "labelKey": "workerDocs.embassy.label",
+          "helpKey": "workerDocs.embassy.help",
+          "links": [
+            {
+              "labelKey": "workerDocs.embassy.link",
+              "url": "https://hr.usembassy.gov/entry-and-residence-requirements/"
+            }
+          ]
+        },
+        {
+          "id": "us-visa-free-plan",
+          "labelKey": "workerDocs.visaFree.label",
+          "helpKey": "workerDocs.visaFree.help",
+          "facts": [
+            {
+              "id": "us-visa-free-window-docs",
+              "value": "90/180",
+              "labelKey": "facts.usVisaFreeWindow",
+              "sourceUrl": "https://hr.usembassy.gov/entry-and-residence-requirements/",
+              "sourceTier": 1,
+              "sourceName": "U.S. Embassy Croatia — Entry and Residence",
+              "verifiedDate": "2026-07-30"
+            }
+          ],
+          "links": [
+            {
+              "labelKey": "workerDocs.embassy.link",
+              "url": "https://hr.usembassy.gov/entry-and-residence-requirements/"
+            }
+          ]
+        },
+        {
+          "id": "us-48h-registration",
+          "labelKey": "workerDocs.registration.label",
+          "helpKey": "workerDocs.registration.help",
+          "facts": [
+            {
+              "id": "us-police-registration",
+              "value": "48 hours",
+              "labelKey": "facts.usPoliceRegistration",
+              "sourceUrl": "https://hr.usembassy.gov/entry-and-residence-requirements/",
+              "sourceTier": 1,
+              "sourceName": "U.S. Embassy Croatia — Entry and Residence",
+              "verifiedDate": "2026-07-30"
+            }
+          ],
+          "links": [
+            {
+              "labelKey": "workerDocs.embassy.link",
+              "url": "https://hr.usembassy.gov/entry-and-residence-requirements/"
+            }
+          ]
+        },
+        {
+          "id": "us-apostille-translation",
+          "labelKey": "workerDocs.apostille.label",
+          "helpKey": "workerDocs.apostille.help"
+        }
+      ]
+    },
+    "file-permit": {
+      "titleKey": "filePermit.title",
+      "notesKey": "filePermit.notes",
+      "links": [
+        {
+          "labelKey": "filePermit.embassyLink",
+          "url": "https://hr.usembassy.gov/entry-and-residence-requirements/"
+        }
+      ]
+    }
+  }
+}

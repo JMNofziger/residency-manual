@@ -1,0 +1,432 @@
+{
+  "ui": {
+    "title": "Employer hiring wizard",
+    "subtitle": "Labor market test → Single Permit",
+    "langEn": "EN",
+    "langHr": "HR",
+    "themeDark": "Dark",
+    "themeLight": "Light",
+    "reset": "Reset progress",
+    "resetConfirm": "Clear all checklist progress for this case?",
+    "nationality": "Nationality",
+    "steps": "Steps",
+    "checklist": "Checklist",
+    "sources": "Sources (Tier 1)",
+    "caseRisks": "Case risk flags",
+    "employer": "Employer (test case)",
+    "occupations": "Occupation suggestions (NKD)",
+    "primary": "Primary",
+    "nationalityPanel": "Nationality guidance",
+    "citedFacts": "Cited figures",
+    "factCitation": "{value} — {source}, verified {date}",
+    "tier": "Tier {n}",
+    "prev": "Previous",
+    "next": "Next",
+    "markComplete": "Mark step complete",
+    "stepComplete": "Step completed",
+    "progress": "Progress",
+    "disclaimer": "Not legal advice. Every numeric legal claim in this wizard is a cited fact object with source and verified date. Re-check the linked official page before filing. Pre-June-2026 secondary guides may reflect prior rules (see NN 55/2026).",
+    "sourceRegistry": "Source registry",
+    "loading": "Loading…",
+    "errorLoad": "Could not load wizard data. Open via a local static server (see README).",
+    "pathLmt": "Primary path: labor market test",
+    "oib": "OIB",
+    "mb": "MB",
+    "nkd": "NKD",
+    "address": "Address",
+    "representative": "Representative",
+    "fina": "Fina Info.BIZ",
+    "revenueReported": "Reported revenue (case data)",
+    "defensibility": "NKD fit",
+    "defensibility.high": "Strong activity match",
+    "defensibility.medium": "Plausible — document duties carefully",
+    "mobileMenu": "Steps",
+    "employeesApprox": "Approx. employees (case data)"
+  },
+  "facts": {
+    "art99DomesticRatio": "Domestic workforce ratio (employer condition)",
+    "art99DeficitaryDomesticRatio": "Domestic workforce ratio when hiring on a UV deficitary occupation",
+    "art99ContinuousEmployment": "Continuous HR/EEA employee lookback",
+    "art99BlockedAccount": "Max blocked-account period before disqualification",
+    "art99InflowThreshold": "Employer inflow / turnover threshold (legal entity)",
+    "blueCardValidity": "EU Blue Card max validity (not this path)",
+    "nn552026InForce": "NN 55/2026 in-force date",
+    "lmtPositiveNoticeWindow": "File Single Permit after positive LMT notice",
+    "permitFee": "Temporary stay / permit administrative fee",
+    "biometricCardFee": "Biometric residence card fee",
+    "permitDecisionTimeline": "Employer / permit decision planning window",
+    "employerChangeAfter": "Change employer without new permit (after)",
+    "unemploymentWindowStandard": "Permitted unemployment (standard)",
+    "unemploymentWindowLongHold": "Permitted unemployment (longer hold)",
+    "unemploymentLongHoldQualifier": "Permit held at least this long for longer unemployment window",
+    "a1LanguageWithin": "A1 Croatian + Latin script required within",
+    "longTermFee": "Long-term residence fee (later pathway)"
+  },
+  "case": {
+    "occupation": {
+      "manualEventCrew": "Manual event crew / physical labor"
+    },
+    "risk": {
+      "art99": "Confirm Art. 99-style employer conditions before filing: continuous domestic/EEA employment lookback, domestic workforce ratio, no unpaid tax/contribution debts, and no prolonged blocked account. Micro size does not waive checks. Cited thresholds:",
+      "nkdMatch": "Requested occupation must match registered activity. For NKD 90399-style event/arts support, stage/event crew can fit; unrelated desk or IT roles will not.",
+      "notBlueCard": "Manual event crew / physical labor is not an EU Blue Card path. Do not route this hire through highly-qualified Blue Card rules.",
+      "revenueVerify": "Compare any reported revenue to the inflow threshold fact below and verify with live tax/bank evidence before filing. This example case does not assert a real company’s finances."
+    }
+  },
+  "sources": {
+    "mupStayWork": "MUP — Stay and work (hub)",
+    "mupWorkTcn": "MUP — Work of third-country nationals",
+    "mupTempStay": "MUP — Temporary stay of third-country nationals",
+    "mupBlueCard": "MUP — Highly-qualified TCNs (EU Blue Card)",
+    "mupLongTerm": "MUP — Long-term residence and permanent stay",
+    "mupRadneDozvole": "MUP — Radne dozvole (exemptions / deficitary list)",
+    "hzzLmt": "HZZ — Labor market test (novi sustav)",
+    "hzzFilingTips": "HZZ — Tips for submitting the request",
+    "mvepStay": "MVEP — Granting stay in Croatia",
+    "nn552026": "Narodne novine — Zakon o strancima amendments (NN 55/2026)"
+  },
+  "occupations": {
+    "nkd90399": {
+      "note": "Titles below align with NKD 90399 event/arts support. Employer still verifies whether any title appears on the current HZZ/MUP deficitary (UV) list before assuming an LMT exemption."
+    },
+    "uvListReminder": "Use the UV search panel (official LMT-exemption PDF) and re-check the live HZZ hub before skipping the labor market test. Art. 110 police categories are a separate channel.",
+    "manualEventCrew": {
+      "title": "Manual event crew / physical labor",
+      "blurb": "Load-in/load-out, carrying equipment, physical stage support. Primary intent for this case; expect labor market test unless listed as deficitary."
+    },
+    "stageHand": {
+      "title": "Stage hand / scenotehničar (support)",
+      "blurb": "Hands-on stage and set support under arts/event activity. Often more recognizable to HZZ than a vague “worker” title."
+    },
+    "eventSetup": {
+      "title": "Event setup / strike worker",
+      "blurb": "Temporary structure, seating, and gear setup for shows and events. Document concrete duties tied to registered activity."
+    },
+    "venueSupport": {
+      "title": "Venue / production support worker",
+      "blurb": "On-site physical support for venues and productions. Keep the job description free of unrelated office tasks."
+    }
+  },
+  "steps": {
+    "orient": {
+      "title": "Orient & eligibility",
+      "summary": "Confirm the Single Permit + LMT path and that this employer can hire under Art. 99-style conditions.",
+      "overview": {
+        "title": "What you are applying for",
+        "body": "For most third-country nationals taking employed work in Croatia, the standard route is a combined stay-and-work authorization (Single Permit) issued by MUP. Employment usually requires a prior HZZ labor market test unless the occupation is on the HZZ Upravno vijeće (UV) deficitary list (LMT skip, online filing) or another separate Art. 110 category applies (police filing — key personnel, Blue Card, ICT, etc.). This wizard follows the LMT → Single Permit path for manual event crew work."
+      },
+      "path": {
+        "title": "Primary path for this case",
+        "body": "Confirm employer eligibility with the Art. 99 guided check → search the UV list for any NKD-plausible LMT skip → lock an NKD-aligned occupation title → prepare the employer package → run the HZZ labor market test (default) → collect worker documents → file the stay-and-work application → biometrics / registrations → stay compliant. Do not treat short visa-free entry as work authorization."
+      },
+      "employerThresholds": {
+        "title": "Employer eligibility thresholds",
+        "body": "Use the guided Art. 99 self-check below for where and how to verify each condition. Cited numeric thresholds:"
+      },
+      "wrongPaths": {
+        "title": "Wrong paths for this job",
+        "body": "EU Blue Card is for highly qualified roles meeting salary/qualification thresholds — not physical event crew. Seasonal-tourism shortcuts only apply when the occupation and sector truly fit. Student permits are a different regime. Blue Card validity (for contrast only):"
+      },
+      "law2026": {
+        "title": "2026 law note (NN 55/2026)",
+        "body": "Amendments include Single Permit framing, longer decision planning windows, worker mobility rules, unemployment windows, Form 17a / housing standards, and A1 Croatian + Latin script for extensions. In-force date:"
+      },
+      "check": {
+        "readOverview": "I understand Single Permit + LMT is the intended path",
+        "art99": "I completed the guided Art. 99 self-check (all rows below)",
+        "lmtPath": "I used the UV search panel and am not assuming an LMT skip without a listed title",
+        "excludeBlueCard": "I confirmed Blue Card / seasonal shortcuts do not fit this role",
+        "verifyRevenue": "I will verify inflow threshold standing with live evidence"
+      }
+    },
+    "occupation": {
+      "title": "Pick the occupation",
+      "summary": "Choose a defensible title tied to NKD 90399; decide LMT vs possible deficitary exemption.",
+      "primary": {
+        "title": "Intended role",
+        "body": "Primary intent: manual event crew / physical labor (load-in, carrying, physical production support). Write duties that a labor inspector and HZZ can map to your registered arts/event support activity."
+      },
+      "nkd": {
+        "title": "Match the company’s NKD",
+        "body": "Match the occupation to the employer’s registered NKD activity. For arts/event-support companies (e.g. NKD 90399 / legacy 9002), prefer titles that clearly sit inside that activity. Avoid requesting occupations that look like unrelated office, IT, or hospitality work."
+      },
+      "lmtVsDeficit": {
+        "title": "Labor market test vs deficitary list",
+        "body": "Default: file a labor market test with HZZ. The searchable UV panel lists occupations from the official HZZ/MUP LMT-exemption PDF (filtered for this employer’s region and NKD). Art. 110 categories (key personnel, Blue Card, etc.) are a separate police-filing channel — not this UV table. Re-check the live HZZ hub before filing."
+      },
+      "check": {
+        "pickTitle": "I selected a concrete occupation title for the application",
+        "matchNkd": "The title and duties match NKD 90399 event/arts support",
+        "uvList": "I searched the UV LMT-exemption list for this region/NKD (and re-check live HZZ before filing)",
+        "documentDuties": "I drafted duty bullets suitable for HZZ / MUP review"
+      }
+    },
+    "employerPackage": {
+      "title": "Prepare employer package",
+      "summary": "Contract, pay parity, Form 17a / housing, and tax readiness before HZZ/MUP filing.",
+      "contract": {
+        "title": "Employment contract & pay",
+        "body": "Prepare a Croatian-law employment contract (or binding offer) stating position, place of work, hours, and pay. Remuneration should meet applicable minimums and be comparable to domestic workers in similar roles. Keep OIB, company extracts, and proof of registered activity ready."
+      },
+      "form17a": {
+        "title": "Form 17a & housing (2026)",
+        "body": "NN 55/2026 introduced Form 17a (employer compliance/liability) and clearer standards when the employer provides accommodation. If you house the worker, document space standards and the arrangement; if the worker arranges housing, keep lease/proof of accommodation for the permit file. Confirm the current Form 17a template on official channels."
+      },
+      "tax": {
+        "title": "Tax, contributions, bank account",
+        "body": "Clear unpaid tax/contribution debts and avoid prolonged blocked accounts (see cited blocked-account threshold on Orient). Have evidence of business inflow/threshold readiness available for eligibility checks."
+      },
+      "check": {
+        "contract": "Draft contract / offer ready with role, place, pay",
+        "payParity": "Pay meets minimums and parity expectations",
+        "form17a": "Form 17a / employer declarations prepared (verify current form)",
+        "housing": "Accommodation plan documented (employer-provided or worker lease)",
+        "taxClear": "Tax/contribution standing and bank account status checked"
+      }
+    },
+    "lmt": {
+      "title": "Run HZZ labor market test",
+      "summary": "Submit the test tržišta rada, keep related-activity consistency, use the positive-notice window.",
+      "what": {
+        "title": "What the test is",
+        "body": "The labor market test (test tržišta rada) lets HZZ assess whether the vacancy can be filled from the domestic/EEA register before a third-country national is hired. Legal basis and employer obligations are described on HZZ’s novi sustav zapošljavanja stranaca pages (Arts. 98–99 context)."
+      },
+      "filing": {
+        "title": "Filing tips",
+        "body": "Follow HZZ’s practical filing guidance: consistent occupation title, workplace, and employer activity; complete attachments; avoid mismatched NKD vs job description. Use HZZ Savjeti za predaju zahtjeva as the operational checklist."
+      },
+      "window": {
+        "title": "After a positive notice",
+        "body": "A positive labor-market opinion is time-limited. File the stay-and-work application within the cited window. If refused, revise occupation/duties or assess exemptions before refiling."
+      },
+      "check": {
+        "prepare": "LMT request package assembled (title, duties, workplace, employer docs)",
+        "relatedActivity": "Occupation is clearly related to registered activity",
+        "submit": "Request submitted to HZZ per current procedure",
+        "positiveNotice": "Positive notice received and stored",
+        "fileWindow": "Calendar set to file Single Permit within the cited validity window"
+      }
+    },
+    "workerDocs": {
+      "title": "Collect worker documents",
+      "summary": "Core TCN document set; nationality pack adds country-specific how-tos in the panel below.",
+      "core": {
+        "title": "Core documents (all third-country nationals)",
+        "body": "Typical MUP temporary stay / stay-and-work files require: valid passport; criminal-record / police certificate(s) as requested for the worker’s countries of residence; proof of health insurance; proof of accommodation; biometric-style photos; application forms; and employer documents from earlier steps. Exact lists are on MUP temporary-stay and work-of-TCN pages — treat those as authoritative."
+      },
+      "translations": {
+        "title": "Translations & formalities",
+        "body": "Foreign public documents usually need a certified Croatian translation (and apostille/legalization where required). Start background checks early — they often gate the filing date."
+      },
+      "check": {
+        "passport": "Valid passport copy collected",
+        "criminalRecord": "Criminal-record documents requested (country-specific process in nationality panel)",
+        "insurance": "Health insurance evidence ready",
+        "accommodation": "Accommodation proof ready",
+        "photos": "Photos meeting biometric/application specs",
+        "translations": "Translation / apostille plan underway"
+      }
+    },
+    "filePermit": {
+      "title": "File stay-and-work (Single Permit)",
+      "summary": "File after LMT (unless exempt); fees and local police competence use cited figures.",
+      "when": {
+        "title": "When to file",
+        "body": "File the stay-and-work / temporary stay application once the labor market precondition is met (positive notice or applicable exemption) and employer + worker documents are complete. Keep the LMT validity window in mind."
+      },
+      "where": {
+        "title": "Where to file (this case)",
+        "body": "Competence generally follows the employer’s seat / place of work. For a Zagreb-based employer, expect Zagreb police administration / competent immigration office — confirm the exact receiving counter on MUP pages before traveling. Some nationalities file via consulate when required; see the nationality panel if a channel delta applies."
+      },
+      "fees": {
+        "title": "Fees",
+        "body": "Administrative fees for temporary stay / card issuance are cited below from MUP. Blue Card fees differ and do not apply here. Re-open the MUP page on payment day."
+      },
+      "timeline": {
+        "title": "Decision timeline",
+        "body": "Planning assumption for the decision window under the 2026 amendments (cite below). Confirm operative wording on the statute / MUP page for your exact procedure."
+      },
+      "check": {
+        "assemble": "Full application file assembled (employer + worker + LMT proof)",
+        "competence": "Competent police/MUP office confirmed for Zagreb employer address",
+        "fees": "Fee amounts re-checked on MUP the day of payment",
+        "submit": "Application submitted / appointment completed",
+        "proof": "Submission proof and copy of file retained"
+      }
+    },
+    "startWork": {
+      "title": "Decision, biometrics, start work",
+      "summary": "Collect the card, register with HZMO/HZZO/tax, start work only when authorized.",
+      "decision": {
+        "title": "Decision",
+        "body": "Wait for MUP’s decision. Do not put the worker on productive paid work in Croatia before stay-and-work authorization is in place. Visa-free presence (if any) is not a substitute."
+      },
+      "biometrics": {
+        "title": "Biometrics & card",
+        "body": "Attend biometrics when invited and collect the residence/work card. Keep scans of the decision and card. Card fee is listed under File permit facts."
+      },
+      "register": {
+        "title": "HZMO, HZZO, tax",
+        "body": "Register the employment for pension (HZMO), health (HZZO), and tax withholding as for any employee. Align the start date in payroll with the legal start of authorized work."
+      },
+      "check": {
+        "decision": "Positive decision received",
+        "biometrics": "Biometrics appointment completed",
+        "card": "Residence/work card collected",
+        "social": "HZMO / HZZO / tax registrations done",
+        "startAuthorized": "First working day is on/after authorized start"
+      }
+    },
+    "comply": {
+      "title": "Stay compliant",
+      "summary": "Employer change, unemployment windows, A1 language for extension, renewals.",
+      "employerChange": {
+        "title": "Changing employer",
+        "body": "Under the 2026 framework, workers may change employer after the cited period without the prior full new-permit pattern — verify the exact notification/approval mechanics on current MUP guidance before acting."
+      },
+      "unemployment": {
+        "title": "Unemployment windows",
+        "body": "Permitted unemployment windows after job loss are cited below. Confirm operative rules before relying on these periods."
+      },
+      "language": {
+        "title": "A1 Croatian for extension",
+        "body": "Plan for a mandatory A1-level Croatian language and Latin script test within the cited period; it is required for permit extension. Book learning early for physical-labor hires who may not use Croatian daily at work."
+      },
+      "renewals": {
+        "title": "Renewals & long-term stay",
+        "body": "Track expiry, keep employment continuous where required, and start renewal before the card lapses. Long-term residence is a separate later pathway; fee cite below."
+      },
+      "check": {
+        "dates": "Permit / card expiry dates logged",
+        "employerChange": "Team knows employer-change rules (verify before use)",
+        "a1": "A1 language plan scheduled within the cited period",
+        "renewal": "Renewal reminder set before expiry"
+      }
+    }
+  },
+  "art99": {
+    "panelTitle": "Art. 99 employer self-check (guided)",
+    "panelIntro": "Work through each condition in order. Mark a row only after you have pulled the evidence. Completing every row marks the Step 1 Art. 99 checklist item.",
+    "progress": "{done}/{total} checks done",
+    "howLabel": "How to check",
+    "evidenceLabel": "Evidence to keep:",
+    "passLabel": "I completed this check with current evidence",
+    "activity": {
+      "title": "Registered activity matches the intended occupation",
+      "why": "HZZ expects the requested occupation to relate to the employer’s registered economic activity in Croatia.",
+      "how": {
+        "fina": "Open the company on Fina Info.BIZ and confirm status, address, and NKD / activity wording.",
+        "court": "Optionally confirm the court-register extract (Sudski registar) for legal form and representation.",
+        "match": "Write the intended job duties and confirm they sit inside the registered arts/event-support activity — not an unrelated desk, IT, or hospitality role."
+      },
+      "evidence": "Current company extract / Info.BIZ printout + draft duty list mapped to NKD.",
+      "caseHint": "Example NKD 90399 (legacy 9002): other support activities to artistic creation and performing arts. Stage/event physical support fits; unrelated titles do not."
+    },
+    "continuous": {
+      "title": "Continuous domestic / EEA / Swiss full-time employee",
+      "why": "A positive HZZ opinion generally requires continuous employment of at least one HR/EEA/Swiss worker on indefinite full-time terms for the cited lookback.",
+      "how": {
+        "hzmo": "Review employer contribution / insured-person records via HZMO employer channels.",
+        "payroll": "Pull payroll / employment contracts showing the same domestic/EEA/Swiss worker on full-time indefinite terms.",
+        "continuity": "Confirm there is no gap that breaks continuous employment across the cited lookback."
+      },
+      "evidence": "Payroll/HZMO evidence naming the continuous domestic/EEA/Swiss FTE and dates.",
+      "caseHint": "Micro employers with ~one employee must still verify that person is HR/EEA/Swiss, full-time, indefinite, and continuous for the lookback — micro size does not waive this."
+    },
+    "ratio": {
+      "title": "Domestic : third-country national workforce ratio",
+      "why": "At filing, full-time domestic/EEA/Swiss headcount must meet the cited minimum share of third-country national headcount (HZZ also counts prior positive opinions in the ratio mechanics).",
+      "how": {
+        "count": "Count current full-time HR/EEA/Swiss employees and current third-country national employees (plus any HZZ positive opinions that count toward the foreign side per HZZ rules).",
+        "compare": "Compare domestic full-time headcount to the foreign side using the general ratio fact below.",
+        "uvNote": "If you later hire on a UV deficitary occupation title, the lower deficitary ratio fact applies instead — still verify live HZZ wording."
+      },
+      "evidence": "Headcount worksheet with names/status + calculation against the cited percentage.",
+      "caseHint": "With ~one domestic employee, hiring even one TCN can fail the general ratio unless the numbers truly work. Model the hire before filing."
+    },
+    "tax": {
+      "title": "No unpaid public dues (tax / contributions)",
+      "why": "Employers must have settled public dues recorded by the finance ministry and filed required tax reports.",
+      "how": {
+        "eporezna": "Check tax standing in ePorezna (Porezna uprava) for the company OIB.",
+        "hzmo": "Confirm contribution standing with HZMO / related contribution channels.",
+        "certificate": "Obtain a current certificate / extract showing no unpaid dues before HZZ/MUP filing."
+      },
+      "evidence": "Recent official certificate or portal extract showing clear dues status."
+    },
+    "inflow": {
+      "title": "Transaction-account inflow threshold (legal entity)",
+      "why": "Legal-entity employers must show the cited minimum inflow on the transaction account over the lookback HZZ applies.",
+      "how": {
+        "bank": "Request bank statements / turnover confirmation for the company transaction account(s).",
+        "window": "Sum inflows for the period HZZ requires and compare to the cited legal-entity threshold.",
+        "notFina": "Do not treat Fina published annual revenue alone as proof of transaction-account inflow."
+      },
+      "evidence": "Bank inflow evidence covering the required period, totaling at least the cited threshold.",
+      "caseHint": "Published company revenue (if any) is not bank inflow proof. Pull live bank evidence before filing."
+    },
+    "blocked": {
+      "title": "No prolonged blocked account",
+      "why": "A continuous blockade longer than the cited maximum in the relevant lookback can block a positive opinion.",
+      "how": {
+        "bank": "Ask the bank whether the account was blocked and for how many continuous days.",
+        "fina": "Check FINA / enforcement blockade information channels available to the company.",
+        "window": "Confirm no continuous blockade exceeded the cited day maximum in the applicable lookback."
+      },
+      "evidence": "Bank/FINA confirmation of blockade history (or none) for the lookback."
+    },
+    "criminal": {
+      "title": "No disqualifying labour / social-security convictions or serious misdemeanours",
+      "why": "HZZ checks whether the employer has final convictions or the most serious labour / social-security / OSH misdemeanour sanctions that bar a positive opinion.",
+      "how": {
+        "review": "Review company and responsible-person history for labour-relation, social-security, and OSH matters.",
+        "counsel": "If unsure, obtain counsel or official extracts before filing rather than guessing."
+      },
+      "evidence": "Internal clearance note and any official extracts counsel recommends."
+    },
+    "undeclared": {
+      "title": "Not listed for undeclared work",
+      "why": "Employers on the undeclared-work list under the special anti-undeclared-work rules are barred from a positive opinion.",
+      "how": {
+        "hzz": "Confirm via HZZ guidance / filing process that the employer is not treated as listed for undeclared work.",
+        "inspectorate": "If status is unclear, ask the labour inspectorate / competent ministry channel before filing."
+      },
+      "evidence": "Written confirmation or filing-system clear status that the employer is not on the prohibited list."
+    }
+  },
+  "uv": {
+    "panelTitle": "UV / deficitary occupations (LMT exemption list)",
+    "panelIntro": "Search occupations from the official HZZ/MUP PDF of titles for which the employer is not required to run a labor market test. Default filter: titles tagged as plausibly relevant to this company’s NKD, and valid in Grad Zagreb (or nationwide).",
+    "art110Note": "Separate channel: Art. 110 categories (key personnel, Blue Card, ICT transfer, etc.) file at the police — they are not this searchable UV table.",
+    "listEdition": "Official UV LMT-exemption list edition ingested",
+    "listStaleBanner": "This tool ships the official 2023 PDF still hosted by MUP/HZZ. Re-open the live HZZ “Lista zanimanja…” hub before filing — the list can be amended after this edition.",
+    "openPdf": "Open official PDF (Tier 1)",
+    "openHub": "Open HZZ radne dozvole hub",
+    "searchLabel": "Search occupations",
+    "searchPlaceholder": "e.g. električar, crane, cleaner…",
+    "toggleAllZagreb": "Show all UV titles valid in Grad Zagreb (not only NKD-relevant)",
+    "nkdRelevantBadge": "NKD-relevant",
+    "regionAll": "Valid in all counties (nationwide on this list)",
+    "regionLimited": "Regional title — includes Grad Zagreb on this list edition",
+    "regionChip": "Region: {region}",
+    "nkdChip": "NKD {nkd}",
+    "emptyState": "No UV titles match this filter. For manual event crew under NKD 90399, treat labor market test as the primary path — do not invent a UV title that is not on the official list or that mismatches real duties.",
+    "noTitleShopping": "LMT skip applies only if the exact occupation title and real duties match a listed UV title and your registered activity. Title shopping that mismatches actual work is a rejection risk.",
+    "regions": {
+      "grad_zagreb": "Grad Zagreb"
+    },
+    "seasonal": {
+      "sales": "Seasonal sales title on the official list — only for the work period stated on the PDF and only in listed counties (not Grad Zagreb on this edition)."
+    },
+    "relevance": {
+      "crane": "Possibly relevant to event/venue load-in if the worker truly operates a crane under your registered activity — document duties carefully.",
+      "joiner": "Woodwork / stage carpentry can support performing-arts productions when duties match.",
+      "electrical": "Electrical install/fit work can support stage and venue power when duties and qualifications match.",
+      "metalStructure": "Metal structure fitting can support stage/set structures when duties match event/arts support.",
+      "sheetMetal": "Sheet-metal work is only relevant if the real job is metal fabrication for productions — not generic event crew.",
+      "locksmith": "Metalworker/locksmith duties must match actual production metalwork, not a label of convenience.",
+      "steelRope": "Steel-rope / lift-cable fitting may relate to venue lift or flying systems — only if that is the real job.",
+      "cleaner": "Cleaner appears on the UV list for Grad Zagreb. Use only if the hire is genuinely cleaning work tied to your activity — not a substitute label for stagehand."
+    }
+  }
+}
