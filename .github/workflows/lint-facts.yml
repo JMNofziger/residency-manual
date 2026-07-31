@@ -1,0 +1,20 @@
+name: lint-facts
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  facts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Lint cited facts
+        run: npm run lint:facts
+      - name: Gate smoke
+        run: npm run test:gates

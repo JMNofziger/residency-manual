@@ -1,0 +1,14 @@
+{
+  "name": "residency-runbook",
+  "private": true,
+  "type": "module",
+  "description": "Static Croatia employer hiring runbook (HZZ LMT → MUP Single Permit)",
+  "scripts": {
+    "lint:facts": "node scripts/lint-facts.mjs",
+    "audit:facts": "node scripts/generate-facts-audit.mjs",
+    "test:gates": "node scripts/smoke-gates.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
