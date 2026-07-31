@@ -55,22 +55,55 @@ function syncAllGuidedParents() {
 const DEFAULT_CASE_PATH = "cases/example-dool-us-manual-labor.json";
 /** Local real-case override (gitignored). Prefer this when present. */
 const LOCAL_CASE_PATH = "cases/private/active.json";
+const CASE_INDEX_PATH = "cases/index.json";
 const DEFAULT_LOCALE = "en";
 
-async function loadCaseData() {
+async function loadCaseCatalog() {
+  const entries = [];
+  try {
+    const idx = await fetch(CASE_INDEX_PATH, { cache: "no-store" }).then((r) => (r.ok ? r.json() : null));
+    for (const c of idx?.cases || []) {
+      if (c?.id && c?.path) entries.push({ id: c.id, path: c.path, title: c.title || c.id, private: false });
+    }
+  } catch {
+    /* ignore */
+  }
+  if (!entries.length) {
+    entries.push({
+      id: "example-dool-us-manual-labor",
+      path: DEFAULT_CASE_PATH,
+      title: "Example d.o.o. — US citizen, manual event crew (LMT)",
+      private: false,
+    });
+  }
   try {
     const local = await fetch(LOCAL_CASE_PATH, { cache: "no-store" });
-    if (local.ok) return local.json();
+    if (local.ok) {
+      const data = await local.json();
+      entries.unshift({
+        id: data.id || "private-active",
+        path: LOCAL_CASE_PATH,
+        title: data.title || "Private active case",
+        private: true,
+      });
+    }
   } catch {
-    /* fall through to default */
+    /* no private case */
   }
-  const pub = await fetch(DEFAULT_CASE_PATH);
-  if (!pub.ok) throw new Error(`Failed to load case: ${DEFAULT_CASE_PATH}`);
-  return pub.json();
+  return entries;
+}
+
+async function loadCaseData(path) {
+  const target = path || DEFAULT_CASE_PATH;
+  const res = await fetch(target, { cache: "no-store" });
+  if (!res.ok) throw new Error(`Failed to load case: ${target}`);
+  return res.json();
 }
 
 const state = {
   caseData: null,
+  caseCatalog: [],
+  casePath: DEFAULT_CASE_PATH,
   stepsData: null,
   occupations: null,
   dutyTemplates: null,
@@ -162,7 +195,31 @@ function setChecked(id, checked) {
   if (panel) {
     panel.syncParentChecklist(isChecked, applyParentChecked);
   }
+  reconcileStepCompletion();
   saveProgress();
+}
+
+/**
+ * Keep completedStepIds a contiguous prefix of steps whose gates still pass.
+ * Unchecking a guided item or un-completing an earlier step revokes later unlocks.
+ */
+function reconcileStepCompletion() {
+  const steps = state.stepsData?.steps || [];
+  if (!steps.length || !state.progress) return;
+  const prev = new Set(state.progress.completedStepIds || []);
+  const next = [];
+  for (const step of steps) {
+    if (!prev.has(step.id)) break;
+    const ctx = {
+      progress: { ...state.progress, completedStepIds: next },
+      isChecked,
+      panelsByKey: GUIDED_PANELS,
+    };
+    if (!canMarkStepComplete(step, ctx).ok) break;
+    next.push(step.id);
+  }
+  state.progress.completedStepIds = next;
+  state.stepIndex = clampStepIndex(state.stepIndex);
 }
 
 function currentStep() {
@@ -521,12 +578,15 @@ function renderMain() {
     const set = new Set(state.progress.completedStepIds);
     if (set.has(step.id)) {
       set.delete(step.id);
+      state.progress.completedStepIds = [...set];
+      reconcileStepCompletion();
     } else {
       const gateNow = canMarkStepComplete(step, gateContext());
       if (!gateNow.ok) return;
       set.add(step.id);
+      state.progress.completedStepIds = [...set];
+      reconcileStepCompletion();
     }
-    state.progress.completedStepIds = [...set];
     saveProgress();
     render();
   });
@@ -553,6 +613,22 @@ function renderChrome() {
   document.getElementById("nav-heading").textContent = I18n.t("ui.steps");
   const exportHint = document.getElementById("export-hint");
   if (exportHint) exportHint.textContent = I18n.t("ui.exportHint");
+  const scopeBanner = document.getElementById("scope-banner");
+  if (scopeBanner) scopeBanner.textContent = I18n.t("ui.zagrebScope");
+  const caseHeading = document.getElementById("case-picker-heading");
+  if (caseHeading) caseHeading.textContent = I18n.t("ui.casePicker");
+  const picker = document.getElementById("case-picker");
+  if (picker) {
+    const currentId = state.caseData?.id;
+    picker.innerHTML = (state.caseCatalog || [])
+      .map(
+        (c) =>
+          `<option value="${escAttr(c.path)}" ${c.id === currentId || c.path === state.casePath ? "selected" : ""}>${esc(
+            c.private ? `${c.title} (${I18n.t("ui.privateCase")})` : c.title
+          )}</option>`
+      )
+      .join("");
+  }
   const mobileNav = document.getElementById("btn-mobile-nav");
   if (mobileNav) mobileNav.textContent = I18n.t("ui.mobileMenu");
   document.getElementById("btn-lang-en").classList.toggle("is-active", state.progress.locale === "en");
@@ -561,6 +637,7 @@ function renderChrome() {
 
 async function applyImportedBundle(caseData, progress) {
   state.caseData = caseData;
+  state.casePath = "";
   state.progress = normalizeProgress({
     ...progress,
     locale: progress.locale || state.progress?.locale || DEFAULT_LOCALE,
@@ -570,6 +647,23 @@ async function applyImportedBundle(caseData, progress) {
   await Nationality.load(caseData.worker.nationalityId);
   await I18n.load(state.progress.locale || DEFAULT_LOCALE, caseData.worker.nationalityId);
   syncAllGuidedParents();
+  reconcileStepCompletion();
+  state.stepIndex = clampStepIndex(state.progress.stepIndex || 0);
+  saveProgress();
+  render();
+}
+
+async function switchCase(path) {
+  if (!path || path === state.casePath) return;
+  const caseData = await loadCaseData(path);
+  state.casePath = path;
+  state.caseData = caseData;
+  state.progress = loadProgress();
+  ensureOccupationDefaults();
+  await Nationality.load(caseData.worker.nationalityId);
+  await I18n.load(state.progress.locale || DEFAULT_LOCALE, caseData.worker.nationalityId);
+  syncAllGuidedParents();
+  reconcileStepCompletion();
   state.stepIndex = clampStepIndex(state.progress.stepIndex || 0);
   saveProgress();
   render();
@@ -653,14 +747,25 @@ function bindGlobal() {
   document.getElementById("btn-mobile-nav")?.addEventListener("click", () => {
     document.getElementById("sidebar").classList.toggle("is-open");
   });
+  document.getElementById("case-picker")?.addEventListener("change", async (e) => {
+    try {
+      await switchCase(e.target.value);
+    } catch (err) {
+      console.error(err);
+      alert(I18n.t("ui.errorLoad"));
+    }
+  });
 }
 
 async function init() {
   Theme.init();
   const loading = document.getElementById("loading-state");
   try {
+    const catalog = await loadCaseCatalog();
+    state.caseCatalog = catalog;
+    state.casePath = catalog[0]?.path || DEFAULT_CASE_PATH;
     const [caseData, stepsData, occupations, dutyTemplates] = await Promise.all([
-      loadCaseData(),
+      loadCaseData(state.casePath),
       fetch("data/steps.json").then((r) => r.json()),
       fetch("data/occupations.json").then((r) => r.json()),
       fetch("data/duty-templates.json").then((r) => r.json()),
@@ -678,6 +783,7 @@ async function init() {
     await Nationality.load(caseData.worker.nationalityId);
     await I18n.load(state.progress.locale || DEFAULT_LOCALE, caseData.worker.nationalityId);
     syncAllGuidedParents();
+    reconcileStepCompletion();
     state.stepIndex = clampStepIndex(state.progress.stepIndex || 0);
     saveProgress();
     bindGlobal();

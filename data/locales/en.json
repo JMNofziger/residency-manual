@@ -38,7 +38,7 @@
     "disclaimer": "Not legal advice. Confirm fees, forms, and deadlines on official government pages before you file.",
     "sourceRegistry": "Source registry",
     "loading": "Loading…",
-    "errorLoad": "Could not load wizard data. Open via a local static server (see README).",
+    "errorLoad": "Could not load wizard data. Serve over HTTP (see README).",
     "oib": "OIB",
     "mb": "MB",
     "nkd": "NKD",
@@ -71,7 +71,10 @@
     "importCase": "Import case",
     "importError": "Could not import that file. Use a residency-runbook case JSON export.",
     "exportPrivacyNote": "Exports can include employer identifiers from the case. Keep files private; do not commit them.",
-    "exportHint": "Export before closing if you need this hire’s progress on another device."
+    "exportHint": "Export is the durable file for this hire (case + progress). Browser storage is only a last-session cache — export before closing if you need the work elsewhere.",
+    "zagrebScope": "Scope: desks and competence are modeled for a Grad Zagreb employer/workplace. Other police administrations are not mapped yet.",
+    "casePicker": "Case",
+    "privateCase": "private"
   },
   "facts": {
     "art99DomesticRatio": "Domestic workforce ratio (employer condition)",

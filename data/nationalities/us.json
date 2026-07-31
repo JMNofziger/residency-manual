@@ -81,7 +81,7 @@
           ]
         },
         {
-          "id": "us-48h-registration",
+          "id": "us-self-registration",
           "labelKey": "workerDocs.registration.label",
           "helpKey": "workerDocs.registration.help",
           "facts": [

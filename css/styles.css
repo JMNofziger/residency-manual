@@ -264,8 +264,33 @@ a:hover {
 
 .export-hint {
   margin: 0;
+  padding: 0 1.25rem 0.35rem;
+  font-size: 0.8rem;
+}
+
+.scope-banner {
+  margin: 0;
   padding: 0 1.25rem 0.75rem;
   font-size: 0.8rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.case-picker-label {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0 0 0.85rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.case-picker {
+  font: inherit;
+  color: var(--text);
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.45rem 0.55rem;
+  width: 100%;
 }
 
 .file-btn {

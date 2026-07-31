@@ -38,7 +38,7 @@
     "disclaimer": "Nije pravni savjet. Prije podnošenja potvrdite pristojbe, obrasce i rokove na službenim stranicama.",
     "sourceRegistry": "Registar izvora",
     "loading": "Učitavanje…",
-    "errorLoad": "Nije moguće učitati podatke. Otvorite putem lokalnog statičkog poslužitelja (vidi README).",
+    "errorLoad": "Nije moguće učitati podatke čarobnjaka. Poslužite preko HTTP-a (vidi README).",
     "oib": "OIB",
     "mb": "MB",
     "nkd": "NKD",
@@ -71,7 +71,10 @@
     "importCase": "Uvezi slučaj",
     "importError": "Datoteku nije moguće uvesti. Koristite JSON izvoz residency-runbook slučaja.",
     "exportPrivacyNote": "Izvoz može sadržavati identifikatore poslodavca iz slučaja. Držite datoteke privatnima; ne predajte ih u git.",
-    "exportHint": "Izvezite prije zatvaranja ako trebate napredak ovog zapošljavanja na drugom uređaju."
+    "exportHint": "Izvoz je trajna datoteka za ovo zapošljavanje (slučaj + napredak). Spremanje u pregledniku je samo predmemorija sesije — izvezite prije zatvaranja ako trebate rad drugdje.",
+    "zagrebScope": "Opseg: šalteri i nadležnost modelirani su za poslodavca/mjesto rada Grad Zagreb. Druge policijske uprave još nisu mapirane.",
+    "casePicker": "Slučaj",
+    "privateCase": "privatno"
   },
   "facts": {
     "art99DomesticRatio": "Udio domaće radne snage (uvjet za poslodavca)",

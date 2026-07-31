@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "cases": [
+    {
+      "id": "example-dool-us-manual-labor",
+      "path": "cases/example-dool-us-manual-labor.json",
+      "title": "Example d.o.o. — US citizen, manual event crew (LMT)"
+    }
+  ]
+}

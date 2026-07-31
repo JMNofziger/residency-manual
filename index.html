@@ -39,6 +39,7 @@
         </div>
       </header>
       <p class="export-hint muted" id="export-hint"></p>
+      <p class="scope-banner muted" id="scope-banner"></p>
 
       <div class="layout">
         <div class="mobile-bar">
@@ -47,6 +48,10 @@
         </div>
         <aside class="sidebar" id="sidebar">
           <h2 id="nav-heading">Steps</h2>
+          <label class="case-picker-label" id="case-picker-label" for="case-picker">
+            <span id="case-picker-heading">Case</span>
+            <select id="case-picker" class="case-picker"></select>
+          </label>
           <nav class="step-nav" id="step-nav" aria-label="Wizard steps"></nav>
         </aside>
         <main class="main-panel" id="main-panel"></main>
