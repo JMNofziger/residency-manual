@@ -90,7 +90,7 @@ export function renderWorkflowOverview({ steps, progress, caseData, stepIndex })
           </div>
           <div>
             <dt>${esc(I18n.t("overview.branchLabel"))}</dt>
-            <dd>${esc(branchLabel)}</dd>
+            <dd>${branchLabel}</dd>
           </div>
         </dl>
         <div class="overview-cta-row">
