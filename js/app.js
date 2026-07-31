@@ -203,6 +203,98 @@ function enterWizardAt(index) {
   setView("wizard");
 }
 
+const THEME_ICON_SUN = `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>`;
+const THEME_ICON_MOON = `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z"/></svg>`;
+
+function updateThemeToggle() {
+  const btn = document.getElementById("btn-theme");
+  if (!btn) return;
+  const dark = Theme.get() === "dark";
+  // Show the target mode icon (sun → light, moon → dark).
+  const icon = btn.querySelector(".theme-icon");
+  if (icon) icon.innerHTML = dark ? THEME_ICON_SUN : THEME_ICON_MOON;
+  btn.setAttribute("aria-label", dark ? I18n.t("ui.themeToLight") : I18n.t("ui.themeToDark"));
+  btn.title = dark ? I18n.t("ui.themeToLight") : I18n.t("ui.themeToDark");
+}
+
+function caseExportBasename() {
+  return `${state.caseData?.id || "case"}-runbook`;
+}
+
+function backupFilename(basename = caseExportBasename()) {
+  const date = new Date().toISOString().slice(0, 10);
+  return `${basename}_${date}_BAK.json`;
+}
+
+function downloadCurrentCaseBackup() {
+  const bundle = toBundle(state.caseData, {
+    ...state.progress,
+    stepIndex: state.stepIndex,
+    view: state.view,
+  });
+  downloadBundle(bundle, backupFilename(`${bundle.id || "case"}-runbook`));
+}
+
+function doResetProgress() {
+  state.progress.completedStepIds = [];
+  state.progress.checkedItemIds = [];
+  state.progress.selectedOccupationId =
+    state.caseData?.intendedOccupation?.id || state.caseData?.suggestedOccupationIds?.[0] || null;
+  state.progress.occupationPath = "labor_market_test";
+  state.progress.uvCandidate = null;
+  state.progress.stepIndex = 0;
+  state.progress.view = "overview";
+  state.stepIndex = 0;
+  state.view = "overview";
+  saveProgress();
+  render();
+}
+
+function closeResetDialog() {
+  document.getElementById("reset-dialog")?.remove();
+}
+
+function openResetDialog() {
+  closeResetDialog();
+  const host = document.createElement("div");
+  host.id = "reset-dialog";
+  host.className = "reset-dialog";
+  host.innerHTML = `
+    <div class="reset-backdrop" data-reset-cancel></div>
+    <div class="reset-panel" role="dialog" aria-modal="true" aria-labelledby="reset-dialog-title">
+      <h2 id="reset-dialog-title">${esc(I18n.t("ui.resetDialogTitle"))}</h2>
+      <p>${esc(I18n.t("ui.resetWarn"))}</p>
+      <p class="muted">${esc(I18n.t("ui.resetBackupPrompt"))}</p>
+      <div class="reset-actions">
+        <button type="button" class="btn primary" id="btn-reset-backup">${esc(
+          I18n.t("ui.resetDownloadBackup")
+        )}</button>
+        <button type="button" class="btn danger-outline" id="btn-reset-confirm">${esc(
+          I18n.t("ui.resetConfirmAction")
+        )}</button>
+        <button type="button" class="btn ghost" data-reset-cancel>${esc(I18n.t("ui.resetCancel"))}</button>
+      </div>
+    </div>`;
+  document.body.appendChild(host);
+  host.querySelectorAll("[data-reset-cancel]").forEach((el) => {
+    el.addEventListener("click", () => closeResetDialog());
+  });
+  host.querySelector("#btn-reset-backup")?.addEventListener("click", () => {
+    downloadCurrentCaseBackup();
+  });
+  host.querySelector("#btn-reset-confirm")?.addEventListener("click", () => {
+    closeResetDialog();
+    doResetProgress();
+  });
+  const onKey = (e) => {
+    if (e.key === "Escape") {
+      closeResetDialog();
+      document.removeEventListener("keydown", onKey);
+    }
+  };
+  document.addEventListener("keydown", onKey);
+}
+
 function isChecked(id) {
   return state.progress.checkedItemIds.includes(id);
 }
@@ -645,12 +737,11 @@ function renderChrome() {
   document.getElementById("app-subtitle").textContent = I18n.t("ui.subtitle");
   document.getElementById("btn-lang-en").textContent = I18n.t("ui.langEn");
   document.getElementById("btn-lang-hr").textContent = I18n.t("ui.langHr");
-  document.getElementById("btn-theme").textContent =
-    Theme.get() === "dark" ? I18n.t("ui.themeLight") : I18n.t("ui.themeDark");
-  document.getElementById("btn-reset").textContent = I18n.t("ui.reset");
+  updateThemeToggle();
+  document.getElementById("btn-reset") && (document.getElementById("btn-reset").textContent = I18n.t("ui.reset"));
   document.getElementById("btn-export") && (document.getElementById("btn-export").textContent = I18n.t("ui.exportCase"));
-  document.getElementById("btn-import-label") &&
-    (document.getElementById("btn-import-label").textContent = I18n.t("ui.importCase"));
+  const importText = document.getElementById("btn-import-text");
+  if (importText) importText.textContent = I18n.t("ui.importCase");
   document.getElementById("btn-glossary").textContent = I18n.t("ui.glossary");
   document.getElementById("btn-offices").textContent = I18n.t("ui.addressBook");
   document.getElementById("nationality-chip").textContent = `${I18n.t("ui.nationality")}: ${Nationality.chipLabel()}`;
@@ -772,23 +863,11 @@ function bindGlobal() {
     if (state.view === "overview") enterWizardAt(state.stepIndex);
     else setView("overview");
   });
-  document.getElementById("btn-reset").addEventListener("click", () => {
-    if (!confirm(I18n.t("ui.resetConfirm"))) return;
-    state.progress.completedStepIds = [];
-    state.progress.checkedItemIds = [];
-    state.progress.selectedOccupationId =
-      state.caseData?.intendedOccupation?.id || state.caseData?.suggestedOccupationIds?.[0] || null;
-    state.progress.occupationPath = "labor_market_test";
-    state.progress.uvCandidate = null;
-    state.progress.stepIndex = 0;
-    state.progress.view = "overview";
-    state.stepIndex = 0;
-    state.view = "overview";
-    saveProgress();
-    render();
+  document.getElementById("btn-reset")?.addEventListener("click", () => {
+    openResetDialog();
   });
   document.getElementById("btn-export")?.addEventListener("click", () => {
-    const bundle = toBundle(state.caseData, { ...state.progress, stepIndex: state.stepIndex });
+    const bundle = toBundle(state.caseData, { ...state.progress, stepIndex: state.stepIndex, view: state.view });
     downloadBundle(bundle, `${bundle.id || "case"}-runbook.json`);
   });
   document.getElementById("btn-import")?.addEventListener("change", async (e) => {

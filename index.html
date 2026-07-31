@@ -27,16 +27,17 @@
             <button type="button" id="btn-lang-en" class="is-active">EN</button>
             <button type="button" id="btn-lang-hr">HR</button>
           </div>
+          <button type="button" class="btn icon-btn theme-toggle" id="btn-theme" aria-label="Theme">
+            <span class="theme-icon" aria-hidden="true"></span>
+          </button>
           <button type="button" class="btn ghost" id="btn-overview">Workflow overview</button>
           <button type="button" class="btn ghost" id="btn-glossary">Glossary</button>
           <button type="button" class="btn ghost" id="btn-offices">Offices</button>
-          <button type="button" class="btn ghost" id="btn-theme">Light</button>
           <button type="button" class="btn ghost" id="btn-export">Export case</button>
           <label class="btn ghost file-btn" id="btn-import-label">
-            Import case
+            <span id="btn-import-text">Import case</span>
             <input type="file" id="btn-import" accept="application/json,.json" hidden />
           </label>
-          <button type="button" class="btn ghost" id="btn-reset">Reset progress</button>
         </div>
       </header>
       <p class="export-hint muted" id="export-hint"></p>
@@ -69,6 +70,9 @@
           ·
           <a id="footer-sources-link" href="croatia-foreign-worker-sources.md">Source registry</a>
         </p>
+        <div class="footer-actions">
+          <button type="button" class="btn danger-outline" id="btn-reset">Reset progress</button>
+        </div>
       </footer>
     </div>
 

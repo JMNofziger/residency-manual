@@ -77,7 +77,15 @@
     "privateCase": "private",
     "overview": "Workflow overview",
     "openChecklist": "Open checklist",
-    "backToOverview": "Back to overview"
+    "backToOverview": "Back to overview",
+    "themeToLight": "Switch to light mode",
+    "themeToDark": "Switch to dark mode",
+    "resetDialogTitle": "Reset case progress?",
+    "resetWarn": "This clears checklist progress stored for this hire (browser cache and the progress block inside your case JSON on the next export). Case identity fields stay, but completed steps and checked items are wiped.",
+    "resetBackupPrompt": "Back up the current case file first. The download uses a _{date}_BAK suffix before .json.",
+    "resetDownloadBackup": "Download backup",
+    "resetConfirmAction": "Reset progress",
+    "resetCancel": "Cancel"
   },
   "facts": {
     "art99DomesticRatio": "Domestic workforce ratio (employer condition)",

@@ -1477,3 +1477,93 @@ a:hover {
     padding: 1.25rem 1rem;
   }
 }
+
+/* —— Theme icon toggle —— */
+.btn.icon-btn {
+  width: 2.35rem;
+  height: 2.35rem;
+  padding: 0;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+}
+
+.theme-toggle .theme-icon {
+  display: grid;
+  place-items: center;
+  line-height: 0;
+}
+
+.theme-toggle .theme-icon svg {
+  display: block;
+}
+
+.theme-toggle:hover {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
+  color: var(--accent);
+}
+
+/* —— Danger outline (footer reset) —— */
+.btn.danger-outline {
+  background: transparent;
+  border-color: var(--danger);
+  color: var(--danger);
+  font-weight: 550;
+}
+
+.btn.danger-outline:hover {
+  background: color-mix(in srgb, var(--danger) 12%, transparent);
+}
+
+.footer-actions {
+  margin-top: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* —— Reset confirmation dialog —— */
+.reset-dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.reset-backdrop {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, #000 55%, transparent);
+}
+
+.reset-panel {
+  position: relative;
+  z-index: 1;
+  width: min(28rem, 100%);
+  padding: 1.25rem 1.3rem 1.15rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-elev);
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 0.75rem;
+}
+
+.reset-panel h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+}
+
+.reset-panel p {
+  margin: 0;
+}
+
+.reset-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+}

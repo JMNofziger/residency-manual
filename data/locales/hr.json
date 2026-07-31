@@ -77,7 +77,15 @@
     "privateCase": "privatno",
     "overview": "Pregled tijeka",
     "openChecklist": "Otvori kontrolni popis",
-    "backToOverview": "Natrag na pregled"
+    "backToOverview": "Natrag na pregled",
+    "themeToLight": "Prijeđi na svijetli način",
+    "themeToDark": "Prijeđi na tamni način",
+    "resetDialogTitle": "Resetirati napredak predmeta?",
+    "resetWarn": "Ovo briše napredak kontrolnog popisa za ovo zapošljavanje (predmemorija preglednika i blok napretka u JSON-u predmeta pri sljedećem izvozu). Identitet predmeta ostaje, ali dovršeni koraci i označene stavke se brišu.",
+    "resetBackupPrompt": "Prvo napravite sigurnosnu kopiju trenutne datoteke predmeta. Preuzimanje koristi sufiks _{date}_BAK prije .json.",
+    "resetDownloadBackup": "Preuzmi sigurnosnu kopiju",
+    "resetConfirmAction": "Resetiraj napredak",
+    "resetCancel": "Odustani"
   },
   "facts": {
     "art99DomesticRatio": "Udio domaće radne snage (uvjet za poslodavca)",

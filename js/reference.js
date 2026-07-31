@@ -53,6 +53,10 @@ export const Reference = {
   close() {
     this.mode = null;
     this.focusId = null;
+    if (this._onKeydown) {
+      document.removeEventListener("keydown", this._onKeydown);
+      this._onKeydown = null;
+    }
     const host = document.getElementById("reference-drawer");
     if (host) host.hidden = true;
   },
@@ -61,7 +65,7 @@ export const Reference = {
     return (this.offices?.offices || []).filter((o) => (o.stepIds || []).includes(stepId));
   },
 
-  renderOfficeCard(office, { compact = false } = {}) {
+  renderOfficeCard(office, { compact = false, showOpenInBook = false } = {}) {
     if (!office) return "";
     const phones = (office.phones || [])
       .map((p) => `<li><a href="tel:${escAttr(p)}">${esc(p)}</a></li>`)
@@ -76,11 +80,11 @@ export const Reference = {
         <header class="office-card-head">
           <h3>${esc(I18n.t(office.nameKey))}</h3>
           ${
-            compact
-              ? ""
-              : `<button type="button" class="btn ghost office-open-btn" data-open-office="${escAttr(
+            showOpenInBook
+              ? `<button type="button" class="btn ghost office-open-btn" data-open-office="${escAttr(
                   office.id
                 )}">${esc(I18n.t("ui.openInAddressBook"))}</button>`
+              : ""
           }
         </header>
         <p class="office-role">${esc(I18n.t(office.roleKey))}</p>
@@ -207,8 +211,9 @@ export const Reference = {
         <div class="reference-body" id="reference-body">${body}</div>
       </div>`;
 
-    host.querySelector("[data-close-reference]")?.addEventListener("click", () => this.close());
-    host.querySelector(".reference-backdrop")?.addEventListener("click", () => this.close());
+    host.querySelectorAll("[data-close-reference]").forEach((el) => {
+      el.addEventListener("click", () => this.close());
+    });
     host.querySelector("#reference-search-input")?.addEventListener("input", (e) => {
       this.query = e.target.value || "";
       const bodyEl = host.querySelector("#reference-body");
@@ -218,6 +223,11 @@ export const Reference = {
       }
     });
     this.bindBody(host);
+    if (this._onKeydown) document.removeEventListener("keydown", this._onKeydown);
+    this._onKeydown = (e) => {
+      if (e.key === "Escape") this.close();
+    };
+    document.addEventListener("keydown", this._onKeydown);
 
     if (this.focusId) {
       const el =
