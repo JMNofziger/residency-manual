@@ -18,10 +18,13 @@ Aliens Act amendments (**NN 55/2026**) entered force **2026-06-04**. Prefer post
 | Narodne novine — NN 55/2026 | Statute text (decision window, mobility, A1.1, etc.) | https://narodne-novine.nn.hr/clanci/sluzbeni/2026_05_55_692.html |
 | HZZ — Novi sustav | Labor market test + Art. 99 | https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/novi-sustav-zaposljavanja-stranaca/ |
 | HZZ — Filing tips | Practical HZZ filing | https://www.hzz.hr/usluge/radne-dozvole-za-zaposljavanje-stranaca-i-test-trzista-rada/savjeti-za-predaju-zahtjeva/ |
+| HZZ — Područna služba Zagreb | Zagreb regional office contact | https://www.hzz.hr/kontakti/podrucne-sluzbe-i-uredi/podrucna-sluzba-zagreb/ |
+| PU zagrebačka — how/where (from 2025-09-01) | Competent desks / e-mail channels for Zagreb | https://zagrebacka-policija.gov.hr/vijesti/kako-i-gdje-rijesiti-upravne-poslove-od-1-rujna-2025/101594 |
 | MVEP — Granting stay | Entry / short stay / registration | https://mvep.gov.hr/services-consular-portal/consular-information-22802/stay-of-foreigners/granting-stay-in-croatia/22839 |
 | HZMO | Pension insurance (employer registration) | https://www.mirovinsko.hr/ |
 | HZZO | Health insurance (employer registration) | https://hzzo.hr/ |
 | Tax Administration (ePorezna) | Employer tax / withholding | https://eporezna.porezna-uprava.hr/ |
+| Fina Info.BIZ | Company register / identifiers | https://infobiz.fina.hr/ |
 
 ## U.S. citizens (entry / documents layer)
 
@@ -38,5 +41,6 @@ Keep a nationality-neutral core. Per country, add only: entry rules, consulate p
 
 ## Live verification artifacts
 
-- [`artifacts/phase5-verification.md`](artifacts/phase5-verification.md) — Art. 99, LMT window, early fees / registration
-- [`artifacts/phase6e-verification.md`](artifacts/phase6e-verification.md) — stay-and-work fee €74.32, Form 2a, Zagreb filing notes
+- [`artifacts/phase5-verification.md`](artifacts/phase5-verification.md) — Art. 99, labor market test window, early fees / registration (**not** the stay-and-work admin fee source of truth)
+- [`artifacts/phase6e-verification.md`](artifacts/phase6e-verification.md) — stay-and-work admin fee **€74.32**, Form 2a, Zagreb filing notes (**fee SoT**; temporary-stay €46.45 is a different purpose — see uncertainty cards)
+- Contested fee readings in-app: [`data/uncertainty.json`](data/uncertainty.json)

@@ -41,6 +41,7 @@ Runtime: `FactsCatalog.load()` + `FactsCatalog.resolve()` in [`js/facts.js`](../
 ## Where facts live
 
 - `data/facts-catalog.json` — shared canonical facts (id → object)
+- `data/uncertainty.json` — contested Tier-1 readings (each reading is a cited fact object; path-adopted value derived from the adopted reading)
 - `data/steps.json` — `facts[]` on steps or sections (ids and/or objects)
 - `data/*-checks.json` — `facts[]` on guided checks
 - `data/nationalities/{id}.json` — `facts[]` on slots / checklist items
@@ -52,7 +53,9 @@ Locale strings (`data/locales/**`) must not embed currency amounts, day-counts, 
 ## Lint
 
 ```bash
-node scripts/lint-facts.mjs
+npm run lint:facts
+# or
+npm run lint   # facts + EN/HR locale key parity
 ```
 
 ## Audit artifact

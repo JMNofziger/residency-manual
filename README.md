@@ -2,9 +2,9 @@
 
 Guided employer checklist for hiring a **third-country national** (outside EU/EEA/Switzerland) for manual work in Croatia.
 
-Usual path: **labor market test** (HZZ) → **stay-and-work permit** / Single Permit (MUP).
+Usual path: ***labor market test*** (HZZ) → **stay-and-work permit** / Single Permit (MUP). An alternate path exists only when the hire matches the official ***Upravno vijeće deficitary occupations list***.
 
-Not legal advice. Fees, deadlines, and thresholds appear only as **cited facts** with official source links.
+**Not legal advice.** Fees, deadlines, and thresholds appear only as **cited facts** with official source links (or as explicit uncertainty cards when Tier-1 pages disagree).
 
 ## Run locally
 
@@ -16,44 +16,47 @@ Open http://localhost:8080 (needed for JSON/`fetch`; do not open as `file://`).
 
 ## In the app
 
-- **Workflow overview** home — visual map of LMT vs UV branch and current step; open the checklist from the hero CTA, top bar, or footer
-- Eight guided steps from employer fitness through compliance
-- **Uncertainty cards** when Tier-1 pages disagree on fees (sources + last-verified dates)
-- **Case picker** in the sidebar (`cases/index.json`; private `cases/private/active.json` when present)
-- **Export case** / **Import case** — pretty-printed JSON (case + progress). Browser storage is a last-session cache only
-- Steps unlock in order; required guided checks must pass (completion is revoked if you uncheck a required item)
-- Scope banner: desks/competence modeled for **Grad Zagreb**
-- English / Croatian and dark / light toggles
-- **Glossary** and **Offices**; per-step office cards
-- Official UV occupation search (titles that may skip the labor market test)
+- **Workflow overview** home — visual map of the *labor market test* vs *Upravno vijeće* branch and current step; enter the checklist from the hero CTA, top bar, or footer
+- Eight guided steps from employer fitness through compliance (gates unlock in order; unchecking a required item revokes later completion)
+- **Case picker** — `cases/index.json`; private `cases/private/active.json` first when present; **imported** cases appear in the picker for the session
+- **Export case** / **Import case** — pretty-printed JSON (`kind: residency-runbook-case`, `schemaVersion: 2`). Browser storage is a last-session cache only; one in-app export reminder after the first durable change, plus a browser leave warning if changes remain unsaved
+- **Uncertainty cards** when Tier-1 pages disagree on fees (both sources + last-verified dates; path-adopted value called out)
+- **Glossary** and **Offices** drawers; per-step office cards with Zagreb-relevant addresses; small Zagreb scope note lives in office views
+- Official *Upravno vijeće* occupation search (titles that may skip the *labor market test*)
+- English / Croatian; sun/moon theme toggle; footer **Reset progress** with backup-first dialog (`_{date}_BAK.json`)
 
 ## Private cases (local only)
 
 Put a real case at `cases/private/active.json` (gitignored). It appears first in the case picker when present.
 
-This workspace includes a local VPR EVENT CREW test fixture at:
-- `cases/private/active.json` (preferred auto-load; exportable schema v2 bundle)
-- `cases/private/vpr-event-crew-us-manual-labor.json` (same bundle for import/export drills)
+Local VPR EVENT CREW test fixture (gitignored; do not commit):
 
-Do not commit these files. For multiple hires, export one `{id}-runbook.json` per worker.
+- `cases/private/active.json` — preferred auto-load; exportable schema v2 bundle
+- `cases/private/vpr-event-crew-us-manual-labor.json` — same bundle for import/export drills
+
+For multiple hires, export one `{id}-runbook.json` per worker. Exports may include OIB and other identifiers.
 
 ## Facts lint / CI
 
 ```bash
-npm run lint
+npm run lint          # facts + EN/HR locale key parity
 npm run test:gates
-npm run audit:facts
+npm run audit:facts   # regenerates artifacts/facts-audit.*
 ```
 
-GitHub Actions runs fact lint, EN/HR locale parity, and gate smoke on pushes/PRs to `main`.
+GitHub Actions (`.github/workflows/lint-facts.yml`) runs fact lint, locale parity, and gate smoke on pushes/PRs to `main`.
+
+Shared fees live in [`data/facts-catalog.json`](data/facts-catalog.json); contested alternate readings in [`data/uncertainty.json`](data/uncertainty.json). See [`data/facts.schema.md`](data/facts.schema.md).
 
 ## Docs
 
 | Doc | Purpose |
 |---|---|
-| [DEVELOPMENT.md](DEVELOPMENT.md) | Phase board |
+| [DEVELOPMENT.md](DEVELOPMENT.md) | Phase board + current priorities |
 | [croatia-foreign-worker-sources.md](croatia-foreign-worker-sources.md) | Official source list |
-| [data/facts.schema.md](data/facts.schema.md) | Cited-fact shape |
-| [artifacts/product-critique.md](artifacts/product-critique.md) | Post–Phase 6 critique |
+| [data/facts.schema.md](data/facts.schema.md) | Cited-fact shape + catalog rules |
+| [data/nationalities/_schema.md](data/nationalities/_schema.md) | Nationality pack shape |
+| [artifacts/product-critique.md](artifacts/product-critique.md) | Post–Phase 6 critique + status addendum |
 | [artifacts/phase5-verification.md](artifacts/phase5-verification.md) | Phase 5 live source pass |
-| [artifacts/phase6e-verification.md](artifacts/phase6e-verification.md) | Phase 6e fee / Form 2a pass |
+| [artifacts/phase6e-verification.md](artifacts/phase6e-verification.md) | Stay-and-work fee €74.32 / Form 2a (fee source of truth) |
+| [artifacts/facts-audit.md](artifacts/facts-audit.md) | Generated citation audit |

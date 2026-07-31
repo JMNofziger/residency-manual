@@ -5,6 +5,8 @@ Strings: `data/locales/nationalities/{id}.{locale}.json`
 
 Core `data/steps.json` stays nationality-neutral. Packs inject into slots only.
 
+**Current packs:** `us` only. Next markets are planned on the Linear board (RES-8); embassy / consulate offices should come from the pack, not hard-wired core step `officeIds`.
+
 ## Pack fields
 
 | Field | Type | Description |
@@ -19,13 +21,13 @@ Core `data/steps.json` stays nationality-neutral. Packs inject into slots only.
 | Field | Type | Description |
 |---|---|---|
 | `blurbKey` / `titleKey` / `notesKey` | string | Locale keys — **no** fees/day-counts/% in the strings |
-| `facts` | Fact[] | Structured cited facts (required for any numeric claim) |
+| `facts` | Fact[] or catalog id strings | Structured cited facts (required for any numeric claim); see catalog rules in [`../facts.schema.md`](../facts.schema.md) |
 | `checklist` | array | `{ id, labelKey, helpKey?, facts?, links? }` |
 | `links` | array | `{ labelKey, url }` |
 
 ## Fact object
 
-See [`../facts.schema.md`](../facts.schema.md). Unsourced numbers are build-blocking (`node scripts/lint-facts.mjs`).
+See [`../facts.schema.md`](../facts.schema.md). Unsourced numbers are build-blocking (`npm run lint:facts`).
 
 ## Slot map (v1)
 
@@ -36,4 +38,4 @@ See [`../facts.schema.md`](../facts.schema.md). Unsourced numbers are build-bloc
 
 ## Extensibility
 
-New country = pack JSON + locale files + case `nationalityId`. Do not edit `steps.json` for nationality rules.
+New country = pack JSON + locale files + case `nationalityId`. Do not edit `steps.json` for nationality rules. Prefer pack-owned office ids for embassies/consulates.

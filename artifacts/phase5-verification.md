@@ -1,5 +1,7 @@
 # Phase 5 — Live Tier-1 verification report
 
+> **Note (current):** Stay-and-work admin fee source of truth is [`phase6e-verification.md`](phase6e-verification.md) (**€74.32**). Contested alternate readings are modeled in `data/uncertainty.json`. This Phase 5 log is retained as a changelog.
+
 **Date:** 2026-07-31  
 **Case:** `local private case (not in repo)`  
 **Method:** Fetch/read live Tier-1 pages; confirm or correct each cited fact; omit unconfirmable numbers.

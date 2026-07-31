@@ -2,9 +2,9 @@
 
 Progress board for the Croatia employer hiring runbook.
 
-**Goal:** Static guided checklist: labor market test (HZZ) → stay-and-work permit (MUP), with nationality packs, cited facts, glossary, offices, step gates, and exportable case files. Real employer cases stay local (`cases/private/`).
+**Goal:** Static guided checklist: *labor market test* (HZZ) → stay-and-work permit (MUP), with nationality packs, cited facts, glossary, offices, step gates, and exportable case files. Real employer cases stay local (`cases/private/`).
 
-**Not legal advice.** Numeric claims must be cited fact objects; `npm run lint:facts` is build-blocking (also on CI).
+**Not legal advice.** Numeric claims must be cited fact objects; contested Tier-1 disagreements use uncertainty cards. `npm run lint` is build-blocking (also on CI).
 
 **Linear board:** [residency-runbook](https://linear.app/personal-interests-llc/project/residency-runbook-c5b480e87a88) — milestones, Todo/Backlog, deferred debt. Prefer Linear for planning; keep this file as the repo-local status snapshot.
 
@@ -12,35 +12,64 @@ Progress board for the Croatia employer hiring runbook.
 
 | Phase | Name | Status |
 |---|---|---|
-| 0–5 | Sources, shell, facts, US pack, Art. 99 + UV, live Tier-1 verify | Done |
+| 0–5 | Sources, shell, facts, US pack, Art. 99 + UV list, live Tier-1 verify | Done |
 | 6 | Guided Steps 1–8, glossary/offices, gates, case file I/O | Done |
-| 7a | Case picker (`cases/index.json`) + Zagreb scope banner | Done |
-| 7 | More nationality packs (beyond US) | Next (discovery open — Linear RES-8) |
+| 7a | Case picker (`cases/index.json`) + Zagreb scope (now in office panes) | Done |
+| 7 | More nationality packs (beyond US) | Next (discovery — Linear RES-8) |
 | 8a | CI lint-facts + gate smoke | Done |
-| 8b | EN/HR locale parity in CI + fee uncertainty cards + workflow overview home | Done |
+| 8b | EN/HR locale parity CI + fee uncertainty cards + workflow overview | Done |
 | Trust | Canonical fact catalog (`data/facts-catalog.json`) | Done (Linear RES-5) |
+| UX | Offices addresses, theme icon, footer reset+backup, import activation, one-shot export nudge | Done |
 | 8 | Hosting (static deploy) | Planned (Linear RES-11) |
 
-## Known gaps (see critique)
+## Current product shape (as of 2026-07-31)
 
-Deep review: [`artifacts/product-critique.md`](artifacts/product-critique.md).
+- Lands on **workflow overview**; checklist is one click away (top bar / footer / hero CTA)
+- **Import** registers the hire in the sidebar for the session and applies imported progress
+- **Export** is the durable artifact; localStorage is cache; nudge once per session + `beforeunload` if still dirty
+- Office drawer carries **Grad Zagreb** desk addresses and a small scope note (not a global chrome banner)
+- UI prefers full italicized names for *labor market test* and *Upravno vijeće deficitary occupations list* over LMT/UV shorthand
 
-Priorities: expand catalog coverage beyond shared fees, more nationality packs (after discovery), anonymized export, hosting.
+## Known gaps
+
+Deep review + addendum: [`artifacts/product-critique.md`](artifacts/product-critique.md).
+
+**Still open**
+
+- More nationality packs (drive embassy offices from pack, not core steps)
+- Optional gate / banner for nationality checklist items on worker-docs
+- Anonymized / redacted export
+- Hosting
+- Cite or formally omit post-permit address registration day-count
+- Non-Zagreb competence only when a real second-city case exists
+- Split large `js/app.js` render/session concerns
+- Progress migration helpers for renamed check ids on old imports
+
+**Recently closed (no longer “next”)**
+
+- Canonical shared-fee catalog
+- EN/HR key-parity in CI
+- Fee uncertainty spectrum cards
+- Workflow overview home
+- Export leave warning + quieter in-app nudge
+- Import case picker / progress activation
 
 ## Done highlights
 
 - Guided panels via [`js/guided-checks.js`](js/guided-checks.js) for every step
 - Step gates + completion reconcile: [`js/step-gates.js`](js/step-gates.js), `reconcileStepCompletion` in [`js/app.js`](js/app.js)
-- Case file I/O: [`js/case-file.js`](js/case-file.js); case picker: [`cases/index.json`](cases/index.json)
-- CI: [`.github/workflows/lint-facts.yml`](.github/workflows/lint-facts.yml) — facts + EN/HR locale parity + gate smoke
-- Workflow overview home + fee uncertainty cards: [`js/overview.js`](js/overview.js), [`js/uncertainty.js`](js/uncertainty.js), [`data/uncertainty.json`](data/uncertainty.json)
-- Canonical shared fees: [`data/facts-catalog.json`](data/facts-catalog.json) (reference by id in `facts[]`; contested readings stay in uncertainty)
-- Live verifies: [`artifacts/phase5-verification.md`](artifacts/phase5-verification.md), [`artifacts/phase6e-verification.md`](artifacts/phase6e-verification.md)
+- Case file I/O: [`js/case-file.js`](js/case-file.js); picker: [`cases/index.json`](cases/index.json); imports registered in-session
+- CI: [`.github/workflows/lint-facts.yml`](.github/workflows/lint-facts.yml) — facts + EN/HR parity + gate smoke
+- Overview + uncertainty: [`js/overview.js`](js/overview.js), [`js/uncertainty.js`](js/uncertainty.js), [`data/uncertainty.json`](data/uncertainty.json)
+- Canonical fees: [`data/facts-catalog.json`](data/facts-catalog.json) (reference by id; contested readings in uncertainty)
+- Offices: [`data/offices.json`](data/offices.json) + [`js/reference.js`](js/reference.js)
+- Live verifies: [`artifacts/phase5-verification.md`](artifacts/phase5-verification.md), [`artifacts/phase6e-verification.md`](artifacts/phase6e-verification.md) (**fee SoT for stay-and-work admin fee**)
 
 ## Contribute
 
 1. `python3 -m http.server 8080`
-2. `npm run lint` (facts + EN/HR parity) and `npm run test:gates` before push
+2. `npm run lint` and `npm run test:gates` before push
 3. Prefer Tier 1 URLs in [`croatia-foreign-worker-sources.md`](croatia-foreign-worker-sources.md)
-4. Multi-hire: **Export case** after progress; keep private JSON out of git
-5. Update this board when a slice ships
+4. Shared fees → catalog id; contested figures → [`data/uncertainty.json`](data/uncertainty.json)
+5. Multi-hire: **Export case** after progress; keep `cases/private/` and exports out of git
+6. Update this board (and Linear) when a slice ships

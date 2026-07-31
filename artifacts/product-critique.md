@@ -100,3 +100,37 @@ Architecture and citation machinery are strong for a static runbook. Phase 6 del
 ## Bottom line for product
 
 Ship the runbook as a **Zagreb + US-first employer operating manual with cited facts**, not as a finished national multi-nationality product. The trust system is the advantage — protect it with canonical facts and CI before expanding geography or nationality packs.
+
+---
+
+## Status addendum — 2026-07-31 (afternoon)
+
+Update against the critique above after follow-on shipping. Historical sections kept for context; **this section is the current scorecard.**
+
+### Closed since critique
+
+| Item | Where |
+|---|---|
+| Canonical fact catalog | `data/facts-catalog.json` + lint; checks/steps may reference by id |
+| EN/HR key-parity CI | `scripts/lint-locale-parity.mjs`, `npm run lint`, workflow |
+| Fee conflict UX (€74.32 vs €46.45; biometric options) | `data/uncertainty.json` + uncertainty cards |
+| Workflow overview home | `js/overview.js`; checklist entry from hero / top / footer |
+| Export vs cache / leave warning | One-shot in-app export nudge; `beforeunload` if still dirty |
+| Import does not activate case | Imported hire registered in sidebar (`imported:` path + snapshot) with progress applied |
+| Zagreb scope placement | Small note in office panes (global banner removed) |
+| Offices addresses for Grad Zagreb case | `data/offices.json` (HZZ Zvonimira 15, PU Remetinečki gaj 13 / Petrinjska 30, etc.) |
+| UI polish | Sun/moon theme; footer reset + `_{date}_BAK` backup; offices close; full italic term names for labor market test / Upravno vijeće list |
+
+### Still open (prioritized)
+
+1. More nationality packs (RES-8) — embassy offices from pack, not core steps  
+2. Anonymized / redacted export  
+3. Hosting (RES-11)  
+4. Optional nationality checklist gate / banner on worker-docs  
+5. Cite or omit post-permit address day-count  
+6. Non-Zagreb competence only with a real second-city case  
+7. Split `app.js`; progress migration for renamed check ids  
+
+### Product framing (unchanged)
+
+Still ship as **Zagreb + US-first** with citation discipline. Do not fake a national matrix or invent form-field specs.

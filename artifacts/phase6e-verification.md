@@ -1,5 +1,7 @@
 # Phase 6e — Live Tier-1 verification (file-permit)
 
+> **Fee source of truth** for this path’s stay-and-work admin fee (**€74.32** on MUP Work of TCN). Temporary-stay **€46.45** is a different purpose — see in-app uncertainty cards / `data/uncertainty.json`.
+
 **Date:** 2026-07-31  
 **Scope:** Stay-and-work filing fees, Form 2a, Zagreb competence wording.
 
