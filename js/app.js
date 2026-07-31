@@ -11,6 +11,7 @@ import { FilePermitGuide } from "./file-permit-guide.js";
 import { UvList } from "./uv-list.js";
 import { Reference } from "./reference.js";
 import { canEnterStep, canMarkStepComplete } from "./step-gates.js";
+import { toBundle, downloadBundle, parseFile } from "./case-file.js";
 
 const GUIDED_PANELS = {
   art99: Art99,
@@ -535,6 +536,9 @@ function renderChrome() {
   document.getElementById("btn-theme").textContent =
     Theme.get() === "dark" ? I18n.t("ui.themeLight") : I18n.t("ui.themeDark");
   document.getElementById("btn-reset").textContent = I18n.t("ui.reset");
+  document.getElementById("btn-export") && (document.getElementById("btn-export").textContent = I18n.t("ui.exportCase"));
+  document.getElementById("btn-import-label") &&
+    (document.getElementById("btn-import-label").textContent = I18n.t("ui.importCase"));
   document.getElementById("btn-glossary").textContent = I18n.t("ui.glossary");
   document.getElementById("btn-offices").textContent = I18n.t("ui.addressBook");
   document.getElementById("nationality-chip").textContent = `${I18n.t("ui.nationality")}: ${Nationality.chipLabel()}`;
@@ -543,10 +547,28 @@ function renderChrome() {
   document.getElementById("footer-offices").textContent = I18n.t("ui.addressBook");
   document.getElementById("footer-sources-link").textContent = I18n.t("ui.sourceRegistry");
   document.getElementById("nav-heading").textContent = I18n.t("ui.steps");
+  const exportHint = document.getElementById("export-hint");
+  if (exportHint) exportHint.textContent = I18n.t("ui.exportHint");
   const mobileNav = document.getElementById("btn-mobile-nav");
   if (mobileNav) mobileNav.textContent = I18n.t("ui.mobileMenu");
   document.getElementById("btn-lang-en").classList.toggle("is-active", state.progress.locale === "en");
   document.getElementById("btn-lang-hr").classList.toggle("is-active", state.progress.locale === "hr");
+}
+
+async function applyImportedBundle(caseData, progress) {
+  state.caseData = caseData;
+  state.progress = normalizeProgress({
+    ...progress,
+    locale: progress.locale || state.progress?.locale || DEFAULT_LOCALE,
+    theme: Theme.get(),
+  });
+  ensureOccupationDefaults();
+  await Nationality.load(caseData.worker.nationalityId);
+  await I18n.load(state.progress.locale || DEFAULT_LOCALE, caseData.worker.nationalityId);
+  syncAllGuidedParents();
+  state.stepIndex = clampStepIndex(state.progress.stepIndex || 0);
+  saveProgress();
+  render();
 }
 
 function render() {
@@ -591,6 +613,22 @@ function bindGlobal() {
     state.stepIndex = 0;
     saveProgress();
     render();
+  });
+  document.getElementById("btn-export")?.addEventListener("click", () => {
+    const bundle = toBundle(state.caseData, { ...state.progress, stepIndex: state.stepIndex });
+    downloadBundle(bundle, `${bundle.id || "case"}-runbook.json`);
+  });
+  document.getElementById("btn-import")?.addEventListener("change", async (e) => {
+    const file = e.target.files?.[0];
+    e.target.value = "";
+    if (!file) return;
+    try {
+      const { caseData, progress } = await parseFile(file);
+      await applyImportedBundle(caseData, progress);
+    } catch (err) {
+      console.error(err);
+      alert(I18n.t("ui.importError"));
+    }
   });
   document.getElementById("step-nav").addEventListener("click", (e) => {
     const btn = e.target.closest("[data-step-index]");

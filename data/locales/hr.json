@@ -66,7 +66,12 @@
     "officialWebsite": "Službena stranica",
     "stepLocked": "Ispunite uvjete ispod prije nego što otvorite ovaj korak ili ga označite gotovim:",
     "stepLockedShort": "Zaključano — najprije dovršite prethodni korak",
-    "cannotComplete": "Dovršite obvezne provjere prije označavanja koraka kao gotovog."
+    "cannotComplete": "Dovršite obvezne provjere prije označavanja koraka kao gotovog.",
+    "exportCase": "Izvezi slučaj",
+    "importCase": "Uvezi slučaj",
+    "importError": "Datoteku nije moguće uvesti. Koristite JSON izvoz residency-runbook slučaja.",
+    "exportPrivacyNote": "Izvoz može sadržavati identifikatore poslodavca iz slučaja. Držite datoteke privatnima; ne predajte ih u git.",
+    "exportHint": "Izvezite prije zatvaranja ako trebate napredak ovog zapošljavanja na drugom uređaju."
   },
   "facts": {
     "art99DomesticRatio": "Udio domaće radne snage (uvjet za poslodavca)",

@@ -66,7 +66,12 @@
     "officialWebsite": "Official website",
     "stepLocked": "Finish the requirements below before you can open this step or mark it complete:",
     "stepLockedShort": "Locked — finish the previous step first",
-    "cannotComplete": "Complete the required checks before marking this step done."
+    "cannotComplete": "Complete the required checks before marking this step done.",
+    "exportCase": "Export case",
+    "importCase": "Import case",
+    "importError": "Could not import that file. Use a residency-runbook case JSON export.",
+    "exportPrivacyNote": "Exports can include employer identifiers from the case. Keep files private; do not commit them.",
+    "exportHint": "Export before closing if you need this hire’s progress on another device."
   },
   "facts": {
     "art99DomesticRatio": "Domestic workforce ratio (employer condition)",
